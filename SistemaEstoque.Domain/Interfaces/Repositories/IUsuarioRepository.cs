@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 
 namespace SistemaEstoque.Domain.Interfaces.Repositories
 {
-    public interface IUsuarioRepository : IBaseRepository<Usuario>
+    public interface IUsuarioRepository : IRepositoryBase<Usuario>
     {
+        Task<Usuario> GetByEmailAsync(string email);
     }
 }

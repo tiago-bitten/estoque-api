@@ -14,7 +14,7 @@ namespace SistemaEstoque.Domain.Entities
         public string Cidade { get; set; }
         public string Estado { get; set; }
         public string Cep { get; set; }
-        public bool Ativo { get; set; }
+        public bool? Ativo { get; set; }
 
         public IEnumerable<Usuario?> Usuarios { get; set; }
         public IEnumerable<Categoria?> Categorias { get; set; } 

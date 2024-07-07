@@ -8,6 +8,8 @@ namespace SistemaEstoque.Infra.EntitiesConfig
     {
         public void Configure(EntityTypeBuilder<Empresa> builder)
         {
+            builder.ToTable("empresas");
+
             builder.HasKey(e => e.Id);
 
             builder.Property(e => e.Id)

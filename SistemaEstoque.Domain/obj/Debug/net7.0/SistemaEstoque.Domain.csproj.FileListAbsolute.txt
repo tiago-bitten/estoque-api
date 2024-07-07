@@ -1,0 +1,12 @@
+D:\csharp\SistemaEstoque\SistemaEstoque.Domain\bin\Debug\net7.0\SistemaEstoque.Domain.deps.json
+D:\csharp\SistemaEstoque\SistemaEstoque.Domain\bin\Debug\net7.0\SistemaEstoque.Domain.dll
+D:\csharp\SistemaEstoque\SistemaEstoque.Domain\bin\Debug\net7.0\SistemaEstoque.Domain.pdb
+D:\csharp\SistemaEstoque\SistemaEstoque.Domain\obj\Debug\net7.0\SistemaEstoque.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\csharp\SistemaEstoque\SistemaEstoque.Domain\obj\Debug\net7.0\SistemaEstoque.Domain.AssemblyInfoInputs.cache
+D:\csharp\SistemaEstoque\SistemaEstoque.Domain\obj\Debug\net7.0\SistemaEstoque.Domain.AssemblyInfo.cs
+D:\csharp\SistemaEstoque\SistemaEstoque.Domain\obj\Debug\net7.0\SistemaEstoque.Domain.csproj.CoreCompileInputs.cache
+D:\csharp\SistemaEstoque\SistemaEstoque.Domain\obj\Debug\net7.0\SistemaEstoque.Domain.sourcelink.json
+D:\csharp\SistemaEstoque\SistemaEstoque.Domain\obj\Debug\net7.0\SistemaEstoque.Domain.dll
+D:\csharp\SistemaEstoque\SistemaEstoque.Domain\obj\Debug\net7.0\refint\SistemaEstoque.Domain.dll
+D:\csharp\SistemaEstoque\SistemaEstoque.Domain\obj\Debug\net7.0\SistemaEstoque.Domain.pdb
+D:\csharp\SistemaEstoque\SistemaEstoque.Domain\obj\Debug\net7.0\ref\SistemaEstoque.Domain.dll

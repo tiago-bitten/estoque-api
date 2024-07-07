@@ -1,5 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using SistemaEstoque.Infra.Data;
+using SistemaEstoque.IoC;
+using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,10 +12,8 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddDbContext<SistemaEstoqueDbContext>(options =>
-{
-    options.UseNpgsql(builder.Configuration.GetConnectionString("SistemaEstoqueContext"));
-});
+builder.Services.AddInfra(builder.Configuration);
+builder.Services.AddRepositories();
 
 var app = builder.Build();
 

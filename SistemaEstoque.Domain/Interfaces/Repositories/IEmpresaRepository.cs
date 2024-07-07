@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SistemaEstoque.Domain.Interfaces.Repositories
 {
-    public interface IEmpresaRepository : IBaseRepository<Empresa>
+    public interface IEmpresaRepository : IRepositoryBase<Empresa>
     {
     }
 }

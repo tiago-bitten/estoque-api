@@ -8,6 +8,8 @@ namespace SistemaEstoque.Infra.EntitiesConfig
     {
         public void Configure(EntityTypeBuilder<Usuario> builder)
         {
+            builder.ToTable("usuarios");
+
             builder.HasKey(u => u.Id);
 
             builder.Property(u => u.Id)
@@ -40,6 +42,11 @@ namespace SistemaEstoque.Infra.EntitiesConfig
                 .HasColumnName("removido")
                 .HasColumnType("boolean")
                 .HasDefaultValue(false);
+
+            builder.Property(u => u.EmpresaId)
+                .HasColumnName("empresa_id")
+                .HasColumnType("int")
+                .IsRequired();
 
             builder.HasOne(u => u.Empresa)
                 .WithMany(e => e.Usuarios)

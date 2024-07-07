@@ -8,6 +8,8 @@ namespace SistemaEstoque.Infra.EntitiesConfig
     {
         public void Configure(EntityTypeBuilder<Produto> builder)
         {
+            builder.ToTable("produtos");
+
             builder.HasKey(p => p.Id);
 
             builder.Property(p => p.Id)
@@ -38,6 +40,16 @@ namespace SistemaEstoque.Infra.EntitiesConfig
                 .HasColumnName("removido")
                 .HasColumnType("boolean")
                 .HasDefaultValue(false);
+
+            builder.Property(p => p.CategoriaId)
+                .HasColumnName("categoria_id")
+                .HasColumnType("int")
+                .IsRequired();
+
+            builder.Property(p => p.EmpresaId)
+                .HasColumnName("empresa_id")
+                .HasColumnType("int")
+                .IsRequired();
 
             builder.HasOne(p => p.Categoria)
                 .WithMany(c => c.Produtos)

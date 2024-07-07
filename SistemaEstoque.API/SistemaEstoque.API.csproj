@@ -8,16 +8,18 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.12" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="7.0.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <ProjectReference Include="..\SistemaEstoque.Application\SistemaEstoque.Application.csproj" />
     <ProjectReference Include="..\SistemaEstoque.Infra\SistemaEstoque.Infra.csproj" />
+    <ProjectReference Include="..\SistemaEstoque.IoC\SistemaEstoque.IoC.csproj" />
   </ItemGroup>
 
 </Project>
