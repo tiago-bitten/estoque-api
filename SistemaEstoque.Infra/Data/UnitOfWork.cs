@@ -1,5 +1,4 @@
 ﻿using SistemaEstoque.Domain.Interfaces.Repositories;
-using SistemaEstoque.Domain.Interfaces.Services;
 using SistemaEstoque.Infra.Repositories;
 
 namespace SistemaEstoque.Infra.Data

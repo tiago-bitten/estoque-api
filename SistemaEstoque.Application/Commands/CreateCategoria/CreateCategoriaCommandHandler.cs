@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using MediatR;
 using SistemaEstoque.Domain.Entities;
-using SistemaEstoque.Domain.Interfaces.Services;
+using SistemaEstoque.Domain.Interfaces.Repositories;
 
 namespace SistemaEstoque.Application.Commands.CreateCategoria
 {

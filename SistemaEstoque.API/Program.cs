@@ -14,6 +14,7 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddInfra(builder.Configuration);
 builder.Services.AddRepositories();
+builder.Services.AddServices();
 
 var app = builder.Build();
 

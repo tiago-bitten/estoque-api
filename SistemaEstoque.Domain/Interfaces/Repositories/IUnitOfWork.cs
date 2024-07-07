@@ -1,6 +1,4 @@
-﻿using SistemaEstoque.Domain.Interfaces.Repositories;
-
-namespace SistemaEstoque.Domain.Interfaces.Services
+﻿namespace SistemaEstoque.Domain.Interfaces.Repositories
 {
     public interface IUnitOfWork : IDisposable
     {
