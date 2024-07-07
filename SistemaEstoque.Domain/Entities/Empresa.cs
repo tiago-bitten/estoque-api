@@ -17,5 +17,7 @@ namespace SistemaEstoque.Domain.Entities
         public bool Ativo { get; set; }
 
         public IEnumerable<Usuario?> Usuarios { get; set; }
+        public IEnumerable<Categoria?> Categorias { get; set; } 
+        public IEnumerable<Produto?> Produtos { get; set; }
     }
 }
