@@ -3,6 +3,7 @@ using SistemaEstoque.Domain.Interfaces.Repositories;
 using SistemaEstoque.Infra.Data;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Threading.Tasks;
 
 namespace SistemaEstoque.Infra.Repositories
@@ -57,6 +58,16 @@ namespace SistemaEstoque.Infra.Repositories
             _dbSet.Update(entity);
             
             await Task.CompletedTask;
+        }
+
+        public async Task<T> FindAsync(Expression<Func<T, bool>> predicate)
+        {
+            return await _dbSet.FirstOrDefaultAsync(predicate);
+        }
+
+        public Task<IQueryable<T>> FindAllAsync(Expression<Func<T, bool>> predicate)
+        {
+            return Task.FromResult(_dbSet.Where(predicate));
         }
     }
 }

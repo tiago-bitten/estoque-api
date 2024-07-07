@@ -27,13 +27,13 @@ namespace SistemaEstoque.Infra.EntitiesConfig
                 .HasColumnName("descricao")
                 .HasColumnType("varchar(150)");
 
-            builder.Property(p => p.PrecoVenda)
-                .HasColumnName("preco_venda")
+            builder.Property(p => p.PrecoVendaReferencia)
+                .HasColumnName("preco_venda_referencia")
                 .HasColumnType("decimal(18,2)")
                 .IsRequired();
 
-            builder.Property(p => p.PrecoCusto)
-                .HasColumnName("preco_custo")
+            builder.Property(p => p.PrecoCustoReferencia)
+                .HasColumnName("preco_custo_referencia")
                 .HasColumnType("decimal(18,2)");
 
             builder.Property(p => p.Removido)

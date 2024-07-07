@@ -16,6 +16,7 @@ namespace SistemaEstoque.Infra.Data
         public DbSet<Categoria> Categorias { get; set; }
         public DbSet<Usuario> Usuarios { get; set; }
         public DbSet<Fornecedor> Fornecedores { get; set; }
+        public DbSet<Estoque> Estoques { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -24,6 +25,7 @@ namespace SistemaEstoque.Infra.Data
             modelBuilder.ApplyConfiguration(new CategoriaConfig());
             modelBuilder.ApplyConfiguration(new UsuarioConfig());
             modelBuilder.ApplyConfiguration(new FornecedorConfig());
+            modelBuilder.ApplyConfiguration(new EstoqueConfig());
             
             base.OnModelCreating(modelBuilder);
         }

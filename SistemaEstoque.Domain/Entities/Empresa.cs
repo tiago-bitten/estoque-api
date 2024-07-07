@@ -20,5 +20,6 @@ namespace SistemaEstoque.Domain.Entities
         public IEnumerable<Categoria?> Categorias { get; set; } 
         public IEnumerable<Produto?> Produtos { get; set; }
         public IEnumerable<Fornecedor?> Fornecedores { get; set; }
+        public IEnumerable<Estoque?> Estoques { get; set; }
     }
 }

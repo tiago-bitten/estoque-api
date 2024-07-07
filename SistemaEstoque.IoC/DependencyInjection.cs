@@ -12,6 +12,8 @@ using SistemaEstoque.Application.Commands.CreateCategoria;
 using SistemaEstoque.Domain.Interfaces.Services;
 using SistemaEstoque.Application.Services;
 using SistemaEstoque.Application.Commands.CreateProduto;
+using SistemaEstoque.Application.Commands.CreateFornecedor;
+using SistemaEstoque.Application.Commands.CreateEstoque;
 
 namespace SistemaEstoque.IoC
 {
@@ -29,12 +31,16 @@ namespace SistemaEstoque.IoC
                     typeof(CreateUsuarioCommand).Assembly,
                     typeof(CreateCategoriaCommand).Assembly,
                     typeof(CreateProdutoCommand).Assembly,
+                    typeof(CreateFornecedorCommand).Assembly,
+                    typeof(CreateEstoqueCommand).Assembly,
                 });
             });
 
             services.AddAutoMapper(typeof(CategoriaProfile));
             services.AddAutoMapper(typeof(ProdutoProfile));
             services.AddAutoMapper(typeof(UsuarioProfile));
+            services.AddAutoMapper(typeof(FornecedorProfile));
+            services.AddAutoMapper(typeof(EstoqueProfile));
 
             return services;
         }
@@ -54,6 +60,7 @@ namespace SistemaEstoque.IoC
             services.AddScoped<IProdutoRepository, ProdutoRepository>();
             services.AddScoped<IUsuarioRepository, UsuarioRepository>();
             services.AddScoped<IFornecedorRepository, FornecedorRepository>();
+            services.AddScoped<IEstoqueRepository, EstoqueRepository>();
 
             return services;
         }
@@ -61,7 +68,7 @@ namespace SistemaEstoque.IoC
         public static IServiceCollection AddServices(this IServiceCollection services)
         {
             services.AddScoped<ICategoriaService, CategoriaService>();
-            //services.AddScoped<IProdutoService, ProdutoService>();
+            services.AddScoped<IProdutoService, ProdutoService>();
             //services.AddScoped<IUsuarioService, UsuarioService>();
             //services.AddScoped<IFornecedorService, FornecedorService>();
 

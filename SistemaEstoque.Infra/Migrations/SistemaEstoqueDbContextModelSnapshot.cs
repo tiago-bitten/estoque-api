@@ -85,8 +85,8 @@ namespace SistemaEstoque.Infra.Migrations
 
                     b.Property<string>("CpfCnpj")
                         .IsRequired()
-                        .HasMaxLength(14)
-                        .HasColumnType("character varying(14)");
+                        .HasColumnType("varchar(14)")
+                        .HasColumnName("cpf_cnpj");
 
                     b.Property<string>("Email")
                         .IsRequired()
@@ -123,6 +123,116 @@ namespace SistemaEstoque.Infra.Migrations
                     b.ToTable("empresas", (string)null);
                 });
 
+            modelBuilder.Entity("SistemaEstoque.Domain.Entities.Estoque", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("id");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("EmpresaId")
+                        .HasColumnType("int")
+                        .HasColumnName("empresa_id");
+
+                    b.Property<int>("ProdutoId")
+                        .HasColumnType("int")
+                        .HasColumnName("produto_id");
+
+                    b.Property<int>("Quantidade")
+                        .HasColumnType("int")
+                        .HasColumnName("quantidade");
+
+                    b.Property<int>("QuantidadeMaxima")
+                        .HasColumnType("int")
+                        .HasColumnName("quantidade_maxima");
+
+                    b.Property<int>("QuantidadeMinima")
+                        .HasColumnType("int")
+                        .HasColumnName("quantidade_minima");
+
+                    b.Property<bool?>("Removido")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("BOOLEAN")
+                        .HasDefaultValue(false)
+                        .HasColumnName("removido");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EmpresaId");
+
+                    b.HasIndex("ProdutoId");
+
+                    b.ToTable("estoques", (string)null);
+                });
+
+            modelBuilder.Entity("SistemaEstoque.Domain.Entities.Fornecedor", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("id");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Cep")
+                        .IsRequired()
+                        .HasColumnType("varchar(8)")
+                        .HasColumnName("cep");
+
+                    b.Property<string>("Cidade")
+                        .IsRequired()
+                        .HasColumnType("varchar(150)")
+                        .HasColumnName("cidade");
+
+                    b.Property<string>("CpfCnpj")
+                        .IsRequired()
+                        .HasColumnType("varchar(14)")
+                        .HasColumnName("cpf_cnpj");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("varchar(150)")
+                        .HasColumnName("email");
+
+                    b.Property<int>("EmpresaId")
+                        .HasColumnType("int")
+                        .HasColumnName("empresa_id");
+
+                    b.Property<string>("Endereco")
+                        .IsRequired()
+                        .HasColumnType("varchar(150)")
+                        .HasColumnName("endereco");
+
+                    b.Property<string>("Estado")
+                        .IsRequired()
+                        .HasColumnType("varchar(2)")
+                        .HasColumnName("estado");
+
+                    b.Property<string>("Nome")
+                        .IsRequired()
+                        .HasColumnType("varchar(150)")
+                        .HasColumnName("nome");
+
+                    b.Property<bool?>("Removido")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("boolean")
+                        .HasDefaultValue(false)
+                        .HasColumnName("removido");
+
+                    b.Property<string>("Telefone")
+                        .IsRequired()
+                        .HasColumnType("varchar(15)")
+                        .HasColumnName("telefone");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EmpresaId");
+
+                    b.ToTable("fornecedores", (string)null);
+                });
+
             modelBuilder.Entity("SistemaEstoque.Domain.Entities.Produto", b =>
                 {
                     b.Property<int>("Id")
@@ -150,13 +260,14 @@ namespace SistemaEstoque.Infra.Migrations
                         .HasColumnType("varchar(150)")
                         .HasColumnName("nome");
 
-                    b.Property<decimal?>("PrecoCusto")
+                    b.Property<decimal?>("PrecoCustoReferencia")
                         .HasColumnType("decimal(18,2)")
-                        .HasColumnName("preco_custo");
+                        .HasColumnName("preco_custo_referencia");
 
-                    b.Property<decimal>("PrecoVenda")
+                    b.Property<decimal?>("PrecoVendaReferencia")
+                        .IsRequired()
                         .HasColumnType("decimal(18,2)")
-                        .HasColumnName("preco_venda");
+                        .HasColumnName("preco_venda_referencia");
 
                     b.Property<bool?>("Removido")
                         .ValueGeneratedOnAdd()
@@ -231,6 +342,36 @@ namespace SistemaEstoque.Infra.Migrations
                     b.Navigation("Empresa");
                 });
 
+            modelBuilder.Entity("SistemaEstoque.Domain.Entities.Estoque", b =>
+                {
+                    b.HasOne("SistemaEstoque.Domain.Entities.Empresa", "Empresa")
+                        .WithMany("Estoques")
+                        .HasForeignKey("EmpresaId")
+                        .OnDelete(DeleteBehavior.SetNull)
+                        .IsRequired();
+
+                    b.HasOne("SistemaEstoque.Domain.Entities.Produto", "Produto")
+                        .WithMany("Estoques")
+                        .HasForeignKey("ProdutoId")
+                        .OnDelete(DeleteBehavior.SetNull)
+                        .IsRequired();
+
+                    b.Navigation("Empresa");
+
+                    b.Navigation("Produto");
+                });
+
+            modelBuilder.Entity("SistemaEstoque.Domain.Entities.Fornecedor", b =>
+                {
+                    b.HasOne("SistemaEstoque.Domain.Entities.Empresa", "Empresa")
+                        .WithMany("Fornecedores")
+                        .HasForeignKey("EmpresaId")
+                        .OnDelete(DeleteBehavior.SetNull)
+                        .IsRequired();
+
+                    b.Navigation("Empresa");
+                });
+
             modelBuilder.Entity("SistemaEstoque.Domain.Entities.Produto", b =>
                 {
                     b.HasOne("SistemaEstoque.Domain.Entities.Categoria", "Categoria")
@@ -270,9 +411,18 @@ namespace SistemaEstoque.Infra.Migrations
                 {
                     b.Navigation("Categorias");
 
+                    b.Navigation("Estoques");
+
+                    b.Navigation("Fornecedores");
+
                     b.Navigation("Produtos");
 
                     b.Navigation("Usuarios");
+                });
+
+            modelBuilder.Entity("SistemaEstoque.Domain.Entities.Produto", b =>
+                {
+                    b.Navigation("Estoques");
                 });
 #pragma warning restore 612, 618
         }

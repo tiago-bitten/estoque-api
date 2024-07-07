@@ -9,5 +9,6 @@
         IUsuarioRepository Usuarios { get; }
         IProdutoRepository Produtos { get; }
         IFornecedorRepository Fornecedores { get; }
+        IEstoqueRepository Estoques { get; }
     }
 }
