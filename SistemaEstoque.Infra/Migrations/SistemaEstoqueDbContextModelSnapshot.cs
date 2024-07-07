@@ -37,7 +37,8 @@ namespace SistemaEstoque.Infra.Migrations
                         .HasColumnName("descricao");
 
                     b.Property<int>("EmpresaId")
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasColumnName("empresa_id");
 
                     b.Property<string>("Nome")
                         .IsRequired()

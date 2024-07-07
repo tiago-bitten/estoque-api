@@ -10,5 +10,6 @@ namespace SistemaEstoque.Domain.Interfaces.Services
         ICategoriaRepository Categorias { get; }
         IUsuarioRepository Usuarios { get; }
         IProdutoRepository Produtos { get; }
+        IFornecedorRepository Fornecedores { get; }
     }
 }

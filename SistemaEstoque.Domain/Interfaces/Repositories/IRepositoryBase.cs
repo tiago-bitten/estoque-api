@@ -1,4 +1,6 @@
-﻿namespace SistemaEstoque.Domain.Interfaces.Repositories
+﻿using System.Linq.Expressions;
+
+namespace SistemaEstoque.Domain.Interfaces.Repositories
 {
     public interface IRepositoryBase<T> where T : class
     {

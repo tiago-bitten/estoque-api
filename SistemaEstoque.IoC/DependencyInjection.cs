@@ -9,6 +9,7 @@ using MediatR;
 using System.Reflection;
 using SistemaEstoque.Domain.Interfaces.Services;
 using SistemaEstoque.Application.Commands.CreateUsuario;
+using SistemaEstoque.Application.Commands.CreateCategoria;
 
 namespace SistemaEstoque.IoC
 {
@@ -21,7 +22,11 @@ namespace SistemaEstoque.IoC
 
             services.AddMediatR(cfg =>
             {
-                cfg.RegisterServicesFromAssembly(typeof(CreateUsuarioCommand).Assembly);
+                cfg.RegisterServicesFromAssemblies(new Assembly[] 
+                { 
+                    typeof(CreateUsuarioCommand).Assembly,
+                    typeof(CreateCategoriaCommand).Assembly
+                });
             });
 
             services.AddAutoMapper(typeof(UsuarioProfile));
@@ -32,9 +37,11 @@ namespace SistemaEstoque.IoC
         public static IServiceCollection AddRepositories(this IServiceCollection services)
         {
             services.AddScoped<IUnitOfWork, UnitOfWork>();
+
             services.AddScoped<ICategoriaRepository, CategoriaRepository>();
             services.AddScoped<IProdutoRepository, ProdutoRepository>();
             services.AddScoped<IUsuarioRepository, UsuarioRepository>();
+            services.AddScoped<IFornecedorRepository, FornecedorRepository>();
 
             return services;
         }

@@ -17,7 +17,7 @@ namespace SistemaEstoque.API.Controllers
         }
 
         [HttpPost("Criar")]
-        public async Task<IActionResult> Criar([FromBody] CreateUsuarioCommand command)
+        public async Task<IActionResult> Create([FromBody] CreateUsuarioCommand command)
         {
             var response = await _mediator.Send(command);
             return Ok(response);

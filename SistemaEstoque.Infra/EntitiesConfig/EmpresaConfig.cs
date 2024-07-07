@@ -24,8 +24,9 @@ namespace SistemaEstoque.Infra.EntitiesConfig
                 .IsRequired();
 
             builder.Property(e => e.CpfCnpj)
-                .IsRequired()
-                .HasMaxLength(14);
+                .HasColumnName("cpf_cnpj")
+                .HasColumnType("varchar(14)")
+                .IsRequired();
 
             builder.Property(e => e.Email)
                 .HasColumnName("email")
@@ -80,6 +81,11 @@ namespace SistemaEstoque.Infra.EntitiesConfig
             builder.HasMany(e => e.Produtos)
                 .WithOne(p => p.Empresa)
                 .HasForeignKey(p => p.EmpresaId)
+                .OnDelete(DeleteBehavior.SetNull);
+        
+            builder.HasMany(e => e.Fornecedores)
+                .WithOne(f => f.Empresa)
+                .HasForeignKey(f => f.EmpresaId)
                 .OnDelete(DeleteBehavior.SetNull);
         }
     }

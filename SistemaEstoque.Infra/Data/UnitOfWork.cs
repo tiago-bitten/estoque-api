@@ -10,6 +10,7 @@ namespace SistemaEstoque.Infra.Data
         private ICategoriaRepository _categoriaRepository;
         private IUsuarioRepository _usuarioRepository;
         private IProdutoRepository _produtoRepository;
+        private IFornecedorRepository _fornecedorRepository;
 
         public UnitOfWork(SistemaEstoqueDbContext context)
         {
@@ -18,10 +19,10 @@ namespace SistemaEstoque.Infra.Data
 
         public ICategoriaRepository Categorias => _categoriaRepository ??= new CategoriaRepository(_context);
 
-
         public IUsuarioRepository Usuarios => _usuarioRepository ??= new UsuarioRepository(_context);
 
         public IProdutoRepository Produtos => _produtoRepository ??= new ProdutoRepository(_context);
+        public IFornecedorRepository Fornecedores => _fornecedorRepository ??= new FornecedorRepository(_context);
 
         public async Task<bool> CommitAsync()
         {

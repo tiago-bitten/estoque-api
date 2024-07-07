@@ -1,7 +1,6 @@
 ﻿using AutoMapper;
 using MediatR;
 using SistemaEstoque.Domain.Entities;
-using SistemaEstoque.Domain.Interfaces.Repositories;
 using SistemaEstoque.Domain.Interfaces.Services;
 
 namespace SistemaEstoque.Application.Commands.CreateUsuario
@@ -27,7 +26,7 @@ namespace SistemaEstoque.Application.Commands.CreateUsuario
             if (existsUsuario != null)
                 throw new Exception("Usuário já cadastrado");
         
-            await _uow.Usuarios.AddAsync(usuario, 1);
+            await _uow.Usuarios.AddAsync(usuario, EMPRESA_CONSTANTE.ID_EMPRESA);
             await _uow.CommitAsync();
 
             var response = _mapper.Map<CreateUsuarioResponse>(usuario);
