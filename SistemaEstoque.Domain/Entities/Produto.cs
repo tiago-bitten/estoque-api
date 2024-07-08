@@ -10,5 +10,6 @@
         public Categoria Categoria { get; set; }
 
         public IEnumerable<Estoque?> Estoques { get; set; }
+        public IEnumerable<Lote?> Lotes { get; set; }
     }
 }

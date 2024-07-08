@@ -11,5 +11,7 @@
         public string Estado { get; set; }
         public string Cep { get; set; }
         public bool? Removido { get; set; }
+
+        public IEnumerable<Lote?> Lotes { get; set; }
     }
 }
