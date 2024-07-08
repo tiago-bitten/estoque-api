@@ -11,5 +11,8 @@ namespace SistemaEstoque.Application.Commands.CreateLote
         public int Quantidade { get; set; }
         public int ProdutoId { get; set; }
         public int FornecedorId { get; set; }
+
+        public decimal PrecoUnitarioVenda { get; set; }
+        public decimal PrecoUnitarioCusto { get; set; }
     }
 }

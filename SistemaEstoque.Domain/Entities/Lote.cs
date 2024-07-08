@@ -12,5 +12,7 @@
 
         public int FornecedorId { get; set; }
         public Fornecedor Fornecedor { get; set; }
+
+        public Movimentacao Movimentacao { get; set; }
     }
 }

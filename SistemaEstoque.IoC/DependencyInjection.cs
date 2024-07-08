@@ -59,12 +59,14 @@ namespace SistemaEstoque.IoC
         {
             services.AddScoped<IUnitOfWork, UnitOfWork>();
 
+            services.AddScoped(typeof(IRepositoryBase<>), typeof(RepositoryBase<>));
             services.AddScoped<ICategoriaRepository, CategoriaRepository>();
             services.AddScoped<IProdutoRepository, ProdutoRepository>();
             services.AddScoped<IUsuarioRepository, UsuarioRepository>();
             services.AddScoped<IFornecedorRepository, FornecedorRepository>();
             services.AddScoped<IEstoqueRepository, EstoqueRepository>();
             services.AddScoped<ILoteRepository, LoteRepository>();
+            services.AddScoped<IMovimentacaoRepository, MovimentacaoRepository>();
 
             return services;
         }
@@ -74,6 +76,7 @@ namespace SistemaEstoque.IoC
             services.AddScoped<ICategoriaService, CategoriaService>();
             services.AddScoped<IProdutoService, ProdutoService>();
             services.AddScoped<IFornecedorService, FornecedorService>();
+            services.AddScoped<ILoteService, LoteService>();
             //services.AddScoped<IUsuarioService, UsuarioService>();
 
             return services;

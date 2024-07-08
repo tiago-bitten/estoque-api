@@ -3,7 +3,6 @@ using MediatR;
 using SistemaEstoque.Domain.Entities;
 using SistemaEstoque.Domain.Interfaces.Repositories;
 using SistemaEstoque.Domain.Interfaces.Services;
-using System.ComponentModel.DataAnnotations;
 
 namespace SistemaEstoque.Application.Commands.CreateLote
 {
@@ -32,11 +31,17 @@ namespace SistemaEstoque.Application.Commands.CreateLote
             var fornecedor = await _fornecedorService.GetAndValidateEntityAsync(request.FornecedorId);
 
             var lote = _mapper.Map<Lote>(request);
+            var movimentacao = _mapper.Map<Movimentacao>(request);
 
             lote.Produto = produto;
             lote.Fornecedor = fornecedor;
 
+            movimentacao.Lote = lote;
+            movimentacao.Produto = produto;
+            movimentacao.UsuarioId = 1;
+
             await _uow.Lotes.AddAsync(lote, EMPRESA_CONSTANTE.ID_EMPRESA);
+            await _uow.Movimentacoes.AddAsync(movimentacao, EMPRESA_CONSTANTE.ID_EMPRESA);
             await _uow.CommitAsync();
 
             var response = _mapper.Map<CreateLoteResponse>(lote);

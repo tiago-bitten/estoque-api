@@ -1,31 +1,47 @@
 ﻿using SistemaEstoque.Domain.Interfaces.Repositories;
 using SistemaEstoque.Infra.Repositories;
+using System.Threading.Tasks;
 
 namespace SistemaEstoque.Infra.Data
 {
     public class UnitOfWork : IUnitOfWork
     {
         private readonly SistemaEstoqueDbContext _context;
-        private ICategoriaRepository _categoriaRepository;
-        private IUsuarioRepository _usuarioRepository;
-        private IProdutoRepository _produtoRepository;
-        private IFornecedorRepository _fornecedorRepository;
-        private IEstoqueRepository _estoqueRepository;
-        private ILoteRepository _loteRepository;
+        private readonly ICategoriaRepository _categoriaRepository;
+        private readonly IUsuarioRepository _usuarioRepository;
+        private readonly IProdutoRepository _produtoRepository;
+        private readonly IFornecedorRepository _fornecedorRepository;
+        private readonly IEstoqueRepository _estoqueRepository;
+        private readonly ILoteRepository _loteRepository;
+        private readonly IMovimentacaoRepository _movimentacaoRepository;
 
-        public UnitOfWork(SistemaEstoqueDbContext context)
+        public UnitOfWork(
+            SistemaEstoqueDbContext context,
+            ICategoriaRepository categoriaRepository,
+            IUsuarioRepository usuarioRepository,
+            IProdutoRepository produtoRepository,
+            IFornecedorRepository fornecedorRepository,
+            IEstoqueRepository estoqueRepository,
+            ILoteRepository loteRepository,
+            IMovimentacaoRepository movimentacaoRepository)
         {
             _context = context;
+            _categoriaRepository = categoriaRepository;
+            _usuarioRepository = usuarioRepository;
+            _produtoRepository = produtoRepository;
+            _fornecedorRepository = fornecedorRepository;
+            _estoqueRepository = estoqueRepository;
+            _loteRepository = loteRepository;
+            _movimentacaoRepository = movimentacaoRepository;
         }
 
-        public ICategoriaRepository Categorias => _categoriaRepository ??= new CategoriaRepository(_context);
-
-        public IUsuarioRepository Usuarios => _usuarioRepository ??= new UsuarioRepository(_context);
-
-        public IProdutoRepository Produtos => _produtoRepository ??= new ProdutoRepository(_context);
-        public IFornecedorRepository Fornecedores => _fornecedorRepository ??= new FornecedorRepository(_context);
-        public IEstoqueRepository Estoques => _estoqueRepository ??= new EstoqueRepository(_context);
-        public ILoteRepository Lotes => _loteRepository ??= new LoteRepository(_context);
+        public ICategoriaRepository Categorias => _categoriaRepository;
+        public IUsuarioRepository Usuarios => _usuarioRepository;
+        public IProdutoRepository Produtos => _produtoRepository;
+        public IFornecedorRepository Fornecedores => _fornecedorRepository;
+        public IEstoqueRepository Estoques => _estoqueRepository;
+        public ILoteRepository Lotes => _loteRepository;
+        public IMovimentacaoRepository Movimentacoes => _movimentacaoRepository;
 
         public async Task<bool> CommitAsync()
         {

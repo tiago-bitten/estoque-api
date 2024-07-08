@@ -73,6 +73,11 @@ namespace SistemaEstoque.Infra.EntitiesConfig
                 .HasForeignKey(l => l.FornecedorId)
                 .OnDelete(DeleteBehavior.SetNull);
 
+            builder.HasOne(l => l.Movimentacao)
+                .WithOne(m => m.Lote)
+                .HasForeignKey<Movimentacao>(m => m.LoteId)
+                .OnDelete(DeleteBehavior.SetNull);
+
             builder.HasOne(l => l.Empresa)
                 .WithMany(e => e.Lotes)
                 .HasForeignKey(l => l.EmpresaId)

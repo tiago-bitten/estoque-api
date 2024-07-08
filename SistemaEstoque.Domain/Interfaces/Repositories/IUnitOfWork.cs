@@ -11,5 +11,6 @@
         IFornecedorRepository Fornecedores { get; }
         IEstoqueRepository Estoques { get; }
         ILoteRepository Lotes { get; }
+        IMovimentacaoRepository Movimentacoes { get; }
     }
 }
