@@ -10,5 +10,6 @@
         IProdutoRepository Produtos { get; }
         IFornecedorRepository Fornecedores { get; }
         IEstoqueRepository Estoques { get; }
+        ILoteRepository Lotes { get; }
     }
 }

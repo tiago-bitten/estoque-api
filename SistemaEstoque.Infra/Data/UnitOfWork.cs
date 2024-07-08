@@ -11,6 +11,7 @@ namespace SistemaEstoque.Infra.Data
         private IProdutoRepository _produtoRepository;
         private IFornecedorRepository _fornecedorRepository;
         private IEstoqueRepository _estoqueRepository;
+        private ILoteRepository _loteRepository;
 
         public UnitOfWork(SistemaEstoqueDbContext context)
         {
@@ -24,6 +25,7 @@ namespace SistemaEstoque.Infra.Data
         public IProdutoRepository Produtos => _produtoRepository ??= new ProdutoRepository(_context);
         public IFornecedorRepository Fornecedores => _fornecedorRepository ??= new FornecedorRepository(_context);
         public IEstoqueRepository Estoques => _estoqueRepository ??= new EstoqueRepository(_context);
+        public ILoteRepository Lotes => _loteRepository ??= new LoteRepository(_context);
 
         public async Task<bool> CommitAsync()
         {
