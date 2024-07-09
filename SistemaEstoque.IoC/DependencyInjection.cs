@@ -15,6 +15,7 @@ using SistemaEstoque.Application.Commands.CreateProduto;
 using SistemaEstoque.Application.Commands.CreateFornecedor;
 using SistemaEstoque.Application.Commands.CreateEstoque;
 using SistemaEstoque.Application.Commands.CreateLote;
+using SistemaEstoque.Application.Commands.UpdateCategoria;
 
 namespace SistemaEstoque.IoC
 {
@@ -35,6 +36,7 @@ namespace SistemaEstoque.IoC
                     typeof(CreateFornecedorCommand).Assembly,
                     typeof(CreateEstoqueCommand).Assembly,
                     typeof(CreateLoteCommand).Assembly,
+                    typeof(UpdateCategoriaCommand).Assembly
                 });
             });
 
@@ -67,6 +69,7 @@ namespace SistemaEstoque.IoC
             services.AddScoped<IEstoqueRepository, EstoqueRepository>();
             services.AddScoped<ILoteRepository, LoteRepository>();
             services.AddScoped<IMovimentacaoRepository, MovimentacaoRepository>();
+            services.AddScoped<ILogAlteracaoRepository, LogAlteracaoRepository>();
 
             return services;
         }

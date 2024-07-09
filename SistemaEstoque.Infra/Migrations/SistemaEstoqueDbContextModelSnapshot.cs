@@ -233,6 +233,64 @@ namespace SistemaEstoque.Infra.Migrations
                     b.ToTable("fornecedores", (string)null);
                 });
 
+            modelBuilder.Entity("SistemaEstoque.Domain.Entities.LogAlteracao", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("id");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("AlteradoEm")
+                        .HasColumnType("date")
+                        .HasColumnName("alterado_em");
+
+                    b.Property<string>("DadosAntigos")
+                        .IsRequired()
+                        .HasColumnType("jsonb")
+                        .HasColumnName("dados_antigos");
+
+                    b.Property<string>("DadosNovos")
+                        .IsRequired()
+                        .HasColumnType("jsonb")
+                        .HasColumnName("dados_novos");
+
+                    b.Property<int>("EmpresaId")
+                        .HasColumnType("int")
+                        .HasColumnName("empresa_id");
+
+                    b.Property<int>("ItemId")
+                        .HasColumnType("int")
+                        .HasColumnName("item_id");
+
+                    b.Property<int>("Quantidade")
+                        .HasColumnType("int")
+                        .HasColumnName("quantidade");
+
+                    b.Property<string>("Tabela")
+                        .IsRequired()
+                        .HasColumnType("varchar(50)")
+                        .HasColumnName("tabela");
+
+                    b.Property<string>("Tipo")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("tipo");
+
+                    b.Property<int>("UsuarioId")
+                        .HasColumnType("int")
+                        .HasColumnName("usuario_id");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EmpresaId");
+
+                    b.HasIndex("UsuarioId");
+
+                    b.ToTable("logs_alteracoes", (string)null);
+                });
+
             modelBuilder.Entity("SistemaEstoque.Domain.Entities.Lote", b =>
                 {
                     b.Property<int>("Id")
@@ -503,6 +561,25 @@ namespace SistemaEstoque.Infra.Migrations
                     b.Navigation("Empresa");
                 });
 
+            modelBuilder.Entity("SistemaEstoque.Domain.Entities.LogAlteracao", b =>
+                {
+                    b.HasOne("SistemaEstoque.Domain.Entities.Empresa", "Empresa")
+                        .WithMany("LogsAlteracoes")
+                        .HasForeignKey("EmpresaId")
+                        .OnDelete(DeleteBehavior.SetNull)
+                        .IsRequired();
+
+                    b.HasOne("SistemaEstoque.Domain.Entities.Usuario", "Usuario")
+                        .WithMany("LogsAlteracoes")
+                        .HasForeignKey("UsuarioId")
+                        .OnDelete(DeleteBehavior.SetNull)
+                        .IsRequired();
+
+                    b.Navigation("Empresa");
+
+                    b.Navigation("Usuario");
+                });
+
             modelBuilder.Entity("SistemaEstoque.Domain.Entities.Lote", b =>
                 {
                     b.HasOne("SistemaEstoque.Domain.Entities.Empresa", "Empresa")
@@ -608,6 +685,8 @@ namespace SistemaEstoque.Infra.Migrations
 
                     b.Navigation("Fornecedores");
 
+                    b.Navigation("LogsAlteracoes");
+
                     b.Navigation("Lotes");
 
                     b.Navigation("Movimentacoes");
@@ -633,6 +712,11 @@ namespace SistemaEstoque.Infra.Migrations
                     b.Navigation("Estoques");
 
                     b.Navigation("Lotes");
+                });
+
+            modelBuilder.Entity("SistemaEstoque.Domain.Entities.Usuario", b =>
+                {
+                    b.Navigation("LogsAlteracoes");
                 });
 #pragma warning restore 612, 618
         }

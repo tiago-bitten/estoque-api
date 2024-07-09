@@ -52,6 +52,11 @@ namespace SistemaEstoque.Infra.EntitiesConfig
                 .WithMany(e => e.Usuarios)
                 .HasForeignKey(u => u.EmpresaId)
                 .OnDelete(DeleteBehavior.SetNull);
+
+            builder.HasMany(u => u.LogsAlteracoes)
+                .WithOne(l => l.Usuario)
+                .HasForeignKey(l => l.UsuarioId)
+                .OnDelete(DeleteBehavior.SetNull);
         }
     }
 }

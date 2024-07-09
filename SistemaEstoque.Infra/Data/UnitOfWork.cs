@@ -14,6 +14,7 @@ namespace SistemaEstoque.Infra.Data
         private readonly IEstoqueRepository _estoqueRepository;
         private readonly ILoteRepository _loteRepository;
         private readonly IMovimentacaoRepository _movimentacaoRepository;
+        private readonly ILogAlteracaoRepository _logAlteracaoRepository;
 
         public UnitOfWork(
             SistemaEstoqueDbContext context,
@@ -23,7 +24,8 @@ namespace SistemaEstoque.Infra.Data
             IFornecedorRepository fornecedorRepository,
             IEstoqueRepository estoqueRepository,
             ILoteRepository loteRepository,
-            IMovimentacaoRepository movimentacaoRepository)
+            IMovimentacaoRepository movimentacaoRepository,
+            ILogAlteracaoRepository logAlteracaoRepository)
         {
             _context = context;
             _categoriaRepository = categoriaRepository;
@@ -33,6 +35,8 @@ namespace SistemaEstoque.Infra.Data
             _estoqueRepository = estoqueRepository;
             _loteRepository = loteRepository;
             _movimentacaoRepository = movimentacaoRepository;
+            _loteRepository = loteRepository;
+            _logAlteracaoRepository = logAlteracaoRepository;
         }
 
         public ICategoriaRepository Categorias => _categoriaRepository;
@@ -42,6 +46,7 @@ namespace SistemaEstoque.Infra.Data
         public IEstoqueRepository Estoques => _estoqueRepository;
         public ILoteRepository Lotes => _loteRepository;
         public IMovimentacaoRepository Movimentacoes => _movimentacaoRepository;
+        public ILogAlteracaoRepository LogsAlteracoes => _logAlteracaoRepository;
 
         public async Task<bool> CommitAsync()
         {

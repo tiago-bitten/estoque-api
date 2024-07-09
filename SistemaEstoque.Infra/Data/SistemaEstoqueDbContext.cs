@@ -19,6 +19,7 @@ namespace SistemaEstoque.Infra.Data
         public DbSet<Estoque> Estoques { get; set; }
         public DbSet<Lote> Lotes { get; set; }
         public DbSet<Movimentacao> Movimentacoes { get; set; }
+        public DbSet<LogAlteracao> LogAlteracoes { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -30,6 +31,7 @@ namespace SistemaEstoque.Infra.Data
             modelBuilder.ApplyConfiguration(new EstoqueConfig());
             modelBuilder.ApplyConfiguration(new LoteConfig());
             modelBuilder.ApplyConfiguration(new MovimentacaoConfig());
+            modelBuilder.ApplyConfiguration(new LogAlteracaoConfig());
             
             base.OnModelCreating(modelBuilder);
         }

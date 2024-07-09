@@ -23,5 +23,6 @@ namespace SistemaEstoque.Domain.Entities
         public IEnumerable<Estoque?> Estoques { get; set; }
         public IEnumerable<Lote?> Lotes { get; set; }
         public IEnumerable<Movimentacao?> Movimentacoes { get; set; }
+        public IEnumerable<LogAlteracao?> LogsAlteracoes { get; set; }
     }
 }
