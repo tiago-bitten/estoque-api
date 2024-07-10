@@ -1,4 +1,6 @@
-﻿namespace SistemaEstoque.Domain.Entities
+﻿using System.Text.Json.Serialization;
+
+namespace SistemaEstoque.Domain.Entities
 {
     public class Tenant
     {

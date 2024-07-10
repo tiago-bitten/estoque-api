@@ -76,6 +76,7 @@ namespace SistemaEstoque.IoC
 
         public static IServiceCollection AddServices(this IServiceCollection services)
         {
+            services.AddScoped(typeof(ILogAlteracaoService<>), typeof(LogAlteracaoService<>));
             services.AddScoped<ICategoriaService, CategoriaService>();
             services.AddScoped<IProdutoService, ProdutoService>();
             services.AddScoped<IFornecedorService, FornecedorService>();

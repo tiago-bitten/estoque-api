@@ -2,6 +2,7 @@
 using SistemaEstoque.Domain.Interfaces.Repositories;
 using SistemaEstoque.Domain.Interfaces.Services;
 using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace SistemaEstoque.Application.Services
 {
@@ -14,16 +15,21 @@ namespace SistemaEstoque.Application.Services
             _uow = uow;
         }
 
-        public async Task LogAsync(T dadosAntigos, T dadosNovos, int itemId, int quantidade, int usuarioId, string tipo, int empresaId)
+        public async Task LogAsync(object dadosAntigos, object dadosNovos, int itemId, int quantidade, int usuarioId, string tipo, int empresaId)
         {
+            var options = new JsonSerializerOptions
+            {
+                ReferenceHandler = ReferenceHandler.Preserve
+            };
+
             var log = new LogAlteracao
             {
                 Tabela = typeof(T).Name,
                 AlteradoEm = DateTime.Now,
                 ItemId = itemId,
                 Quantidade = quantidade,
-                DadosAntigos = JsonSerializer.Serialize(dadosAntigos),
-                DadosNovos = JsonSerializer.Serialize(dadosNovos),
+                DadosAntigos = JsonSerializer.Serialize(dadosAntigos, options),
+                DadosNovos = JsonSerializer.Serialize(dadosNovos, options),
                 Tipo = tipo,
                 UsuarioId = usuarioId,
                 EmpresaId = empresaId

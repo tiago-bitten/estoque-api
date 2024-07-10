@@ -19,25 +19,25 @@ namespace SistemaEstoque.Infra.Repositories
             _dbSet = context.Set<T>();
         }
 
-        public async Task<T> GetByIdAsync(int id)
+        public virtual async Task<T> GetByIdAsync(int id)
         {
             return await _dbSet.FindAsync(id);
         }
 
-        public async Task<IEnumerable<T>> GetAllAsync(int empresaId)
+        public virtual async Task<IEnumerable<T>> GetAllAsync(int empresaId)
         {
             return await _dbSet.Where(e =>
                 EF.Property<int>(e, "EmpresaId") == empresaId).ToListAsync();
         }
 
-        public async Task AddAsync(T entity, int empresaId)
+        public virtual async Task AddAsync(T entity, int empresaId)
         {
             var propertyInfo = entity.GetType().GetProperty("EmpresaId");
             propertyInfo.SetValue(entity, empresaId);
             await _dbSet.AddAsync(entity);
         }
 
-        public void Update(T entity)
+        public virtual void Update(T entity)
         {
             _context.Entry(entity).Property("EmpresaId").IsModified = false;
             _context.Entry(entity).Property("Removido").IsModified = false;
@@ -45,12 +45,12 @@ namespace SistemaEstoque.Infra.Repositories
             _dbSet.Update(entity);
         }
 
-        public void Remove(T entity)
+        public virtual void Remove(T entity)
         {
             _dbSet.Remove(entity);
         }
 
-        public async Task SoftRemoveAsync(T entity)
+        public virtual async Task SoftRemoveAsync(T entity)
         {
             var removidoProperty = entity.GetType().GetProperty("Removido");
             removidoProperty.SetValue(entity, true);
@@ -60,12 +60,12 @@ namespace SistemaEstoque.Infra.Repositories
             await Task.CompletedTask;
         }
 
-        public async Task<T> FindAsync(Expression<Func<T, bool>> predicate)
+        public virtual async Task<T> FindAsync(Expression<Func<T, bool>> predicate)
         {
             return await _dbSet.FirstOrDefaultAsync(predicate);
         }
 
-        public Task<IQueryable<T>> FindAllAsync(Expression<Func<T, bool>> predicate)
+        public virtual Task<IQueryable<T>> FindAllAsync(Expression<Func<T, bool>> predicate)
         {
             return Task.FromResult(_dbSet.Where(predicate));
         }

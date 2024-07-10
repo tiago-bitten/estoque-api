@@ -1,5 +1,7 @@
 ﻿using AutoMapper;
 using SistemaEstoque.Application.Commands.CreateCategoria;
+using SistemaEstoque.Application.Commands.UpdateCategoria;
+using SistemaEstoque.Application.DTOs;
 using SistemaEstoque.Domain.Entities;
 
 namespace SistemaEstoque.Application.Profiles
@@ -11,6 +13,10 @@ namespace SistemaEstoque.Application.Profiles
             CreateMap<CreateCategoriaCommand, Categoria>();
             
             CreateMap<Categoria, CreateCategoriaResponse>();
+
+            CreateMap<Categoria, CategoriaDTO>();
+
+            CreateMap<Categoria, UpdateCategoriaResponse>();
         }
     }
 }

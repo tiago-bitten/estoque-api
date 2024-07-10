@@ -25,7 +25,7 @@ namespace SistemaEstoque.Infra.EntitiesConfig
 
             builder.Property(l => l.AlteradoEm)
                 .HasColumnName("alterado_em")
-                .HasColumnType("date")
+                .HasColumnType("timestamp")
                 .IsRequired();
 
             builder.Property(l => l.ItemId)

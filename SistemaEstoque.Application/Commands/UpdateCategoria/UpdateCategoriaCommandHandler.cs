@@ -1,10 +1,9 @@
 ﻿using AutoMapper;
 using MediatR;
+using SistemaEstoque.Application.DTOs;
 using SistemaEstoque.Domain.Entities;
 using SistemaEstoque.Domain.Interfaces.Repositories;
 using SistemaEstoque.Domain.Interfaces.Services;
-using System.Text.Json;
-using static SistemaEstoque.Infra.Data.Constants;
 
 namespace SistemaEstoque.Application.Commands.UpdateCategoria
 {
@@ -55,9 +54,12 @@ namespace SistemaEstoque.Application.Commands.UpdateCategoria
                 totalAlteracoes++;
             }
 
+            var categoriaAntigaDTO = _mapper.Map<CategoriaDTO>(categoriaAntiga);
+            var categoriaNovaDTO = _mapper.Map<CategoriaDTO>(categoriaNova);
+
             await _logAlteracaoService.LogAsync(
-                categoriaAntiga,
-                categoriaNova,
+                categoriaAntigaDTO,
+                categoriaNovaDTO,
                 categoriaNova.Id,
                 totalAlteracoes,
                 1,

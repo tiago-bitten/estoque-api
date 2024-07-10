@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using SistemaEstoque.Domain.Entities;
+using SistemaEstoque.Domain.Enums;
 
 namespace SistemaEstoque.Infra.EntitiesConfig
 {
@@ -36,6 +37,9 @@ namespace SistemaEstoque.Infra.EntitiesConfig
             builder.Property(e => e.TipoEmpresa)
                 .HasColumnName("tipo_empresa")
                 .HasColumnType("text")
+                .HasConversion(
+                    v => v.ToString(),
+                    v => (ETipoEmpresa)System.Enum.Parse(typeof(ETipoEmpresa), v))
                 .IsRequired();
 
             builder.Property(e => e.Telefone)
