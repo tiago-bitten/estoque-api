@@ -8,9 +8,9 @@ namespace SistemaEstoque.Application.Profiles
     {
         public EstoqueProfile()
         {
-            CreateMap<CreateEstoqueCommand, Estoque>();
+            CreateMap<CreateEstoqueCommand, EstoqueProduto>();
 
-            CreateMap<Estoque, CreateEstoqueResponse>();
+            CreateMap<EstoqueProduto, CreateEstoqueResponse>();
         }
     }
 }

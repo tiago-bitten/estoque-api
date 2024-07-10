@@ -4,9 +4,9 @@ using SistemaEstoque.Domain.Entities;
 
 namespace SistemaEstoque.Infra.EntitiesConfig
 {
-    public class EstoqueConfig : IEntityTypeConfiguration<Estoque>
+    public class EstoqueProdutoConfig : IEntityTypeConfiguration<EstoqueProduto>
     {
-        public void Configure(EntityTypeBuilder<Estoque> builder)
+        public void Configure(EntityTypeBuilder<EstoqueProduto> builder)
         {
             builder.ToTable("estoques");
 
@@ -29,8 +29,7 @@ namespace SistemaEstoque.Infra.EntitiesConfig
 
             builder.Property(e => e.QuantidadeMaxima)
                 .HasColumnName("quantidade_maxima")
-                .HasColumnType("int")
-                .IsRequired();
+                .HasColumnType("int");
 
             builder.Property(e => e.Removido)
                 .HasColumnName("removido")
@@ -48,12 +47,12 @@ namespace SistemaEstoque.Infra.EntitiesConfig
                 .IsRequired();
 
             builder.HasOne(e => e.Produto)
-                .WithMany(p => p.Estoques)
+                .WithMany(p => p.EstoquesProdutos)
                 .HasForeignKey(e => e.ProdutoId)
                 .OnDelete(DeleteBehavior.SetNull);
 
             builder.HasOne(e => e.Empresa)
-                .WithMany(em => em.Estoques)
+                .WithMany(em => em.EstoquesProdutos)
                 .HasForeignKey(e => e.EmpresaId)
                 .OnDelete(DeleteBehavior.SetNull);
         }

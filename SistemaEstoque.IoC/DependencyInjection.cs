@@ -66,7 +66,7 @@ namespace SistemaEstoque.IoC
             services.AddScoped<IProdutoRepository, ProdutoRepository>();
             services.AddScoped<IUsuarioRepository, UsuarioRepository>();
             services.AddScoped<IFornecedorRepository, FornecedorRepository>();
-            services.AddScoped<IEstoqueRepository, EstoqueRepository>();
+            services.AddScoped<IEstoqueProdutoRepository, EstoqueProdutoRepository>();
             services.AddScoped<ILoteProdutoRepository, LoteProdutoRepository>();
             services.AddScoped<IMovimentacaoProdutoRepository, MovimentacaoProdutoRepository>();
             services.AddScoped<ILogAlteracaoRepository, LogAlteracaoRepository>();

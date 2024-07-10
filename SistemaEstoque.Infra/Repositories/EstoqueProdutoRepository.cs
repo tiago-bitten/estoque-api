@@ -4,9 +4,9 @@ using SistemaEstoque.Infra.Data;
 
 namespace SistemaEstoque.Infra.Repositories
 {
-    public class EstoqueRepository : RepositoryBase<Estoque>, IEstoqueRepository
+    public class EstoqueProdutoRepository : RepositoryBase<EstoqueProduto>, IEstoqueProdutoRepository
     {
-        public EstoqueRepository(SistemaEstoqueDbContext context) 
+        public EstoqueProdutoRepository(SistemaEstoqueDbContext context) 
             : base(context)
         {
         }

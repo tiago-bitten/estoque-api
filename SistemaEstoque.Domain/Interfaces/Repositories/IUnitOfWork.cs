@@ -9,7 +9,7 @@
         IUsuarioRepository Usuarios { get; }
         IProdutoRepository Produtos { get; }
         IFornecedorRepository Fornecedores { get; }
-        IEstoqueRepository Estoques { get; }
+        IEstoqueProdutoRepository EstoquesProdutos { get; }
         ILoteProdutoRepository LotesProdutos { get; }
         IMovimentacaoProdutoRepository MovimentacoesProdutos { get; }
         ILogAlteracaoRepository LogsAlteracoes { get; }
