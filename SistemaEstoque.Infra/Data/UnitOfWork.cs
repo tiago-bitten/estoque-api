@@ -12,8 +12,8 @@ namespace SistemaEstoque.Infra.Data
         private readonly IProdutoRepository _produtoRepository;
         private readonly IFornecedorRepository _fornecedorRepository;
         private readonly IEstoqueRepository _estoqueRepository;
-        private readonly ILoteRepository _loteRepository;
-        private readonly IMovimentacaoRepository _movimentacaoRepository;
+        private readonly ILoteProdutoRepository _loteProdutoRepository;
+        private readonly IMovimentacaoProdutoRepository _movimentacaoProdutoRepository;
         private readonly ILogAlteracaoRepository _logAlteracaoRepository;
 
         public UnitOfWork(
@@ -23,8 +23,8 @@ namespace SistemaEstoque.Infra.Data
             IProdutoRepository produtoRepository,
             IFornecedorRepository fornecedorRepository,
             IEstoqueRepository estoqueRepository,
-            ILoteRepository loteRepository,
-            IMovimentacaoRepository movimentacaoRepository,
+            ILoteProdutoRepository loteProdutoRepository,
+            IMovimentacaoProdutoRepository movimentacaoProdutoRepository,
             ILogAlteracaoRepository logAlteracaoRepository)
         {
             _context = context;
@@ -33,9 +33,8 @@ namespace SistemaEstoque.Infra.Data
             _produtoRepository = produtoRepository;
             _fornecedorRepository = fornecedorRepository;
             _estoqueRepository = estoqueRepository;
-            _loteRepository = loteRepository;
-            _movimentacaoRepository = movimentacaoRepository;
-            _loteRepository = loteRepository;
+            _movimentacaoProdutoRepository = movimentacaoProdutoRepository;
+            _loteProdutoRepository = loteProdutoRepository;
             _logAlteracaoRepository = logAlteracaoRepository;
         }
 
@@ -44,8 +43,8 @@ namespace SistemaEstoque.Infra.Data
         public IProdutoRepository Produtos => _produtoRepository;
         public IFornecedorRepository Fornecedores => _fornecedorRepository;
         public IEstoqueRepository Estoques => _estoqueRepository;
-        public ILoteRepository Lotes => _loteRepository;
-        public IMovimentacaoRepository Movimentacoes => _movimentacaoRepository;
+        public ILoteProdutoRepository LotesProdutos => _loteProdutoRepository;
+        public IMovimentacaoProdutoRepository MovimentacoesProdutos => _movimentacaoProdutoRepository;
         public ILogAlteracaoRepository LogsAlteracoes => _logAlteracaoRepository;
 
         public async Task<bool> CommitAsync()

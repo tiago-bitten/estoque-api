@@ -10,6 +10,7 @@
         public Categoria Categoria { get; set; }
 
         public IEnumerable<Estoque?> Estoques { get; set; }
-        public IEnumerable<Lote?> Lotes { get; set; }
+        public IEnumerable<LoteProduto?> LotesProdutos { get; set; }
+        public IEnumerable<MovimentacaoProduto?> MovimentacoesProdutos { get; set; }
     }
 }

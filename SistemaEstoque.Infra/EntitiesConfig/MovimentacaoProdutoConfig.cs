@@ -4,11 +4,11 @@ using SistemaEstoque.Domain.Entities;
 
 namespace SistemaEstoque.Infra.EntitiesConfig
 {
-    public class MovimentacaoConfig : IEntityTypeConfiguration<Movimentacao>
+    public class MovimentacaoProdutoConfig : IEntityTypeConfiguration<MovimentacaoProduto>
     {
-        public void Configure(EntityTypeBuilder<Movimentacao> builder)
+        public void Configure(EntityTypeBuilder<MovimentacaoProduto> builder)
         {
-            builder.ToTable("movimentacoes");
+            builder.ToTable("movimentacoes_produtos");
 
             builder.HasKey(m => m.Id);
 
@@ -74,22 +74,22 @@ namespace SistemaEstoque.Infra.EntitiesConfig
                 .IsRequired();
 
             builder.HasOne(m => m.Usuario)
-                .WithMany()
+                .WithMany(u => u.MovimentacoesProdutos)
                 .HasForeignKey(m => m.UsuarioId)
                 .OnDelete(DeleteBehavior.SetNull);
         
             builder.HasOne(m => m.Produto)
-                .WithMany()
+                .WithMany(p => p.MovimentacoesProdutos)
                 .HasForeignKey(m => m.ProdutoId)
                 .OnDelete(DeleteBehavior.SetNull);
 
-            builder.HasOne(m => m.Lote)
-                .WithOne(l => l.Movimentacao)
-                .HasForeignKey<Movimentacao>(m => m.LoteId)
+            builder.HasOne(m => m.LoteProduto)
+                .WithOne(l => l.MovimentacaoProduto)
+                .HasForeignKey<MovimentacaoProduto>(m => m.LoteId)
                 .OnDelete(DeleteBehavior.SetNull);
 
             builder.HasOne(m => m.Empresa)
-                .WithMany(e => e.Movimentacoes)
+                .WithMany(e => e.MovimentacoesProdutos)
                 .HasForeignKey(m => m.EmpresaId)
                 .OnDelete(DeleteBehavior.SetNull);
         }

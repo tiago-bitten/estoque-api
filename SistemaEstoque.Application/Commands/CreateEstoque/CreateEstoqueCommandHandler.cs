@@ -40,6 +40,7 @@ namespace SistemaEstoque.Application.Commands.CreateEstoque
             var estoque = _mapper.Map<Estoque>(request);
 
             estoque.Produto = produto;
+            estoque.EmpresaId = EMPRESA_CONSTANTE.ID_EMPRESA;
 
             await _ouw.Estoques.AddAsync(estoque, EMPRESA_CONSTANTE.ID_EMPRESA);
             await _ouw.CommitAsync();

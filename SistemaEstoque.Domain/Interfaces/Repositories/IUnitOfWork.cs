@@ -10,8 +10,8 @@
         IProdutoRepository Produtos { get; }
         IFornecedorRepository Fornecedores { get; }
         IEstoqueRepository Estoques { get; }
-        ILoteRepository Lotes { get; }
-        IMovimentacaoRepository Movimentacoes { get; }
+        ILoteProdutoRepository LotesProdutos { get; }
+        IMovimentacaoProdutoRepository MovimentacoesProdutos { get; }
         ILogAlteracaoRepository LogsAlteracoes { get; }
     }
 }

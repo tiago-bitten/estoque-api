@@ -2,7 +2,7 @@
 
 namespace SistemaEstoque.Domain.Entities
 {
-    public sealed class Movimentacao : EntidadeBase
+    public sealed class MovimentacaoProduto : EntidadeBase
     {
         public ETipoMovimentacao Tipo { get; set; }
         public int Quantidade { get; set; }
@@ -17,7 +17,7 @@ namespace SistemaEstoque.Domain.Entities
         public Produto Produto { get; set; }
 
         public int LoteId { get; set; }
-        public Lote Lote { get; set; }
+        public LoteProduto LoteProduto { get; set; }
 
         public decimal ValorTotalVenda => Quantidade * PrecoUnitarioVenda;
         public decimal ValorTotalCustos => Quantidade * PrecoUnitarioCusto;

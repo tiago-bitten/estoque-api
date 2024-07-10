@@ -7,17 +7,17 @@ namespace SistemaEstoque.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class LotesController : ControllerBase
+    public class LotesProdutosController : ControllerBase
     {
         private readonly IMediator _mediator;
 
-        public LotesController(IMediator mediator)
+        public LotesProdutosController(IMediator mediator)
         {
             _mediator = mediator;
         }
 
         [HttpPost("Criar")]
-        public async Task<IActionResult> Criar([FromBody] CreateLoteCommand command)
+        public async Task<IActionResult> Criar([FromBody] CreateLoteProdutoCommand command)
         {
             var response = await _mediator.Send(command);
 

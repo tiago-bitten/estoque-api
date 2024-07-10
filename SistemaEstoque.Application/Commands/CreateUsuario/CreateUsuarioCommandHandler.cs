@@ -26,6 +26,8 @@ namespace SistemaEstoque.Application.Commands.CreateUsuario
             if (existsUsuario != null)
                 throw new Exception("Usuário já cadastrado");
         
+            usuario.EmpresaId = EMPRESA_CONSTANTE.ID_EMPRESA;
+
             await _uow.Usuarios.AddAsync(usuario, EMPRESA_CONSTANTE.ID_EMPRESA);
             await _uow.CommitAsync();
 

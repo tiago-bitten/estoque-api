@@ -4,11 +4,11 @@ using SistemaEstoque.Domain.Entities;
 
 namespace SistemaEstoque.Infra.EntitiesConfig
 {
-    public class LoteConfig : IEntityTypeConfiguration<Lote>
+    public class LoteProdutoConfig : IEntityTypeConfiguration<LoteProduto>
     {
-        public void Configure(EntityTypeBuilder<Lote> builder)
+        public void Configure(EntityTypeBuilder<LoteProduto> builder)
         {
-            builder.ToTable("lotes");
+            builder.ToTable("lotes_produtos");
 
             builder.HasKey(l => l.Id);
 
@@ -30,12 +30,12 @@ namespace SistemaEstoque.Infra.EntitiesConfig
 
             builder.Property(l => l.DataFabricacao)
                 .HasColumnName("data_fabricacao")
-                .HasColumnType("date")
+                .HasColumnType("timestamp")
                 .IsRequired();
 
             builder.Property(l => l.DataValidade)
                 .HasColumnName("data_validade")
-                .HasColumnType("date")
+                .HasColumnType("timestamp")
                 .IsRequired();
 
             builder.Property(l => l.Quantidade)
@@ -64,18 +64,18 @@ namespace SistemaEstoque.Infra.EntitiesConfig
                 .IsRequired();
 
             builder.HasOne(l => l.Produto)
-                .WithMany(p => p.Lotes)
+                .WithMany(p => p.LotesProdutos)
                 .HasForeignKey(l => l.ProdutoId)
                 .OnDelete(DeleteBehavior.SetNull);
 
             builder.HasOne(l => l.Fornecedor)
-                .WithMany(f => f.Lotes)
+                .WithMany(f => f.LotesProdutos)
                 .HasForeignKey(l => l.FornecedorId)
                 .OnDelete(DeleteBehavior.SetNull);
 
-            builder.HasOne(l => l.Movimentacao)
-                .WithOne(m => m.Lote)
-                .HasForeignKey<Movimentacao>(m => m.LoteId)
+            builder.HasOne(l => l.MovimentacaoProduto)
+                .WithOne(m => m.LoteProduto)
+                .HasForeignKey<MovimentacaoProduto>(m => m.LoteId)
                 .OnDelete(DeleteBehavior.SetNull);
 
             builder.HasOne(l => l.Empresa)

@@ -35,7 +35,7 @@ namespace SistemaEstoque.IoC
                     typeof(CreateProdutoCommand).Assembly,
                     typeof(CreateFornecedorCommand).Assembly,
                     typeof(CreateEstoqueCommand).Assembly,
-                    typeof(CreateLoteCommand).Assembly,
+                    typeof(CreateLoteProdutoCommand).Assembly,
                     typeof(UpdateCategoriaCommand).Assembly
                 });
             });
@@ -45,7 +45,7 @@ namespace SistemaEstoque.IoC
             services.AddAutoMapper(typeof(UsuarioProfile));
             services.AddAutoMapper(typeof(FornecedorProfile));
             services.AddAutoMapper(typeof(EstoqueProfile));
-            services.AddAutoMapper(typeof(LoteProfile));
+            services.AddAutoMapper(typeof(LoteProdutoProfile));
 
             return services;
         }
@@ -67,8 +67,8 @@ namespace SistemaEstoque.IoC
             services.AddScoped<IUsuarioRepository, UsuarioRepository>();
             services.AddScoped<IFornecedorRepository, FornecedorRepository>();
             services.AddScoped<IEstoqueRepository, EstoqueRepository>();
-            services.AddScoped<ILoteRepository, LoteRepository>();
-            services.AddScoped<IMovimentacaoRepository, MovimentacaoRepository>();
+            services.AddScoped<ILoteProdutoRepository, LoteProdutoRepository>();
+            services.AddScoped<IMovimentacaoProdutoRepository, MovimentacaoProdutoRepository>();
             services.AddScoped<ILogAlteracaoRepository, LogAlteracaoRepository>();
 
             return services;
@@ -79,7 +79,7 @@ namespace SistemaEstoque.IoC
             services.AddScoped<ICategoriaService, CategoriaService>();
             services.AddScoped<IProdutoService, ProdutoService>();
             services.AddScoped<IFornecedorService, FornecedorService>();
-            services.AddScoped<ILoteService, LoteService>();
+            services.AddScoped<ILoteProdutoService, LoteProdutoService>();
             //services.AddScoped<IUsuarioService, UsuarioService>();
 
             return services;

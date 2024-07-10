@@ -12,6 +12,6 @@
         public string Cep { get; set; }
         public bool? Removido { get; set; }
 
-        public IEnumerable<Lote?> Lotes { get; set; }
+        public IEnumerable<LoteProduto?> LotesProdutos { get; set; }
     }
 }

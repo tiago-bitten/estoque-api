@@ -1,9 +1,8 @@
-﻿using MediatR;
-
-namespace SistemaEstoque.Application.Commands.CreateLote
+﻿namespace SistemaEstoque.Application.Commands.CreateLote
 {
-    public class CreateLoteCommand : IRequest<CreateLoteResponse>
+    public class CreateLoteProdutoResponse
     {
+        public int Id { get; set; }
         public string Codigo { get; set; }
         public string CodigoBarras { get; set; }
         public DateTime DataFabricacao { get; set; }
@@ -11,8 +10,5 @@ namespace SistemaEstoque.Application.Commands.CreateLote
         public int Quantidade { get; set; }
         public int ProdutoId { get; set; }
         public int FornecedorId { get; set; }
-
-        public decimal PrecoUnitarioVenda { get; set; }
-        public decimal PrecoUnitarioCusto { get; set; }
     }
 }

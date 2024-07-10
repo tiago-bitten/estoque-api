@@ -1,6 +1,6 @@
 ﻿namespace SistemaEstoque.Domain.Entities
 {
-    public sealed class Lote : EntidadeBase
+    public sealed class LoteProduto : EntidadeBase
     {
         public string Codigo { get; set; }
         public string CodigoBarras { get; set; }
@@ -13,6 +13,6 @@
         public int FornecedorId { get; set; }
         public Fornecedor Fornecedor { get; set; }
 
-        public Movimentacao Movimentacao { get; set; }
+        public MovimentacaoProduto MovimentacaoProduto { get; set; }
     }
 }

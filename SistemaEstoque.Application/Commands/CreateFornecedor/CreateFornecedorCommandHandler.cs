@@ -24,6 +24,7 @@ namespace SistemaEstoque.Application.Commands.CreateFornecedor
                 throw new Exception("Fornecedor já cadastrado");
 
             var fornecedor = _mapper.Map<Fornecedor>(request);
+            fornecedor.EmpresaId = EMPRESA_CONSTANTE.ID_EMPRESA;
 
             await _uow.Fornecedores.AddAsync(fornecedor, EMPRESA_CONSTANTE.ID_EMPRESA);
             await _uow.CommitAsync();

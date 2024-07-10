@@ -3,14 +3,7 @@ using MediatR;
 using SistemaEstoque.Domain.Entities;
 using SistemaEstoque.Domain.Interfaces.Repositories;
 using SistemaEstoque.Domain.Interfaces.Services;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
 using System.Text.Json;
-using System.Text.Json.Serialization;
-using System.Threading.Tasks;
 using static SistemaEstoque.Infra.Data.Constants;
 
 namespace SistemaEstoque.Application.Commands.UpdateCategoria
@@ -20,15 +13,18 @@ namespace SistemaEstoque.Application.Commands.UpdateCategoria
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
         private readonly ICategoriaService _categoriaService;
+        private readonly ILogAlteracaoService<Categoria> _logAlteracaoService;
 
         public UpdateCategoriaCommandHandler(
             IUnitOfWork unitOfWork,
             IMapper mapper,
-            ICategoriaService categoriaService)
+            ICategoriaService categoriaService,
+            ILogAlteracaoService<Categoria> logAlteracaoService)
         {
             _unitOfWork = unitOfWork;
             _mapper = mapper;
             _categoriaService = categoriaService;
+            _logAlteracaoService = logAlteracaoService;
         }
 
         public async Task<UpdateCategoriaResponse> Handle(UpdateCategoriaCommand request, CancellationToken cancellationToken)
@@ -59,31 +55,22 @@ namespace SistemaEstoque.Application.Commands.UpdateCategoria
                 totalAlteracoes++;
             }
 
-            await Console.Out.WriteLineAsync(
-                $"Categoria antiga: {JsonSerializer.Serialize(categoriaAntiga)} " +
-                $"Categoria nova: {JsonSerializer.Serialize(categoriaNova)}"
-                );
-
-            var logAlteracao = new LogAlteracao
-            {
-                Tabela = Tables.Categoria,
-                ItemId = categoriaNova.Id,
-                EmpresaId = EMPRESA_CONSTANTE.ID_EMPRESA,
-                AlteradoEm = DateTime.Now,
-                UsuarioId = 1,
-                Quantidade = totalAlteracoes,
-                Tipo = "ALTERACAO",
-                DadosAntigos = JsonSerializer.Serialize(categoriaAntiga),
-                DadosNovos = JsonSerializer.Serialize(categoriaNova)
-            };
+            await _logAlteracaoService.LogAsync(
+                categoriaAntiga,
+                categoriaNova,
+                categoriaNova.Id,
+                totalAlteracoes,
+                1,
+                "ALTERACAO",
+                EMPRESA_CONSTANTE.ID_EMPRESA
+            );
 
             _unitOfWork.Categorias.Update(categoriaNova);
-            await _unitOfWork.LogsAlteracoes.LogAsync(logAlteracao, EMPRESA_CONSTANTE.ID_EMPRESA);
             await _unitOfWork.CommitAsync();
-        
+
             var response = _mapper.Map<UpdateCategoriaResponse>(categoriaNova);
 
-            return await Task.FromResult(response);
+            return response;
         }
     }
 }

@@ -26,6 +26,7 @@ namespace SistemaEstoque.Application.Commands.CreateCategoria
             if (existsCategoria != null)
                 throw new Exception("Categoria já cadastrada");
 
+            categoria.EmpresaId = EMPRESA_CONSTANTE.ID_EMPRESA;
 
             await _uow.Categorias.AddAsync(categoria, EMPRESA_CONSTANTE.ID_EMPRESA);
             await _uow.CommitAsync();

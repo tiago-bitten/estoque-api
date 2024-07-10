@@ -9,7 +9,7 @@ namespace SistemaEstoque.Application.Profiles
     {
         public MovimentacaoProfile()
         {
-            CreateMap<CreateLoteCommand, Movimentacao>()
+            CreateMap<CreateLoteProdutoCommand, MovimentacaoProduto>()
                 .ForMember(dest => dest.Tipo, opt => opt.MapFrom(src => ETipoMovimentacao.Entrada))
                 .ForMember(dest => dest.DataMovimentacao, opt => opt.MapFrom(src => DateTime.Now))
                 .ForMember(dest => dest.Origem, opt => opt.MapFrom(src => EOrigemMovimentacao.EntradaLote));
