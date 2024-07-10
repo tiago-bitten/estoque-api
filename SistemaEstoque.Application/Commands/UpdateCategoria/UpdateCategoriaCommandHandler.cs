@@ -2,8 +2,10 @@
 using MediatR;
 using SistemaEstoque.Application.DTOs;
 using SistemaEstoque.Domain.Entities;
+using SistemaEstoque.Domain.Enums;
 using SistemaEstoque.Domain.Interfaces.Repositories;
 using SistemaEstoque.Domain.Interfaces.Services;
+using SistemaEstoque.Shared.Extensions;
 
 namespace SistemaEstoque.Application.Commands.UpdateCategoria
 {
@@ -32,15 +34,7 @@ namespace SistemaEstoque.Application.Commands.UpdateCategoria
 
             var categoriaNova = await _categoriaService.GetAndValidateEntityAsync(request.Id);
 
-            var categoriaAntiga = new Categoria
-            {
-                Id = categoriaNova.Id,
-                Nome = categoriaNova.Nome,
-                Descricao = categoriaNova.Descricao,
-                EmpresaId = categoriaNova.EmpresaId,
-                Removido = categoriaNova.Removido,
-                Produtos = categoriaNova.Produtos
-            };
+            var categoriaAntiga = categoriaNova.DeepClone();
 
             if (!string.IsNullOrEmpty(request.Nome))
             {
@@ -63,7 +57,7 @@ namespace SistemaEstoque.Application.Commands.UpdateCategoria
                 categoriaNova.Id,
                 totalAlteracoes,
                 1,
-                "ALTERACAO",
+                ETipoAlteracao.Alteracao,
                 EMPRESA_CONSTANTE.ID_EMPRESA
             );
 

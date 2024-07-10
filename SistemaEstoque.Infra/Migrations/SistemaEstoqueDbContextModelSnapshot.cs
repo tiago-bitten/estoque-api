@@ -243,7 +243,7 @@ namespace SistemaEstoque.Infra.Migrations
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
                     b.Property<DateTime>("AlteradoEm")
-                        .HasColumnType("timestamp")
+                        .HasColumnType("date")
                         .HasColumnName("alterado_em");
 
                     b.Property<string>("DadosAntigos")

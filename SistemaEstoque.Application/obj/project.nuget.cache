@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "mxnCp13rjK8=",
+  "dgSpecHash": "s/fWqeXOgpuhM0MYND8oqM/SFB2Kgo/IWUGL4/nqTctmN/PQXW/ygKnGBelH6cPGN39/yWicyspfOJcxez//hg==",
   "success": true,
-  "projectFilePath": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Application\\SistemaEstoque.Application.csproj",
+  "projectFilePath": "C:\\Users\\tiago\\Documents\\CSHARP\\p-projetos\\estoque-api\\SistemaEstoque.Application\\SistemaEstoque.Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\tiago\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\tiago\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",

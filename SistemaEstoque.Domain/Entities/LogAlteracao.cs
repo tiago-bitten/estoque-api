@@ -1,4 +1,6 @@
-﻿namespace SistemaEstoque.Domain.Entities
+﻿using SistemaEstoque.Domain.Enums;
+
+namespace SistemaEstoque.Domain.Entities
 {
     public sealed class LogAlteracao : Tenant
     {
@@ -9,7 +11,7 @@
         public int Quantidade { get; set; }
         public string DadosAntigos { get; set; }
         public string DadosNovos { get; set; }
-        public string Tipo { get; set; }
+        public ETipoAlteracao Tipo { get; set; }
         public int UsuarioId { get; set; }
         public Usuario Usuario { get; set; }
     }

@@ -334,6 +334,7 @@
           "Microsoft.Extensions.Configuration.Json": "7.0.0",
           "Microsoft.Extensions.Options.ConfigurationExtensions": "7.0.0",
           "SistemaEstoque.Infra": "1.0.0",
+          "SistemaEstoque.Shared": "1.0.0",
           "System.IdentityModel.Tokens.Jwt": "7.6.2"
         },
         "runtime": {
@@ -357,6 +358,11 @@
         },
         "runtime": {
           "SistemaEstoque.Infra.dll": {}
+        }
+      },
+      "SistemaEstoque.Shared/1.0.0": {
+        "runtime": {
+          "SistemaEstoque.Shared.dll": {}
         }
       }
     }
@@ -672,6 +678,11 @@
       "sha512": ""
     },
     "SistemaEstoque.Infra/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "SistemaEstoque.Shared/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using SistemaEstoque.Domain.Entities;
+using SistemaEstoque.Domain.Enums;
 
 namespace SistemaEstoque.Infra.EntitiesConfig
 {
@@ -25,7 +26,7 @@ namespace SistemaEstoque.Infra.EntitiesConfig
 
             builder.Property(l => l.AlteradoEm)
                 .HasColumnName("alterado_em")
-                .HasColumnType("timestamp")
+                .HasColumnType("date")
                 .IsRequired();
 
             builder.Property(l => l.ItemId)
@@ -51,6 +52,9 @@ namespace SistemaEstoque.Infra.EntitiesConfig
             builder.Property(l => l.Tipo)
                 .HasColumnName("tipo")
                 .HasColumnType("text")
+                .HasConversion(
+                    v => v.ToString(),
+                    v => (ETipoAlteracao)Enum.Parse(typeof(ETipoAlteracao), v))
                 .IsRequired();
 
             builder.Property(l => l.UsuarioId)

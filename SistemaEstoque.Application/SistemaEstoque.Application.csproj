@@ -24,6 +24,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\SistemaEstoque.Infra\SistemaEstoque.Infra.csproj" />
+    <ProjectReference Include="..\SistemaEstoque.Shared\SistemaEstoque.Shared.csproj" />
   </ItemGroup>
 
 </Project>

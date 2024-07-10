@@ -34,3 +34,5 @@ C:\Users\tiago\Documents\CSHARP\p-projetos\estoque-api\SistemaEstoque.Applicatio
 C:\Users\tiago\Documents\CSHARP\p-projetos\estoque-api\SistemaEstoque.Application\bin\Debug\net7.0\SistemaEstoque.Domain.pdb
 C:\Users\tiago\Documents\CSHARP\p-projetos\estoque-api\SistemaEstoque.Application\obj\Debug\net7.0\SistemaEstoque.Application.csproj.CopyComplete
 C:\Users\tiago\Documents\CSHARP\p-projetos\estoque-api\SistemaEstoque.Application\obj\Debug\net7.0\ref\SistemaEstoque.Application.dll
+C:\Users\tiago\Documents\CSHARP\p-projetos\estoque-api\SistemaEstoque.Application\bin\Debug\net7.0\SistemaEstoque.Shared.dll
+C:\Users\tiago\Documents\CSHARP\p-projetos\estoque-api\SistemaEstoque.Application\bin\Debug\net7.0\SistemaEstoque.Shared.pdb

@@ -12,7 +12,7 @@ namespace SistemaEstoque.Application.Services
             _repository = repository;
         }
 
-        public async Task<T> GetAndValidateEntityAsync(int id)
+        public virtual async Task<T> GetAndValidateEntityAsync(int id)
         {
             var entity = await _repository.GetByIdAsync(id);
 

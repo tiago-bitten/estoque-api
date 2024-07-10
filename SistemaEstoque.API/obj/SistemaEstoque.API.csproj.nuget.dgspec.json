@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "D:\\csharp\\SistemaEstoque\\SistemaEstoque.API\\SistemaEstoque.API.csproj": {}
+    "C:\\Users\\tiago\\Documents\\CSHARP\\p-projetos\\estoque-api\\SistemaEstoque.API\\SistemaEstoque.API.csproj": {}
   },
   "projects": {
-    "D:\\csharp\\SistemaEstoque\\SistemaEstoque.API\\SistemaEstoque.API.csproj": {
+    "C:\\Users\\tiago\\Documents\\CSHARP\\p-projetos\\estoque-api\\SistemaEstoque.API\\SistemaEstoque.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.API\\SistemaEstoque.API.csproj",
+        "projectUniqueName": "C:\\Users\\tiago\\Documents\\CSHARP\\p-projetos\\estoque-api\\SistemaEstoque.API\\SistemaEstoque.API.csproj",
         "projectName": "SistemaEstoque.API",
-        "projectPath": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.API\\SistemaEstoque.API.csproj",
+        "projectPath": "C:\\Users\\tiago\\Documents\\CSHARP\\p-projetos\\estoque-api\\SistemaEstoque.API\\SistemaEstoque.API.csproj",
         "packagesPath": "C:\\Users\\tiago\\.nuget\\packages\\",
-        "outputPath": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.API\\obj\\",
+        "outputPath": "C:\\Users\\tiago\\Documents\\CSHARP\\p-projetos\\estoque-api\\SistemaEstoque.API\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
           "C:\\Users\\tiago\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -29,14 +33,14 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Application\\SistemaEstoque.Application.csproj": {
-                "projectPath": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Application\\SistemaEstoque.Application.csproj"
+              "C:\\Users\\tiago\\Documents\\CSHARP\\p-projetos\\estoque-api\\SistemaEstoque.Application\\SistemaEstoque.Application.csproj": {
+                "projectPath": "C:\\Users\\tiago\\Documents\\CSHARP\\p-projetos\\estoque-api\\SistemaEstoque.Application\\SistemaEstoque.Application.csproj"
               },
-              "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Infra\\SistemaEstoque.Infra.csproj": {
-                "projectPath": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Infra\\SistemaEstoque.Infra.csproj"
+              "C:\\Users\\tiago\\Documents\\CSHARP\\p-projetos\\estoque-api\\SistemaEstoque.Infra\\SistemaEstoque.Infra.csproj": {
+                "projectPath": "C:\\Users\\tiago\\Documents\\CSHARP\\p-projetos\\estoque-api\\SistemaEstoque.Infra\\SistemaEstoque.Infra.csproj"
               },
-              "D:\\csharp\\SistemaEstoque\\SistemaEstoque.IoC\\SistemaEstoque.IoC.csproj": {
-                "projectPath": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.IoC\\SistemaEstoque.IoC.csproj"
+              "C:\\Users\\tiago\\Documents\\CSHARP\\p-projetos\\estoque-api\\SistemaEstoque.IoC\\SistemaEstoque.IoC.csproj": {
+                "projectPath": "C:\\Users\\tiago\\Documents\\CSHARP\\p-projetos\\estoque-api\\SistemaEstoque.IoC\\SistemaEstoque.IoC.csproj"
               }
             }
           }
@@ -45,11 +49,6 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -94,21 +93,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Application\\SistemaEstoque.Application.csproj": {
+    "C:\\Users\\tiago\\Documents\\CSHARP\\p-projetos\\estoque-api\\SistemaEstoque.Application\\SistemaEstoque.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Application\\SistemaEstoque.Application.csproj",
+        "projectUniqueName": "C:\\Users\\tiago\\Documents\\CSHARP\\p-projetos\\estoque-api\\SistemaEstoque.Application\\SistemaEstoque.Application.csproj",
         "projectName": "SistemaEstoque.Application",
-        "projectPath": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Application\\SistemaEstoque.Application.csproj",
+        "projectPath": "C:\\Users\\tiago\\Documents\\CSHARP\\p-projetos\\estoque-api\\SistemaEstoque.Application\\SistemaEstoque.Application.csproj",
         "packagesPath": "C:\\Users\\tiago\\.nuget\\packages\\",
-        "outputPath": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Application\\obj\\",
+        "outputPath": "C:\\Users\\tiago\\Documents\\CSHARP\\p-projetos\\estoque-api\\SistemaEstoque.Application\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
           "C:\\Users\\tiago\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -123,8 +126,11 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Infra\\SistemaEstoque.Infra.csproj": {
-                "projectPath": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Infra\\SistemaEstoque.Infra.csproj"
+              "C:\\Users\\tiago\\Documents\\CSHARP\\p-projetos\\estoque-api\\SistemaEstoque.Infra\\SistemaEstoque.Infra.csproj": {
+                "projectPath": "C:\\Users\\tiago\\Documents\\CSHARP\\p-projetos\\estoque-api\\SistemaEstoque.Infra\\SistemaEstoque.Infra.csproj"
+              },
+              "C:\\Users\\tiago\\Documents\\CSHARP\\p-projetos\\estoque-api\\SistemaEstoque.Shared\\SistemaEstoque.Shared.csproj": {
+                "projectPath": "C:\\Users\\tiago\\Documents\\CSHARP\\p-projetos\\estoque-api\\SistemaEstoque.Shared\\SistemaEstoque.Shared.csproj"
               }
             }
           }
@@ -133,11 +139,6 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -193,21 +194,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj": {
+    "C:\\Users\\tiago\\Documents\\CSHARP\\p-projetos\\estoque-api\\SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\tiago\\Documents\\CSHARP\\p-projetos\\estoque-api\\SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj",
         "projectName": "SistemaEstoque.Domain",
-        "projectPath": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj",
+        "projectPath": "C:\\Users\\tiago\\Documents\\CSHARP\\p-projetos\\estoque-api\\SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj",
         "packagesPath": "C:\\Users\\tiago\\.nuget\\packages\\",
-        "outputPath": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Domain\\obj\\",
+        "outputPath": "C:\\Users\\tiago\\Documents\\CSHARP\\p-projetos\\estoque-api\\SistemaEstoque.Domain\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
           "C:\\Users\\tiago\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -228,11 +233,6 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -254,21 +254,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Infra\\SistemaEstoque.Infra.csproj": {
+    "C:\\Users\\tiago\\Documents\\CSHARP\\p-projetos\\estoque-api\\SistemaEstoque.Infra\\SistemaEstoque.Infra.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Infra\\SistemaEstoque.Infra.csproj",
+        "projectUniqueName": "C:\\Users\\tiago\\Documents\\CSHARP\\p-projetos\\estoque-api\\SistemaEstoque.Infra\\SistemaEstoque.Infra.csproj",
         "projectName": "SistemaEstoque.Infra",
-        "projectPath": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Infra\\SistemaEstoque.Infra.csproj",
+        "projectPath": "C:\\Users\\tiago\\Documents\\CSHARP\\p-projetos\\estoque-api\\SistemaEstoque.Infra\\SistemaEstoque.Infra.csproj",
         "packagesPath": "C:\\Users\\tiago\\.nuget\\packages\\",
-        "outputPath": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Infra\\obj\\",
+        "outputPath": "C:\\Users\\tiago\\Documents\\CSHARP\\p-projetos\\estoque-api\\SistemaEstoque.Infra\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
           "C:\\Users\\tiago\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -283,8 +287,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj": {
-                "projectPath": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj"
+              "C:\\Users\\tiago\\Documents\\CSHARP\\p-projetos\\estoque-api\\SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj": {
+                "projectPath": "C:\\Users\\tiago\\Documents\\CSHARP\\p-projetos\\estoque-api\\SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj"
               }
             }
           }
@@ -293,11 +297,6 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -357,21 +356,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\csharp\\SistemaEstoque\\SistemaEstoque.IoC\\SistemaEstoque.IoC.csproj": {
+    "C:\\Users\\tiago\\Documents\\CSHARP\\p-projetos\\estoque-api\\SistemaEstoque.IoC\\SistemaEstoque.IoC.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.IoC\\SistemaEstoque.IoC.csproj",
+        "projectUniqueName": "C:\\Users\\tiago\\Documents\\CSHARP\\p-projetos\\estoque-api\\SistemaEstoque.IoC\\SistemaEstoque.IoC.csproj",
         "projectName": "SistemaEstoque.IoC",
-        "projectPath": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.IoC\\SistemaEstoque.IoC.csproj",
+        "projectPath": "C:\\Users\\tiago\\Documents\\CSHARP\\p-projetos\\estoque-api\\SistemaEstoque.IoC\\SistemaEstoque.IoC.csproj",
         "packagesPath": "C:\\Users\\tiago\\.nuget\\packages\\",
-        "outputPath": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.IoC\\obj\\",
+        "outputPath": "C:\\Users\\tiago\\Documents\\CSHARP\\p-projetos\\estoque-api\\SistemaEstoque.IoC\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
           "C:\\Users\\tiago\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -386,11 +389,11 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Application\\SistemaEstoque.Application.csproj": {
-                "projectPath": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Application\\SistemaEstoque.Application.csproj"
+              "C:\\Users\\tiago\\Documents\\CSHARP\\p-projetos\\estoque-api\\SistemaEstoque.Application\\SistemaEstoque.Application.csproj": {
+                "projectPath": "C:\\Users\\tiago\\Documents\\CSHARP\\p-projetos\\estoque-api\\SistemaEstoque.Application\\SistemaEstoque.Application.csproj"
               },
-              "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Infra\\SistemaEstoque.Infra.csproj": {
-                "projectPath": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Infra\\SistemaEstoque.Infra.csproj"
+              "C:\\Users\\tiago\\Documents\\CSHARP\\p-projetos\\estoque-api\\SistemaEstoque.Infra\\SistemaEstoque.Infra.csproj": {
+                "projectPath": "C:\\Users\\tiago\\Documents\\CSHARP\\p-projetos\\estoque-api\\SistemaEstoque.Infra\\SistemaEstoque.Infra.csproj"
               }
             }
           }
@@ -399,11 +402,6 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -425,7 +423,67 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\tiago\\Documents\\CSHARP\\p-projetos\\estoque-api\\SistemaEstoque.Shared\\SistemaEstoque.Shared.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\tiago\\Documents\\CSHARP\\p-projetos\\estoque-api\\SistemaEstoque.Shared\\SistemaEstoque.Shared.csproj",
+        "projectName": "SistemaEstoque.Shared",
+        "projectPath": "C:\\Users\\tiago\\Documents\\CSHARP\\p-projetos\\estoque-api\\SistemaEstoque.Shared\\SistemaEstoque.Shared.csproj",
+        "packagesPath": "C:\\Users\\tiago\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\tiago\\Documents\\CSHARP\\p-projetos\\estoque-api\\SistemaEstoque.Shared\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\tiago\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }
