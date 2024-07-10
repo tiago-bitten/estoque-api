@@ -75,11 +75,11 @@ namespace SistemaEstoque.Infra.EntitiesConfig
 
             builder.HasOne(l => l.MovimentacaoProduto)
                 .WithOne(m => m.LoteProduto)
-                .HasForeignKey<MovimentacaoProduto>(m => m.LoteId)
+                .HasForeignKey<MovimentacaoProduto>(m => m.LoteProdutoId)
                 .OnDelete(DeleteBehavior.SetNull);
 
             builder.HasOne(l => l.Empresa)
-                .WithMany(e => e.Lotes)
+                .WithMany(e => e.LotesProdutos)
                 .HasForeignKey(l => l.EmpresaId)
                 .OnDelete(DeleteBehavior.SetNull);
         }

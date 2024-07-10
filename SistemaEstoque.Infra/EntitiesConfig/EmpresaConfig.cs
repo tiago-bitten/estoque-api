@@ -92,7 +92,12 @@ namespace SistemaEstoque.Infra.EntitiesConfig
                 .HasForeignKey(f => f.EmpresaId)
                 .OnDelete(DeleteBehavior.SetNull);
 
-            builder.HasMany(e => e.Lotes)
+            builder.HasMany(e => e.LotesProdutos)
+                .WithOne(l => l.Empresa)
+                .HasForeignKey(l => l.EmpresaId)
+                .OnDelete(DeleteBehavior.SetNull);
+
+            builder.HasMany(e => e.LotesInsumos)
                 .WithOne(l => l.Empresa)
                 .HasForeignKey(l => l.EmpresaId)
                 .OnDelete(DeleteBehavior.SetNull);
@@ -102,6 +107,21 @@ namespace SistemaEstoque.Infra.EntitiesConfig
                 .HasForeignKey(m => m.EmpresaId)
                 .OnDelete(DeleteBehavior.SetNull);
         
+            builder.HasMany(e => e.MovimentacoesInsumos)
+                .WithOne(m => m.Empresa)
+                .HasForeignKey(m => m.EmpresaId)
+                .OnDelete(DeleteBehavior.SetNull);
+
+            builder.HasMany(e => e.Estoques)
+                .WithOne(es => es.Empresa)
+                .HasForeignKey(es => es.EmpresaId)
+                .OnDelete(DeleteBehavior.SetNull);
+
+            builder.HasMany(e => e.Insumos)
+                .WithOne(i => i.Empresa)
+                .HasForeignKey(i => i.EmpresaId)
+                .OnDelete(DeleteBehavior.SetNull);
+
             builder.HasMany(e => e.LogsAlteracoes)
                 .WithOne(l => l.Empresa)
                 .HasForeignKey(l => l.EmpresaId)

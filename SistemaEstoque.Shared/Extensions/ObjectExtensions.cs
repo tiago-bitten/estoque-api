@@ -5,7 +5,7 @@ namespace SistemaEstoque.Shared.Extensions
 {
     public static class ObjectExtensions
     {
-        public static T? DeepClone<T>(this T obj)
+        public static T DeepClone<T>(this T obj)
         {
             if (obj == null)
                 throw new Exception("Objeto não pode ser nulo.");

@@ -13,11 +13,13 @@ namespace SistemaEstoque.Infra.Data
 
         public DbSet<Empresa> Empresas { get; set; }
         public DbSet<Produto> Produtos { get; set; }
+        public DbSet<Insumo> Insumos { get; set; }
         public DbSet<Categoria> Categorias { get; set; }
         public DbSet<Usuario> Usuarios { get; set; }
         public DbSet<Fornecedor> Fornecedores { get; set; }
         public DbSet<Estoque> Estoques { get; set; }
         public DbSet<LoteProduto> LotesProdutos { get; set; }
+        public DbSet<LoteInsumo> LotesInsumos { get; set; }
         public DbSet<MovimentacaoProduto> MovimentacoesProdutos { get; set; }
         public DbSet<LogAlteracao> LogAlteracoes { get; set; }
 
@@ -25,11 +27,13 @@ namespace SistemaEstoque.Infra.Data
         {
             modelBuilder.ApplyConfiguration(new EmpresaConfig());
             modelBuilder.ApplyConfiguration(new ProdutoConfig());
+            modelBuilder.ApplyConfiguration(new InsumoConfig());
             modelBuilder.ApplyConfiguration(new CategoriaConfig());
             modelBuilder.ApplyConfiguration(new UsuarioConfig());
             modelBuilder.ApplyConfiguration(new FornecedorConfig());
             modelBuilder.ApplyConfiguration(new EstoqueConfig());
             modelBuilder.ApplyConfiguration(new LoteProdutoConfig());
+            modelBuilder.ApplyConfiguration(new LoteInsumoConfig());
             modelBuilder.ApplyConfiguration(new MovimentacaoProdutoConfig());
             modelBuilder.ApplyConfiguration(new LogAlteracaoConfig());
             

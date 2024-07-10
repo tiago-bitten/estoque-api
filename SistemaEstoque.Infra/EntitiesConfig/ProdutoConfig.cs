@@ -29,8 +29,7 @@ namespace SistemaEstoque.Infra.EntitiesConfig
 
             builder.Property(p => p.PrecoVendaReferencia)
                 .HasColumnName("preco_venda_referencia")
-                .HasColumnType("decimal(18,2)")
-                .IsRequired();
+                .HasColumnType("decimal(18,2)");
 
             builder.Property(p => p.PrecoCustoReferencia)
                 .HasColumnName("preco_custo_referencia")

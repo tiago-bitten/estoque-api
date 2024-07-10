@@ -70,6 +70,7 @@ namespace SistemaEstoque.IoC
             services.AddScoped<ILoteProdutoRepository, LoteProdutoRepository>();
             services.AddScoped<IMovimentacaoProdutoRepository, MovimentacaoProdutoRepository>();
             services.AddScoped<ILogAlteracaoRepository, LogAlteracaoRepository>();
+            services.AddScoped<IInsumoRepository, InsumoRepository>();
 
             return services;
         }

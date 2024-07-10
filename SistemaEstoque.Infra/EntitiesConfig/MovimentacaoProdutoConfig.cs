@@ -63,7 +63,7 @@ namespace SistemaEstoque.Infra.EntitiesConfig
                 .HasColumnType("int")
                 .IsRequired();
 
-            builder.Property(m => m.LoteId)
+            builder.Property(m => m.LoteProdutoId)
                 .HasColumnName("lote_id")
                 .HasColumnType("int")
                 .IsRequired();
@@ -85,7 +85,7 @@ namespace SistemaEstoque.Infra.EntitiesConfig
 
             builder.HasOne(m => m.LoteProduto)
                 .WithOne(l => l.MovimentacaoProduto)
-                .HasForeignKey<MovimentacaoProduto>(m => m.LoteId)
+                .HasForeignKey<MovimentacaoProduto>(m => m.LoteProdutoId)
                 .OnDelete(DeleteBehavior.SetNull);
 
             builder.HasOne(m => m.Empresa)

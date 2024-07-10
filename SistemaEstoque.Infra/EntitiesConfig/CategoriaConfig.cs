@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Microsoft.EntityFrameworkCore;
 using SistemaEstoque.Domain.Entities;
+using SistemaEstoque.Domain.Enums;
 
 namespace SistemaEstoque.Infra.EntitiesConfig
 {
@@ -27,6 +28,14 @@ namespace SistemaEstoque.Infra.EntitiesConfig
                 .HasColumnName("descricao")
                 .HasColumnType("varchar(255)");
 
+            builder.Property(c => c.TipoItem)
+                .HasColumnName("tipo_item")
+                .HasColumnType("text")
+                .HasConversion(
+                    v => v.ToString(),
+                    v => (ETipoItem)System.Enum.Parse(typeof(ETipoItem), v))
+                .IsRequired();
+
             builder.Property(c => c.Removido)
                 .HasColumnName("removido")
                 .HasColumnType("boolean")
@@ -40,6 +49,11 @@ namespace SistemaEstoque.Infra.EntitiesConfig
             builder.HasMany(c => c.Produtos)
                 .WithOne(p => p.Categoria)
                 .HasForeignKey(p => p.CategoriaId)
+                .OnDelete(DeleteBehavior.SetNull);
+
+            builder.HasMany(c => c.Insumos)
+                .WithOne(i => i.Categoria)
+                .HasForeignKey(i => i.CategoriaId)
                 .OnDelete(DeleteBehavior.SetNull);
 
             builder.HasOne(c => c.Empresa)

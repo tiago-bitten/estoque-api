@@ -13,5 +13,6 @@
         public bool? Removido { get; set; }
 
         public IEnumerable<LoteProduto?> LotesProdutos { get; set; }
+        public IEnumerable<LoteInsumo?> LotesInsumos { get; set; }
     }
 }

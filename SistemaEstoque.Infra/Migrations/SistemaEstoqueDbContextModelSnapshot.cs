@@ -32,7 +32,6 @@ namespace SistemaEstoque.Infra.Migrations
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Descricao")
-                        .IsRequired()
                         .HasColumnType("varchar(255)")
                         .HasColumnName("descricao");
 
@@ -50,6 +49,11 @@ namespace SistemaEstoque.Infra.Migrations
                         .HasColumnType("boolean")
                         .HasDefaultValue(false)
                         .HasColumnName("removido");
+
+                    b.Property<string>("TipoItem")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("tipo_item");
 
                     b.HasKey("Id");
 
@@ -233,6 +237,56 @@ namespace SistemaEstoque.Infra.Migrations
                     b.ToTable("fornecedores", (string)null);
                 });
 
+            modelBuilder.Entity("SistemaEstoque.Domain.Entities.Insumo", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("id");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("CategoriaId")
+                        .HasColumnType("int")
+                        .HasColumnName("categoria_id");
+
+                    b.Property<string>("Descricao")
+                        .IsRequired()
+                        .HasColumnType("varchar(255)")
+                        .HasColumnName("descricao");
+
+                    b.Property<int>("EmpresaId")
+                        .HasColumnType("int")
+                        .HasColumnName("empresa_id");
+
+                    b.Property<string>("Nome")
+                        .IsRequired()
+                        .HasColumnType("varchar(150)")
+                        .HasColumnName("nome");
+
+                    b.Property<decimal?>("PrecoCustoReferencia")
+                        .HasColumnType("decimal(10,2)")
+                        .HasColumnName("preco_custo_referencia");
+
+                    b.Property<decimal?>("PrecoVendaReferencia")
+                        .HasColumnType("decimal(10,2)")
+                        .HasColumnName("preco_venda_referencia");
+
+                    b.Property<bool?>("Removido")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("boolean")
+                        .HasDefaultValue(false)
+                        .HasColumnName("removido");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CategoriaId");
+
+                    b.HasIndex("EmpresaId");
+
+                    b.ToTable("insumos", (string)null);
+                });
+
             modelBuilder.Entity("SistemaEstoque.Domain.Entities.LogAlteracao", b =>
                 {
                     b.Property<int>("Id")
@@ -289,6 +343,66 @@ namespace SistemaEstoque.Infra.Migrations
                     b.HasIndex("UsuarioId");
 
                     b.ToTable("logs_alteracoes", (string)null);
+                });
+
+            modelBuilder.Entity("SistemaEstoque.Domain.Entities.LoteInsumo", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("id");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Codigo")
+                        .IsRequired()
+                        .HasColumnType("varchar(50)")
+                        .HasColumnName("codigo");
+
+                    b.Property<string>("CodigoBarras")
+                        .IsRequired()
+                        .HasColumnType("varchar(255)")
+                        .HasColumnName("codigo_barras");
+
+                    b.Property<DateTime>("DataFabricacao")
+                        .HasColumnType("timestamp")
+                        .HasColumnName("data_fabricacao");
+
+                    b.Property<DateTime>("DataValidade")
+                        .HasColumnType("timestamp")
+                        .HasColumnName("data_validade");
+
+                    b.Property<int>("EmpresaId")
+                        .HasColumnType("int")
+                        .HasColumnName("empresa_id");
+
+                    b.Property<int>("FornecedorId")
+                        .HasColumnType("int")
+                        .HasColumnName("fornecedor_id");
+
+                    b.Property<int>("InsumoId")
+                        .HasColumnType("int")
+                        .HasColumnName("insumo_id");
+
+                    b.Property<int>("Quantidade")
+                        .HasColumnType("int")
+                        .HasColumnName("quantidade");
+
+                    b.Property<bool?>("Removido")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("boolean")
+                        .HasDefaultValue(false)
+                        .HasColumnName("removido");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EmpresaId");
+
+                    b.HasIndex("FornecedorId");
+
+                    b.HasIndex("InsumoId");
+
+                    b.ToTable("lotes_insumos", (string)null);
                 });
 
             modelBuilder.Entity("SistemaEstoque.Domain.Entities.LoteProduto", b =>
@@ -351,6 +465,61 @@ namespace SistemaEstoque.Infra.Migrations
                     b.ToTable("lotes_produtos", (string)null);
                 });
 
+            modelBuilder.Entity("SistemaEstoque.Domain.Entities.MovimentacaoInsumo", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("DataMovimentacao")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<int>("EmpresaId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("InsumoId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("LoteInsumoId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Origem")
+                        .HasColumnType("integer");
+
+                    b.Property<decimal>("PrecoUnitarioCusto")
+                        .HasColumnType("numeric");
+
+                    b.Property<decimal>("PrecoUnitarioVenda")
+                        .HasColumnType("numeric");
+
+                    b.Property<int>("Quantidade")
+                        .HasColumnType("integer");
+
+                    b.Property<bool?>("Removido")
+                        .HasColumnType("boolean");
+
+                    b.Property<int>("Tipo")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("UsuarioId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EmpresaId");
+
+                    b.HasIndex("InsumoId");
+
+                    b.HasIndex("LoteInsumoId")
+                        .IsUnique();
+
+                    b.HasIndex("UsuarioId");
+
+                    b.ToTable("MovimentacaoInsumo");
+                });
+
             modelBuilder.Entity("SistemaEstoque.Domain.Entities.MovimentacaoProduto", b =>
                 {
                     b.Property<int>("Id")
@@ -368,7 +537,7 @@ namespace SistemaEstoque.Infra.Migrations
                         .HasColumnType("int")
                         .HasColumnName("empresa_id");
 
-                    b.Property<int>("LoteId")
+                    b.Property<int>("LoteProdutoId")
                         .HasColumnType("int")
                         .HasColumnName("lote_id");
 
@@ -412,7 +581,7 @@ namespace SistemaEstoque.Infra.Migrations
 
                     b.HasIndex("EmpresaId");
 
-                    b.HasIndex("LoteId")
+                    b.HasIndex("LoteProdutoId")
                         .IsUnique();
 
                     b.HasIndex("ProdutoId");
@@ -436,7 +605,6 @@ namespace SistemaEstoque.Infra.Migrations
                         .HasColumnName("categoria_id");
 
                     b.Property<string>("Descricao")
-                        .IsRequired()
                         .HasColumnType("varchar(150)")
                         .HasColumnName("descricao");
 
@@ -454,7 +622,6 @@ namespace SistemaEstoque.Infra.Migrations
                         .HasColumnName("preco_custo_referencia");
 
                     b.Property<decimal?>("PrecoVendaReferencia")
-                        .IsRequired()
                         .HasColumnType("decimal(18,2)")
                         .HasColumnName("preco_venda_referencia");
 
@@ -561,6 +728,25 @@ namespace SistemaEstoque.Infra.Migrations
                     b.Navigation("Empresa");
                 });
 
+            modelBuilder.Entity("SistemaEstoque.Domain.Entities.Insumo", b =>
+                {
+                    b.HasOne("SistemaEstoque.Domain.Entities.Categoria", "Categoria")
+                        .WithMany("Insumos")
+                        .HasForeignKey("CategoriaId")
+                        .OnDelete(DeleteBehavior.SetNull)
+                        .IsRequired();
+
+                    b.HasOne("SistemaEstoque.Domain.Entities.Empresa", "Empresa")
+                        .WithMany("Insumos")
+                        .HasForeignKey("EmpresaId")
+                        .OnDelete(DeleteBehavior.SetNull)
+                        .IsRequired();
+
+                    b.Navigation("Categoria");
+
+                    b.Navigation("Empresa");
+                });
+
             modelBuilder.Entity("SistemaEstoque.Domain.Entities.LogAlteracao", b =>
                 {
                     b.HasOne("SistemaEstoque.Domain.Entities.Empresa", "Empresa")
@@ -580,10 +766,37 @@ namespace SistemaEstoque.Infra.Migrations
                     b.Navigation("Usuario");
                 });
 
+            modelBuilder.Entity("SistemaEstoque.Domain.Entities.LoteInsumo", b =>
+                {
+                    b.HasOne("SistemaEstoque.Domain.Entities.Empresa", "Empresa")
+                        .WithMany("LotesInsumos")
+                        .HasForeignKey("EmpresaId")
+                        .OnDelete(DeleteBehavior.SetNull)
+                        .IsRequired();
+
+                    b.HasOne("SistemaEstoque.Domain.Entities.Fornecedor", "Fornecedor")
+                        .WithMany("LotesInsumos")
+                        .HasForeignKey("FornecedorId")
+                        .OnDelete(DeleteBehavior.SetNull)
+                        .IsRequired();
+
+                    b.HasOne("SistemaEstoque.Domain.Entities.Insumo", "Insumo")
+                        .WithMany("LotesInsumo")
+                        .HasForeignKey("InsumoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Empresa");
+
+                    b.Navigation("Fornecedor");
+
+                    b.Navigation("Insumo");
+                });
+
             modelBuilder.Entity("SistemaEstoque.Domain.Entities.LoteProduto", b =>
                 {
                     b.HasOne("SistemaEstoque.Domain.Entities.Empresa", "Empresa")
-                        .WithMany("Lotes")
+                        .WithMany("LotesProdutos")
                         .HasForeignKey("EmpresaId")
                         .OnDelete(DeleteBehavior.SetNull)
                         .IsRequired();
@@ -607,6 +820,41 @@ namespace SistemaEstoque.Infra.Migrations
                     b.Navigation("Produto");
                 });
 
+            modelBuilder.Entity("SistemaEstoque.Domain.Entities.MovimentacaoInsumo", b =>
+                {
+                    b.HasOne("SistemaEstoque.Domain.Entities.Empresa", "Empresa")
+                        .WithMany("MovimentacoesInsumos")
+                        .HasForeignKey("EmpresaId")
+                        .OnDelete(DeleteBehavior.SetNull)
+                        .IsRequired();
+
+                    b.HasOne("SistemaEstoque.Domain.Entities.Insumo", "Insumo")
+                        .WithMany("MovimentacoesInsumo")
+                        .HasForeignKey("InsumoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("SistemaEstoque.Domain.Entities.LoteInsumo", "LoteInsumo")
+                        .WithOne("MovimentacaoInsumo")
+                        .HasForeignKey("SistemaEstoque.Domain.Entities.MovimentacaoInsumo", "LoteInsumoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("SistemaEstoque.Domain.Entities.Usuario", "Usuario")
+                        .WithMany()
+                        .HasForeignKey("UsuarioId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Empresa");
+
+                    b.Navigation("Insumo");
+
+                    b.Navigation("LoteInsumo");
+
+                    b.Navigation("Usuario");
+                });
+
             modelBuilder.Entity("SistemaEstoque.Domain.Entities.MovimentacaoProduto", b =>
                 {
                     b.HasOne("SistemaEstoque.Domain.Entities.Empresa", "Empresa")
@@ -617,7 +865,7 @@ namespace SistemaEstoque.Infra.Migrations
 
                     b.HasOne("SistemaEstoque.Domain.Entities.LoteProduto", "LoteProduto")
                         .WithOne("MovimentacaoProduto")
-                        .HasForeignKey("SistemaEstoque.Domain.Entities.MovimentacaoProduto", "LoteId")
+                        .HasForeignKey("SistemaEstoque.Domain.Entities.MovimentacaoProduto", "LoteProdutoId")
                         .OnDelete(DeleteBehavior.SetNull)
                         .IsRequired();
 
@@ -674,6 +922,8 @@ namespace SistemaEstoque.Infra.Migrations
 
             modelBuilder.Entity("SistemaEstoque.Domain.Entities.Categoria", b =>
                 {
+                    b.Navigation("Insumos");
+
                     b.Navigation("Produtos");
                 });
 
@@ -685,9 +935,15 @@ namespace SistemaEstoque.Infra.Migrations
 
                     b.Navigation("Fornecedores");
 
+                    b.Navigation("Insumos");
+
                     b.Navigation("LogsAlteracoes");
 
-                    b.Navigation("Lotes");
+                    b.Navigation("LotesInsumos");
+
+                    b.Navigation("LotesProdutos");
+
+                    b.Navigation("MovimentacoesInsumos");
 
                     b.Navigation("MovimentacoesProdutos");
 
@@ -698,7 +954,22 @@ namespace SistemaEstoque.Infra.Migrations
 
             modelBuilder.Entity("SistemaEstoque.Domain.Entities.Fornecedor", b =>
                 {
+                    b.Navigation("LotesInsumos");
+
                     b.Navigation("LotesProdutos");
+                });
+
+            modelBuilder.Entity("SistemaEstoque.Domain.Entities.Insumo", b =>
+                {
+                    b.Navigation("LotesInsumo");
+
+                    b.Navigation("MovimentacoesInsumo");
+                });
+
+            modelBuilder.Entity("SistemaEstoque.Domain.Entities.LoteInsumo", b =>
+                {
+                    b.Navigation("MovimentacaoInsumo")
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("SistemaEstoque.Domain.Entities.LoteProduto", b =>
