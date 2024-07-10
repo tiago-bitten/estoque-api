@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using SistemaEstoque.Infra.Data;
@@ -11,9 +12,11 @@ using SistemaEstoque.Infra.Data;
 namespace SistemaEstoque.Infra.Migrations
 {
     [DbContext(typeof(SistemaEstoqueDbContext))]
-    partial class SistemaEstoqueDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240710193757_Add_Movimentacao_Insumo")]
+    partial class AddMovimentacaoInsumo
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

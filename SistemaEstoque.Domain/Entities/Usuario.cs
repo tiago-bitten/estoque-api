@@ -7,7 +7,8 @@
         public string Senha { get; set; }
         public bool? AcessoBloqueado { get; set; }
 
-        public virtual ICollection<MovimentacaoProduto?> MovimentacoesProdutos { get; set; }
-        public virtual ICollection<LogAlteracao?> LogsAlteracoes { get; set; }
+        public IEnumerable<MovimentacaoProduto?> MovimentacoesProdutos { get; set; }
+        public IEnumerable<MovimentacaoInsumo?> MovimentacoesInsumos { get; set; }
+        public IEnumerable<LogAlteracao?> LogsAlteracoes { get; set; }
     }
 }
