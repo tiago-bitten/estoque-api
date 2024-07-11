@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Commands\CreateMovimentacao\" />
+    <Folder Include="Commands\CreateMovimentacaoProduto\" />
     <Folder Include="Queries\" />
   </ItemGroup>
 

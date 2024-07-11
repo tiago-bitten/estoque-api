@@ -2,8 +2,8 @@
 {
     public sealed class Insumo : Item
     {
-        public IEnumerable<LoteInsumo?> LotesInsumo { get; set; }
-        public IEnumerable<MovimentacaoInsumo?> MovimentacoesInsumos { get; set; }
-        public IEnumerable<EstoqueInsumo?> EstoquesInsumos { get;}
+        public EstoqueInsumo? EstoqueInsumo { get; set; }
+        public IEnumerable<LoteInsumo?> LotesInsumos { get; set; }
+        public IEnumerable<MovimentoInsumo?> MovimentacoesInsumos { get; set; }
     }
 }

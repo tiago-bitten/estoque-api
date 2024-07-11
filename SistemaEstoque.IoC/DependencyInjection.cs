@@ -16,6 +16,8 @@ using SistemaEstoque.Application.Commands.CreateFornecedor;
 using SistemaEstoque.Application.Commands.CreateEstoque;
 using SistemaEstoque.Application.Commands.CreateLote;
 using SistemaEstoque.Application.Commands.UpdateCategoria;
+using SistemaEstoque.Application.Commands.CreateInsumo;
+using SistemaEstoque.Application.Commands.CreateLoteInsumo;
 
 namespace SistemaEstoque.IoC
 {
@@ -33,9 +35,11 @@ namespace SistemaEstoque.IoC
                     typeof(CreateUsuarioCommand).Assembly,
                     typeof(CreateCategoriaCommand).Assembly,
                     typeof(CreateProdutoCommand).Assembly,
+                    typeof(CreateInsumoCommand).Assembly,
                     typeof(CreateFornecedorCommand).Assembly,
-                    typeof(CreateEstoqueCommand).Assembly,
+                    typeof(CreateEstoqueProdutoCommand).Assembly,
                     typeof(CreateLoteProdutoCommand).Assembly,
+                    typeof(CreateLoteInsumoCommand).Assembly,
                     typeof(UpdateCategoriaCommand).Assembly
                 });
             });
@@ -46,6 +50,8 @@ namespace SistemaEstoque.IoC
             services.AddAutoMapper(typeof(FornecedorProfile));
             services.AddAutoMapper(typeof(EstoqueProfile));
             services.AddAutoMapper(typeof(LoteProdutoProfile));
+            services.AddAutoMapper(typeof(InsumoProfile));
+            services.AddAutoMapper(typeof(LoteInsumoProfile));
 
             return services;
         }
@@ -71,6 +77,8 @@ namespace SistemaEstoque.IoC
             services.AddScoped<IMovimentacaoProdutoRepository, MovimentacaoProdutoRepository>();
             services.AddScoped<ILogAlteracaoRepository, LogAlteracaoRepository>();
             services.AddScoped<IInsumoRepository, InsumoRepository>();
+            services.AddScoped<ILoteInsumoRepository, LoteInsumoRepository>();
+            services.AddScoped<IMovimentacaoInsumoRepository, MovimentacaoInsumoRepository>();
 
             return services;
         }
@@ -78,10 +86,12 @@ namespace SistemaEstoque.IoC
         public static IServiceCollection AddServices(this IServiceCollection services)
         {
             services.AddScoped(typeof(ILogAlteracaoService<>), typeof(LogAlteracaoService<>));
+            services.AddScoped(typeof(IEstoqueService<>), typeof(EstoqueService<>));
             services.AddScoped<ICategoriaService, CategoriaService>();
             services.AddScoped<IProdutoService, ProdutoService>();
             services.AddScoped<IFornecedorService, FornecedorService>();
             services.AddScoped<ILoteProdutoService, LoteProdutoService>();
+            services.AddScoped<IInsumoService, InsumoService>();
             //services.AddScoped<IUsuarioService, UsuarioService>();
 
             return services;

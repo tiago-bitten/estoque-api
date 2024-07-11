@@ -40,3 +40,5 @@ C:\Users\tiago\Documents\CSHARP\p-projetos\estoque-api\SistemaEstoque.IoC\obj\De
 C:\Users\tiago\Documents\CSHARP\p-projetos\estoque-api\SistemaEstoque.IoC\obj\Debug\net7.0\ref\SistemaEstoque.IoC.dll
 C:\Users\tiago\Documents\CSHARP\p-projetos\estoque-api\SistemaEstoque.IoC\bin\Debug\net7.0\SistemaEstoque.Shared.dll
 C:\Users\tiago\Documents\CSHARP\p-projetos\estoque-api\SistemaEstoque.IoC\bin\Debug\net7.0\SistemaEstoque.Shared.pdb
+D:\csharp\SistemaEstoque\SistemaEstoque.IoC\bin\Debug\net7.0\SistemaEstoque.Shared.dll
+D:\csharp\SistemaEstoque\SistemaEstoque.IoC\bin\Debug\net7.0\SistemaEstoque.Shared.pdb

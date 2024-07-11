@@ -48,8 +48,8 @@ namespace SistemaEstoque.Infra.EntitiesConfig
                 .IsRequired();
 
             builder.HasOne(e => e.Insumo)
-                .WithMany(i => i.EstoquesInsumos)
-                .HasForeignKey(e => e.InsumoId)
+                .WithOne(i => i.EstoqueInsumo)
+                .HasForeignKey<EstoqueInsumo>(e => e.InsumoId)
                 .OnDelete(DeleteBehavior.SetNull);
 
             builder.HasOne(e => e.Empresa)

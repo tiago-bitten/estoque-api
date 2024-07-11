@@ -6,13 +6,13 @@ using SistemaEstoque.Domain.Interfaces.Services;
 
 namespace SistemaEstoque.Application.Commands.CreateEstoque
 {
-    public class CreateEstoqueCommandHandler : IRequestHandler<CreateEstoqueCommand, CreateEstoqueResponse>
+    public class CreateEstoqueProdutoCommandHandler : IRequestHandler<CreateEstoqueProdutoCommand, CreateEstoqueProdutoResponse>
     {
         private readonly IUnitOfWork _ouw;
         private readonly IMapper _mapper;
         private readonly IProdutoService _produtoService;
 
-        public CreateEstoqueCommandHandler(
+        public CreateEstoqueProdutoCommandHandler(
             IUnitOfWork ouw, 
             IMapper mapper,
             IProdutoService produtoService)
@@ -23,7 +23,7 @@ namespace SistemaEstoque.Application.Commands.CreateEstoque
 
         }
 
-        public async Task<CreateEstoqueResponse> Handle(CreateEstoqueCommand request, CancellationToken cancellationToken)
+        public async Task<CreateEstoqueProdutoResponse> Handle(CreateEstoqueProdutoCommand request, CancellationToken cancellationToken)
         {
             var produto = await _produtoService.GetAndValidateEntityAsync(request.ProdutoId);
 
@@ -45,7 +45,7 @@ namespace SistemaEstoque.Application.Commands.CreateEstoque
             await _ouw.EstoquesProdutos.AddAsync(estoque, EMPRESA_CONSTANTE.ID_EMPRESA);
             await _ouw.CommitAsync();
         
-            var response = _mapper.Map<CreateEstoqueResponse>(estoque);
+            var response = _mapper.Map<CreateEstoqueProdutoResponse>(estoque);
 
             return await Task.FromResult(response);
         }

@@ -1,9 +1,8 @@
-﻿using MediatR;
-
-namespace SistemaEstoque.Application.Commands.CreateEstoque
+﻿namespace SistemaEstoque.Application.Commands.CreateEstoque
 {
-    public class CreateEstoqueCommand : IRequest<CreateEstoqueResponse>
+    public class CreateEstoqueProdutoResponse
     {
+        public int Id { get; set; }
         public int Quantidade { get; set; }
         public int QuantidadeMinima { get; set; }
         public int QuantidadeMaxima { get; set; }

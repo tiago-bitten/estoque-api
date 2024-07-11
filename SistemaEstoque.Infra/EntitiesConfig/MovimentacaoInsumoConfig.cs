@@ -5,9 +5,9 @@ using SistemaEstoque.Domain.Enums;
 
 namespace SistemaEstoque.Infra.EntitiesConfig
 {
-    public class MovimentacaoInsumoConfig : IEntityTypeConfiguration<MovimentacaoInsumo>
+    public class MovimentacaoInsumoConfig : IEntityTypeConfiguration<MovimentoInsumo>
     {
-        public void Configure(EntityTypeBuilder<MovimentacaoInsumo> builder)
+        public void Configure(EntityTypeBuilder<MovimentoInsumo> builder)
         {
             builder.ToTable("movimentacoes_insumos");
 
@@ -92,7 +92,7 @@ namespace SistemaEstoque.Infra.EntitiesConfig
 
             builder.HasOne(m => m.LoteInsumo)
                 .WithOne(l => l.MovimentacaoInsumo)
-                .HasForeignKey<MovimentacaoInsumo>(m => m.LoteInsumoId)
+                .HasForeignKey<MovimentoInsumo>(m => m.LoteInsumoId)
                 .OnDelete(DeleteBehavior.SetNull);
 
             builder.HasOne(m => m.Empresa)

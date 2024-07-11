@@ -47,8 +47,8 @@ namespace SistemaEstoque.Infra.EntitiesConfig
                 .IsRequired();
 
             builder.HasOne(e => e.Produto)
-                .WithMany(p => p.EstoquesProdutos)
-                .HasForeignKey(e => e.ProdutoId)
+                .WithOne(p => p.EstoqueProduto)
+                .HasForeignKey<EstoqueProduto>(e => e.ProdutoId)
                 .OnDelete(DeleteBehavior.SetNull);
 
             builder.HasOne(e => e.Empresa)

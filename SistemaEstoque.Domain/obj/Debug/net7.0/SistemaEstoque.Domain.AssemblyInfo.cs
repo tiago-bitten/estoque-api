@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SistemaEstoque.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fa1d1eccfc97175b12559fe6cd2f5a207f70da4e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d6f10f860ff66a6c61d1e3799fcd6c578f838f8a")]
 [assembly: System.Reflection.AssemblyProductAttribute("SistemaEstoque.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SistemaEstoque.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -30,12 +30,12 @@ namespace SistemaEstoque.Infra.EntitiesConfig
 
             builder.Property(l => l.DataFabricacao)
                 .HasColumnName("data_fabricacao")
-                .HasColumnType("timestamp")
+                .HasColumnType("date")
                 .IsRequired();
 
             builder.Property(l => l.DataValidade)
                 .HasColumnName("data_validade")
-                .HasColumnType("timestamp")
+                .HasColumnType("date")
                 .IsRequired();
 
             builder.Property(l => l.Quantidade)

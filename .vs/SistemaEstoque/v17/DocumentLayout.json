@@ -3,272 +3,148 @@
   "WorkspaceRootPath": "D:\\csharp\\SistemaEstoque\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\csharp\\SistemaEstoque\\SistemaEstoque.Infra\\Migrations\\20240710035542_Alterado_Coluna_AlteradoEm_Para_TimeStamp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:SistemaEstoque.Infra\\Migrations\\20240710035542_Alterado_Coluna_AlteradoEm_Para_TimeStamp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\csharp\\SistemaEstoque\\SistemaEstoque.Infra\\Migrations\\20240711025606_FIX.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:SistemaEstoque.Infra\\Migrations\\20240711025606_FIX.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E22EE1E4-1BAA-4265-B92A-009EDA120373}|SistemaEstoque.Infra\\SistemaEstoque.Infra.csproj|d:\\csharp\\sistemaestoque\\sistemaestoque.infra\\entitiesconfig\\logalteracaoconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E22EE1E4-1BAA-4265-B92A-009EDA120373}|SistemaEstoque.Infra\\SistemaEstoque.Infra.csproj|solutionrelative:sistemaestoque.infra\\entitiesconfig\\logalteracaoconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A6A65046-92C2-4B40-9220-2C4993FA6584}|SistemaEstoque.Application\\SistemaEstoque.Application.csproj|d:\\csharp\\sistemaestoque\\sistemaestoque.application\\commands\\updatecategoria\\updatecategoriacommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A6A65046-92C2-4B40-9220-2C4993FA6584}|SistemaEstoque.Application\\SistemaEstoque.Application.csproj|solutionrelative:sistemaestoque.application\\commands\\updatecategoria\\updatecategoriacommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A6A65046-92C2-4B40-9220-2C4993FA6584}|SistemaEstoque.Application\\SistemaEstoque.Application.csproj|d:\\csharp\\sistemaestoque\\sistemaestoque.application\\profiles\\categoriaprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A6A65046-92C2-4B40-9220-2C4993FA6584}|SistemaEstoque.Application\\SistemaEstoque.Application.csproj|solutionrelative:sistemaestoque.application\\profiles\\categoriaprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A6A65046-92C2-4B40-9220-2C4993FA6584}|SistemaEstoque.Application\\SistemaEstoque.Application.csproj|d:\\csharp\\sistemaestoque\\sistemaestoque.application\\services\\logalteracaoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A6A65046-92C2-4B40-9220-2C4993FA6584}|SistemaEstoque.Application\\SistemaEstoque.Application.csproj|solutionrelative:sistemaestoque.application\\services\\logalteracaoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{51750E1A-578E-4EAB-BFFE-BFEE5E2B399C}|SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj|d:\\csharp\\sistemaestoque\\sistemaestoque.domain\\interfaces\\services\\ilogalteracaoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{51750E1A-578E-4EAB-BFFE-BFEE5E2B399C}|SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj|solutionrelative:sistemaestoque.domain\\interfaces\\services\\ilogalteracaoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A6A65046-92C2-4B40-9220-2C4993FA6584}|SistemaEstoque.Application\\SistemaEstoque.Application.csproj|d:\\csharp\\sistemaestoque\\sistemaestoque.application\\dtos\\categoriadto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A6A65046-92C2-4B40-9220-2C4993FA6584}|SistemaEstoque.Application\\SistemaEstoque.Application.csproj|solutionrelative:sistemaestoque.application\\dtos\\categoriadto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{51750E1A-578E-4EAB-BFFE-BFEE5E2B399C}|SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj|d:\\csharp\\sistemaestoque\\sistemaestoque.domain\\entities\\categoria.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{51750E1A-578E-4EAB-BFFE-BFEE5E2B399C}|SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj|solutionrelative:sistemaestoque.domain\\entities\\categoria.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{51750E1A-578E-4EAB-BFFE-BFEE5E2B399C}|SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj|d:\\csharp\\sistemaestoque\\sistemaestoque.domain\\entities\\produto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{51750E1A-578E-4EAB-BFFE-BFEE5E2B399C}|SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj|solutionrelative:sistemaestoque.domain\\entities\\produto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{51750E1A-578E-4EAB-BFFE-BFEE5E2B399C}|SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj|d:\\csharp\\sistemaestoque\\sistemaestoque.domain\\entities\\empresa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{51750E1A-578E-4EAB-BFFE-BFEE5E2B399C}|SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj|solutionrelative:sistemaestoque.domain\\entities\\empresa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{51750E1A-578E-4EAB-BFFE-BFEE5E2B399C}|SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj|d:\\csharp\\sistemaestoque\\sistemaestoque.domain\\entities\\tenant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{51750E1A-578E-4EAB-BFFE-BFEE5E2B399C}|SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj|solutionrelative:sistemaestoque.domain\\entities\\tenant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E22EE1E4-1BAA-4265-B92A-009EDA120373}|SistemaEstoque.Infra\\SistemaEstoque.Infra.csproj|d:\\csharp\\sistemaestoque\\sistemaestoque.infra\\entitiesconfig\\empresaconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E22EE1E4-1BAA-4265-B92A-009EDA120373}|SistemaEstoque.Infra\\SistemaEstoque.Infra.csproj|solutionrelative:sistemaestoque.infra\\entitiesconfig\\empresaconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E22EE1E4-1BAA-4265-B92A-009EDA120373}|SistemaEstoque.Infra\\SistemaEstoque.Infra.csproj|d:\\csharp\\sistemaestoque\\sistemaestoque.infra\\repositories\\categoriarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E22EE1E4-1BAA-4265-B92A-009EDA120373}|SistemaEstoque.Infra\\SistemaEstoque.Infra.csproj|solutionrelative:sistemaestoque.infra\\repositories\\categoriarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E22EE1E4-1BAA-4265-B92A-009EDA120373}|SistemaEstoque.Infra\\SistemaEstoque.Infra.csproj|d:\\csharp\\sistemaestoque\\sistemaestoque.infra\\repositories\\repositorybase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E22EE1E4-1BAA-4265-B92A-009EDA120373}|SistemaEstoque.Infra\\SistemaEstoque.Infra.csproj|solutionrelative:sistemaestoque.infra\\repositories\\repositorybase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E22EE1E4-1BAA-4265-B92A-009EDA120373}|SistemaEstoque.Infra\\SistemaEstoque.Infra.csproj|d:\\csharp\\sistemaestoque\\sistemaestoque.infra\\entitiesconfig\\insumoconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E22EE1E4-1BAA-4265-B92A-009EDA120373}|SistemaEstoque.Infra\\SistemaEstoque.Infra.csproj|solutionrelative:sistemaestoque.infra\\entitiesconfig\\insumoconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E2BC48E8-B5BF-4069-8A81-1A3E3EFC5A45}|SistemaEstoque.IoC\\SistemaEstoque.IoC.csproj|d:\\csharp\\sistemaestoque\\sistemaestoque.ioc\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E2BC48E8-B5BF-4069-8A81-1A3E3EFC5A45}|SistemaEstoque.IoC\\SistemaEstoque.IoC.csproj|solutionrelative:sistemaestoque.ioc\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A6A65046-92C2-4B40-9220-2C4993FA6584}|SistemaEstoque.Application\\SistemaEstoque.Application.csproj|d:\\csharp\\sistemaestoque\\sistemaestoque.application\\commands\\createloteproduto\\createloteprodutocommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A6A65046-92C2-4B40-9220-2C4993FA6584}|SistemaEstoque.Application\\SistemaEstoque.Application.csproj|solutionrelative:sistemaestoque.application\\commands\\createloteproduto\\createloteprodutocommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A6A65046-92C2-4B40-9220-2C4993FA6584}|SistemaEstoque.Application\\SistemaEstoque.Application.csproj|d:\\csharp\\sistemaestoque\\sistemaestoque.application\\profiles\\loteinsumoprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A6A65046-92C2-4B40-9220-2C4993FA6584}|SistemaEstoque.Application\\SistemaEstoque.Application.csproj|solutionrelative:sistemaestoque.application\\profiles\\loteinsumoprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{51750E1A-578E-4EAB-BFFE-BFEE5E2B399C}|SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj|d:\\csharp\\sistemaestoque\\sistemaestoque.domain\\entities\\logalteracao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{51750E1A-578E-4EAB-BFFE-BFEE5E2B399C}|SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj|solutionrelative:sistemaestoque.domain\\entities\\logalteracao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A6A65046-92C2-4B40-9220-2C4993FA6584}|SistemaEstoque.Application\\SistemaEstoque.Application.csproj|d:\\csharp\\sistemaestoque\\sistemaestoque.application\\commands\\createloteinsumo\\createloteinsumocommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A6A65046-92C2-4B40-9220-2C4993FA6584}|SistemaEstoque.Application\\SistemaEstoque.Application.csproj|solutionrelative:sistemaestoque.application\\commands\\createloteinsumo\\createloteinsumocommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{51750E1A-578E-4EAB-BFFE-BFEE5E2B399C}|SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj|d:\\csharp\\sistemaestoque\\sistemaestoque.domain\\entities\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{51750E1A-578E-4EAB-BFFE-BFEE5E2B399C}|SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj|solutionrelative:sistemaestoque.domain\\entities\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E22EE1E4-1BAA-4265-B92A-009EDA120373}|SistemaEstoque.Infra\\SistemaEstoque.Infra.csproj|d:\\csharp\\sistemaestoque\\sistemaestoque.infra\\entitiesconfig\\movimentacaoprodutoconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E22EE1E4-1BAA-4265-B92A-009EDA120373}|SistemaEstoque.Infra\\SistemaEstoque.Infra.csproj|solutionrelative:sistemaestoque.infra\\entitiesconfig\\movimentacaoprodutoconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E22EE1E4-1BAA-4265-B92A-009EDA120373}|SistemaEstoque.Infra\\SistemaEstoque.Infra.csproj|d:\\csharp\\sistemaestoque\\sistemaestoque.infra\\entitiesconfig\\usuarioconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E22EE1E4-1BAA-4265-B92A-009EDA120373}|SistemaEstoque.Infra\\SistemaEstoque.Infra.csproj|solutionrelative:sistemaestoque.infra\\entitiesconfig\\usuarioconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E22EE1E4-1BAA-4265-B92A-009EDA120373}|SistemaEstoque.Infra\\SistemaEstoque.Infra.csproj|d:\\csharp\\sistemaestoque\\sistemaestoque.infra\\entitiesconfig\\produtoconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E22EE1E4-1BAA-4265-B92A-009EDA120373}|SistemaEstoque.Infra\\SistemaEstoque.Infra.csproj|solutionrelative:sistemaestoque.infra\\entitiesconfig\\produtoconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{51750E1A-578E-4EAB-BFFE-BFEE5E2B399C}|SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj|d:\\csharp\\sistemaestoque\\sistemaestoque.domain\\entities\\movimentacaoproduto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{51750E1A-578E-4EAB-BFFE-BFEE5E2B399C}|SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj|solutionrelative:sistemaestoque.domain\\entities\\movimentacaoproduto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E22EE1E4-1BAA-4265-B92A-009EDA120373}|SistemaEstoque.Infra\\SistemaEstoque.Infra.csproj|d:\\csharp\\sistemaestoque\\sistemaestoque.infra\\data\\constants.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E22EE1E4-1BAA-4265-B92A-009EDA120373}|SistemaEstoque.Infra\\SistemaEstoque.Infra.csproj|solutionrelative:sistemaestoque.infra\\data\\constants.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\csharp\\SistemaEstoque\\SistemaEstoque.Infra\\Migrations\\20240710022933_Ajustando_Lote_e_Movimentacao_para_Produto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:SistemaEstoque.Infra\\Migrations\\20240710022933_Ajustando_Lote_e_Movimentacao_para_Produto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E22EE1E4-1BAA-4265-B92A-009EDA120373}|SistemaEstoque.Infra\\SistemaEstoque.Infra.csproj|d:\\csharp\\sistemaestoque\\sistemaestoque.infra\\entitiesconfig\\loteprodutoconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E22EE1E4-1BAA-4265-B92A-009EDA120373}|SistemaEstoque.Infra\\SistemaEstoque.Infra.csproj|solutionrelative:sistemaestoque.infra\\entitiesconfig\\loteprodutoconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A6A65046-92C2-4B40-9220-2C4993FA6584}|SistemaEstoque.Application\\SistemaEstoque.Application.csproj|d:\\csharp\\sistemaestoque\\sistemaestoque.application\\commands\\createusuario\\createusuariocommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A6A65046-92C2-4B40-9220-2C4993FA6584}|SistemaEstoque.Application\\SistemaEstoque.Application.csproj|solutionrelative:sistemaestoque.application\\commands\\createusuario\\createusuariocommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A6A65046-92C2-4B40-9220-2C4993FA6584}|SistemaEstoque.Application\\SistemaEstoque.Application.csproj|d:\\csharp\\sistemaestoque\\sistemaestoque.application\\commands\\createproduto\\createprodutocommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A6A65046-92C2-4B40-9220-2C4993FA6584}|SistemaEstoque.Application\\SistemaEstoque.Application.csproj|solutionrelative:sistemaestoque.application\\commands\\createproduto\\createprodutocommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A6A65046-92C2-4B40-9220-2C4993FA6584}|SistemaEstoque.Application\\SistemaEstoque.Application.csproj|d:\\csharp\\sistemaestoque\\sistemaestoque.application\\commands\\createcategoria\\createcategoriacommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A6A65046-92C2-4B40-9220-2C4993FA6584}|SistemaEstoque.Application\\SistemaEstoque.Application.csproj|solutionrelative:sistemaestoque.application\\commands\\createcategoria\\createcategoriacommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A6A65046-92C2-4B40-9220-2C4993FA6584}|SistemaEstoque.Application\\SistemaEstoque.Application.csproj|d:\\csharp\\sistemaestoque\\sistemaestoque.application\\commands\\createestoque\\createestoquecommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A6A65046-92C2-4B40-9220-2C4993FA6584}|SistemaEstoque.Application\\SistemaEstoque.Application.csproj|solutionrelative:sistemaestoque.application\\commands\\createestoque\\createestoquecommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A6A65046-92C2-4B40-9220-2C4993FA6584}|SistemaEstoque.Application\\SistemaEstoque.Application.csproj|d:\\csharp\\sistemaestoque\\sistemaestoque.application\\commands\\createfornecedor\\createfornecedorcommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A6A65046-92C2-4B40-9220-2C4993FA6584}|SistemaEstoque.Application\\SistemaEstoque.Application.csproj|solutionrelative:sistemaestoque.application\\commands\\createfornecedor\\createfornecedorcommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E22EE1E4-1BAA-4265-B92A-009EDA120373}|SistemaEstoque.Infra\\SistemaEstoque.Infra.csproj|d:\\csharp\\sistemaestoque\\sistemaestoque.infra\\data\\sistemaestoquedbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E22EE1E4-1BAA-4265-B92A-009EDA120373}|SistemaEstoque.Infra\\SistemaEstoque.Infra.csproj|solutionrelative:sistemaestoque.infra\\data\\sistemaestoquedbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E22EE1E4-1BAA-4265-B92A-009EDA120373}|SistemaEstoque.Infra\\SistemaEstoque.Infra.csproj|d:\\csharp\\sistemaestoque\\sistemaestoque.infra\\data\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E22EE1E4-1BAA-4265-B92A-009EDA120373}|SistemaEstoque.Infra\\SistemaEstoque.Infra.csproj|solutionrelative:sistemaestoque.infra\\data\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{51750E1A-578E-4EAB-BFFE-BFEE5E2B399C}|SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj|d:\\csharp\\sistemaestoque\\sistemaestoque.domain\\interfaces\\repositories\\iunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{51750E1A-578E-4EAB-BFFE-BFEE5E2B399C}|SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj|solutionrelative:sistemaestoque.domain\\interfaces\\repositories\\iunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E22EE1E4-1BAA-4265-B92A-009EDA120373}|SistemaEstoque.Infra\\SistemaEstoque.Infra.csproj|d:\\csharp\\sistemaestoque\\sistemaestoque.infra\\repositories\\movimentacaoprodutorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E22EE1E4-1BAA-4265-B92A-009EDA120373}|SistemaEstoque.Infra\\SistemaEstoque.Infra.csproj|solutionrelative:sistemaestoque.infra\\repositories\\movimentacaoprodutorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{51750E1A-578E-4EAB-BFFE-BFEE5E2B399C}|SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj|d:\\csharp\\sistemaestoque\\sistemaestoque.domain\\entities\\loteproduto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{51750E1A-578E-4EAB-BFFE-BFEE5E2B399C}|SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj|solutionrelative:sistemaestoque.domain\\entities\\loteproduto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A6A65046-92C2-4B40-9220-2C4993FA6584}|SistemaEstoque.Application\\SistemaEstoque.Application.csproj|d:\\csharp\\sistemaestoque\\sistemaestoque.application\\services\\loteprodutoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A6A65046-92C2-4B40-9220-2C4993FA6584}|SistemaEstoque.Application\\SistemaEstoque.Application.csproj|solutionrelative:sistemaestoque.application\\services\\loteprodutoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E22EE1E4-1BAA-4265-B92A-009EDA120373}|SistemaEstoque.Infra\\SistemaEstoque.Infra.csproj|d:\\csharp\\sistemaestoque\\sistemaestoque.infra\\entitiesconfig\\fornecedorconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E22EE1E4-1BAA-4265-B92A-009EDA120373}|SistemaEstoque.Infra\\SistemaEstoque.Infra.csproj|solutionrelative:sistemaestoque.infra\\entitiesconfig\\fornecedorconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{51750E1A-578E-4EAB-BFFE-BFEE5E2B399C}|SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj|d:\\csharp\\sistemaestoque\\sistemaestoque.domain\\entities\\fornecedor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{51750E1A-578E-4EAB-BFFE-BFEE5E2B399C}|SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj|solutionrelative:sistemaestoque.domain\\entities\\fornecedor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9518518F-51FA-47AF-9F24-B9BFBC3A3CA9}|SistemaEstoque.API\\SistemaEstoque.API.csproj|d:\\csharp\\sistemaestoque\\sistemaestoque.api\\controllers\\lotesprodutoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9518518F-51FA-47AF-9F24-B9BFBC3A3CA9}|SistemaEstoque.API\\SistemaEstoque.API.csproj|solutionrelative:sistemaestoque.api\\controllers\\lotesprodutoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A6A65046-92C2-4B40-9220-2C4993FA6584}|SistemaEstoque.Application\\SistemaEstoque.Application.csproj|d:\\csharp\\sistemaestoque\\sistemaestoque.application\\commands\\createloteproduto\\createloteprodutocommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A6A65046-92C2-4B40-9220-2C4993FA6584}|SistemaEstoque.Application\\SistemaEstoque.Application.csproj|solutionrelative:sistemaestoque.application\\commands\\createloteproduto\\createloteprodutocommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A6A65046-92C2-4B40-9220-2C4993FA6584}|SistemaEstoque.Application\\SistemaEstoque.Application.csproj|d:\\csharp\\sistemaestoque\\sistemaestoque.application\\profiles\\movimentacaoprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A6A65046-92C2-4B40-9220-2C4993FA6584}|SistemaEstoque.Application\\SistemaEstoque.Application.csproj|solutionrelative:sistemaestoque.application\\profiles\\movimentacaoprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A6A65046-92C2-4B40-9220-2C4993FA6584}|SistemaEstoque.Application\\SistemaEstoque.Application.csproj|d:\\csharp\\sistemaestoque\\sistemaestoque.application\\profiles\\loteprodutoprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A6A65046-92C2-4B40-9220-2C4993FA6584}|SistemaEstoque.Application\\SistemaEstoque.Application.csproj|solutionrelative:sistemaestoque.application\\profiles\\loteprodutoprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E22EE1E4-1BAA-4265-B92A-009EDA120373}|SistemaEstoque.Infra\\SistemaEstoque.Infra.csproj|d:\\csharp\\sistemaestoque\\sistemaestoque.infra\\repositories\\loteprodutorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E22EE1E4-1BAA-4265-B92A-009EDA120373}|SistemaEstoque.Infra\\SistemaEstoque.Infra.csproj|solutionrelative:sistemaestoque.infra\\repositories\\loteprodutorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A6A65046-92C2-4B40-9220-2C4993FA6584}|SistemaEstoque.Application\\SistemaEstoque.Application.csproj|d:\\csharp\\sistemaestoque\\sistemaestoque.application\\commands\\createinsumo\\createinsumocommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A6A65046-92C2-4B40-9220-2C4993FA6584}|SistemaEstoque.Application\\SistemaEstoque.Application.csproj|solutionrelative:sistemaestoque.application\\commands\\createinsumo\\createinsumocommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{51750E1A-578E-4EAB-BFFE-BFEE5E2B399C}|SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj|d:\\csharp\\sistemaestoque\\sistemaestoque.domain\\interfaces\\repositories\\iloteprodutorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{51750E1A-578E-4EAB-BFFE-BFEE5E2B399C}|SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj|solutionrelative:sistemaestoque.domain\\interfaces\\repositories\\iloteprodutorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E22EE1E4-1BAA-4265-B92A-009EDA120373}|SistemaEstoque.Infra\\SistemaEstoque.Infra.csproj|d:\\csharp\\sistemaestoque\\sistemaestoque.infra\\repositories\\insumorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E22EE1E4-1BAA-4265-B92A-009EDA120373}|SistemaEstoque.Infra\\SistemaEstoque.Infra.csproj|solutionrelative:sistemaestoque.infra\\repositories\\insumorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9518518F-51FA-47AF-9F24-B9BFBC3A3CA9}|SistemaEstoque.API\\SistemaEstoque.API.csproj|d:\\csharp\\sistemaestoque\\sistemaestoque.api\\controllers\\estoquescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9518518F-51FA-47AF-9F24-B9BFBC3A3CA9}|SistemaEstoque.API\\SistemaEstoque.API.csproj|solutionrelative:sistemaestoque.api\\controllers\\estoquescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{51750E1A-578E-4EAB-BFFE-BFEE5E2B399C}|SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj|d:\\csharp\\sistemaestoque\\sistemaestoque.domain\\entities\\empresa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51750E1A-578E-4EAB-BFFE-BFEE5E2B399C}|SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj|solutionrelative:sistemaestoque.domain\\entities\\empresa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A6A65046-92C2-4B40-9220-2C4993FA6584}|SistemaEstoque.Application\\SistemaEstoque.Application.csproj|d:\\csharp\\sistemaestoque\\sistemaestoque.application\\commands\\createloteproduto\\createloteprodutoresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A6A65046-92C2-4B40-9220-2C4993FA6584}|SistemaEstoque.Application\\SistemaEstoque.Application.csproj|solutionrelative:sistemaestoque.application\\commands\\createloteproduto\\createloteprodutoresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{51750E1A-578E-4EAB-BFFE-BFEE5E2B399C}|SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj|d:\\csharp\\sistemaestoque\\sistemaestoque.domain\\interfaces\\repositories\\iinsumorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51750E1A-578E-4EAB-BFFE-BFEE5E2B399C}|SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj|solutionrelative:sistemaestoque.domain\\interfaces\\repositories\\iinsumorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A6A65046-92C2-4B40-9220-2C4993FA6584}|SistemaEstoque.Application\\SistemaEstoque.Application.csproj|d:\\csharp\\sistemaestoque\\sistemaestoque.application\\services\\fornecedorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A6A65046-92C2-4B40-9220-2C4993FA6584}|SistemaEstoque.Application\\SistemaEstoque.Application.csproj|solutionrelative:sistemaestoque.application\\services\\fornecedorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A6A65046-92C2-4B40-9220-2C4993FA6584}|SistemaEstoque.Application\\SistemaEstoque.Application.csproj|d:\\csharp\\sistemaestoque\\sistemaestoque.application\\services\\insumoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A6A65046-92C2-4B40-9220-2C4993FA6584}|SistemaEstoque.Application\\SistemaEstoque.Application.csproj|solutionrelative:sistemaestoque.application\\services\\insumoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{51750E1A-578E-4EAB-BFFE-BFEE5E2B399C}|SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj|d:\\csharp\\sistemaestoque\\sistemaestoque.domain\\interfaces\\services\\ifornecedorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{51750E1A-578E-4EAB-BFFE-BFEE5E2B399C}|SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj|solutionrelative:sistemaestoque.domain\\interfaces\\services\\ifornecedorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{51750E1A-578E-4EAB-BFFE-BFEE5E2B399C}|SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj|d:\\csharp\\sistemaestoque\\sistemaestoque.domain\\interfaces\\services\\iinsumoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51750E1A-578E-4EAB-BFFE-BFEE5E2B399C}|SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj|solutionrelative:sistemaestoque.domain\\interfaces\\services\\iinsumoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E22EE1E4-1BAA-4265-B92A-009EDA120373}|SistemaEstoque.Infra\\SistemaEstoque.Infra.csproj|d:\\csharp\\sistemaestoque\\sistemaestoque.infra\\migrations\\20240708013700_add_lote.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E22EE1E4-1BAA-4265-B92A-009EDA120373}|SistemaEstoque.Infra\\SistemaEstoque.Infra.csproj|solutionrelative:sistemaestoque.infra\\migrations\\20240708013700_add_lote.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E22EE1E4-1BAA-4265-B92A-009EDA120373}|SistemaEstoque.Infra\\SistemaEstoque.Infra.csproj|d:\\csharp\\sistemaestoque\\sistemaestoque.infra\\entitiesconfig\\loteinsumoconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E22EE1E4-1BAA-4265-B92A-009EDA120373}|SistemaEstoque.Infra\\SistemaEstoque.Infra.csproj|solutionrelative:sistemaestoque.infra\\entitiesconfig\\loteinsumoconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E22EE1E4-1BAA-4265-B92A-009EDA120373}|SistemaEstoque.Infra\\SistemaEstoque.Infra.csproj|d:\\csharp\\sistemaestoque\\sistemaestoque.infra\\entitiesconfig\\categoriaconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E22EE1E4-1BAA-4265-B92A-009EDA120373}|SistemaEstoque.Infra\\SistemaEstoque.Infra.csproj|solutionrelative:sistemaestoque.infra\\entitiesconfig\\categoriaconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{51750E1A-578E-4EAB-BFFE-BFEE5E2B399C}|SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj|d:\\csharp\\sistemaestoque\\sistemaestoque.domain\\entities\\movimentacaoinsumo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51750E1A-578E-4EAB-BFFE-BFEE5E2B399C}|SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj|solutionrelative:sistemaestoque.domain\\entities\\movimentacaoinsumo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{51750E1A-578E-4EAB-BFFE-BFEE5E2B399C}|SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj|d:\\csharp\\sistemaestoque\\sistemaestoque.domain\\interfaces\\repositories\\irepositorybase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{51750E1A-578E-4EAB-BFFE-BFEE5E2B399C}|SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj|solutionrelative:sistemaestoque.domain\\interfaces\\repositories\\irepositorybase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{51750E1A-578E-4EAB-BFFE-BFEE5E2B399C}|SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj|d:\\csharp\\sistemaestoque\\sistemaestoque.domain\\entities\\movimentacao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51750E1A-578E-4EAB-BFFE-BFEE5E2B399C}|SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj|solutionrelative:sistemaestoque.domain\\entities\\movimentacao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A6A65046-92C2-4B40-9220-2C4993FA6584}|SistemaEstoque.Application\\SistemaEstoque.Application.csproj|d:\\csharp\\sistemaestoque\\sistemaestoque.application\\profiles\\estoqueprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A6A65046-92C2-4B40-9220-2C4993FA6584}|SistemaEstoque.Application\\SistemaEstoque.Application.csproj|solutionrelative:sistemaestoque.application\\profiles\\estoqueprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{51750E1A-578E-4EAB-BFFE-BFEE5E2B399C}|SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj|d:\\csharp\\sistemaestoque\\sistemaestoque.domain\\entities\\loteproduto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51750E1A-578E-4EAB-BFFE-BFEE5E2B399C}|SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj|solutionrelative:sistemaestoque.domain\\entities\\loteproduto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A6A65046-92C2-4B40-9220-2C4993FA6584}|SistemaEstoque.Application\\SistemaEstoque.Application.csproj|d:\\csharp\\sistemaestoque\\sistemaestoque.application\\services\\produtoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A6A65046-92C2-4B40-9220-2C4993FA6584}|SistemaEstoque.Application\\SistemaEstoque.Application.csproj|solutionrelative:sistemaestoque.application\\services\\produtoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{51750E1A-578E-4EAB-BFFE-BFEE5E2B399C}|SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj|d:\\csharp\\sistemaestoque\\sistemaestoque.domain\\entities\\loteinsumo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51750E1A-578E-4EAB-BFFE-BFEE5E2B399C}|SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj|solutionrelative:sistemaestoque.domain\\entities\\loteinsumo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{51750E1A-578E-4EAB-BFFE-BFEE5E2B399C}|SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj|d:\\csharp\\sistemaestoque\\sistemaestoque.domain\\interfaces\\services\\iprodutoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{51750E1A-578E-4EAB-BFFE-BFEE5E2B399C}|SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj|solutionrelative:sistemaestoque.domain\\interfaces\\services\\iprodutoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{51750E1A-578E-4EAB-BFFE-BFEE5E2B399C}|SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj|d:\\csharp\\sistemaestoque\\sistemaestoque.domain\\entities\\lote.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51750E1A-578E-4EAB-BFFE-BFEE5E2B399C}|SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj|solutionrelative:sistemaestoque.domain\\entities\\lote.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A6A65046-92C2-4B40-9220-2C4993FA6584}|SistemaEstoque.Application\\SistemaEstoque.Application.csproj|d:\\csharp\\sistemaestoque\\sistemaestoque.application\\commands\\createestoque\\createestoquecommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A6A65046-92C2-4B40-9220-2C4993FA6584}|SistemaEstoque.Application\\SistemaEstoque.Application.csproj|solutionrelative:sistemaestoque.application\\commands\\createestoque\\createestoquecommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{51750E1A-578E-4EAB-BFFE-BFEE5E2B399C}|SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj|d:\\csharp\\sistemaestoque\\sistemaestoque.domain\\entities\\logalteracao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51750E1A-578E-4EAB-BFFE-BFEE5E2B399C}|SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj|solutionrelative:sistemaestoque.domain\\entities\\logalteracao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A6A65046-92C2-4B40-9220-2C4993FA6584}|SistemaEstoque.Application\\SistemaEstoque.Application.csproj|d:\\csharp\\sistemaestoque\\sistemaestoque.application\\commands\\createestoque\\createestoqueresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A6A65046-92C2-4B40-9220-2C4993FA6584}|SistemaEstoque.Application\\SistemaEstoque.Application.csproj|solutionrelative:sistemaestoque.application\\commands\\createestoque\\createestoqueresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{51750E1A-578E-4EAB-BFFE-BFEE5E2B399C}|SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj|d:\\csharp\\sistemaestoque\\sistemaestoque.domain\\entities\\item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51750E1A-578E-4EAB-BFFE-BFEE5E2B399C}|SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj|solutionrelative:sistemaestoque.domain\\entities\\item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E22EE1E4-1BAA-4265-B92A-009EDA120373}|SistemaEstoque.Infra\\SistemaEstoque.Infra.csproj|d:\\csharp\\sistemaestoque\\sistemaestoque.infra\\repositories\\estoquerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E22EE1E4-1BAA-4265-B92A-009EDA120373}|SistemaEstoque.Infra\\SistemaEstoque.Infra.csproj|solutionrelative:sistemaestoque.infra\\repositories\\estoquerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{51750E1A-578E-4EAB-BFFE-BFEE5E2B399C}|SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj|d:\\csharp\\sistemaestoque\\sistemaestoque.domain\\entities\\insumo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51750E1A-578E-4EAB-BFFE-BFEE5E2B399C}|SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj|solutionrelative:sistemaestoque.domain\\entities\\insumo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{51750E1A-578E-4EAB-BFFE-BFEE5E2B399C}|SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj|d:\\csharp\\sistemaestoque\\sistemaestoque.domain\\interfaces\\repositories\\iestoquerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{51750E1A-578E-4EAB-BFFE-BFEE5E2B399C}|SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj|solutionrelative:sistemaestoque.domain\\interfaces\\repositories\\iestoquerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{51750E1A-578E-4EAB-BFFE-BFEE5E2B399C}|SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj|d:\\csharp\\sistemaestoque\\sistemaestoque.domain\\entities\\fornecedor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51750E1A-578E-4EAB-BFFE-BFEE5E2B399C}|SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj|solutionrelative:sistemaestoque.domain\\entities\\fornecedor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E22EE1E4-1BAA-4265-B92A-009EDA120373}|SistemaEstoque.Infra\\SistemaEstoque.Infra.csproj|d:\\csharp\\sistemaestoque\\sistemaestoque.infra\\entitiesconfig\\estoqueconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E22EE1E4-1BAA-4265-B92A-009EDA120373}|SistemaEstoque.Infra\\SistemaEstoque.Infra.csproj|solutionrelative:sistemaestoque.infra\\entitiesconfig\\estoqueconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{51750E1A-578E-4EAB-BFFE-BFEE5E2B399C}|SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj|d:\\csharp\\sistemaestoque\\sistemaestoque.domain\\entities\\estoqueproduto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51750E1A-578E-4EAB-BFFE-BFEE5E2B399C}|SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj|solutionrelative:sistemaestoque.domain\\entities\\estoqueproduto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51750E1A-578E-4EAB-BFFE-BFEE5E2B399C}|SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj|d:\\csharp\\sistemaestoque\\sistemaestoque.domain\\entities\\estoqueinsumo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51750E1A-578E-4EAB-BFFE-BFEE5E2B399C}|SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj|solutionrelative:sistemaestoque.domain\\entities\\estoqueinsumo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{51750E1A-578E-4EAB-BFFE-BFEE5E2B399C}|SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj|d:\\csharp\\sistemaestoque\\sistemaestoque.domain\\entities\\estoque.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{51750E1A-578E-4EAB-BFFE-BFEE5E2B399C}|SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj|solutionrelative:sistemaestoque.domain\\entities\\estoque.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9518518F-51FA-47AF-9F24-B9BFBC3A3CA9}|SistemaEstoque.API\\SistemaEstoque.API.csproj|d:\\csharp\\sistemaestoque\\sistemaestoque.api\\controllers\\fornecedorescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9518518F-51FA-47AF-9F24-B9BFBC3A3CA9}|SistemaEstoque.API\\SistemaEstoque.API.csproj|solutionrelative:sistemaestoque.api\\controllers\\fornecedorescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{51750E1A-578E-4EAB-BFFE-BFEE5E2B399C}|SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj|d:\\csharp\\sistemaestoque\\sistemaestoque.domain\\entities\\entidadebase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51750E1A-578E-4EAB-BFFE-BFEE5E2B399C}|SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj|solutionrelative:sistemaestoque.domain\\entities\\entidadebase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A6A65046-92C2-4B40-9220-2C4993FA6584}|SistemaEstoque.Application\\SistemaEstoque.Application.csproj|d:\\csharp\\sistemaestoque\\sistemaestoque.application\\profiles\\fornecedorprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A6A65046-92C2-4B40-9220-2C4993FA6584}|SistemaEstoque.Application\\SistemaEstoque.Application.csproj|solutionrelative:sistemaestoque.application\\profiles\\fornecedorprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{51750E1A-578E-4EAB-BFFE-BFEE5E2B399C}|SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj|d:\\csharp\\sistemaestoque\\sistemaestoque.domain\\entities\\categoria.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51750E1A-578E-4EAB-BFFE-BFEE5E2B399C}|SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj|solutionrelative:sistemaestoque.domain\\entities\\categoria.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E22EE1E4-1BAA-4265-B92A-009EDA120373}|SistemaEstoque.Infra\\SistemaEstoque.Infra.csproj|d:\\csharp\\sistemaestoque\\sistemaestoque.infra\\repositories\\fornecedorrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E22EE1E4-1BAA-4265-B92A-009EDA120373}|SistemaEstoque.Infra\\SistemaEstoque.Infra.csproj|solutionrelative:sistemaestoque.infra\\repositories\\fornecedorrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E22EE1E4-1BAA-4265-B92A-009EDA120373}|SistemaEstoque.Infra\\SistemaEstoque.Infra.csproj|d:\\csharp\\sistemaestoque\\sistemaestoque.infra\\entitiesconfig\\categoriaconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E22EE1E4-1BAA-4265-B92A-009EDA120373}|SistemaEstoque.Infra\\SistemaEstoque.Infra.csproj|solutionrelative:sistemaestoque.infra\\entitiesconfig\\categoriaconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{51750E1A-578E-4EAB-BFFE-BFEE5E2B399C}|SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj|d:\\csharp\\sistemaestoque\\sistemaestoque.domain\\interfaces\\repositories\\ifornecedorrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{51750E1A-578E-4EAB-BFFE-BFEE5E2B399C}|SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj|solutionrelative:sistemaestoque.domain\\interfaces\\repositories\\ifornecedorrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A6A65046-92C2-4B40-9220-2C4993FA6584}|SistemaEstoque.Application\\SistemaEstoque.Application.csproj|d:\\csharp\\sistemaestoque\\sistemaestoque.application\\commands\\createloteproduto\\createloteprodutocommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A6A65046-92C2-4B40-9220-2C4993FA6584}|SistemaEstoque.Application\\SistemaEstoque.Application.csproj|solutionrelative:sistemaestoque.application\\commands\\createloteproduto\\createloteprodutocommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A6A65046-92C2-4B40-9220-2C4993FA6584}|SistemaEstoque.Application\\SistemaEstoque.Application.csproj|d:\\csharp\\sistemaestoque\\sistemaestoque.application\\commands\\createfornecedor\\createfornecedorcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A6A65046-92C2-4B40-9220-2C4993FA6584}|SistemaEstoque.Application\\SistemaEstoque.Application.csproj|solutionrelative:sistemaestoque.application\\commands\\createfornecedor\\createfornecedorcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{51750E1A-578E-4EAB-BFFE-BFEE5E2B399C}|SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj|d:\\csharp\\sistemaestoque\\sistemaestoque.domain\\interfaces\\repositories\\iunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51750E1A-578E-4EAB-BFFE-BFEE5E2B399C}|SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj|solutionrelative:sistemaestoque.domain\\interfaces\\repositories\\iunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A6A65046-92C2-4B40-9220-2C4993FA6584}|SistemaEstoque.Application\\SistemaEstoque.Application.csproj|d:\\csharp\\sistemaestoque\\sistemaestoque.application\\commands\\createfornecedor\\createfornecedorresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A6A65046-92C2-4B40-9220-2C4993FA6584}|SistemaEstoque.Application\\SistemaEstoque.Application.csproj|solutionrelative:sistemaestoque.application\\commands\\createfornecedor\\createfornecedorresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E22EE1E4-1BAA-4265-B92A-009EDA120373}|SistemaEstoque.Infra\\SistemaEstoque.Infra.csproj|d:\\csharp\\sistemaestoque\\sistemaestoque.infra\\data\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E22EE1E4-1BAA-4265-B92A-009EDA120373}|SistemaEstoque.Infra\\SistemaEstoque.Infra.csproj|solutionrelative:sistemaestoque.infra\\data\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E22EE1E4-1BAA-4265-B92A-009EDA120373}|SistemaEstoque.Infra\\SistemaEstoque.Infra.csproj|d:\\csharp\\sistemaestoque\\sistemaestoque.infra\\migrations\\20240707170247_add_estoque.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E22EE1E4-1BAA-4265-B92A-009EDA120373}|SistemaEstoque.Infra\\SistemaEstoque.Infra.csproj|solutionrelative:sistemaestoque.infra\\migrations\\20240707170247_add_estoque.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A6A65046-92C2-4B40-9220-2C4993FA6584}|SistemaEstoque.Application\\SistemaEstoque.Application.csproj|d:\\csharp\\sistemaestoque\\sistemaestoque.application\\profiles\\insumoprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A6A65046-92C2-4B40-9220-2C4993FA6584}|SistemaEstoque.Application\\SistemaEstoque.Application.csproj|solutionrelative:sistemaestoque.application\\profiles\\insumoprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E22EE1E4-1BAA-4265-B92A-009EDA120373}|SistemaEstoque.Infra\\SistemaEstoque.Infra.csproj|d:\\csharp\\sistemaestoque\\sistemaestoque.infra\\migrations\\20240710023435_ajustando_lote_e_movimentacao_para_produto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E22EE1E4-1BAA-4265-B92A-009EDA120373}|SistemaEstoque.Infra\\SistemaEstoque.Infra.csproj|solutionrelative:sistemaestoque.infra\\migrations\\20240710023435_ajustando_lote_e_movimentacao_para_produto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E22EE1E4-1BAA-4265-B92A-009EDA120373}|SistemaEstoque.Infra\\SistemaEstoque.Infra.csproj|d:\\csharp\\sistemaestoque\\sistemaestoque.infra\\entitiesconfig\\estoqueinsumoconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E22EE1E4-1BAA-4265-B92A-009EDA120373}|SistemaEstoque.Infra\\SistemaEstoque.Infra.csproj|solutionrelative:sistemaestoque.infra\\entitiesconfig\\estoqueinsumoconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51750E1A-578E-4EAB-BFFE-BFEE5E2B399C}|SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj|d:\\csharp\\sistemaestoque\\sistemaestoque.domain\\interfaces\\repositories\\imovimentacaoinsumorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51750E1A-578E-4EAB-BFFE-BFEE5E2B399C}|SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj|solutionrelative:sistemaestoque.domain\\interfaces\\repositories\\imovimentacaoinsumorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E22EE1E4-1BAA-4265-B92A-009EDA120373}|SistemaEstoque.Infra\\SistemaEstoque.Infra.csproj|d:\\csharp\\sistemaestoque\\sistemaestoque.infra\\repositories\\movimentacaoinsumorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E22EE1E4-1BAA-4265-B92A-009EDA120373}|SistemaEstoque.Infra\\SistemaEstoque.Infra.csproj|solutionrelative:sistemaestoque.infra\\repositories\\movimentacaoinsumorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -283,144 +159,261 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "20240710035542_Alterado_Coluna_AlteradoEm_Para_TimeStamp.cs",
-              "DocumentMoniker": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Infra\\Migrations\\20240710035542_Alterado_Coluna_AlteradoEm_Para_TimeStamp.cs",
-              "RelativeDocumentMoniker": "SistemaEstoque.Infra\\Migrations\\20240710035542_Alterado_Coluna_AlteradoEm_Para_TimeStamp.cs",
-              "ToolTip": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Infra\\Migrations\\20240710035542_Alterado_Coluna_AlteradoEm_Para_TimeStamp.cs",
-              "RelativeToolTip": "SistemaEstoque.Infra\\Migrations\\20240710035542_Alterado_Coluna_AlteradoEm_Para_TimeStamp.cs",
-              "ViewState": "AQIAAAgAAAAAAAAAAAAxwAAAAAAAAAAA",
+              "Title": "20240711025606_FIX.cs",
+              "DocumentMoniker": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Infra\\Migrations\\20240711025606_FIX.cs",
+              "RelativeDocumentMoniker": "SistemaEstoque.Infra\\Migrations\\20240711025606_FIX.cs",
+              "ToolTip": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Infra\\Migrations\\20240711025606_FIX.cs",
+              "RelativeToolTip": "SistemaEstoque.Infra\\Migrations\\20240711025606_FIX.cs",
+              "ViewState": "AQIAAGkAAAAAAAAAAAAowAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-10T03:55:42.404Z",
+              "WhenOpened": "2024-07-11T02:56:06.777Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "CategoriaProfile.cs",
-              "DocumentMoniker": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Application\\Profiles\\CategoriaProfile.cs",
-              "RelativeDocumentMoniker": "SistemaEstoque.Application\\Profiles\\CategoriaProfile.cs",
-              "ToolTip": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Application\\Profiles\\CategoriaProfile.cs",
-              "RelativeToolTip": "SistemaEstoque.Application\\Profiles\\CategoriaProfile.cs",
-              "ViewState": "AQIAAAgAAAAAAAAAAAAAABIAAAA8AAAA",
+              "Title": "LoteInsumoProfile.cs",
+              "DocumentMoniker": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Application\\Profiles\\LoteInsumoProfile.cs",
+              "RelativeDocumentMoniker": "SistemaEstoque.Application\\Profiles\\LoteInsumoProfile.cs",
+              "ToolTip": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Application\\Profiles\\LoteInsumoProfile.cs",
+              "RelativeToolTip": "SistemaEstoque.Application\\Profiles\\LoteInsumoProfile.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-10T03:43:05.92Z",
+              "WhenOpened": "2024-07-11T02:53:45.159Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "CategoriaDTO.cs",
-              "DocumentMoniker": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Application\\DTOs\\CategoriaDTO.cs",
-              "RelativeDocumentMoniker": "SistemaEstoque.Application\\DTOs\\CategoriaDTO.cs",
-              "ToolTip": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Application\\DTOs\\CategoriaDTO.cs",
-              "RelativeToolTip": "SistemaEstoque.Application\\DTOs\\CategoriaDTO.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAABAAAA",
+              "Title": "LoteProdutoProfile.cs",
+              "DocumentMoniker": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Application\\Profiles\\LoteProdutoProfile.cs",
+              "RelativeDocumentMoniker": "SistemaEstoque.Application\\Profiles\\LoteProdutoProfile.cs",
+              "ToolTip": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Application\\Profiles\\LoteProdutoProfile.cs",
+              "RelativeToolTip": "SistemaEstoque.Application\\Profiles\\LoteProdutoProfile.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-10T03:42:50.951Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Categoria.cs",
-              "DocumentMoniker": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Domain\\Entities\\Categoria.cs",
-              "RelativeDocumentMoniker": "SistemaEstoque.Domain\\Entities\\Categoria.cs",
-              "ToolTip": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Domain\\Entities\\Categoria.cs",
-              "RelativeToolTip": "SistemaEstoque.Domain\\Entities\\Categoria.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAgAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-10T03:28:30.201Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "LogAlteracaoService.cs",
-              "DocumentMoniker": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Application\\Services\\LogAlteracaoService.cs",
-              "RelativeDocumentMoniker": "SistemaEstoque.Application\\Services\\LogAlteracaoService.cs",
-              "ToolTip": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Application\\Services\\LogAlteracaoService.cs",
-              "RelativeToolTip": "SistemaEstoque.Application\\Services\\LogAlteracaoService.cs",
-              "ViewState": "AQIAAAgAAAAAAAAAAAAwwBkAAAANAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-10T02:44:02.513Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "UpdateCategoriaCommandHandler.cs",
-              "DocumentMoniker": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Application\\Commands\\UpdateCategoria\\UpdateCategoriaCommandHandler.cs",
-              "RelativeDocumentMoniker": "SistemaEstoque.Application\\Commands\\UpdateCategoria\\UpdateCategoriaCommandHandler.cs",
-              "ToolTip": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Application\\Commands\\UpdateCategoria\\UpdateCategoriaCommandHandler.cs",
-              "RelativeToolTip": "SistemaEstoque.Application\\Commands\\UpdateCategoria\\UpdateCategoriaCommandHandler.cs",
-              "ViewState": "AQIAADMAAAAAAAAAAAAowEsAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-10T02:06:55.421Z",
+              "WhenOpened": "2024-07-11T02:52:57.62Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "ILogAlteracaoService.cs",
-              "DocumentMoniker": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Domain\\Interfaces\\Services\\ILogAlteracaoService.cs",
-              "RelativeDocumentMoniker": "SistemaEstoque.Domain\\Interfaces\\Services\\ILogAlteracaoService.cs",
-              "ToolTip": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Domain\\Interfaces\\Services\\ILogAlteracaoService.cs",
-              "RelativeToolTip": "SistemaEstoque.Domain\\Interfaces\\Services\\ILogAlteracaoService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAAAAAA",
+              "Title": "MovimentacaoProfile.cs",
+              "DocumentMoniker": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Application\\Profiles\\MovimentacaoProfile.cs",
+              "RelativeDocumentMoniker": "SistemaEstoque.Application\\Profiles\\MovimentacaoProfile.cs",
+              "ToolTip": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Application\\Profiles\\MovimentacaoProfile.cs",
+              "RelativeToolTip": "SistemaEstoque.Application\\Profiles\\MovimentacaoProfile.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABcAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-10T02:41:55.702Z",
+              "WhenOpened": "2024-07-11T02:51:41.776Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "LogAlteracaoConfig.cs",
-              "DocumentMoniker": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Infra\\EntitiesConfig\\LogAlteracaoConfig.cs",
-              "RelativeDocumentMoniker": "SistemaEstoque.Infra\\EntitiesConfig\\LogAlteracaoConfig.cs",
-              "ToolTip": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Infra\\EntitiesConfig\\LogAlteracaoConfig.cs",
-              "RelativeToolTip": "SistemaEstoque.Infra\\EntitiesConfig\\LogAlteracaoConfig.cs",
-              "ViewState": "AQIAABEAAAAAAAAAAAAgwBsAAAApAAAA",
+              "DocumentIndex": 2,
+              "Title": "DependencyInjection.cs",
+              "DocumentMoniker": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.IoC\\DependencyInjection.cs",
+              "RelativeDocumentMoniker": "SistemaEstoque.IoC\\DependencyInjection.cs",
+              "ToolTip": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.IoC\\DependencyInjection.cs",
+              "RelativeToolTip": "SistemaEstoque.IoC\\DependencyInjection.cs",
+              "ViewState": "AQIAAB0AAAAAAAAAAAAgwCkAAAA9AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-10T02:50:26.117Z",
+              "WhenOpened": "2024-07-11T02:50:31.611Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "CreateInsumoCommandHandler.cs",
+              "DocumentMoniker": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Application\\Commands\\CreateInsumo\\CreateInsumoCommandHandler.cs",
+              "RelativeDocumentMoniker": "SistemaEstoque.Application\\Commands\\CreateInsumo\\CreateInsumoCommandHandler.cs",
+              "ToolTip": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Application\\Commands\\CreateInsumo\\CreateInsumoCommandHandler.cs",
+              "RelativeToolTip": "SistemaEstoque.Application\\Commands\\CreateInsumo\\CreateInsumoCommandHandler.cs",
+              "ViewState": "AQIAABcAAAAAAAAAAAD4vxsAAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-11T02:49:23.535Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "InsumoRepository.cs",
+              "DocumentMoniker": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Infra\\Repositories\\InsumoRepository.cs",
+              "RelativeDocumentMoniker": "SistemaEstoque.Infra\\Repositories\\InsumoRepository.cs",
+              "ToolTip": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Infra\\Repositories\\InsumoRepository.cs",
+              "RelativeToolTip": "SistemaEstoque.Infra\\Repositories\\InsumoRepository.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAAArwAYAAAA5AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-11T02:49:08.854Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 10,
-              "Title": "Tenant.cs",
-              "DocumentMoniker": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Domain\\Entities\\Tenant.cs",
-              "RelativeDocumentMoniker": "SistemaEstoque.Domain\\Entities\\Tenant.cs",
-              "ToolTip": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Domain\\Entities\\Tenant.cs",
-              "RelativeToolTip": "SistemaEstoque.Domain\\Entities\\Tenant.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAcAAAAWAAAA",
+              "Title": "IInsumoRepository.cs",
+              "DocumentMoniker": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Domain\\Interfaces\\Repositories\\IInsumoRepository.cs",
+              "RelativeDocumentMoniker": "SistemaEstoque.Domain\\Interfaces\\Repositories\\IInsumoRepository.cs",
+              "ToolTip": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Domain\\Interfaces\\Repositories\\IInsumoRepository.cs",
+              "RelativeToolTip": "SistemaEstoque.Domain\\Interfaces\\Repositories\\IInsumoRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAWwAQAAAA4AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-10T03:29:39.335Z",
+              "WhenOpened": "2024-07-11T02:48:34.695Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "EmpresaConfig.cs",
-              "DocumentMoniker": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Infra\\EntitiesConfig\\EmpresaConfig.cs",
-              "RelativeDocumentMoniker": "SistemaEstoque.Infra\\EntitiesConfig\\EmpresaConfig.cs",
-              "ToolTip": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Infra\\EntitiesConfig\\EmpresaConfig.cs",
-              "RelativeToolTip": "SistemaEstoque.Infra\\EntitiesConfig\\EmpresaConfig.cs",
-              "ViewState": "AQIAAB0AAAAAAAAAAAAmwCkAAAAmAAAA",
+              "DocumentIndex": 13,
+              "Title": "LoteInsumoConfig.cs",
+              "DocumentMoniker": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Infra\\EntitiesConfig\\LoteInsumoConfig.cs",
+              "RelativeDocumentMoniker": "SistemaEstoque.Infra\\EntitiesConfig\\LoteInsumoConfig.cs",
+              "ToolTip": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Infra\\EntitiesConfig\\LoteInsumoConfig.cs",
+              "RelativeToolTip": "SistemaEstoque.Infra\\EntitiesConfig\\LoteInsumoConfig.cs",
+              "ViewState": "AQIAAEAAAAAAAAAAAAAgwEIAAAAhAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-08T01:30:18.597Z",
+              "WhenOpened": "2024-07-11T02:47:26.017Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "CategoriaRepository.cs",
-              "DocumentMoniker": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Infra\\Repositories\\CategoriaRepository.cs",
-              "RelativeDocumentMoniker": "SistemaEstoque.Infra\\Repositories\\CategoriaRepository.cs",
-              "ToolTip": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Infra\\Repositories\\CategoriaRepository.cs",
-              "RelativeToolTip": "SistemaEstoque.Infra\\Repositories\\CategoriaRepository.cs",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAIwBwAAAAJAAAA",
+              "DocumentIndex": 1,
+              "Title": "InsumoConfig.cs",
+              "DocumentMoniker": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Infra\\EntitiesConfig\\InsumoConfig.cs",
+              "RelativeDocumentMoniker": "SistemaEstoque.Infra\\EntitiesConfig\\InsumoConfig.cs",
+              "ToolTip": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Infra\\EntitiesConfig\\InsumoConfig.cs",
+              "RelativeToolTip": "SistemaEstoque.Infra\\EntitiesConfig\\InsumoConfig.cs",
+              "ViewState": "AQIAAE8AAAAAAAAAAAAAAA0AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-10T03:12:38.215Z",
+              "WhenOpened": "2024-07-11T02:47:05.785Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Movimentacao.cs",
+              "DocumentMoniker": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Domain\\Entities\\Movimentacao.cs",
+              "RelativeDocumentMoniker": "SistemaEstoque.Domain\\Entities\\Movimentacao.cs",
+              "ToolTip": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Domain\\Entities\\Movimentacao.cs",
+              "RelativeToolTip": "SistemaEstoque.Domain\\Entities\\Movimentacao.cs",
+              "ViewState": "AQIAAAcAAAAAAAAAAAAgwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-11T02:46:53.09Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "LoteProduto.cs",
+              "DocumentMoniker": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Domain\\Entities\\LoteProduto.cs",
+              "RelativeDocumentMoniker": "SistemaEstoque.Domain\\Entities\\LoteProduto.cs",
+              "ToolTip": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Domain\\Entities\\LoteProduto.cs",
+              "RelativeToolTip": "SistemaEstoque.Domain\\Entities\\LoteProduto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-11T02:46:51.524Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "LoteInsumo.cs",
+              "DocumentMoniker": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Domain\\Entities\\LoteInsumo.cs",
+              "RelativeDocumentMoniker": "SistemaEstoque.Domain\\Entities\\LoteInsumo.cs",
+              "ToolTip": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Domain\\Entities\\LoteInsumo.cs",
+              "RelativeToolTip": "SistemaEstoque.Domain\\Entities\\LoteInsumo.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-11T02:46:41.666Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Lote.cs",
+              "DocumentMoniker": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Domain\\Entities\\Lote.cs",
+              "RelativeDocumentMoniker": "SistemaEstoque.Domain\\Entities\\Lote.cs",
+              "ToolTip": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Domain\\Entities\\Lote.cs",
+              "RelativeToolTip": "SistemaEstoque.Domain\\Entities\\Lote.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-11T02:46:39.917Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "LogAlteracao.cs",
+              "DocumentMoniker": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Domain\\Entities\\LogAlteracao.cs",
+              "RelativeDocumentMoniker": "SistemaEstoque.Domain\\Entities\\LogAlteracao.cs",
+              "ToolTip": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Domain\\Entities\\LogAlteracao.cs",
+              "RelativeToolTip": "SistemaEstoque.Domain\\Entities\\LogAlteracao.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-11T02:46:38.944Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Item.cs",
+              "DocumentMoniker": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Domain\\Entities\\Item.cs",
+              "RelativeDocumentMoniker": "SistemaEstoque.Domain\\Entities\\Item.cs",
+              "ToolTip": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Domain\\Entities\\Item.cs",
+              "RelativeToolTip": "SistemaEstoque.Domain\\Entities\\Item.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-11T02:46:38.143Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "Fornecedor.cs",
+              "DocumentMoniker": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Domain\\Entities\\Fornecedor.cs",
+              "RelativeDocumentMoniker": "SistemaEstoque.Domain\\Entities\\Fornecedor.cs",
+              "ToolTip": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Domain\\Entities\\Fornecedor.cs",
+              "RelativeToolTip": "SistemaEstoque.Domain\\Entities\\Fornecedor.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-11T02:46:30.784Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "EstoqueProduto.cs",
+              "DocumentMoniker": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Domain\\Entities\\EstoqueProduto.cs",
+              "RelativeDocumentMoniker": "SistemaEstoque.Domain\\Entities\\EstoqueProduto.cs",
+              "ToolTip": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Domain\\Entities\\EstoqueProduto.cs",
+              "RelativeToolTip": "SistemaEstoque.Domain\\Entities\\EstoqueProduto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-11T02:46:29.542Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "Estoque.cs",
+              "DocumentMoniker": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Domain\\Entities\\Estoque.cs",
+              "RelativeDocumentMoniker": "SistemaEstoque.Domain\\Entities\\Estoque.cs",
+              "ToolTip": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Domain\\Entities\\Estoque.cs",
+              "RelativeToolTip": "SistemaEstoque.Domain\\Entities\\Estoque.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-11T02:46:26.077Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "EntidadeBase.cs",
+              "DocumentMoniker": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Domain\\Entities\\EntidadeBase.cs",
+              "RelativeDocumentMoniker": "SistemaEstoque.Domain\\Entities\\EntidadeBase.cs",
+              "ToolTip": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Domain\\Entities\\EntidadeBase.cs",
+              "RelativeToolTip": "SistemaEstoque.Domain\\Entities\\EntidadeBase.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-11T02:46:25.687Z",
               "EditorCaption": ""
             },
             {
@@ -431,229 +424,101 @@
               "RelativeDocumentMoniker": "SistemaEstoque.Domain\\Entities\\Empresa.cs",
               "ToolTip": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Domain\\Entities\\Empresa.cs",
               "RelativeToolTip": "SistemaEstoque.Domain\\Entities\\Empresa.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAowBMAAAAkAAAA",
+              "ViewState": "AQIAABsAAAAAAAAAAADwvx4AAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-07T16:55:30.821Z",
+              "WhenOpened": "2024-07-11T02:46:01.725Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Produto.cs",
-              "DocumentMoniker": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Domain\\Entities\\Produto.cs",
-              "RelativeDocumentMoniker": "SistemaEstoque.Domain\\Entities\\Produto.cs",
-              "ToolTip": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Domain\\Entities\\Produto.cs",
-              "RelativeToolTip": "SistemaEstoque.Domain\\Entities\\Produto.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAqwA4AAAAIAAAA",
+              "DocumentIndex": 27,
+              "Title": "Categoria.cs",
+              "DocumentMoniker": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Domain\\Entities\\Categoria.cs",
+              "RelativeDocumentMoniker": "SistemaEstoque.Domain\\Entities\\Categoria.cs",
+              "ToolTip": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Domain\\Entities\\Categoria.cs",
+              "RelativeToolTip": "SistemaEstoque.Domain\\Entities\\Categoria.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-07T16:55:46.235Z",
+              "WhenOpened": "2024-07-11T02:45:50.157Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "CategoriaConfig.cs",
+              "DocumentMoniker": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Infra\\EntitiesConfig\\CategoriaConfig.cs",
+              "RelativeDocumentMoniker": "SistemaEstoque.Infra\\EntitiesConfig\\CategoriaConfig.cs",
+              "ToolTip": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Infra\\EntitiesConfig\\CategoriaConfig.cs",
+              "RelativeToolTip": "SistemaEstoque.Infra\\EntitiesConfig\\CategoriaConfig.cs",
+              "ViewState": "AQIAAC8AAAAAAAAAAAAUwDUAAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-11T02:45:42.182Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "EstoqueInsumo.cs",
+              "DocumentMoniker": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Domain\\Entities\\EstoqueInsumo.cs",
+              "RelativeDocumentMoniker": "SistemaEstoque.Domain\\Entities\\EstoqueInsumo.cs",
+              "ToolTip": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Domain\\Entities\\EstoqueInsumo.cs",
+              "RelativeToolTip": "SistemaEstoque.Domain\\Entities\\EstoqueInsumo.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-11T02:42:04.46Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "EstoqueInsumoConfig.cs",
+              "DocumentMoniker": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Infra\\EntitiesConfig\\EstoqueInsumoConfig.cs",
+              "RelativeDocumentMoniker": "SistemaEstoque.Infra\\EntitiesConfig\\EstoqueInsumoConfig.cs",
+              "ToolTip": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Infra\\EntitiesConfig\\EstoqueInsumoConfig.cs",
+              "RelativeToolTip": "SistemaEstoque.Infra\\EntitiesConfig\\EstoqueInsumoConfig.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAADkAAAAyAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-11T02:41:54.918Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "InsumoProfile.cs",
+              "DocumentMoniker": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Application\\Profiles\\InsumoProfile.cs",
+              "RelativeDocumentMoniker": "SistemaEstoque.Application\\Profiles\\InsumoProfile.cs",
+              "ToolTip": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Application\\Profiles\\InsumoProfile.cs",
+              "RelativeToolTip": "SistemaEstoque.Application\\Profiles\\InsumoProfile.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-11T02:41:13.834Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "Insumo.cs",
+              "DocumentMoniker": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Domain\\Entities\\Insumo.cs",
+              "RelativeDocumentMoniker": "SistemaEstoque.Domain\\Entities\\Insumo.cs",
+              "ToolTip": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Domain\\Entities\\Insumo.cs",
+              "RelativeToolTip": "SistemaEstoque.Domain\\Entities\\Insumo.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAowAkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-11T02:39:28.016Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 14,
-              "Title": "DependencyInjection.cs",
-              "DocumentMoniker": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.IoC\\DependencyInjection.cs",
-              "RelativeDocumentMoniker": "SistemaEstoque.IoC\\DependencyInjection.cs",
-              "ToolTip": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.IoC\\DependencyInjection.cs",
-              "RelativeToolTip": "SistemaEstoque.IoC\\DependencyInjection.cs",
-              "ViewState": "AQIAAEYAAAAAAAAAAAAcwFQAAAAAAAAA",
+              "Title": "MovimentacaoInsumo.cs",
+              "DocumentMoniker": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Domain\\Entities\\MovimentacaoInsumo.cs",
+              "RelativeDocumentMoniker": "SistemaEstoque.Domain\\Entities\\MovimentacaoInsumo.cs",
+              "ToolTip": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Domain\\Entities\\MovimentacaoInsumo.cs",
+              "RelativeToolTip": "SistemaEstoque.Domain\\Entities\\MovimentacaoInsumo.cs",
+              "ViewState": "AQIAAAIAAAAAAAAAAAAYwAoAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-07T16:50:23.758Z",
+              "WhenOpened": "2024-07-11T02:38:33.578Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "CreateLoteProdutoCommandHandler.cs",
-              "DocumentMoniker": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Application\\Commands\\CreateLoteProduto\\CreateLoteProdutoCommandHandler.cs",
-              "RelativeDocumentMoniker": "SistemaEstoque.Application\\Commands\\CreateLoteProduto\\CreateLoteProdutoCommandHandler.cs",
-              "ToolTip": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Application\\Commands\\CreateLoteProduto\\CreateLoteProdutoCommandHandler.cs",
-              "RelativeToolTip": "SistemaEstoque.Application\\Commands\\CreateLoteProduto\\CreateLoteProdutoCommandHandler.cs",
-              "ViewState": "AQIAABcAAAAAAAAAAAAgwC4AAAAlAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-08T02:02:50.32Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 66,
-              "Title": "20240710023435_Ajustando_Lote_e_Movimentacao_para_Produto.cs",
-              "DocumentMoniker": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Infra\\Migrations\\20240710023435_Ajustando_Lote_e_Movimentacao_para_Produto.cs",
-              "RelativeDocumentMoniker": "SistemaEstoque.Infra\\Migrations\\20240710023435_Ajustando_Lote_e_Movimentacao_para_Produto.cs",
-              "ToolTip": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Infra\\Migrations\\20240710023435_Ajustando_Lote_e_Movimentacao_para_Produto.cs",
-              "RelativeToolTip": "SistemaEstoque.Infra\\Migrations\\20240710023435_Ajustando_Lote_e_Movimentacao_para_Produto.cs",
-              "ViewState": "AQIAABkAAAAAAAAAAAAgwAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-10T02:34:35.176Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "RepositoryBase.cs",
-              "DocumentMoniker": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Infra\\Repositories\\RepositoryBase.cs",
-              "RelativeDocumentMoniker": "SistemaEstoque.Infra\\Repositories\\RepositoryBase.cs",
-              "ToolTip": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Infra\\Repositories\\RepositoryBase.cs",
-              "RelativeToolTip": "SistemaEstoque.Infra\\Repositories\\RepositoryBase.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAEkAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-07T17:34:46.498Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "MovimentacaoProdutoConfig.cs",
-              "DocumentMoniker": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Infra\\EntitiesConfig\\MovimentacaoProdutoConfig.cs",
-              "RelativeDocumentMoniker": "SistemaEstoque.Infra\\EntitiesConfig\\MovimentacaoProdutoConfig.cs",
-              "ToolTip": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Infra\\EntitiesConfig\\MovimentacaoProdutoConfig.cs",
-              "RelativeToolTip": "SistemaEstoque.Infra\\EntitiesConfig\\MovimentacaoProdutoConfig.cs",
-              "ViewState": "AQIAAEQAAAAAAAAAAAAmwFMAAAAyAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-10T02:28:17.01Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "UsuarioConfig.cs",
-              "DocumentMoniker": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Infra\\EntitiesConfig\\UsuarioConfig.cs",
-              "RelativeDocumentMoniker": "SistemaEstoque.Infra\\EntitiesConfig\\UsuarioConfig.cs",
-              "ToolTip": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Infra\\EntitiesConfig\\UsuarioConfig.cs",
-              "RelativeToolTip": "SistemaEstoque.Infra\\EntitiesConfig\\UsuarioConfig.cs",
-              "ViewState": "AQIAACgAAAAAAAAAAAAgwEEAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-10T02:33:51.584Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "Constants.cs",
-              "DocumentMoniker": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Infra\\Data\\Constants.cs",
-              "RelativeDocumentMoniker": "SistemaEstoque.Infra\\Data\\Constants.cs",
-              "ToolTip": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Infra\\Data\\Constants.cs",
-              "RelativeToolTip": "SistemaEstoque.Infra\\Data\\Constants.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAgAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-10T02:32:14.914Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "LogAlteracao.cs",
-              "DocumentMoniker": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Domain\\Entities\\LogAlteracao.cs",
-              "RelativeDocumentMoniker": "SistemaEstoque.Domain\\Entities\\LogAlteracao.cs",
-              "ToolTip": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Domain\\Entities\\LogAlteracao.cs",
-              "RelativeToolTip": "SistemaEstoque.Domain\\Entities\\LogAlteracao.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-10T02:17:41.383Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "Usuario.cs",
-              "DocumentMoniker": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Domain\\Entities\\Usuario.cs",
-              "RelativeDocumentMoniker": "SistemaEstoque.Domain\\Entities\\Usuario.cs",
-              "ToolTip": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Domain\\Entities\\Usuario.cs",
-              "RelativeToolTip": "SistemaEstoque.Domain\\Entities\\Usuario.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-10T02:16:54.563Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "20240710022933_Ajustando_Lote_e_Movimentacao_para_Produto.cs",
-              "DocumentMoniker": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Infra\\Migrations\\20240710022933_Ajustando_Lote_e_Movimentacao_para_Produto.cs",
-              "RelativeDocumentMoniker": "SistemaEstoque.Infra\\Migrations\\20240710022933_Ajustando_Lote_e_Movimentacao_para_Produto.cs",
-              "ToolTip": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Infra\\Migrations\\20240710022933_Ajustando_Lote_e_Movimentacao_para_Produto.cs",
-              "RelativeToolTip": "SistemaEstoque.Infra\\Migrations\\20240710022933_Ajustando_Lote_e_Movimentacao_para_Produto.cs",
-              "ViewState": "AQIAAFsAAAAAAAAAAAAQwGoAAABMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-10T02:29:33.387Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "MovimentacaoProduto.cs",
-              "DocumentMoniker": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Domain\\Entities\\MovimentacaoProduto.cs",
-              "RelativeDocumentMoniker": "SistemaEstoque.Domain\\Entities\\MovimentacaoProduto.cs",
-              "ToolTip": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Domain\\Entities\\MovimentacaoProduto.cs",
-              "RelativeToolTip": "SistemaEstoque.Domain\\Entities\\MovimentacaoProduto.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAYAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-10T02:15:43.808Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "ProdutoConfig.cs",
-              "DocumentMoniker": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Infra\\EntitiesConfig\\ProdutoConfig.cs",
-              "RelativeDocumentMoniker": "SistemaEstoque.Infra\\EntitiesConfig\\ProdutoConfig.cs",
-              "ToolTip": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Infra\\EntitiesConfig\\ProdutoConfig.cs",
-              "RelativeToolTip": "SistemaEstoque.Infra\\EntitiesConfig\\ProdutoConfig.cs",
-              "ViewState": "AQIAACwAAAAAAAAAAAAQwEQAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-07T16:55:58.539Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "CreateUsuarioCommandHandler.cs",
-              "DocumentMoniker": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Application\\Commands\\CreateUsuario\\CreateUsuarioCommandHandler.cs",
-              "RelativeDocumentMoniker": "SistemaEstoque.Application\\Commands\\CreateUsuario\\CreateUsuarioCommandHandler.cs",
-              "ToolTip": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Application\\Commands\\CreateUsuario\\CreateUsuarioCommandHandler.cs",
-              "RelativeToolTip": "SistemaEstoque.Application\\Commands\\CreateUsuario\\CreateUsuarioCommandHandler.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAAQwBwAAAA9AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-10T02:26:27.421Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "CreateProdutoCommandHandler.cs",
-              "DocumentMoniker": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Application\\Commands\\CreateProduto\\CreateProdutoCommandHandler.cs",
-              "RelativeDocumentMoniker": "SistemaEstoque.Application\\Commands\\CreateProduto\\CreateProdutoCommandHandler.cs",
-              "ToolTip": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Application\\Commands\\CreateProduto\\CreateProdutoCommandHandler.cs",
-              "RelativeToolTip": "SistemaEstoque.Application\\Commands\\CreateProduto\\CreateProdutoCommandHandler.cs",
-              "ViewState": "AQIAAA4AAAAAAAAAAAAQwB8AAAA9AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-10T02:26:20.519Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 27,
-              "Title": "CreateCategoriaCommandHandler.cs",
-              "DocumentMoniker": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Application\\Commands\\CreateCategoria\\CreateCategoriaCommandHandler.cs",
-              "RelativeDocumentMoniker": "SistemaEstoque.Application\\Commands\\CreateCategoria\\CreateCategoriaCommandHandler.cs",
-              "ToolTip": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Application\\Commands\\CreateCategoria\\CreateCategoriaCommandHandler.cs",
-              "RelativeToolTip": "SistemaEstoque.Application\\Commands\\CreateCategoria\\CreateCategoriaCommandHandler.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAAQwBwAAAA/AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-10T02:26:11.927Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 30,
-              "Title": "SistemaEstoqueDbContext.cs",
-              "DocumentMoniker": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Infra\\Data\\SistemaEstoqueDbContext.cs",
-              "RelativeDocumentMoniker": "SistemaEstoque.Infra\\Data\\SistemaEstoqueDbContext.cs",
-              "ToolTip": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Infra\\Data\\SistemaEstoqueDbContext.cs",
-              "RelativeToolTip": "SistemaEstoque.Infra\\Data\\SistemaEstoqueDbContext.cs",
-              "ViewState": "AQIAABAAAAAAAAAAAAAUwBcAAABKAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-07T17:00:19.859Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "LoteProdutoConfig.cs",
-              "DocumentMoniker": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Infra\\EntitiesConfig\\LoteProdutoConfig.cs",
-              "RelativeDocumentMoniker": "SistemaEstoque.Infra\\EntitiesConfig\\LoteProdutoConfig.cs",
-              "ToolTip": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Infra\\EntitiesConfig\\LoteProdutoConfig.cs",
-              "RelativeToolTip": "SistemaEstoque.Infra\\EntitiesConfig\\LoteProdutoConfig.cs",
-              "ViewState": "AQIAAAEAAAAAAAAAAAAtwEwAAAAsAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-08T01:30:58.462Z"
             },
             {
               "$type": "Document",
@@ -663,441 +528,101 @@
               "RelativeDocumentMoniker": "SistemaEstoque.Infra\\Data\\UnitOfWork.cs",
               "ToolTip": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Infra\\Data\\UnitOfWork.cs",
               "RelativeToolTip": "SistemaEstoque.Infra\\Data\\UnitOfWork.cs",
-              "ViewState": "AQIAABwAAAAAAAAAAAAgwDAAAAAAAAAA",
+              "ViewState": "AQIAAC4AAAAAAAAAAAAgwD4AAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-07T17:10:53.724Z"
+              "WhenOpened": "2024-07-11T02:36:45.065Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 30,
               "Title": "IUnitOfWork.cs",
               "DocumentMoniker": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Domain\\Interfaces\\Repositories\\IUnitOfWork.cs",
               "RelativeDocumentMoniker": "SistemaEstoque.Domain\\Interfaces\\Repositories\\IUnitOfWork.cs",
               "ToolTip": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Domain\\Interfaces\\Repositories\\IUnitOfWork.cs",
               "RelativeToolTip": "SistemaEstoque.Domain\\Interfaces\\Repositories\\IUnitOfWork.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAABAAAA",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAowBQAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-07T17:10:46.03Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 29,
-              "Title": "CreateFornecedorCommandHandler.cs",
-              "DocumentMoniker": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Application\\Commands\\CreateFornecedor\\CreateFornecedorCommandHandler.cs",
-              "RelativeDocumentMoniker": "SistemaEstoque.Application\\Commands\\CreateFornecedor\\CreateFornecedorCommandHandler.cs",
-              "ToolTip": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Application\\Commands\\CreateFornecedor\\CreateFornecedorCommandHandler.cs",
-              "RelativeToolTip": "SistemaEstoque.Application\\Commands\\CreateFornecedor\\CreateFornecedorCommandHandler.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAAQwBoAAABAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-07T16:45:14.46Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 28,
-              "Title": "CreateEstoqueCommandHandler.cs",
-              "DocumentMoniker": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Application\\Commands\\CreateEstoque\\CreateEstoqueCommandHandler.cs",
-              "RelativeDocumentMoniker": "SistemaEstoque.Application\\Commands\\CreateEstoque\\CreateEstoqueCommandHandler.cs",
-              "ToolTip": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Application\\Commands\\CreateEstoque\\CreateEstoqueCommandHandler.cs",
-              "RelativeToolTip": "SistemaEstoque.Application\\Commands\\CreateEstoque\\CreateEstoqueCommandHandler.cs",
-              "ViewState": "AQIAABUAAAAAAAAAAAAcwCoAAAA9AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-07T17:06:55.917Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 33,
-              "Title": "MovimentacaoProdutoRepository.cs",
-              "DocumentMoniker": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Infra\\Repositories\\MovimentacaoProdutoRepository.cs",
-              "RelativeDocumentMoniker": "SistemaEstoque.Infra\\Repositories\\MovimentacaoProdutoRepository.cs",
-              "ToolTip": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Infra\\Repositories\\MovimentacaoProdutoRepository.cs",
-              "RelativeToolTip": "SistemaEstoque.Infra\\Repositories\\MovimentacaoProdutoRepository.cs",
-              "ViewState": "AQIAAAUAAAAAAAAAAAAxwBYAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-10T02:20:52.403Z"
+              "WhenOpened": "2024-07-11T02:36:34.16Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 35,
-              "Title": "LoteProdutoService.cs",
-              "DocumentMoniker": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Application\\Services\\LoteProdutoService.cs",
-              "RelativeDocumentMoniker": "SistemaEstoque.Application\\Services\\LoteProdutoService.cs",
-              "ToolTip": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Application\\Services\\LoteProdutoService.cs",
-              "RelativeToolTip": "SistemaEstoque.Application\\Services\\LoteProdutoService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
+              "Title": "MovimentacaoInsumoRepository.cs",
+              "DocumentMoniker": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Infra\\Repositories\\MovimentacaoInsumoRepository.cs",
+              "RelativeDocumentMoniker": "SistemaEstoque.Infra\\Repositories\\MovimentacaoInsumoRepository.cs",
+              "ToolTip": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Infra\\Repositories\\MovimentacaoInsumoRepository.cs",
+              "RelativeToolTip": "SistemaEstoque.Infra\\Repositories\\MovimentacaoInsumoRepository.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAYAAABOAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-10T02:14:05.546Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 39,
-              "Title": "CreateLoteProdutoCommand.cs",
-              "DocumentMoniker": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Application\\Commands\\CreateLoteProduto\\CreateLoteProdutoCommand.cs",
-              "RelativeDocumentMoniker": "SistemaEstoque.Application\\Commands\\CreateLoteProduto\\CreateLoteProdutoCommand.cs",
-              "ToolTip": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Application\\Commands\\CreateLoteProduto\\CreateLoteProdutoCommand.cs",
-              "RelativeToolTip": "SistemaEstoque.Application\\Commands\\CreateLoteProduto\\CreateLoteProdutoCommand.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-08T02:01:33.541Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 40,
-              "Title": "LoteProdutoProfile.cs",
-              "DocumentMoniker": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Application\\Profiles\\LoteProdutoProfile.cs",
-              "RelativeDocumentMoniker": "SistemaEstoque.Application\\Profiles\\LoteProdutoProfile.cs",
-              "ToolTip": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Application\\Profiles\\LoteProdutoProfile.cs",
-              "RelativeToolTip": "SistemaEstoque.Application\\Profiles\\LoteProdutoProfile.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAqwA0AAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-08T02:07:40.904Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 38,
-              "Title": "LotesProdutosController.cs",
-              "DocumentMoniker": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.API\\Controllers\\LotesProdutosController.cs",
-              "RelativeDocumentMoniker": "SistemaEstoque.API\\Controllers\\LotesProdutosController.cs",
-              "ToolTip": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.API\\Controllers\\LotesProdutosController.cs",
-              "RelativeToolTip": "SistemaEstoque.API\\Controllers\\LotesProdutosController.cs",
-              "ViewState": "AQIAAAIAAAAAAAAAAAAowBsAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-08T02:09:03.552Z"
+              "WhenOpened": "2024-07-11T02:35:25.519Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 34,
-              "Title": "LoteProduto.cs",
-              "DocumentMoniker": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Domain\\Entities\\LoteProduto.cs",
-              "RelativeDocumentMoniker": "SistemaEstoque.Domain\\Entities\\LoteProduto.cs",
-              "ToolTip": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Domain\\Entities\\LoteProduto.cs",
-              "RelativeToolTip": "SistemaEstoque.Domain\\Entities\\LoteProduto.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAqwBEAAAABAAAA",
+              "Title": "IMovimentacaoInsumoRepository.cs",
+              "DocumentMoniker": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Domain\\Interfaces\\Repositories\\IMovimentacaoInsumoRepository.cs",
+              "RelativeDocumentMoniker": "SistemaEstoque.Domain\\Interfaces\\Repositories\\IMovimentacaoInsumoRepository.cs",
+              "ToolTip": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Domain\\Interfaces\\Repositories\\IMovimentacaoInsumoRepository.cs",
+              "RelativeToolTip": "SistemaEstoque.Domain\\Interfaces\\Repositories\\IMovimentacaoInsumoRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAgAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-08T01:24:43.591Z"
+              "WhenOpened": "2024-07-11T02:34:47.767Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
-              "Title": "Fornecedor.cs",
-              "DocumentMoniker": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Domain\\Entities\\Fornecedor.cs",
-              "RelativeDocumentMoniker": "SistemaEstoque.Domain\\Entities\\Fornecedor.cs",
-              "ToolTip": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Domain\\Entities\\Fornecedor.cs",
-              "RelativeToolTip": "SistemaEstoque.Domain\\Entities\\Fornecedor.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAA2AAAA",
+              "DocumentIndex": 29,
+              "Title": "CreateLoteProdutoCommandHandler.cs",
+              "DocumentMoniker": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Application\\Commands\\CreateLoteProduto\\CreateLoteProdutoCommandHandler.cs",
+              "RelativeDocumentMoniker": "SistemaEstoque.Application\\Commands\\CreateLoteProduto\\CreateLoteProdutoCommandHandler.cs",
+              "ToolTip": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Application\\Commands\\CreateLoteProduto\\CreateLoteProdutoCommandHandler.cs",
+              "RelativeToolTip": "SistemaEstoque.Application\\Commands\\CreateLoteProduto\\CreateLoteProdutoCommandHandler.cs",
+              "ViewState": "AQIAAC0AAAAAAAAAAAAowAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-07T07:19:26.599Z"
+              "WhenOpened": "2024-07-11T02:30:06.291Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
-              "Title": "FornecedorConfig.cs",
-              "DocumentMoniker": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Infra\\EntitiesConfig\\FornecedorConfig.cs",
-              "RelativeDocumentMoniker": "SistemaEstoque.Infra\\EntitiesConfig\\FornecedorConfig.cs",
-              "ToolTip": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Infra\\EntitiesConfig\\FornecedorConfig.cs",
-              "RelativeToolTip": "SistemaEstoque.Infra\\EntitiesConfig\\FornecedorConfig.cs",
-              "ViewState": "AQIAADcAAAAAAAAAAAAgwEUAAAAwAAAA",
+              "DocumentIndex": 11,
+              "Title": "InsumoService.cs",
+              "DocumentMoniker": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Application\\Services\\InsumoService.cs",
+              "RelativeDocumentMoniker": "SistemaEstoque.Application\\Services\\InsumoService.cs",
+              "ToolTip": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Application\\Services\\InsumoService.cs",
+              "RelativeToolTip": "SistemaEstoque.Application\\Services\\InsumoService.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAYwAgAAAAuAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-08T01:29:26.608Z"
+              "WhenOpened": "2024-07-11T02:28:11.65Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
-              "Title": "LoteProdutoRepository.cs",
-              "DocumentMoniker": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Infra\\Repositories\\LoteProdutoRepository.cs",
-              "RelativeDocumentMoniker": "SistemaEstoque.Infra\\Repositories\\LoteProdutoRepository.cs",
-              "ToolTip": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Infra\\Repositories\\LoteProdutoRepository.cs",
-              "RelativeToolTip": "SistemaEstoque.Infra\\Repositories\\LoteProdutoRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
+              "DocumentIndex": 12,
+              "Title": "IInsumoService.cs",
+              "DocumentMoniker": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Domain\\Interfaces\\Services\\IInsumoService.cs",
+              "RelativeDocumentMoniker": "SistemaEstoque.Domain\\Interfaces\\Services\\IInsumoService.cs",
+              "ToolTip": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Domain\\Interfaces\\Services\\IInsumoService.cs",
+              "RelativeToolTip": "SistemaEstoque.Domain\\Interfaces\\Services\\IInsumoService.cs",
+              "ViewState": "AQIAAAEAAAAAAAAAAAD4vwYAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-08T01:59:21.023Z"
+              "WhenOpened": "2024-07-11T02:27:40.583Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
-              "Title": "ILoteProdutoRepository.cs",
-              "DocumentMoniker": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Domain\\Interfaces\\Repositories\\ILoteProdutoRepository.cs",
-              "RelativeDocumentMoniker": "SistemaEstoque.Domain\\Interfaces\\Repositories\\ILoteProdutoRepository.cs",
-              "ToolTip": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Domain\\Interfaces\\Repositories\\ILoteProdutoRepository.cs",
-              "RelativeToolTip": "SistemaEstoque.Domain\\Interfaces\\Repositories\\ILoteProdutoRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAAAAAA",
+              "DocumentIndex": 4,
+              "Title": "CreateLoteInsumoCommandHandler.cs",
+              "DocumentMoniker": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Application\\Commands\\CreateLoteInsumo\\CreateLoteInsumoCommandHandler.cs",
+              "RelativeDocumentMoniker": "SistemaEstoque.Application\\Commands\\CreateLoteInsumo\\CreateLoteInsumoCommandHandler.cs",
+              "ToolTip": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Application\\Commands\\CreateLoteInsumo\\CreateLoteInsumoCommandHandler.cs",
+              "RelativeToolTip": "SistemaEstoque.Application\\Commands\\CreateLoteInsumo\\CreateLoteInsumoCommandHandler.cs",
+              "ViewState": "AQIAAC0AAAAAAAAAAAAowDwAAAAzAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-08T01:58:27.978Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 43,
-              "Title": "EstoquesController.cs",
-              "DocumentMoniker": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.API\\Controllers\\EstoquesController.cs",
-              "RelativeDocumentMoniker": "SistemaEstoque.API\\Controllers\\EstoquesController.cs",
-              "ToolTip": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.API\\Controllers\\EstoquesController.cs",
-              "RelativeToolTip": "SistemaEstoque.API\\Controllers\\EstoquesController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-07T17:14:50.078Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 44,
-              "Title": "CreateLoteProdutoResponse.cs",
-              "DocumentMoniker": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Application\\Commands\\CreateLoteProduto\\CreateLoteProdutoResponse.cs",
-              "RelativeDocumentMoniker": "SistemaEstoque.Application\\Commands\\CreateLoteProduto\\CreateLoteProdutoResponse.cs",
-              "ToolTip": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Application\\Commands\\CreateLoteProduto\\CreateLoteProdutoResponse.cs",
-              "RelativeToolTip": "SistemaEstoque.Application\\Commands\\CreateLoteProduto\\CreateLoteProdutoResponse.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-08T02:02:27.252Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 45,
-              "Title": "FornecedorService.cs",
-              "DocumentMoniker": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Application\\Services\\FornecedorService.cs",
-              "RelativeDocumentMoniker": "SistemaEstoque.Application\\Services\\FornecedorService.cs",
-              "ToolTip": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Application\\Services\\FornecedorService.cs",
-              "RelativeToolTip": "SistemaEstoque.Application\\Services\\FornecedorService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-08T01:59:52.375Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 46,
-              "Title": "IFornecedorService.cs",
-              "DocumentMoniker": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Domain\\Interfaces\\Services\\IFornecedorService.cs",
-              "RelativeDocumentMoniker": "SistemaEstoque.Domain\\Interfaces\\Services\\IFornecedorService.cs",
-              "ToolTip": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Domain\\Interfaces\\Services\\IFornecedorService.cs",
-              "RelativeToolTip": "SistemaEstoque.Domain\\Interfaces\\Services\\IFornecedorService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-08T01:58:55.774Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 47,
-              "Title": "20240708013700_Add_Lote.cs",
-              "DocumentMoniker": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Infra\\Migrations\\20240708013700_Add_Lote.cs",
-              "RelativeDocumentMoniker": "SistemaEstoque.Infra\\Migrations\\20240708013700_Add_Lote.cs",
-              "ToolTip": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Infra\\Migrations\\20240708013700_Add_Lote.cs",
-              "RelativeToolTip": "SistemaEstoque.Infra\\Migrations\\20240708013700_Add_Lote.cs",
-              "ViewState": "AQIAAA0AAAAAAAAAAAAgwAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-08T01:37:00.8Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 48,
-              "Title": "CategoriaConfig.cs",
-              "DocumentMoniker": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Infra\\EntitiesConfig\\CategoriaConfig.cs",
-              "RelativeDocumentMoniker": "SistemaEstoque.Infra\\EntitiesConfig\\CategoriaConfig.cs",
-              "ToolTip": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Infra\\EntitiesConfig\\CategoriaConfig.cs",
-              "RelativeToolTip": "SistemaEstoque.Infra\\EntitiesConfig\\CategoriaConfig.cs",
-              "ViewState": "AQIAAB8AAAAAAAAAAAAgwAYAAAARAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-08T01:28:15.246Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 50,
-              "Title": "EstoqueProfile.cs",
-              "DocumentMoniker": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Application\\Profiles\\EstoqueProfile.cs",
-              "RelativeDocumentMoniker": "SistemaEstoque.Application\\Profiles\\EstoqueProfile.cs",
-              "ToolTip": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Application\\Profiles\\EstoqueProfile.cs",
-              "RelativeToolTip": "SistemaEstoque.Application\\Profiles\\EstoqueProfile.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAA4AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-07T17:13:25.067Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 49,
-              "Title": "IRepositoryBase.cs",
-              "DocumentMoniker": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Domain\\Interfaces\\Repositories\\IRepositoryBase.cs",
-              "RelativeDocumentMoniker": "SistemaEstoque.Domain\\Interfaces\\Repositories\\IRepositoryBase.cs",
-              "ToolTip": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Domain\\Interfaces\\Repositories\\IRepositoryBase.cs",
-              "RelativeToolTip": "SistemaEstoque.Domain\\Interfaces\\Repositories\\IRepositoryBase.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAeAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-07T17:34:48.222Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 51,
-              "Title": "ProdutoService.cs",
-              "DocumentMoniker": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Application\\Services\\ProdutoService.cs",
-              "RelativeDocumentMoniker": "SistemaEstoque.Application\\Services\\ProdutoService.cs",
-              "ToolTip": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Application\\Services\\ProdutoService.cs",
-              "RelativeToolTip": "SistemaEstoque.Application\\Services\\ProdutoService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-07T17:08:17.083Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 52,
-              "Title": "IProdutoService.cs",
-              "DocumentMoniker": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Domain\\Interfaces\\Services\\IProdutoService.cs",
-              "RelativeDocumentMoniker": "SistemaEstoque.Domain\\Interfaces\\Services\\IProdutoService.cs",
-              "ToolTip": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Domain\\Interfaces\\Services\\IProdutoService.cs",
-              "RelativeToolTip": "SistemaEstoque.Domain\\Interfaces\\Services\\IProdutoService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAA2AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-07T17:07:59.043Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 54,
-              "Title": "CreateEstoqueResponse.cs",
-              "DocumentMoniker": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Application\\Commands\\CreateEstoque\\CreateEstoqueResponse.cs",
-              "RelativeDocumentMoniker": "SistemaEstoque.Application\\Commands\\CreateEstoque\\CreateEstoqueResponse.cs",
-              "ToolTip": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Application\\Commands\\CreateEstoque\\CreateEstoqueResponse.cs",
-              "RelativeToolTip": "SistemaEstoque.Application\\Commands\\CreateEstoque\\CreateEstoqueResponse.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAqAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-07T17:06:15.031Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 53,
-              "Title": "CreateEstoqueCommand.cs",
-              "DocumentMoniker": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Application\\Commands\\CreateEstoque\\CreateEstoqueCommand.cs",
-              "RelativeDocumentMoniker": "SistemaEstoque.Application\\Commands\\CreateEstoque\\CreateEstoqueCommand.cs",
-              "ToolTip": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Application\\Commands\\CreateEstoque\\CreateEstoqueCommand.cs",
-              "RelativeToolTip": "SistemaEstoque.Application\\Commands\\CreateEstoque\\CreateEstoqueCommand.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-07T17:05:13.633Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 65,
-              "Title": "20240707170247_ADD_Estoque.cs",
-              "DocumentMoniker": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Infra\\Migrations\\20240707170247_ADD_Estoque.cs",
-              "RelativeDocumentMoniker": "SistemaEstoque.Infra\\Migrations\\20240707170247_ADD_Estoque.cs",
-              "ToolTip": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Infra\\Migrations\\20240707170247_ADD_Estoque.cs",
-              "RelativeToolTip": "SistemaEstoque.Infra\\Migrations\\20240707170247_ADD_Estoque.cs",
-              "ViewState": "AQIAAH4AAAAAAAAAAAAowAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-07T17:02:47.599Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 55,
-              "Title": "EstoqueRepository.cs",
-              "DocumentMoniker": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Infra\\Repositories\\EstoqueRepository.cs",
-              "RelativeDocumentMoniker": "SistemaEstoque.Infra\\Repositories\\EstoqueRepository.cs",
-              "ToolTip": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Infra\\Repositories\\EstoqueRepository.cs",
-              "RelativeToolTip": "SistemaEstoque.Infra\\Repositories\\EstoqueRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-07T17:01:17.168Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 56,
-              "Title": "IEstoqueRepository.cs",
-              "DocumentMoniker": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Domain\\Interfaces\\Repositories\\IEstoqueRepository.cs",
-              "RelativeDocumentMoniker": "SistemaEstoque.Domain\\Interfaces\\Repositories\\IEstoqueRepository.cs",
-              "ToolTip": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Domain\\Interfaces\\Repositories\\IEstoqueRepository.cs",
-              "RelativeToolTip": "SistemaEstoque.Domain\\Interfaces\\Repositories\\IEstoqueRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-07T17:00:51.529Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 57,
-              "Title": "EstoqueConfig.cs",
-              "DocumentMoniker": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Infra\\EntitiesConfig\\EstoqueConfig.cs",
-              "RelativeDocumentMoniker": "SistemaEstoque.Infra\\EntitiesConfig\\EstoqueConfig.cs",
-              "ToolTip": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Infra\\EntitiesConfig\\EstoqueConfig.cs",
-              "RelativeToolTip": "SistemaEstoque.Infra\\EntitiesConfig\\EstoqueConfig.cs",
-              "ViewState": "AQIAACUAAAAAAAAAAAAgwD0AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-07T16:53:41.053Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 58,
-              "Title": "Estoque.cs",
-              "DocumentMoniker": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Domain\\Entities\\Estoque.cs",
-              "RelativeDocumentMoniker": "SistemaEstoque.Domain\\Entities\\Estoque.cs",
-              "ToolTip": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Domain\\Entities\\Estoque.cs",
-              "RelativeToolTip": "SistemaEstoque.Domain\\Entities\\Estoque.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAgAAAAWAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-07T16:52:10.261Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 60,
-              "Title": "FornecedorProfile.cs",
-              "DocumentMoniker": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Application\\Profiles\\FornecedorProfile.cs",
-              "RelativeDocumentMoniker": "SistemaEstoque.Application\\Profiles\\FornecedorProfile.cs",
-              "ToolTip": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Application\\Profiles\\FornecedorProfile.cs",
-              "RelativeToolTip": "SistemaEstoque.Application\\Profiles\\FornecedorProfile.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAA+AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-07T16:49:32.185Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 61,
-              "Title": "FornecedorRepository.cs",
-              "DocumentMoniker": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Infra\\Repositories\\FornecedorRepository.cs",
-              "RelativeDocumentMoniker": "SistemaEstoque.Infra\\Repositories\\FornecedorRepository.cs",
-              "ToolTip": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Infra\\Repositories\\FornecedorRepository.cs",
-              "RelativeToolTip": "SistemaEstoque.Infra\\Repositories\\FornecedorRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-07T16:46:32.796Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 62,
-              "Title": "IFornecedorRepository.cs",
-              "DocumentMoniker": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Domain\\Interfaces\\Repositories\\IFornecedorRepository.cs",
-              "RelativeDocumentMoniker": "SistemaEstoque.Domain\\Interfaces\\Repositories\\IFornecedorRepository.cs",
-              "ToolTip": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Domain\\Interfaces\\Repositories\\IFornecedorRepository.cs",
-              "RelativeToolTip": "SistemaEstoque.Domain\\Interfaces\\Repositories\\IFornecedorRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAQAAAAgAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-07T16:46:05.392Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 59,
-              "Title": "FornecedoresController.cs",
-              "DocumentMoniker": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.API\\Controllers\\FornecedoresController.cs",
-              "RelativeDocumentMoniker": "SistemaEstoque.API\\Controllers\\FornecedoresController.cs",
-              "ToolTip": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.API\\Controllers\\FornecedoresController.cs",
-              "RelativeToolTip": "SistemaEstoque.API\\Controllers\\FornecedoresController.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAABcAAAAgAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-07T16:41:13.609Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 64,
-              "Title": "CreateFornecedorResponse.cs",
-              "DocumentMoniker": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Application\\Commands\\CreateFornecedor\\CreateFornecedorResponse.cs",
-              "RelativeDocumentMoniker": "SistemaEstoque.Application\\Commands\\CreateFornecedor\\CreateFornecedorResponse.cs",
-              "ToolTip": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Application\\Commands\\CreateFornecedor\\CreateFornecedorResponse.cs",
-              "RelativeToolTip": "SistemaEstoque.Application\\Commands\\CreateFornecedor\\CreateFornecedorResponse.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-07T16:44:23.54Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 63,
-              "Title": "CreateFornecedorCommand.cs",
-              "DocumentMoniker": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Application\\Commands\\CreateFornecedor\\CreateFornecedorCommand.cs",
-              "RelativeDocumentMoniker": "SistemaEstoque.Application\\Commands\\CreateFornecedor\\CreateFornecedorCommand.cs",
-              "ToolTip": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Application\\Commands\\CreateFornecedor\\CreateFornecedorCommand.cs",
-              "RelativeToolTip": "SistemaEstoque.Application\\Commands\\CreateFornecedor\\CreateFornecedorCommand.cs",
-              "ViewState": "AQIAAAQAAAAAAAAAAAAAAAsAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-07T16:43:25.473Z"
+              "WhenOpened": "2024-07-11T02:26:09.694Z",
+              "EditorCaption": ""
             }
           ]
         }

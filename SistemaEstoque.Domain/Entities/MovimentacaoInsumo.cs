@@ -1,6 +1,6 @@
 ﻿namespace SistemaEstoque.Domain.Entities
 {
-    public sealed class MovimentacaoInsumo : Movimentacao
+    public sealed class MovimentoInsumo : Movimentacao
     {
         public int InsumoId { get; set; }
         public Insumo Insumo { get; set; }

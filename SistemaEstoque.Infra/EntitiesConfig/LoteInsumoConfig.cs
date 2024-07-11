@@ -30,12 +30,12 @@ namespace SistemaEstoque.Infra.EntitiesConfig
 
             builder.Property(l => l.DataFabricacao)
                 .HasColumnName("data_fabricacao")
-                .HasColumnType("timestamp")
+                .HasColumnType("date")
                 .IsRequired();
 
             builder.Property(l => l.DataValidade)
                 .HasColumnName("data_validade")
-                .HasColumnType("timestamp")
+                .HasColumnType("date")
                 .IsRequired();
 
             builder.Property(l => l.Quantidade)
@@ -64,7 +64,7 @@ namespace SistemaEstoque.Infra.EntitiesConfig
                 .IsRequired();
 
             builder.HasOne(l => l.Insumo)
-                .WithMany(i => i.LotesInsumo)
+                .WithMany(i => i.LotesInsumos)
                 .HasForeignKey(l => l.InsumoId)
                 .OnDelete(DeleteBehavior.Cascade);
 
@@ -75,7 +75,7 @@ namespace SistemaEstoque.Infra.EntitiesConfig
 
             builder.HasOne(l => l.MovimentacaoInsumo)
                 .WithOne(m => m.LoteInsumo)
-                .HasForeignKey<MovimentacaoInsumo>(m => m.LoteInsumoId)
+                .HasForeignKey<MovimentoInsumo>(m => m.LoteInsumoId)
                 .OnDelete(DeleteBehavior.SetNull);
 
             builder.HasOne(l => l.Empresa)

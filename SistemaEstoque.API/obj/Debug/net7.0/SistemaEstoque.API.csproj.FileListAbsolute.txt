@@ -130,3 +130,5 @@ D:\csharp\SistemaEstoque\SistemaEstoque.API\bin\Debug\net7.0\Microsoft.IdentityM
 D:\csharp\SistemaEstoque\SistemaEstoque.API\bin\Debug\net7.0\System.IdentityModel.Tokens.Jwt.dll
 C:\Users\tiago\Documents\CSHARP\p-projetos\estoque-api\SistemaEstoque.API\bin\Debug\net7.0\SistemaEstoque.Shared.dll
 C:\Users\tiago\Documents\CSHARP\p-projetos\estoque-api\SistemaEstoque.API\bin\Debug\net7.0\SistemaEstoque.Shared.pdb
+D:\csharp\SistemaEstoque\SistemaEstoque.API\bin\Debug\net7.0\SistemaEstoque.Shared.dll
+D:\csharp\SistemaEstoque\SistemaEstoque.API\bin\Debug\net7.0\SistemaEstoque.Shared.pdb
