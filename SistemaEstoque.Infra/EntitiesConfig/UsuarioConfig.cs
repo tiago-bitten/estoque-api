@@ -67,6 +67,11 @@ namespace SistemaEstoque.Infra.EntitiesConfig
                 .WithOne(m => m.Usuario)
                 .HasForeignKey(m => m.UsuarioId)
                 .OnDelete(DeleteBehavior.SetNull);
+
+            builder.HasMany(u => u.HistoricosUsuariosAcessos)
+                .WithOne(h => h.Usuario)
+                .HasForeignKey(h => h.UsuarioId)
+                .OnDelete(DeleteBehavior.SetNull);
         }
     }
 }

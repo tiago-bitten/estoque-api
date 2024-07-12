@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using SistemaEstoque.Infra.Data;
@@ -11,9 +12,11 @@ using SistemaEstoque.Infra.Data;
 namespace SistemaEstoque.Infra.Migrations
 {
     [DbContext(typeof(SistemaEstoqueDbContext))]
-    partial class SistemaEstoqueDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240712021656_Add_Historico_Acesso")]
+    partial class AddHistoricoAcesso
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -287,39 +290,32 @@ namespace SistemaEstoque.Infra.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasColumnName("id");
+                        .HasColumnType("integer");
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
                     b.Property<bool>("AcessoValido")
-                        .HasColumnType("boolean")
-                        .HasColumnName("acesso_valido");
+                        .HasColumnType("boolean");
 
                     b.Property<DateTime>("DataAcesso")
-                        .HasColumnType("date")
-                        .HasColumnName("data_acesso");
+                        .HasColumnType("timestamp with time zone");
 
                     b.Property<int>("EmpresaId")
-                        .HasColumnType("int")
-                        .HasColumnName("empresa_id");
+                        .HasColumnType("int");
 
                     b.Property<string>("IpAcesso")
                         .IsRequired()
-                        .HasColumnType("varchar(15)")
-                        .HasColumnName("ip_acesso");
+                        .HasColumnType("text");
 
                     b.Property<bool?>("Removido")
                         .HasColumnType("boolean");
 
                     b.Property<string>("UserAgent")
                         .IsRequired()
-                        .HasColumnType("varchar(255)")
-                        .HasColumnName("user_agent");
+                        .HasColumnType("text");
 
                     b.Property<int>("UsuarioId")
-                        .HasColumnType("int")
-                        .HasColumnName("usuario_id");
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -327,7 +323,7 @@ namespace SistemaEstoque.Infra.Migrations
 
                     b.HasIndex("UsuarioId");
 
-                    b.ToTable("historicos_usuarios_acessos", (string)null);
+                    b.ToTable("HistoricoUsuarioAcesso");
                 });
 
             modelBuilder.Entity("SistemaEstoque.Domain.Entities.Insumo", b =>
