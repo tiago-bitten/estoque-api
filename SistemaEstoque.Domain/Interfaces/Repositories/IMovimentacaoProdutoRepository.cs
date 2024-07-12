@@ -5,7 +5,7 @@ namespace SistemaEstoque.Domain.Interfaces.Repositories
     public interface IMovimentacaoProdutoRepository
     {
         Task AddAsync(MovimentacaoProduto movimentacao, int idEmpresa);
-        Task<IEnumerable<MovimentacaoProduto>> GetAllAsync(int idEmpresa);
+        IQueryable<MovimentacaoProduto> GetAll(int idEmpresa);
         Task<MovimentacaoProduto> GetByIdAsync(int id);
     }
 }

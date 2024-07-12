@@ -13,9 +13,9 @@ namespace SistemaEstoque.Infra.Repositories
             _repository = repository;
         }
 
-        public async Task<IQueryable<LogAlteracao>> GetAllLogsFromItem(int itemId, string tabela, int empresaId)
+        public IQueryable<LogAlteracao> GetAllLogsFromItem(int itemId, string tabela, int empresaId)
         {
-            return await _repository.FindAllAsync(x => x.ItemId == itemId && x.Tabela == tabela && x.EmpresaId == empresaId);
+            return _repository.FindAll(x => x.ItemId == itemId && x.Tabela == tabela && x.EmpresaId == empresaId);
         }
 
         public async Task LogAsync(LogAlteracao log, int empresaId)

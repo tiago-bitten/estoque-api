@@ -22,7 +22,7 @@ namespace SistemaEstoque.Application.Queries.GetAllProdutos
             // ALTERAR_EMPRESA
             var empresaId = EMPRESA_CONSTANTE.ID_EMPRESA;
 
-            var produtos = await _uow.Produtos.GetAllAsync(empresaId);
+            var produtos = _uow.Produtos.GetAll(empresaId).AsEnumerable();
 
             var response = _mapper.Map<GetAllProdutosResponse>(produtos);
 

@@ -9,6 +9,5 @@ namespace SistemaEstoque.Domain.Interfaces.Repositories
 {
     public interface ICategoriaRepository : IRepositoryBase<Categoria>
     {
-        Task<Categoria> GetByNomeAsync(string nome, int empresaId);
     }
 }

@@ -11,10 +11,5 @@ namespace SistemaEstoque.Infra.Repositories
             : base(context)
         {
         }
-
-        public async Task<Fornecedor?> GeyByCpfCnpj(string cpfCnpj)
-        {
-            return await _dbSet.FirstOrDefaultAsync(f => f.CpfCnpj == cpfCnpj);
-        }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using MediatR;
 using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 using SistemaEstoque.Domain.Interfaces.Repositories;
 
 namespace SistemaEstoque.Application.Queries.GetAllCategorias
@@ -24,7 +25,11 @@ namespace SistemaEstoque.Application.Queries.GetAllCategorias
             // ALTERAR_EMPRESA
             var empresaId = EMPRESA_CONSTANTE.ID_EMPRESA;
 
-            var categorias = await _uow.Categorias.GetAllAsync(empresaId);
+            var totalCategorias = await _uow.Categorias.GetAll(empresaId).CountAsync();
+            var categorias = await _uow.Categorias.GetAll(empresaId)
+                .Skip(request.Skip)
+                .Take(request.Take)
+                .ToListAsync();
 
             var response = _mapper.Map<GetAllCategoriasResponse>(categorias);
 

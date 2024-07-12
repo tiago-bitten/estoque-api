@@ -33,9 +33,14 @@ namespace SistemaEstoque.API.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAll()
+        public async Task<IActionResult> GetAll([FromQuery] int skip = 0, int take = 15)
         {
-            var response = await _mediator.Send(new GetAllCategoriasQuery());
+            HttpContext.Items["MensagemAPI"] = "Listagem de categorias";
+
+            var query = new GetAllCategoriasQuery(skip, take);
+            
+            var response = await _mediator.Send(query);
+            
             return Ok(response);
         }
     }

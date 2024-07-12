@@ -12,15 +12,15 @@ namespace SistemaEstoque.Infra.Repositories
         {
         }
 
-        public async override Task<IEnumerable<Insumo>> GetAllAsync(int empresaId)
+        public override IQueryable<Insumo> GetAll(int empresaId)
         {
-            return await _dbSet
+            return _dbSet
                 .Include(i => i.EstoqueInsumo)
                 .Include(i => i.Categoria)
                 .Include(i => i.LotesInsumos)
                 .Include(i => i.MovimentacoesInsumos)
                 .Where(i => i.EmpresaId == empresaId)
-                .ToListAsync();
+                .AsQueryable();
         }
 
         public async override Task<Insumo> GetByIdAsync(int id)
