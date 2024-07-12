@@ -32,12 +32,13 @@ namespace SistemaEstoque.Application.Commands.CreateLoteInsumo
         public async Task<CreateLoteInsumoResponse> Handle(CreateLoteInsumoCommand request, CancellationToken cancellationToken)
         {
             var insumo = await _insumoService.GetAndValidateEntityAsync(request.InsumoId);
+            var fornecedor = await _fornecedorService.GetAndValidateEntityAsync(request.FornecedorId);
+            
             var estoque = insumo.EstoqueInsumo;
 
             if (estoque == null)
                 throw new Exception("Primeiro crie o estoque");
 
-            var fornecedor = await _fornecedorService.GetAndValidateEntityAsync(request.FornecedorId);
 
             var lote = _mapper.Map<LoteInsumo>(request);
             var movimentacao = _mapper.Map<MovimentoInsumo>(request);

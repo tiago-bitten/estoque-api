@@ -4,5 +4,7 @@
     {
         public int ProdutoId { get; set; }
         public Produto Produto { get; set; }
+
+        public IEnumerable<HistoricoEstoqueProduto> HistoricosEstoquesProdutos { get; set; }
     }
 }

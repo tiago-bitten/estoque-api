@@ -7,19 +7,15 @@ using SistemaEstoque.Infra.Migrations;
 
 namespace SistemaEstoque.Application.Profiles
 {
-    public class MovimentacaoProfile : Profile
+    public class MovimentacaoProdutoProfile : Profile
     {
-        public MovimentacaoProfile()
+        public MovimentacaoProdutoProfile()
         {
             CreateMap<CreateLoteProdutoCommand, MovimentacaoProduto>()
                 .ForMember(dest => dest.Tipo, opt => opt.MapFrom(src => ETipoMovimentacao.Entrada))
                 .ForMember(dest => dest.DataMovimentacao, opt => opt.MapFrom(src => DateTime.Now))
                 .ForMember(dest => dest.Origem, opt => opt.MapFrom(src => EOrigemMovimentacao.EntradaLote));
-        
-            CreateMap<CreateLoteInsumoCommand, MovimentoInsumo>()
-                .ForMember(dest => dest.Tipo, opt => opt.MapFrom(src => ETipoMovimentacao.Entrada))
-                .ForMember(dest => dest.DataMovimentacao, opt => opt.MapFrom(src => DateTime.Now))
-                .ForMember(dest => dest.Origem, opt => opt.MapFrom(src => EOrigemMovimentacao.EntradaLote));
+       
         }
     }
 }
