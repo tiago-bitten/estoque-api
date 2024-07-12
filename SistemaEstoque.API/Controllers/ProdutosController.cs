@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using SistemaEstoque.Application.Commands.CreateProduto;
+using SistemaEstoque.Application.Queries.GetAllProdutos;
 
 namespace SistemaEstoque.API.Controllers
 {
@@ -20,6 +21,16 @@ namespace SistemaEstoque.API.Controllers
         public async Task<IActionResult> Create([FromBody] CreateProdutoCommand command)
         {
             var response = await _mediator.Send(command);
+            return Ok(response);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetAll()
+        {
+            var query = new GetAllProdutosQuery();
+
+            var response = await _mediator.Send(query);
+            
             return Ok(response);
         }
     }

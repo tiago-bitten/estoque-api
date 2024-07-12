@@ -18,6 +18,8 @@ using SistemaEstoque.Application.Commands.CreateLote;
 using SistemaEstoque.Application.Commands.UpdateCategoria;
 using SistemaEstoque.Application.Commands.CreateInsumo;
 using SistemaEstoque.Application.Commands.CreateLoteInsumo;
+using SistemaEstoque.Application.Queries.GetAllCategorias;
+using SistemaEstoque.Application.Queries.GetAllProdutos;
 
 namespace SistemaEstoque.IoC
 {
@@ -40,7 +42,9 @@ namespace SistemaEstoque.IoC
                     typeof(CreateEstoqueProdutoCommand).Assembly,
                     typeof(CreateLoteProdutoCommand).Assembly,
                     typeof(CreateLoteInsumoCommand).Assembly,
-                    typeof(UpdateCategoriaCommand).Assembly
+                    typeof(UpdateCategoriaCommand).Assembly,
+                    typeof(GetAllCategoriasQuery).Assembly,
+                    typeof(GetAllProdutosQuery).Assembly
                 });
             });
 

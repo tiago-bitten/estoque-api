@@ -30,5 +30,6 @@ namespace SistemaEstoque.Domain.Entities
         public IEnumerable<LogAlteracao?> LogsAlteracoes { get; set; }
         public IEnumerable<HistoricoEstoqueProduto> HistoricosEstoquesProdutos { get; set; }
         public IEnumerable<HistoricoEstoqueInsumo?> HistoricosEstoquesInsumos { get; set; }
+        public IEnumerable<HistoricoUsuarioAcesso?> HistoricosUsuariosAcessos { get; set; }
     }
 }

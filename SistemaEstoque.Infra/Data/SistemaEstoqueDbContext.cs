@@ -24,6 +24,7 @@ namespace SistemaEstoque.Infra.Data
         public DbSet<MovimentacaoProduto> MovimentacoesProdutos { get; set; }
         public DbSet<MovimentoInsumo> MovimentacoesInsumos { get; set; }
         public DbSet<LogAlteracao> LogAlteracoes { get; set; }
+        public DbSet<HistoricoUsuarioAcesso> HistoricosUsuariosAcessos { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -40,6 +41,7 @@ namespace SistemaEstoque.Infra.Data
             modelBuilder.ApplyConfiguration(new MovimentacaoProdutoConfig());
             modelBuilder.ApplyConfiguration(new MovimentacaoInsumoConfig());
             modelBuilder.ApplyConfiguration(new LogAlteracaoConfig());
+            modelBuilder.ApplyConfiguration(new HistoricoUsuarioAcessoConfig());
             
             base.OnModelCreating(modelBuilder);
         }

@@ -2,6 +2,7 @@
 using SistemaEstoque.Application.Commands.CreateCategoria;
 using SistemaEstoque.Application.Commands.UpdateCategoria;
 using SistemaEstoque.Application.DTOs;
+using SistemaEstoque.Application.Queries.GetAllCategorias;
 using SistemaEstoque.Domain.Entities;
 
 namespace SistemaEstoque.Application.Profiles
@@ -17,6 +18,8 @@ namespace SistemaEstoque.Application.Profiles
             CreateMap<Categoria, CategoriaDTO>();
 
             CreateMap<Categoria, UpdateCategoriaResponse>();
+
+            CreateMap<Categoria, GetAllCategoriasResponse>();
         }
     }
 }

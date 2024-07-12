@@ -283,6 +283,53 @@ namespace SistemaEstoque.Infra.Migrations
                     b.ToTable("fornecedores", (string)null);
                 });
 
+            modelBuilder.Entity("SistemaEstoque.Domain.Entities.HistoricoUsuarioAcesso", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("id");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<bool>("AcessoValido")
+                        .HasColumnType("boolean")
+                        .HasColumnName("acesso_valido");
+
+                    b.Property<DateTime>("DataAcesso")
+                        .HasColumnType("date")
+                        .HasColumnName("data_acesso");
+
+                    b.Property<int>("EmpresaId")
+                        .HasColumnType("int")
+                        .HasColumnName("empresa_id");
+
+                    b.Property<string>("IpAcesso")
+                        .IsRequired()
+                        .HasColumnType("varchar(15)")
+                        .HasColumnName("ip_acesso");
+
+                    b.Property<bool?>("Removido")
+                        .HasColumnType("boolean");
+
+                    b.Property<string>("UserAgent")
+                        .IsRequired()
+                        .HasColumnType("varchar(255)")
+                        .HasColumnName("user_agent");
+
+                    b.Property<int>("UsuarioId")
+                        .HasColumnType("int")
+                        .HasColumnName("usuario_id");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EmpresaId");
+
+                    b.HasIndex("UsuarioId");
+
+                    b.ToTable("historicos_usuarios_acessos", (string)null);
+                });
+
             modelBuilder.Entity("SistemaEstoque.Domain.Entities.Insumo", b =>
                 {
                     b.Property<int>("Id")
@@ -809,6 +856,25 @@ namespace SistemaEstoque.Infra.Migrations
                     b.Navigation("Empresa");
                 });
 
+            modelBuilder.Entity("SistemaEstoque.Domain.Entities.HistoricoUsuarioAcesso", b =>
+                {
+                    b.HasOne("SistemaEstoque.Domain.Entities.Empresa", "Empresa")
+                        .WithMany("HistoricosUsuariosAcessos")
+                        .HasForeignKey("EmpresaId")
+                        .OnDelete(DeleteBehavior.SetNull)
+                        .IsRequired();
+
+                    b.HasOne("SistemaEstoque.Domain.Entities.Usuario", "Usuario")
+                        .WithMany("HistoricosUsuariosAcessos")
+                        .HasForeignKey("UsuarioId")
+                        .OnDelete(DeleteBehavior.SetNull)
+                        .IsRequired();
+
+                    b.Navigation("Empresa");
+
+                    b.Navigation("Usuario");
+                });
+
             modelBuilder.Entity("SistemaEstoque.Domain.Entities.Insumo", b =>
                 {
                     b.HasOne("SistemaEstoque.Domain.Entities.Categoria", "Categoria")
@@ -1018,6 +1084,8 @@ namespace SistemaEstoque.Infra.Migrations
 
                     b.Navigation("Fornecedores");
 
+                    b.Navigation("HistoricosUsuariosAcessos");
+
                     b.Navigation("Insumos");
 
                     b.Navigation("LogsAlteracoes");
@@ -1074,6 +1142,8 @@ namespace SistemaEstoque.Infra.Migrations
 
             modelBuilder.Entity("SistemaEstoque.Domain.Entities.Usuario", b =>
                 {
+                    b.Navigation("HistoricosUsuariosAcessos");
+
                     b.Navigation("LogsAlteracoes");
 
                     b.Navigation("MovimentacoesInsumos");
