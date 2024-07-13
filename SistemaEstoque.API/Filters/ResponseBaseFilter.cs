@@ -22,8 +22,23 @@ namespace SistemaEstoque.API.Filters
                     Conteudo = objectResult.StatusCode >= 200 && objectResult.StatusCode < 300 ? objectResult.Value : null,
                     Erros = objectResult.StatusCode >= 400 ? new List<string> { objectResult.Value?.ToString() } : null,
                     Mensagem = objectResult.StatusCode >= 400 ? "Erro geral" : mensagem,
-                    Total = 15
                 };
+
+                var pagedResponseType = typeof(IPagedResponse<>);
+                var objectType = objectResult.Value?.GetType();
+                if (objectType != null)
+                {
+                    var isPagedResponse = objectType.GetInterfaces().Any(i => i.IsGenericType && i.GetGenericTypeDefinition() == pagedResponseType);
+                    if (isPagedResponse)
+                    {
+                        var totalProperty = objectType.GetProperty("Total");
+                        if (totalProperty != null)
+                        {
+                            apiResponse.Total = (int) totalProperty.GetValue(objectResult.Value);
+                            apiResponse.Conteudo = (objectResult.Value as IEnumerable<object>).ToList();
+                        }
+                    }
+                }
 
                 context.Result = new ObjectResult(apiResponse)
                 {

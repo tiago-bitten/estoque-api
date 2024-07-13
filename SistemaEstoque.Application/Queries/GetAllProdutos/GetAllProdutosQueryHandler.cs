@@ -1,5 +1,7 @@
 ﻿using AutoMapper;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
+using SistemaEstoque.Application.DTOs;
 using SistemaEstoque.Domain.Interfaces.Repositories;
 
 namespace SistemaEstoque.Application.Queries.GetAllProdutos
@@ -22,11 +24,15 @@ namespace SistemaEstoque.Application.Queries.GetAllProdutos
             // ALTERAR_EMPRESA
             var empresaId = EMPRESA_CONSTANTE.ID_EMPRESA;
 
-            var produtos = _uow.Produtos.GetAll(empresaId).AsEnumerable();
+            var totalProdutos = await _uow.Produtos.GetAll(empresaId).CountAsync(cancellationToken);
+            var produtos = await _uow.Produtos.GetAll(empresaId)
+                .Skip(request.Skip)
+                .Take(request.Take)
+                .ToListAsync(cancellationToken);
 
-            var response = _mapper.Map<GetAllProdutosResponse>(produtos);
+            var produtosDTO = _mapper.Map<List<ProdutoDTO>>(produtos);
 
-            return await Task.FromResult(response);
+            return new GetAllProdutosResponse(produtosDTO, totalProdutos);
         }
     }
 }

@@ -2,6 +2,7 @@
 using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
+using SistemaEstoque.Application.DTOs;
 using SistemaEstoque.Domain.Interfaces.Repositories;
 
 namespace SistemaEstoque.Application.Queries.GetAllCategorias
@@ -25,15 +26,15 @@ namespace SistemaEstoque.Application.Queries.GetAllCategorias
             // ALTERAR_EMPRESA
             var empresaId = EMPRESA_CONSTANTE.ID_EMPRESA;
 
-            var totalCategorias = await _uow.Categorias.GetAll(empresaId).CountAsync();
+            var totalCategorias = await _uow.Categorias.GetAll(empresaId).CountAsync(cancellationToken);
             var categorias = await _uow.Categorias.GetAll(empresaId)
                 .Skip(request.Skip)
                 .Take(request.Take)
-                .ToListAsync();
+                .ToListAsync(cancellationToken);
 
-            var response = _mapper.Map<GetAllCategoriasResponse>(categorias);
+            var categoriasDTO = _mapper.Map<List<CategoriaDTO>>(categorias);
 
-            return await Task.FromResult(response);
+            return new GetAllCategoriasResponse(categoriasDTO, totalCategorias);
         }
     }
 }

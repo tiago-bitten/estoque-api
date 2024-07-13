@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using SistemaEstoque.Application.Commands.CreateInsumo;
+using SistemaEstoque.Application.DTOs;
 using SistemaEstoque.Domain.Entities;
 
 namespace SistemaEstoque.Application.Profiles
@@ -11,6 +12,8 @@ namespace SistemaEstoque.Application.Profiles
             CreateMap<CreateInsumoCommand, Insumo>();
 
             CreateMap<Insumo, CreateInsumoResponse>();
+
+            CreateMap<Insumo, InsumoDTO>();
         }
     }
 }

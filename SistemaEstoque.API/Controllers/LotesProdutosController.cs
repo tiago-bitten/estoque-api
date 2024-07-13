@@ -21,6 +21,8 @@ namespace SistemaEstoque.API.Controllers
         {
             var response = await _mediator.Send(command);
 
+            HttpContext.Items["MensagemAPI"] = "Lote de produto criado";
+
             return Ok(response);
         }
     }
