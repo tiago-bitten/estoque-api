@@ -9,7 +9,7 @@ namespace SistemaEstoque.Infra.EntitiesConfig
     {
         public void Configure(EntityTypeBuilder<HistoricoEstoqueProduto> builder)
         {
-            builder.ToTable("historicos_estoque");
+            builder.ToTable("historicos_estoques_produtos");
 
             builder.HasKey(h => h.Id);
 
@@ -26,12 +26,12 @@ namespace SistemaEstoque.Infra.EntitiesConfig
 
             builder.Property(h => h.Data)
                 .HasColumnName("data")
-                .HasColumnType("datetime")
+                .HasColumnType("date")
                 .IsRequired();
 
             builder.Property(h => h.DataRegistro)
                 .HasColumnName("data_registro")
-                .HasColumnType("datetime")
+                .HasColumnType("date")
                 .IsRequired();
         
             builder.HasOne(h => h.EstoqueProduto)

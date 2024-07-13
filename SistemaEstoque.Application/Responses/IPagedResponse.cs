@@ -2,7 +2,7 @@
 
 namespace SistemaEstoque.Application.Responses
 {
-    public interface IPagedResponse<T> where T : class
+    public interface IPagedResponse
     {
         int Total { get; set; }
     }

@@ -21,13 +21,15 @@ namespace SistemaEstoque.Infra.Repositories
 
         public virtual async Task<T> GetByIdAsync(int id)
         {
-            return await _dbSet.FindAsync(id);
+            return await _dbSet.FirstOrDefaultAsync(e => EF.Property<int>(e, "Id") == id);
+             
         }
 
         public virtual IQueryable<T> GetAll(int empresaId)
         {
             return _dbSet.Where(e =>
                 EF.Property<int>(e, "EmpresaId") == empresaId)
+                .Where(e => EF.Property<bool>(e, "Removido") == false)
                 .AsQueryable();
         }
 

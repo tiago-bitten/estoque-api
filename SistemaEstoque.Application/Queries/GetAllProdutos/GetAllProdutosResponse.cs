@@ -4,7 +4,7 @@ using SistemaEstoque.Application.Responses;
 
 namespace SistemaEstoque.Application.Queries.GetAllProdutos
 {
-    public class GetAllProdutosResponse : List<ProdutoDTO>, IPagedResponse<ProdutoDTO>
+    public class GetAllProdutosResponse : List<ProdutoDTO>, IPagedResponse
     {
         public GetAllProdutosResponse(IEnumerable<ProdutoDTO> produtosDTO, int total)
         {

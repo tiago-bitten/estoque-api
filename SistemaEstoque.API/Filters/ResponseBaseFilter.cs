@@ -24,11 +24,11 @@ namespace SistemaEstoque.API.Filters
                     Mensagem = objectResult.StatusCode >= 400 ? "Erro geral" : mensagem,
                 };
 
-                var pagedResponseType = typeof(IPagedResponse<>);
+                var pagedResponseType = typeof(IPagedResponse);
                 var objectType = objectResult.Value?.GetType();
                 if (objectType != null)
                 {
-                    var isPagedResponse = objectType.GetInterfaces().Any(i => i.IsGenericType && i.GetGenericTypeDefinition() == pagedResponseType);
+                    var isPagedResponse = objectType.GetInterfaces().Any(i => i.Equals(pagedResponseType));
                     if (isPagedResponse)
                     {
                         var totalProperty = objectType.GetProperty("Total");

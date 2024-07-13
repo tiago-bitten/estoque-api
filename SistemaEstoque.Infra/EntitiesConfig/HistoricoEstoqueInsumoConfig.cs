@@ -25,12 +25,12 @@ namespace SistemaEstoque.Infra.EntitiesConfig
 
             builder.Property(h => h.Data)
                 .HasColumnName("data")
-                .HasColumnType("datetime")
+                .HasColumnType("date")
                 .IsRequired();
 
             builder.Property(h => h.DataRegistro)
                 .HasColumnName("data_registro")
-                .HasColumnType("datetime")
+                .HasColumnType("date")
                 .IsRequired();
 
             builder.HasOne(h => h.EstoqueInsumo)

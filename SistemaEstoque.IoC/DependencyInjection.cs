@@ -5,7 +5,6 @@ using SistemaEstoque.Application.Profiles;
 using SistemaEstoque.Domain.Interfaces.Repositories;
 using SistemaEstoque.Infra.Data;
 using SistemaEstoque.Infra.Repositories;
-using MediatR;
 using System.Reflection;
 using SistemaEstoque.Application.Commands.CreateUsuario;
 using SistemaEstoque.Application.Commands.CreateCategoria;
@@ -20,6 +19,8 @@ using SistemaEstoque.Application.Commands.CreateInsumo;
 using SistemaEstoque.Application.Commands.CreateLoteInsumo;
 using SistemaEstoque.Application.Queries.GetAllCategorias;
 using SistemaEstoque.Application.Queries.GetAllProdutos;
+using SistemaEstoque.Application.Queries.GetAllInsumos;
+using SistemaEstoque.Application.Queries.GetAllEstoquesProdutos;
 
 namespace SistemaEstoque.IoC
 {
@@ -42,9 +43,13 @@ namespace SistemaEstoque.IoC
                     typeof(CreateEstoqueProdutoCommand).Assembly,
                     typeof(CreateLoteProdutoCommand).Assembly,
                     typeof(CreateLoteInsumoCommand).Assembly,
+
                     typeof(UpdateCategoriaCommand).Assembly,
+                    
                     typeof(GetAllCategoriasQuery).Assembly,
-                    typeof(GetAllProdutosQuery).Assembly
+                    typeof(GetAllProdutosQuery).Assembly,
+                    typeof(GetAllInsumosQuery).Assembly,
+                    typeof(GetAllEstoquesProdutosQuery).Assembly,
                 });
             });
 
@@ -53,6 +58,7 @@ namespace SistemaEstoque.IoC
             services.AddAutoMapper(typeof(UsuarioProfile));
             services.AddAutoMapper(typeof(FornecedorProfile));
             services.AddAutoMapper(typeof(EstoqueProfile));
+            services.AddAutoMapper(typeof(EstoqueProdutoProfile));
             services.AddAutoMapper(typeof(LoteProdutoProfile));
             services.AddAutoMapper(typeof(InsumoProfile));
             services.AddAutoMapper(typeof(LoteInsumoProfile));

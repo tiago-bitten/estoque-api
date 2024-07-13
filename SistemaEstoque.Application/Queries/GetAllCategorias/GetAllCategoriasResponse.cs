@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace SistemaEstoque.Application.Queries.GetAllCategorias
 {
-    public class GetAllCategoriasResponse : List<CategoriaDTO>, IPagedResponse<CategoriaDTO>
+    public class GetAllCategoriasResponse : List<CategoriaDTO>, IPagedResponse
     {
         public int Total { get ; set ; }
      
