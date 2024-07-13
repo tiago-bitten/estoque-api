@@ -7,7 +7,7 @@ namespace SistemaEstoque.Domain.Entities
         public int ProdutoId { get; set; }
         public Produto Produto { get; set; }
 
-        public int LoteProdutoId { get; set; }
-        public LoteProduto LoteProduto { get; set; }
+        public int? LoteProdutoId { get; set; }
+        public LoteProduto? LoteProduto { get; set; }
     }
 }

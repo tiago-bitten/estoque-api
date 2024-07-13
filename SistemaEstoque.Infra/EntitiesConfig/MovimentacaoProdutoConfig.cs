@@ -72,8 +72,7 @@ namespace SistemaEstoque.Infra.EntitiesConfig
 
             builder.Property(m => m.LoteProdutoId)
                 .HasColumnName("lote_id")
-                .HasColumnType("int")
-                .IsRequired();
+                .HasColumnType("int");
 
             builder.Property(m => m.EmpresaId)
                 .HasColumnName("empresa_id")

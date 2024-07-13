@@ -653,7 +653,7 @@ namespace SistemaEstoque.Infra.Migrations
                         .HasColumnType("int")
                         .HasColumnName("empresa_id");
 
-                    b.Property<int>("LoteProdutoId")
+                    b.Property<int?>("LoteProdutoId")
                         .HasColumnType("int")
                         .HasColumnName("lote_id");
 
@@ -728,7 +728,7 @@ namespace SistemaEstoque.Infra.Migrations
                         .HasColumnType("int")
                         .HasColumnName("insumo_id");
 
-                    b.Property<int>("LoteInsumoId")
+                    b.Property<int?>("LoteInsumoId")
                         .HasColumnType("int")
                         .HasColumnName("lote_id");
 
@@ -1094,8 +1094,7 @@ namespace SistemaEstoque.Infra.Migrations
                     b.HasOne("SistemaEstoque.Domain.Entities.LoteProduto", "LoteProduto")
                         .WithOne("MovimentacaoProduto")
                         .HasForeignKey("SistemaEstoque.Domain.Entities.MovimentacaoProduto", "LoteProdutoId")
-                        .OnDelete(DeleteBehavior.SetNull)
-                        .IsRequired();
+                        .OnDelete(DeleteBehavior.SetNull);
 
                     b.HasOne("SistemaEstoque.Domain.Entities.Produto", "Produto")
                         .WithMany("MovimentacoesProdutos")
@@ -1135,8 +1134,7 @@ namespace SistemaEstoque.Infra.Migrations
                     b.HasOne("SistemaEstoque.Domain.Entities.LoteInsumo", "LoteInsumo")
                         .WithOne("MovimentacaoInsumo")
                         .HasForeignKey("SistemaEstoque.Domain.Entities.MovimentoInsumo", "LoteInsumoId")
-                        .OnDelete(DeleteBehavior.SetNull)
-                        .IsRequired();
+                        .OnDelete(DeleteBehavior.SetNull);
 
                     b.HasOne("SistemaEstoque.Domain.Entities.Usuario", "Usuario")
                         .WithMany("MovimentacoesInsumos")

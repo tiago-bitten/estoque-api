@@ -33,7 +33,7 @@ namespace SistemaEstoque.Application.Commands.CreateEstoque
             if (request.QuantidadeMinima > request.QuantidadeMaxima)
                 throw new Exception("Quantidade minima deve ser menor que a quantidade maxima");
 
-            var existsEstoque = await _ouw.EstoquesProdutos.FindAsync(e => e.ProdutoId == request.ProdutoId);
+            var existsEstoque = await _ouw.EstoquesProdutos.FindAsync(e => e.ProdutoId == request.ProdutoId && e.Removido == false);
             if (existsEstoque != null)
                 throw new Exception($"Estoque para {existsEstoque.Produto.Nome} já foi cadastrado");
 

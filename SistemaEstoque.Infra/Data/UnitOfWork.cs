@@ -13,6 +13,7 @@ namespace SistemaEstoque.Infra.Data
         private readonly IInsumoRepository _insumoRepository;
         private readonly IFornecedorRepository _fornecedorRepository;
         private readonly IEstoqueProdutoRepository _estoqueProdutoRepository;
+        private readonly IEstoqueInsumoRepository _estoqueInsumoRepository;
         private readonly ILoteProdutoRepository _loteProdutoRepository;
         private readonly ILoteInsumoRepository _loteInsumoRepository;
         private readonly IMovimentacaoProdutoRepository _movimentacaoProdutoRepository;
@@ -27,6 +28,7 @@ namespace SistemaEstoque.Infra.Data
             IInsumoRepository insumoRepository,
             IFornecedorRepository fornecedorRepository,
             IEstoqueProdutoRepository estoqueProdutoRepository,
+            IEstoqueInsumoRepository estoqueInsumoRepository,
             ILoteProdutoRepository loteProdutoRepository,
             ILoteInsumoRepository loteInsumoRepository,
             IMovimentacaoProdutoRepository movimentacaoProdutoRepository,
@@ -40,6 +42,7 @@ namespace SistemaEstoque.Infra.Data
             _insumoRepository = insumoRepository;
             _fornecedorRepository = fornecedorRepository;
             _estoqueProdutoRepository = estoqueProdutoRepository;
+            _estoqueInsumoRepository = estoqueInsumoRepository;
             _movimentacaoProdutoRepository = movimentacaoProdutoRepository;
             _movimentacaoInsumoRepository = movimentacaoInsumoRepository;
             _loteProdutoRepository = loteProdutoRepository;
@@ -53,6 +56,7 @@ namespace SistemaEstoque.Infra.Data
         public IInsumoRepository Insumos => _insumoRepository;
         public IFornecedorRepository Fornecedores => _fornecedorRepository;
         public IEstoqueProdutoRepository EstoquesProdutos => _estoqueProdutoRepository;
+        public IEstoqueInsumoRepository EstoquesInsumos => _estoqueInsumoRepository;
         public ILoteProdutoRepository LotesProdutos => _loteProdutoRepository;
         public ILoteInsumoRepository LoteInsumos => _loteInsumoRepository;
         public IMovimentacaoProdutoRepository MovimentacoesProdutos => _movimentacaoProdutoRepository;

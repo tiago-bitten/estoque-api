@@ -21,6 +21,9 @@ using SistemaEstoque.Application.Queries.GetAllCategorias;
 using SistemaEstoque.Application.Queries.GetAllProdutos;
 using SistemaEstoque.Application.Queries.GetAllInsumos;
 using SistemaEstoque.Application.Queries.GetAllEstoquesProdutos;
+using SistemaEstoque.Application.Queries.GetAllFornecedores;
+using SistemaEstoque.Application.Commands.CreateEstoqueInsumo;
+using SistemaEstoque.Application.Queries.GetAllEstoquesInsumos;
 
 namespace SistemaEstoque.IoC
 {
@@ -41,6 +44,7 @@ namespace SistemaEstoque.IoC
                     typeof(CreateInsumoCommand).Assembly,
                     typeof(CreateFornecedorCommand).Assembly,
                     typeof(CreateEstoqueProdutoCommand).Assembly,
+                    typeof(CreateEstoqueInsumoCommand).Assembly,
                     typeof(CreateLoteProdutoCommand).Assembly,
                     typeof(CreateLoteInsumoCommand).Assembly,
 
@@ -50,6 +54,8 @@ namespace SistemaEstoque.IoC
                     typeof(GetAllProdutosQuery).Assembly,
                     typeof(GetAllInsumosQuery).Assembly,
                     typeof(GetAllEstoquesProdutosQuery).Assembly,
+                    typeof(GetAllEstoquesInsumosQuery).Assembly,
+                    typeof(GetAllFornecedoresQuery).Assembly
                 });
             });
 
@@ -57,8 +63,8 @@ namespace SistemaEstoque.IoC
             services.AddAutoMapper(typeof(ProdutoProfile));
             services.AddAutoMapper(typeof(UsuarioProfile));
             services.AddAutoMapper(typeof(FornecedorProfile));
-            services.AddAutoMapper(typeof(EstoqueProfile));
             services.AddAutoMapper(typeof(EstoqueProdutoProfile));
+            services.AddAutoMapper(typeof(EstoqueInsumoProfile));
             services.AddAutoMapper(typeof(LoteProdutoProfile));
             services.AddAutoMapper(typeof(InsumoProfile));
             services.AddAutoMapper(typeof(LoteInsumoProfile));
@@ -85,6 +91,7 @@ namespace SistemaEstoque.IoC
             services.AddScoped<IUsuarioRepository, UsuarioRepository>();
             services.AddScoped<IFornecedorRepository, FornecedorRepository>();
             services.AddScoped<IEstoqueProdutoRepository, EstoqueProdutoRepository>();
+            services.AddScoped<IEstoqueInsumoRepository, EstoqueInsumoRepository>();
             services.AddScoped<ILoteProdutoRepository, LoteProdutoRepository>();
             services.AddScoped<IMovimentacaoProdutoRepository, MovimentacaoProdutoRepository>();
             services.AddScoped<ILogAlteracaoRepository, LogAlteracaoRepository>();

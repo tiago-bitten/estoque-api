@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using SistemaEstoque.Application.Commands.CreateFornecedor;
+using SistemaEstoque.Application.Queries.GetAllFornecedores;
 
 namespace SistemaEstoque.API.Controllers
 {
@@ -22,6 +23,16 @@ namespace SistemaEstoque.API.Controllers
             var response = await _mediator.Send(command);
 
             HttpContext.Items["MensagemAPI"] = "Fornecedor criado";
+
+            return Ok(response);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetAll([FromQuery] int skip = 0, int take = 15)
+        {
+            var query = new GetAllFornecedoresQuery(skip, take);
+
+            var response = await _mediator.Send(query);
 
             return Ok(response);
         }

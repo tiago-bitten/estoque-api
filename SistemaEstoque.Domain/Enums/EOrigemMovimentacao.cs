@@ -15,6 +15,7 @@ namespace SistemaEstoque.Domain.Enums
         EntradaLote = 5,
         SaidaLote = 6,
         EntradaManual = 7,
-        SaidaManual = 8
+        SaidaManual = 8,
+        CriacaoEstoque = 9
     }
 }
