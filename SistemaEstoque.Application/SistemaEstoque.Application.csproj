@@ -8,7 +8,6 @@
 
   <ItemGroup>
     <Folder Include="Commands\CreateMovimentacaoProduto\" />
-    <Folder Include="Queries\" />
   </ItemGroup>
 
   <ItemGroup>

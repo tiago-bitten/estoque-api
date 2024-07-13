@@ -17,9 +17,9 @@ namespace SistemaEstoque.Infra.Repositories
             await _repositoryBase.AddAsync(movimentacao, idEmpresa);
         }
 
-        public async Task<IEnumerable<MovimentacaoProduto>> GetAllAsync(int idEmpresa)
+        public IQueryable<MovimentacaoProduto> GetAll(int idEmpresa)
         {
-            return await _repositoryBase.GetAllAsync(idEmpresa);
+            return _repositoryBase.GetAll(idEmpresa);
         }
 
         public async Task<MovimentacaoProduto> GetByIdAsync(int id)

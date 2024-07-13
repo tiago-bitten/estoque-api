@@ -20,6 +20,9 @@ namespace SistemaEstoque.API.Controllers
         public async Task<IActionResult> Create([FromBody] CreateUsuarioCommand command)
         {
             var response = await _mediator.Send(command);
+
+            HttpContext.Items["MensagemAPI"] = "Usuário criado";
+
             return Ok(response);
         }
     }

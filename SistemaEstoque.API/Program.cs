@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using SistemaEstoque.API.Filters;
 using SistemaEstoque.Infra.Data;
 using SistemaEstoque.IoC;
 using System.Reflection;
@@ -7,7 +8,11 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-builder.Services.AddControllers();
+builder.Services.AddControllers(opt =>
+{
+    opt.Filters.Add<ResponseBaseFilter>();
+});
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

@@ -18,7 +18,7 @@ namespace SistemaEstoque.Application.Commands.CreateFornecedor
 
         public async Task<CreateFornecedorResponse> Handle(CreateFornecedorCommand request, CancellationToken cancellationToken)
         {
-            var existsFornecedor = await _uow.Fornecedores.GeyByCpfCnpj(request.CpfCnpj);
+            var existsFornecedor = await _uow.Fornecedores.FindAsync(x => x.CpfCnpj == request.CpfCnpj);
 
             if (existsFornecedor != null)
                 throw new Exception("Fornecedor já cadastrado");

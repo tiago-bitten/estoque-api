@@ -19,18 +19,13 @@ namespace SistemaEstoque.Infra.Repositories
                 .FirstOrDefaultAsync(c => c.Id == id && c.Removido == false);
         }
 
-        public async override Task<IEnumerable<Categoria>> GetAllAsync(int empresaId)
+        public override IQueryable<Categoria> GetAll(int empresaId)
         {
-            return await _context.Set<Categoria>()
+            return _dbSet
                 .Include(c => c.Produtos)
                 .Include(c => c.Empresa)
                 .Where(c => c.EmpresaId == empresaId && c.Removido == false)
-                .ToListAsync();
-        }
-
-        public async Task<Categoria> GetByNomeAsync(string nome, int empresaId)
-        {
-            return await _dbSet.FirstOrDefaultAsync(c => c.Nome.ToLower() == nome.ToLower() && c.EmpresaId == empresaId);
+                .AsQueryable();
         }
     }
 }

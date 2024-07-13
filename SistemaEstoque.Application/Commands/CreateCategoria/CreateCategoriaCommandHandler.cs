@@ -22,7 +22,7 @@ namespace SistemaEstoque.Application.Commands.CreateCategoria
         {
             var categoria = _mapper.Map<Categoria>(request);
             
-            var existsCategoria = await _uow.Categorias.GetByNomeAsync(request.Nome, EMPRESA_CONSTANTE.ID_EMPRESA);
+            var existsCategoria = await _uow.Categorias.FindAsync(x => x.Nome == request.Nome && x.EmpresaId == EMPRESA_CONSTANTE.ID_EMPRESA);
             if (existsCategoria != null)
                 throw new Exception("Categoria já cadastrada");
 

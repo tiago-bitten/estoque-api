@@ -21,13 +21,16 @@ namespace SistemaEstoque.Infra.Repositories
 
         public virtual async Task<T> GetByIdAsync(int id)
         {
-            return await _dbSet.FindAsync(id);
+            return await _dbSet.FirstOrDefaultAsync(e => EF.Property<int>(e, "Id") == id);
+             
         }
 
-        public virtual async Task<IEnumerable<T>> GetAllAsync(int empresaId)
+        public virtual IQueryable<T> GetAll(int empresaId)
         {
-            return await _dbSet.Where(e =>
-                EF.Property<int>(e, "EmpresaId") == empresaId).ToListAsync();
+            return _dbSet.Where(e =>
+                EF.Property<int>(e, "EmpresaId") == empresaId)
+                .Where(e => EF.Property<bool>(e, "Removido") == false)
+                .AsQueryable();
         }
 
         public virtual async Task AddAsync(T entity, int empresaId)
@@ -65,9 +68,9 @@ namespace SistemaEstoque.Infra.Repositories
             return await _dbSet.FirstOrDefaultAsync(predicate);
         }
 
-        public virtual Task<IQueryable<T>> FindAllAsync(Expression<Func<T, bool>> predicate)
+        public virtual IQueryable<T> FindAll(Expression<Func<T, bool>> predicate)
         {
-            return Task.FromResult(_dbSet.Where(predicate));
+            return _dbSet.Where(predicate);
         }
     }
 }

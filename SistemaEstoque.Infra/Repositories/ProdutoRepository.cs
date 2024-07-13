@@ -14,21 +14,23 @@ namespace SistemaEstoque.Infra.Repositories
 
         public override async Task<Produto> GetByIdAsync(int id)
         {
-            return await _context.Set<Produto>()
+            return await _dbSet
+                .Include(p => p.Categoria)
                 .Include(p => p.EstoqueProduto)
                 .Include(p => p.LotesProdutos)
                 .Include(p => p.MovimentacoesProdutos)
                 .FirstOrDefaultAsync(p => p.Id == id);  
         }
 
-        public override async Task<IEnumerable<Produto>> GetAllAsync(int empresaId)
+        public override IQueryable<Produto> GetAll(int empresaId)
         {
-            return await _context.Set<Produto>()
+            return _dbSet
+                .Include(p => p.Categoria)
                 .Include(p => p.EstoqueProduto)
                 .Include(p => p.LotesProdutos)
                 .Include(p => p.MovimentacoesProdutos)
                 .Where(p => p.EmpresaId == empresaId)
-                .ToListAsync();
+                .AsQueryable();
         }
     }
 }
