@@ -47,6 +47,11 @@ namespace SistemaEstoque.Infra.EntitiesConfig
                 .HasColumnType("int")
                 .IsRequired();
 
+            builder.HasMany(e => e.MovimentacoesInsumos)
+                .WithOne(m => m.EstoqueInsumo)
+                .HasForeignKey(m => m.EstoqueInsumoId)
+                .OnDelete(DeleteBehavior.SetNull);
+
             builder.HasOne(e => e.Insumo)
                 .WithOne(i => i.EstoqueInsumo)
                 .HasForeignKey<EstoqueInsumo>(e => e.InsumoId)

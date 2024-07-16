@@ -15,12 +15,12 @@ namespace SistemaEstoque.Application.Profiles
     {
         public MovimentacaoInsumoProfile()
         {
-            CreateMap<CreateLoteInsumoCommand, MovimentoInsumo>()
+            CreateMap<CreateLoteInsumoCommand, MovimentacaoInsumo>()
                 .ForMember(dest => dest.Tipo, opt => opt.MapFrom(src => ETipoMovimentacao.Entrada))
                 .ForMember(dest => dest.DataMovimentacao, opt => opt.MapFrom(src => DateTime.Now))
                 .ForMember(dest => dest.Origem, opt => opt.MapFrom(src => EOrigemMovimentacao.EntradaLote));
         
-            CreateMap<CreateEstoqueInsumoCommand, MovimentoInsumo>()
+            CreateMap<CreateEstoqueInsumoCommand, MovimentacaoInsumo>()
                 .ForMember(dest => dest.Tipo, opt => opt.MapFrom(src => ETipoMovimentacao.Entrada))
                 .ForMember(dest => dest.DataMovimentacao, opt => opt.MapFrom(src => DateTime.Now))
                 .ForMember(dest => dest.Origem, opt => opt.MapFrom(src => EOrigemMovimentacao.CriacaoEstoque));

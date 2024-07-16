@@ -4,6 +4,6 @@
     {
         public EstoqueInsumo? EstoqueInsumo { get; set; }
         public IEnumerable<LoteInsumo?> LotesInsumos { get; set; }
-        public IEnumerable<MovimentoInsumo?> MovimentacoesInsumos { get; set; }
+        public IEnumerable<MovimentacaoInsumo?> MovimentacoesInsumos { get; set; }
     }
 }

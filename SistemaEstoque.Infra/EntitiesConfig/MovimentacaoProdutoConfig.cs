@@ -65,13 +65,18 @@ namespace SistemaEstoque.Infra.EntitiesConfig
                 .HasColumnType("int")
                 .IsRequired();
 
+            builder.Property(m => m.EstoqueProdutoId)
+                .HasColumnName("estoque_produto_id")
+                .HasColumnType("int")
+                .IsRequired();
+
             builder.Property(m => m.ProdutoId)
                 .HasColumnName("produto_id")
                 .HasColumnType("int")
                 .IsRequired();
 
             builder.Property(m => m.LoteProdutoId)
-                .HasColumnName("lote_id")
+                .HasColumnName("lote_produto_id")
                 .HasColumnType("int");
 
             builder.Property(m => m.EmpresaId)
@@ -82,6 +87,11 @@ namespace SistemaEstoque.Infra.EntitiesConfig
             builder.HasOne(m => m.Usuario)
                 .WithMany(u => u.MovimentacoesProdutos)
                 .HasForeignKey(m => m.UsuarioId)
+                .OnDelete(DeleteBehavior.SetNull);
+
+            builder.HasOne(m => m.EstoqueProduto)
+                .WithMany(e => e.MovimentacoesProdutos)
+                .HasForeignKey(m => m.EstoqueProdutoId)
                 .OnDelete(DeleteBehavior.SetNull);
         
             builder.HasOne(m => m.Produto)

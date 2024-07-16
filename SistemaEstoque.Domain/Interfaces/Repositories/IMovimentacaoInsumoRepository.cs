@@ -2,7 +2,7 @@
 
 namespace SistemaEstoque.Domain.Interfaces.Repositories
 {
-    public interface IMovimentacaoInsumoRepository : IRepositoryBase<MovimentoInsumo>
+    public interface IMovimentacaoInsumoRepository : IRepositoryBase<MovimentacaoInsumo>
     {
     }
 }

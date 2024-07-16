@@ -26,10 +26,11 @@ namespace SistemaEstoque.Domain.Entities
         public IEnumerable<LoteProduto?> LotesProdutos { get; set; }
         public IEnumerable<LoteInsumo?> LotesInsumos { get; set; }
         public IEnumerable<MovimentacaoProduto?> MovimentacoesProdutos { get; set; }
-        public IEnumerable<MovimentoInsumo?> MovimentacoesInsumos { get; set; }
+        public IEnumerable<MovimentacaoInsumo?> MovimentacoesInsumos { get; set; }
         public IEnumerable<LogAlteracao?> LogsAlteracoes { get; set; }
         public IEnumerable<HistoricoEstoqueProduto> HistoricosEstoquesProdutos { get; set; }
         public IEnumerable<HistoricoEstoqueInsumo?> HistoricosEstoquesInsumos { get; set; }
         public IEnumerable<HistoricoUsuarioAcesso?> HistoricosUsuariosAcessos { get; set; }
+        public IEnumerable<Lote?> Lotes { get; set; }
     }
 }
