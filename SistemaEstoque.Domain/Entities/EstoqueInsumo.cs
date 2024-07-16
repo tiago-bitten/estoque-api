@@ -6,5 +6,6 @@
         public Insumo Insumo { get; set; }
 
         public IEnumerable<HistoricoEstoqueInsumo?> HistoricosEstoquesInsumos { get; set; }
+        public IEnumerable<MovimentacaoInsumo?> MovimentacoesInsumos { get; set; }
     }
 }

@@ -11,6 +11,7 @@
         IInsumoRepository Insumos { get; }
         IFornecedorRepository Fornecedores { get; }
         IEstoqueProdutoRepository EstoquesProdutos { get; }
+        IEstoqueInsumoRepository EstoquesInsumos { get; }
         ILoteProdutoRepository LotesProdutos { get; }
         ILoteInsumoRepository LoteInsumos { get; }
         IMovimentacaoProdutoRepository MovimentacoesProdutos { get; }

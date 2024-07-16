@@ -18,16 +18,6 @@ namespace SistemaEstoque.Infra.EntitiesConfig
                 .ValueGeneratedOnAdd()
                 .IsRequired();
 
-            builder.Property(l => l.Codigo)
-                .HasColumnName("codigo")
-                .HasColumnType("varchar(50)")
-                .IsRequired();
-
-            builder.Property(l => l.CodigoBarras)
-                .HasColumnName("codigo_barras")
-                .HasColumnType("varchar(255)")
-                .IsRequired();
-
             builder.Property(l => l.DataFabricacao)
                 .HasColumnName("data_fabricacao")
                 .HasColumnType("date")
@@ -48,13 +38,13 @@ namespace SistemaEstoque.Infra.EntitiesConfig
                 .HasColumnType("boolean")
                 .HasDefaultValue(false);
 
-            builder.Property(l => l.InsumoId)
-                .HasColumnName("insumo_id")
+            builder.Property(l => l.LoteId)
+                .HasColumnName("lote_id")
                 .HasColumnType("int")
                 .IsRequired();
 
-            builder.Property(l => l.FornecedorId)
-                .HasColumnName("fornecedor_id")
+            builder.Property(l => l.InsumoId)
+                .HasColumnName("insumo_id")
                 .HasColumnType("int")
                 .IsRequired();
 
@@ -63,19 +53,19 @@ namespace SistemaEstoque.Infra.EntitiesConfig
                 .HasColumnType("int")
                 .IsRequired();
 
+            builder.HasOne(l => l.Lote)
+                .WithMany(l => l.LotesInsumos)
+                .HasForeignKey(l => l.LoteId)
+                .OnDelete(DeleteBehavior.Cascade);
+
             builder.HasOne(l => l.Insumo)
                 .WithMany(i => i.LotesInsumos)
                 .HasForeignKey(l => l.InsumoId)
                 .OnDelete(DeleteBehavior.Cascade);
 
-            builder.HasOne(l => l.Fornecedor)
-                .WithMany(f => f.LotesInsumos)
-                .HasForeignKey(l => l.FornecedorId)
-                .OnDelete(DeleteBehavior.SetNull);
-
             builder.HasOne(l => l.MovimentacaoInsumo)
                 .WithOne(m => m.LoteInsumo)
-                .HasForeignKey<MovimentoInsumo>(m => m.LoteInsumoId)
+                .HasForeignKey<MovimentacaoInsumo>(m => m.LoteInsumoId)
                 .OnDelete(DeleteBehavior.SetNull);
 
             builder.HasOne(l => l.Empresa)

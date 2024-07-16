@@ -6,5 +6,6 @@
         public Produto Produto { get; set; }
 
         public IEnumerable<HistoricoEstoqueProduto> HistoricosEstoquesProdutos { get; set; }
+        public IEnumerable<MovimentacaoProduto> MovimentacoesProdutos { get; set; }
     }
 }

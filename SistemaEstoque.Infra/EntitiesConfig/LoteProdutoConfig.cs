@@ -18,16 +18,6 @@ namespace SistemaEstoque.Infra.EntitiesConfig
                 .ValueGeneratedOnAdd()
                 .IsRequired();
 
-            builder.Property(l => l.Codigo)
-                .HasColumnName("codigo")
-                .HasColumnType("varchar(50)")
-                .IsRequired();
-
-            builder.Property(l => l.CodigoBarras)
-                .HasColumnName("codigo_barras")
-                .HasColumnType("varchar(255)")
-                .IsRequired();
-
             builder.Property(l => l.DataFabricacao)
                 .HasColumnName("data_fabricacao")
                 .HasColumnType("date")
@@ -53,11 +43,6 @@ namespace SistemaEstoque.Infra.EntitiesConfig
                 .HasColumnType("int")
                 .IsRequired();
 
-            builder.Property(l => l.FornecedorId)
-                .HasColumnName("fornecedor_id")
-                .HasColumnType("int")
-                .IsRequired();
-
             builder.Property(l => l.EmpresaId)
                 .HasColumnName("empresa_id")
                 .HasColumnType("int")
@@ -66,11 +51,6 @@ namespace SistemaEstoque.Infra.EntitiesConfig
             builder.HasOne(l => l.Produto)
                 .WithMany(p => p.LotesProdutos)
                 .HasForeignKey(l => l.ProdutoId)
-                .OnDelete(DeleteBehavior.SetNull);
-
-            builder.HasOne(l => l.Fornecedor)
-                .WithMany(f => f.LotesProdutos)
-                .HasForeignKey(l => l.FornecedorId)
                 .OnDelete(DeleteBehavior.SetNull);
 
             builder.HasOne(l => l.MovimentacaoProduto)

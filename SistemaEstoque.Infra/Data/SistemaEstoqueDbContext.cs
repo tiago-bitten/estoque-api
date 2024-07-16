@@ -12,8 +12,9 @@ namespace SistemaEstoque.Infra.Data
         }
 
         public DbSet<Empresa> Empresas { get; set; }
+        public DbSet<Lote> Lotes { get; set; }
         public DbSet<Produto> Produtos { get; set; }
-        public DbSet<MovimentoInsumo> Insumos { get; set; }
+        public DbSet<MovimentacaoInsumo> Insumos { get; set; }
         public DbSet<Categoria> Categorias { get; set; }
         public DbSet<Usuario> Usuarios { get; set; }
         public DbSet<Fornecedor> Fornecedores { get; set; }
@@ -22,7 +23,7 @@ namespace SistemaEstoque.Infra.Data
         public DbSet<LoteProduto> LotesProdutos { get; set; }
         public DbSet<LoteInsumo> LotesInsumos { get; set; }
         public DbSet<MovimentacaoProduto> MovimentacoesProdutos { get; set; }
-        public DbSet<MovimentoInsumo> MovimentacoesInsumos { get; set; }
+        public DbSet<MovimentacaoInsumo> MovimentacoesInsumos { get; set; }
         public DbSet<LogAlteracao> LogAlteracoes { get; set; }
         public DbSet<HistoricoUsuarioAcesso> HistoricosUsuariosAcessos { get; set; }
         public DbSet<HistoricoEstoqueProduto> HistoricosEstoquesProdutos { get; set; }
@@ -31,6 +32,7 @@ namespace SistemaEstoque.Infra.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new EmpresaConfig());
+            modelBuilder.ApplyConfiguration(new LoteConfig());
             modelBuilder.ApplyConfiguration(new ProdutoConfig());
             modelBuilder.ApplyConfiguration(new InsumoConfig());
             modelBuilder.ApplyConfiguration(new CategoriaConfig());

@@ -8,7 +8,7 @@ namespace SistemaEstoque.Infra.EntitiesConfig
     {
         public void Configure(EntityTypeBuilder<EstoqueProduto> builder)
         {
-            builder.ToTable("estoques");
+            builder.ToTable("estoques_produtos");
 
             builder.HasKey(e => e.Id);
 
@@ -45,6 +45,11 @@ namespace SistemaEstoque.Infra.EntitiesConfig
                 .HasColumnName("empresa_id")
                 .HasColumnType("int")
                 .IsRequired();
+
+            builder.HasMany(e => e.MovimentacoesProdutos)
+                .WithOne(m => m.EstoqueProduto)
+                .HasForeignKey(m => m.EstoqueProdutoId)
+                .OnDelete(DeleteBehavior.SetNull);
 
             builder.HasOne(e => e.Produto)
                 .WithOne(p => p.EstoqueProduto)

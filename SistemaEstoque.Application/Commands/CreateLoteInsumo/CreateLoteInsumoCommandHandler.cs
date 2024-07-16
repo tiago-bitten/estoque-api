@@ -41,10 +41,9 @@ namespace SistemaEstoque.Application.Commands.CreateLoteInsumo
 
 
             var lote = _mapper.Map<LoteInsumo>(request);
-            var movimentacao = _mapper.Map<MovimentoInsumo>(request);
+            var movimentacao = _mapper.Map<MovimentacaoInsumo>(request);
 
             lote.Insumo = insumo;
-            lote.Fornecedor = fornecedor;
             lote.EmpresaId = EMPRESA_CONSTANTE.ID_EMPRESA;
 
             movimentacao.LoteInsumo = lote;

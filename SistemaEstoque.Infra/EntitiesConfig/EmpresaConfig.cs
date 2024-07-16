@@ -12,7 +12,7 @@ namespace SistemaEstoque.Infra.EntitiesConfig
             builder.ToTable("empresas");
 
             builder.HasKey(e => e.Id);
-
+            
             builder.Property(e => e.Id)
                 .HasColumnName("id")
                 .HasColumnType("int")
@@ -140,6 +140,16 @@ namespace SistemaEstoque.Infra.EntitiesConfig
             builder.HasMany(e => e.HistoricosEstoquesInsumos)
                 .WithOne(h => h.Empresa)
                 .HasForeignKey(h => h.EmpresaId)
+                .OnDelete(DeleteBehavior.SetNull);
+
+            builder.HasMany(e => e.HistoricosUsuariosAcessos)
+                .WithOne(h => h.Empresa)
+                .HasForeignKey(h => h.EmpresaId)
+                .OnDelete(DeleteBehavior.SetNull);
+
+            builder.HasMany(e => e.Lotes)
+                .WithOne(l => l.Empresa)
+                .HasForeignKey(l => l.EmpresaId)
                 .OnDelete(DeleteBehavior.SetNull);
         }
     }
