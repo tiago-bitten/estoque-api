@@ -11,6 +11,7 @@ namespace SistemaEstoque.Application.Commands.CreateLote
         public FornecedorDTO Fornecedor { get; set; }
         public int UsuarioRecebimentoId { get; set; }
         public DateTime DataRecebimento { get; set; }
-        public IEnumerable<LoteItemDTO> LotesItens { get; set; }
+        public List<LoteProdutoDTO> LotesProdutos { get; set; }
+        public List<LoteInsumoDTO> LotesInsumos { get; set; }
     }
 }

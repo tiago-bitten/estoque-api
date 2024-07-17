@@ -1,6 +1,7 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using SistemaEstoque.Application.Commands.CreateLote;
 
 namespace SistemaEstoque.API.Controllers
 {
@@ -15,5 +16,12 @@ namespace SistemaEstoque.API.Controllers
             _mediator = mediator;
         }
 
+        [HttpPost("Criar")]
+        public async Task<IActionResult> CriarLote([FromBody] CreateLoteCommand command)
+        {
+            var response = await _mediator.Send(command);
+
+            return Ok(response);
+        }
     }
 }

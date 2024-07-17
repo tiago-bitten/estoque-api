@@ -13,7 +13,10 @@ namespace SistemaEstoque.Application.Profiles
 
             CreateMap<LoteProduto, CreateLoteProdutoResponse>();
 
-            CreateMap<LoteItemDTO, LoteProduto>();
+            CreateMap<LoteProduto, LoteProdutoDTO>();
+
+            CreateMap<LoteItemDTO, LoteProduto>()
+                .ForMember(dest => dest.ProdutoId, opt => opt.Ignore());
         }
     }
 }
