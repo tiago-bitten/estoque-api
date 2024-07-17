@@ -14,6 +14,7 @@ namespace SistemaEstoque.Infra.Data
         private readonly IFornecedorRepository _fornecedorRepository;
         private readonly IEstoqueProdutoRepository _estoqueProdutoRepository;
         private readonly IEstoqueInsumoRepository _estoqueInsumoRepository;
+        private readonly ILoteRepository _loteRepository;
         private readonly ILoteProdutoRepository _loteProdutoRepository;
         private readonly ILoteInsumoRepository _loteInsumoRepository;
         private readonly IMovimentacaoProdutoRepository _movimentacaoProdutoRepository;
@@ -29,6 +30,7 @@ namespace SistemaEstoque.Infra.Data
             IFornecedorRepository fornecedorRepository,
             IEstoqueProdutoRepository estoqueProdutoRepository,
             IEstoqueInsumoRepository estoqueInsumoRepository,
+            ILoteRepository loteRepository,
             ILoteProdutoRepository loteProdutoRepository,
             ILoteInsumoRepository loteInsumoRepository,
             IMovimentacaoProdutoRepository movimentacaoProdutoRepository,
@@ -45,6 +47,7 @@ namespace SistemaEstoque.Infra.Data
             _estoqueInsumoRepository = estoqueInsumoRepository;
             _movimentacaoProdutoRepository = movimentacaoProdutoRepository;
             _movimentacaoInsumoRepository = movimentacaoInsumoRepository;
+            _loteRepository = loteRepository;
             _loteProdutoRepository = loteProdutoRepository;
             _loteInsumoRepository = loteInsumoRepository;
             _logAlteracaoRepository = logAlteracaoRepository;
@@ -57,8 +60,9 @@ namespace SistemaEstoque.Infra.Data
         public IFornecedorRepository Fornecedores => _fornecedorRepository;
         public IEstoqueProdutoRepository EstoquesProdutos => _estoqueProdutoRepository;
         public IEstoqueInsumoRepository EstoquesInsumos => _estoqueInsumoRepository;
+        public ILoteRepository Lotes => _loteRepository;
         public ILoteProdutoRepository LotesProdutos => _loteProdutoRepository;
-        public ILoteInsumoRepository LoteInsumos => _loteInsumoRepository;
+        public ILoteInsumoRepository LotesInsumos => _loteInsumoRepository;
         public IMovimentacaoProdutoRepository MovimentacoesProdutos => _movimentacaoProdutoRepository;
         public IMovimentacaoInsumoRepository MovimentacoesInsumos => _movimentacaoInsumoRepository;
         public ILogAlteracaoRepository LogsAlteracoes => _logAlteracaoRepository;

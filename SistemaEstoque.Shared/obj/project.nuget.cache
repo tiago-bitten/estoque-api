@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "n0PyFO5OWv8Tt/ZJLv+C5I7mOmmlPj1byFkK1tXRxey+d+BInCwsBuq74LspmLfxjG3SBVAJTzvrlffXqYJKWA==",
+  "dgSpecHash": "yQYLI15XEL6Dlsc7uObwOTC5G+bZyHEl4RZnayNUUtVX6mJBDFz3Y1h+x6H66ZTBwbmNR06THgF30DUTepeg2Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\tiago\\Documents\\CSHARP\\p-projetos\\estoque-api\\SistemaEstoque.Shared\\SistemaEstoque.Shared.csproj",
+  "projectFilePath": "C:\\Users\\teste\\Documents\\CSHARP\\projetos\\estoque-api\\SistemaEstoque.Shared\\SistemaEstoque.Shared.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

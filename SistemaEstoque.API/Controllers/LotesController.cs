@@ -15,11 +15,5 @@ namespace SistemaEstoque.API.Controllers
             _mediator = mediator;
         }
 
-        [HttpPost("Criar")]
-        public async Task<IActionResult> CriarLote([FromBody] CriarLoteCommand command)
-        {
-            var result = await _mediator.Send(command);
-            return Ok(result);
-        }
     }
 }
