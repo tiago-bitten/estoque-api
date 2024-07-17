@@ -51,7 +51,7 @@ namespace SistemaEstoque.Application.Commands.CreateLoteInsumo
             movimentacao.UsuarioId = 1;
             movimentacao.EmpresaId = EMPRESA_CONSTANTE.ID_EMPRESA;
 
-            await _uow.LoteInsumos.AddAsync(lote, EMPRESA_CONSTANTE.ID_EMPRESA);
+            await _uow.LotesInsumos.AddAsync(lote, EMPRESA_CONSTANTE.ID_EMPRESA);
             await _uow.MovimentacoesInsumos.AddAsync(movimentacao, EMPRESA_CONSTANTE.ID_EMPRESA);
             await _estoqueService.UpdateEstoque(estoque, request.Quantidade, ETipoMovimentacao.Entrada);
             await _uow.CommitAsync();

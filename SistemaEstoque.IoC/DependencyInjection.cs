@@ -45,6 +45,7 @@ namespace SistemaEstoque.IoC
                     typeof(CreateFornecedorCommand).Assembly,
                     typeof(CreateEstoqueProdutoCommand).Assembly,
                     typeof(CreateEstoqueInsumoCommand).Assembly,
+                    typeof(CreateLoteCommand).Assembly,
                     typeof(CreateLoteProdutoCommand).Assembly,
                     typeof(CreateLoteInsumoCommand).Assembly,
 
@@ -70,6 +71,7 @@ namespace SistemaEstoque.IoC
             services.AddAutoMapper(typeof(LoteInsumoProfile));
             services.AddAutoMapper(typeof(MovimentacaoProdutoProfile));
             services.AddAutoMapper(typeof(MovimentacaoInsumoProfile));
+            services.AddAutoMapper(typeof(LoteProfile));
 
             return services;
         }
@@ -98,6 +100,7 @@ namespace SistemaEstoque.IoC
             services.AddScoped<IInsumoRepository, InsumoRepository>();
             services.AddScoped<ILoteInsumoRepository, LoteInsumoRepository>();
             services.AddScoped<IMovimentacaoInsumoRepository, MovimentacaoInsumoRepository>();
+            services.AddScoped<ILoteRepository, LoteRepository>();
 
             return services;
         }

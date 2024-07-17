@@ -30,6 +30,7 @@ namespace SistemaEstoque.Application.Commands.CreateLote
             _insumoService = insumoService;
         }
 
+        // TODO: Implementar movimentações no estoque de produtos e insumos
         public async Task<CreateLoteResponse> Handle(CreateLoteCommand request, CancellationToken cancellationToken)
         {
             var empresaId = EMPRESA_CONSTANTE.ID_EMPRESA;
@@ -37,14 +38,16 @@ namespace SistemaEstoque.Application.Commands.CreateLote
             var fornecedor = await _fornecedorService.GetAndValidateEntityAsync(request.FornecedorId);
 
             var usuarioId = 1;
+            var usuarioRecebimentoId = 1;
 
             var lote = _mapper.Map<Lote>(request);
             lote.Fornecedor = fornecedor;
             lote.EmpresaId = empresaId;
+            lote.UsuarioRecebimentoId = usuarioRecebimentoId;
 
             await _uow.Lotes.AddAsync(lote, empresaId);
 
-            request.LotesItens.ToList().ForEach(async item =>
+            foreach (var item in request.LotesItens)
             {
                 if (item.TipoItem == ETipoItem.Produto)
                 {
@@ -53,7 +56,6 @@ namespace SistemaEstoque.Application.Commands.CreateLote
                     var loteProduto = _mapper.Map<LoteProduto>(item);
                     loteProduto.Produto = produto;
                     loteProduto.EmpresaId = empresaId;
-
                     loteProduto.Lote = lote;
 
                     await _uow.LotesProdutos.AddAsync(loteProduto, empresaId);
@@ -65,14 +67,18 @@ namespace SistemaEstoque.Application.Commands.CreateLote
                     var loteInsumo = _mapper.Map<LoteInsumo>(item);
                     loteInsumo.Insumo = insumo;
                     loteInsumo.EmpresaId = empresaId;
-
                     loteInsumo.Lote = lote;
 
                     await _uow.LotesInsumos.AddAsync(loteInsumo, empresaId);
                 }
-            });
+            }
 
             await _uow.CommitAsync();
+
+            var response = _mapper.Map<CreateLoteResponse>(lote);
+
+            return await Task.FromResult(response);
         }
+
     }
 }

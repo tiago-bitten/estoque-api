@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "0ZSQSNg/rDIAqYoznn9usrjLYOOMHtg9yBXzvxztAIt9tOFnE3DrppApQ9SBPEesVYIAEEROrt8Fr58FH9b1dw==",
+  "dgSpecHash": "cjXZivAZteE=",
   "success": true,
-  "projectFilePath": "C:\\Users\\teste\\Documents\\CSHARP\\projetos\\estoque-api\\SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj",
+  "projectFilePath": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
