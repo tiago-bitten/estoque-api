@@ -22,3 +22,14 @@ C:\Users\tiago\Documents\CSHARP\p-projetos\estoque-api\SistemaEstoque.Domain\bin
 C:\Users\tiago\Documents\CSHARP\p-projetos\estoque-api\SistemaEstoque.Domain\bin\Debug\net7.0\SistemaEstoque.Domain.dll
 C:\Users\tiago\Documents\CSHARP\p-projetos\estoque-api\SistemaEstoque.Domain\bin\Debug\net7.0\SistemaEstoque.Domain.pdb
 C:\Users\tiago\Documents\CSHARP\p-projetos\estoque-api\SistemaEstoque.Domain\obj\Debug\net7.0\ref\SistemaEstoque.Domain.dll
+C:\Users\teste\Documents\CSHARP\projetos\estoque-api\SistemaEstoque.Domain\bin\Debug\net7.0\SistemaEstoque.Domain.deps.json
+C:\Users\teste\Documents\CSHARP\projetos\estoque-api\SistemaEstoque.Domain\bin\Debug\net7.0\SistemaEstoque.Domain.dll
+C:\Users\teste\Documents\CSHARP\projetos\estoque-api\SistemaEstoque.Domain\bin\Debug\net7.0\SistemaEstoque.Domain.pdb
+C:\Users\teste\Documents\CSHARP\projetos\estoque-api\SistemaEstoque.Domain\obj\Debug\net7.0\SistemaEstoque.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\teste\Documents\CSHARP\projetos\estoque-api\SistemaEstoque.Domain\obj\Debug\net7.0\SistemaEstoque.Domain.AssemblyInfoInputs.cache
+C:\Users\teste\Documents\CSHARP\projetos\estoque-api\SistemaEstoque.Domain\obj\Debug\net7.0\SistemaEstoque.Domain.AssemblyInfo.cs
+C:\Users\teste\Documents\CSHARP\projetos\estoque-api\SistemaEstoque.Domain\obj\Debug\net7.0\SistemaEstoque.Domain.csproj.CoreCompileInputs.cache
+C:\Users\teste\Documents\CSHARP\projetos\estoque-api\SistemaEstoque.Domain\obj\Debug\net7.0\SistemaEstoque.Domain.dll
+C:\Users\teste\Documents\CSHARP\projetos\estoque-api\SistemaEstoque.Domain\obj\Debug\net7.0\refint\SistemaEstoque.Domain.dll
+C:\Users\teste\Documents\CSHARP\projetos\estoque-api\SistemaEstoque.Domain\obj\Debug\net7.0\SistemaEstoque.Domain.pdb
+C:\Users\teste\Documents\CSHARP\projetos\estoque-api\SistemaEstoque.Domain\obj\Debug\net7.0\ref\SistemaEstoque.Domain.dll
