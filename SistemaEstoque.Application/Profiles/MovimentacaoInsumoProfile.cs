@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using SistemaEstoque.Application.Commands.CreateEstoqueInsumo;
 using SistemaEstoque.Application.Commands.CreateLoteInsumo;
+using SistemaEstoque.Application.DTOs;
 using SistemaEstoque.Domain.Entities;
 using SistemaEstoque.Domain.Enums;
 using System;
@@ -20,10 +21,10 @@ namespace SistemaEstoque.Application.Profiles
                 .ForMember(dest => dest.DataMovimentacao, opt => opt.MapFrom(src => DateTime.Now))
                 .ForMember(dest => dest.Origem, opt => opt.MapFrom(src => EOrigemMovimentacao.EntradaLote));
         
-            CreateMap<CreateEstoqueInsumoCommand, MovimentacaoInsumo>()
+            CreateMap<LoteItemDTO, MovimentacaoInsumo>()
                 .ForMember(dest => dest.Tipo, opt => opt.MapFrom(src => ETipoMovimentacao.Entrada))
                 .ForMember(dest => dest.DataMovimentacao, opt => opt.MapFrom(src => DateTime.Now))
-                .ForMember(dest => dest.Origem, opt => opt.MapFrom(src => EOrigemMovimentacao.CriacaoEstoque));
+                .ForMember(dest => dest.Origem, opt => opt.MapFrom(src => EOrigemMovimentacao.EntradaLote));    
         }
     }
 }
