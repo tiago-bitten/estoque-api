@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using SistemaEstoque.Domain.Entities;
+using SistemaEstoque.Domain.Entities.Permissoes;
 using SistemaEstoque.Infra.EntitiesConfig;
 
 namespace SistemaEstoque.Infra.Data
@@ -28,6 +29,8 @@ namespace SistemaEstoque.Infra.Data
         public DbSet<HistoricoUsuarioAcesso> HistoricosUsuariosAcessos { get; set; }
         public DbSet<HistoricoEstoqueProduto> HistoricosEstoquesProdutos { get; set; }
         public DbSet<HistoricoEstoqueInsumo> HistoricosEstoquesInsumos { get; set; }
+        public DbSet<PerfilAcesso> PerfisAcessos { get; set; }
+        public DbSet<PermissaoProduto> PermissoesProdutos { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -48,6 +51,8 @@ namespace SistemaEstoque.Infra.Data
             modelBuilder.ApplyConfiguration(new HistoricoUsuarioAcessoConfig());
             modelBuilder.ApplyConfiguration(new HistoricoEstoqueProdutoConfig());
             modelBuilder.ApplyConfiguration(new HistoricoEstoqueInsumoConfig());
+            modelBuilder.ApplyConfiguration(new PerfilAcessoConfig());
+            modelBuilder.ApplyConfiguration(new PermissaoProdutoConfig());
             
             base.OnModelCreating(modelBuilder);
         }

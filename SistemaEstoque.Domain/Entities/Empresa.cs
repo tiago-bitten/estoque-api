@@ -1,4 +1,5 @@
-﻿using SistemaEstoque.Domain.Enums;
+﻿using SistemaEstoque.Domain.Entities.Permissoes;
+using SistemaEstoque.Domain.Enums;
 
 namespace SistemaEstoque.Domain.Entities
 {
@@ -32,5 +33,7 @@ namespace SistemaEstoque.Domain.Entities
         public IEnumerable<HistoricoEstoqueInsumo?> HistoricosEstoquesInsumos { get; set; }
         public IEnumerable<HistoricoUsuarioAcesso?> HistoricosUsuariosAcessos { get; set; }
         public IEnumerable<Lote?> Lotes { get; set; }
+        public IEnumerable<PerfilAcesso?> PerfisAcessos { get; set; }
+        public IEnumerable<PermissaoProduto?> PermissoesProdutos { get; set; }
     }
 }

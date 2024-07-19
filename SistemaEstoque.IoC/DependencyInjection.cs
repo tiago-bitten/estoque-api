@@ -24,6 +24,7 @@ using SistemaEstoque.Application.Queries.GetAllEstoquesProdutos;
 using SistemaEstoque.Application.Queries.GetAllFornecedores;
 using SistemaEstoque.Application.Commands.CreateEstoqueInsumo;
 using SistemaEstoque.Application.Queries.GetAllEstoquesInsumos;
+using SistemaEstoque.Application.Queries.GetAllLotes;
 
 namespace SistemaEstoque.IoC
 {
@@ -56,7 +57,8 @@ namespace SistemaEstoque.IoC
                     typeof(GetAllInsumosQuery).Assembly,
                     typeof(GetAllEstoquesProdutosQuery).Assembly,
                     typeof(GetAllEstoquesInsumosQuery).Assembly,
-                    typeof(GetAllFornecedoresQuery).Assembly
+                    typeof(GetAllFornecedoresQuery).Assembly,
+                    typeof(GetAllLotesQuery).Assembly
                 });
             });
 
@@ -101,6 +103,8 @@ namespace SistemaEstoque.IoC
             services.AddScoped<ILoteInsumoRepository, LoteInsumoRepository>();
             services.AddScoped<IMovimentacaoInsumoRepository, MovimentacaoInsumoRepository>();
             services.AddScoped<ILoteRepository, LoteRepository>();
+            services.AddScoped<IPerfilAcessoRepository, IPerfilAcessoRepository>();
+            services.AddScoped<IPermissaoProdutoRepository, IPermissaoProdutoRepository>();
 
             return services;
         }

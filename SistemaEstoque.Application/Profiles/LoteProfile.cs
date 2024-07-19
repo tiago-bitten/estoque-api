@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using SistemaEstoque.Application.Commands.CreateLote;
+using SistemaEstoque.Application.DTOs;
 using SistemaEstoque.Domain.Entities;
 
 namespace SistemaEstoque.Application.Profiles
@@ -11,6 +12,8 @@ namespace SistemaEstoque.Application.Profiles
             CreateMap<CreateLoteCommand, Lote>();
 
             CreateMap<Lote, CreateLoteResponse>();
+
+            CreateMap<Lote, LoteDTO>();
         }
     }
 }

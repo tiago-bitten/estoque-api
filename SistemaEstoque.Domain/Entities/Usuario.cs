@@ -5,7 +5,10 @@
         public string Nome { get; set; }
         public string Email { get; set; }
         public string Senha { get; set; }
+        public int? PerfilAcessoId { get; set; }
         public bool? AcessoBloqueado { get; set; }
+        
+        public PerfilAcesso? PerfilAcesso { get; set; }
 
         public IEnumerable<MovimentacaoProduto?> MovimentacoesProdutos { get; set; }
         public IEnumerable<MovimentacaoInsumo?> MovimentacoesInsumos { get; set; }

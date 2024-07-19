@@ -33,6 +33,10 @@ namespace SistemaEstoque.Infra.EntitiesConfig
                 .HasColumnType("varchar(255)")
                 .IsRequired();
 
+            builder.Property(u => u.PerfilAcessoId)
+                .HasColumnName("perfil_acesso_id")
+                .HasColumnType("int");
+
             builder.Property(u => u.AcessoBloqueado)
                 .HasColumnName("acesso_bloqueado")
                 .HasColumnType("boolean")
@@ -47,6 +51,11 @@ namespace SistemaEstoque.Infra.EntitiesConfig
                 .HasColumnName("empresa_id")
                 .HasColumnType("int")
                 .IsRequired();
+
+            builder.HasOne(u => u.PerfilAcesso)
+                .WithMany(p => p.Usuarios)
+                .HasForeignKey(u => u.PerfilAcessoId)
+                .OnDelete(DeleteBehavior.SetNull);
 
             builder.HasOne(u => u.Empresa)
                 .WithMany(e => e.Usuarios)
