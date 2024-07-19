@@ -74,6 +74,7 @@ namespace SistemaEstoque.IoC
             services.AddAutoMapper(typeof(MovimentacaoProdutoProfile));
             services.AddAutoMapper(typeof(MovimentacaoInsumoProfile));
             services.AddAutoMapper(typeof(LoteProfile));
+            services.AddAutoMapper(typeof(PerfilAcessoProfile));
 
             return services;
         }
