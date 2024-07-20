@@ -7,6 +7,7 @@ namespace SistemaEstoque.Infra.Data
     public class UnitOfWork : IUnitOfWork
     {
         private readonly SistemaEstoqueDbContext _context;
+        private readonly IEmpresaRepository _empresaRepository;
         private readonly ICategoriaRepository _categoriaRepository;
         private readonly IUsuarioRepository _usuarioRepository;
         private readonly IProdutoRepository _produtoRepository;
@@ -20,9 +21,13 @@ namespace SistemaEstoque.Infra.Data
         private readonly IMovimentacaoProdutoRepository _movimentacaoProdutoRepository;
         private readonly IMovimentacaoInsumoRepository _movimentacaoInsumoRepository;
         private readonly ILogAlteracaoRepository _logAlteracaoRepository;
+        private readonly IPerfilAcessoRepository _perfilAcessoRepository;
+        private readonly IPermissaoProdutoRepository _permissaoProdutoRepository;
+        private readonly IPermissaoCategoriaRepository _permissaoCategoriaRepository;
 
         public UnitOfWork(
             SistemaEstoqueDbContext context,
+            IEmpresaRepository empresaRepository,
             ICategoriaRepository categoriaRepository,
             IUsuarioRepository usuarioRepository,
             IProdutoRepository produtoRepository,
@@ -35,9 +40,13 @@ namespace SistemaEstoque.Infra.Data
             ILoteInsumoRepository loteInsumoRepository,
             IMovimentacaoProdutoRepository movimentacaoProdutoRepository,
             IMovimentacaoInsumoRepository movimentacaoInsumoRepository,
-            ILogAlteracaoRepository logAlteracaoRepository)
+            ILogAlteracaoRepository logAlteracaoRepository,
+            IPerfilAcessoRepository perfilAcessoRepository,
+            IPermissaoProdutoRepository permissaoProdutoRepository,
+            IPermissaoCategoriaRepository permissaoCategoriaRepository)
         {
             _context = context;
+            _empresaRepository = empresaRepository;
             _categoriaRepository = categoriaRepository;
             _usuarioRepository = usuarioRepository;
             _produtoRepository = produtoRepository;
@@ -51,8 +60,12 @@ namespace SistemaEstoque.Infra.Data
             _loteProdutoRepository = loteProdutoRepository;
             _loteInsumoRepository = loteInsumoRepository;
             _logAlteracaoRepository = logAlteracaoRepository;
+            _perfilAcessoRepository = perfilAcessoRepository;
+            _permissaoProdutoRepository = permissaoProdutoRepository;
+            _permissaoCategoriaRepository = permissaoCategoriaRepository;
         }
 
+        public IEmpresaRepository Empresas => _empresaRepository;
         public ICategoriaRepository Categorias => _categoriaRepository;
         public IUsuarioRepository Usuarios => _usuarioRepository;
         public IProdutoRepository Produtos => _produtoRepository;
@@ -66,6 +79,9 @@ namespace SistemaEstoque.Infra.Data
         public IMovimentacaoProdutoRepository MovimentacoesProdutos => _movimentacaoProdutoRepository;
         public IMovimentacaoInsumoRepository MovimentacoesInsumos => _movimentacaoInsumoRepository;
         public ILogAlteracaoRepository LogsAlteracoes => _logAlteracaoRepository;
+        public IPerfilAcessoRepository PerfisAcessos => _perfilAcessoRepository;
+        public IPermissaoProdutoRepository PermissoesProdutos => _permissaoProdutoRepository;
+        public IPermissaoCategoriaRepository PermissoesCategorias => _permissaoCategoriaRepository;
 
         public async Task<bool> CommitAsync()
         {

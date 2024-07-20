@@ -72,6 +72,15 @@ namespace SistemaEstoque.Infra.EntitiesConfig
                 .HasColumnType("BOOLEAN")
                 .HasDefaultValue(true);
 
+            builder.Property(e => e.ProprietarioId)
+                .HasColumnName("proprietario_id")
+                .HasColumnType("int");
+
+            builder.HasOne(e => e.Proprietario)
+                .WithMany(p => p.Empresas)
+                .HasForeignKey(e => e.ProprietarioId)
+                .OnDelete(DeleteBehavior.SetNull);
+
             builder.HasMany(e => e.Usuarios)
                 .WithOne(u => u.Empresa)
                 .HasForeignKey(u => u.EmpresaId)
@@ -150,6 +159,21 @@ namespace SistemaEstoque.Infra.EntitiesConfig
             builder.HasMany(e => e.Lotes)
                 .WithOne(l => l.Empresa)
                 .HasForeignKey(l => l.EmpresaId)
+                .OnDelete(DeleteBehavior.SetNull);
+
+            builder.HasMany(e => e.PerfisAcessos)
+                .WithOne(p => p.Empresa)
+                .HasForeignKey(p => p.EmpresaId)
+                .OnDelete(DeleteBehavior.SetNull);
+
+            builder.HasMany(e => e.PermissoesProdutos)
+                .WithOne(p => p.Empresa)
+                .HasForeignKey(p => p.EmpresaId)
+                .OnDelete(DeleteBehavior.SetNull);
+
+            builder.HasMany(e => e.PermissoesCategorias)
+                .WithOne(p => p.Empresa)
+                .HasForeignKey(p => p.EmpresaId)
                 .OnDelete(DeleteBehavior.SetNull);
         }
     }

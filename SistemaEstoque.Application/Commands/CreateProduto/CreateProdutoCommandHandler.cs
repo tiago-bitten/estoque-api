@@ -24,14 +24,21 @@ namespace SistemaEstoque.Application.Commands.CreateProduto
 
         public async Task<CreateProdutoResponse> Handle(CreateProdutoCommand request, CancellationToken cancellationToken)
         {
+            var empresaId = EMPRESA_CONSTANTE.ID_EMPRESA;
+            var usuarioId = 1;
+
+            var usuario = await _uow.Usuarios.GetByIdAsync(usuarioId);
+
+            if (!usuario.PerfilAcesso.PermissaoProduto.Criar)
+                throw new UnauthorizedAccessException("Usuário não tem permissão para criar produtos");
+
             var categoria = await _categoriaService.GetAndValidateEntityAsync(request.CategoriaId);
 
             var produto = _mapper.Map<Produto>(request);
 
             produto.Categoria = categoria;
-            produto.EmpresaId = EMPRESA_CONSTANTE.ID_EMPRESA;
 
-            await _uow.Produtos.AddAsync(produto, EMPRESA_CONSTANTE.ID_EMPRESA);
+            await _uow.Produtos.AddAsync(produto, empresaId);
             await _uow.CommitAsync();
 
             var response = _mapper.Map<CreateProdutoResponse>(produto);

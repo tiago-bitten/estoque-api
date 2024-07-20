@@ -45,7 +45,7 @@ namespace SistemaEstoque.Infra.EntitiesConfig
             builder.Property(p => p.Removido)
                 .HasColumnName("removido")
                 .HasColumnType("boolean")
-                .IsRequired();
+                .HasDefaultValue(false);
 
             builder.Property(p => p.EmpresaId)
                 .HasColumnName("empresa_id")

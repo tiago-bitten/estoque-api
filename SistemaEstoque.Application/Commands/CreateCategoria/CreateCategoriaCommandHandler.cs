@@ -20,6 +20,11 @@ namespace SistemaEstoque.Application.Commands.CreateCategoria
 
         public async Task<CreateCategoriaResponse> Handle(CreateCategoriaCommand request, CancellationToken cancellationToken)
         {
+            var usuario = await _uow.Usuarios.GetByIdAsync(EMPRESA_CONSTANTE.ID_USUARIO);
+
+            if (!usuario.PerfilAcesso.PermissaoCategoria.Criar)
+                throw new UnauthorizedAccessException("Usuário não tem permissão para criar categorias");
+
             var categoria = _mapper.Map<Categoria>(request);
             
             var existsCategoria = await _uow.Categorias.FindAsync(x => x.Nome == request.Nome && x.EmpresaId == EMPRESA_CONSTANTE.ID_EMPRESA);

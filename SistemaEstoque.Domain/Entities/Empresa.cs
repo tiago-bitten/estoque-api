@@ -16,6 +16,8 @@ namespace SistemaEstoque.Domain.Entities
         public string Estado { get; set; }
         public string Cep { get; set; }
         public bool? Ativo { get; set; }
+        public int? ProprietarioId { get; set; }
+        public Proprietario? Proprietario { get; set; }
 
         public IEnumerable<Usuario?> Usuarios { get; set; }
         public IEnumerable<Categoria?> Categorias { get; set; } 
@@ -35,5 +37,6 @@ namespace SistemaEstoque.Domain.Entities
         public IEnumerable<Lote?> Lotes { get; set; }
         public IEnumerable<PerfilAcesso?> PerfisAcessos { get; set; }
         public IEnumerable<PermissaoProduto?> PermissoesProdutos { get; set; }
+        public IEnumerable<PermissaoCategoria?> PermissoesCategorias { get; set; }
     }
 }

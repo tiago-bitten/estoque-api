@@ -5,6 +5,7 @@
         Task<bool> CommitAsync();
         Task RollbackAsync();
 
+        IEmpresaRepository Empresas { get; }
         ICategoriaRepository Categorias { get; }
         IUsuarioRepository Usuarios { get; }
         IProdutoRepository Produtos { get; }
@@ -18,5 +19,8 @@
         IMovimentacaoProdutoRepository MovimentacoesProdutos { get; }
         IMovimentacaoInsumoRepository MovimentacoesInsumos { get; }
         ILogAlteracaoRepository LogsAlteracoes { get; }
+        IPerfilAcessoRepository PerfisAcessos { get; }
+        IPermissaoProdutoRepository PermissoesProdutos { get; }
+        IPermissaoCategoriaRepository PermissoesCategorias { get; }
     }
 }

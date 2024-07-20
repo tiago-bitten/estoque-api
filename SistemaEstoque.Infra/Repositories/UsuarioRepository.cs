@@ -12,6 +12,22 @@ namespace SistemaEstoque.Infra.Repositories
         {
         }
 
+        public override IQueryable<Usuario> GetAll(int empresaId)
+        {
+            return _dbSet
+                .Include(u => u.PerfilAcesso).ThenInclude(p => p.PermissaoProduto)
+                .Include(u => u.PerfilAcesso).ThenInclude(p => p.PermissaoCategoria)
+                .Where(u => u.EmpresaId == empresaId && u.Removido == false);
+        }
+
+        public override async Task<Usuario> GetByIdAsync(int id)
+        {
+            return await _context.Usuarios
+                .Include(u => u.PerfilAcesso).ThenInclude(p => p.PermissaoProduto)
+                .Include(u => u.PerfilAcesso).ThenInclude(p => p.PermissaoCategoria)
+                .FirstOrDefaultAsync(u => u.Id == id);
+        }   
+
         public async Task<Usuario> GetByEmailAsync(string email)
         {
             return await _context.Usuarios.FirstOrDefaultAsync(u => u.Email == email);

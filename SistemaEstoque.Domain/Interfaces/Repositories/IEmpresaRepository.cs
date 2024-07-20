@@ -7,7 +7,9 @@ using System.Threading.Tasks;
 
 namespace SistemaEstoque.Domain.Interfaces.Repositories
 {
-    public interface IEmpresaRepository : IRepositoryBase<Empresa>
+    public interface IEmpresaRepository
     {
+        Task AddAsync(Empresa empresa);
+        Task<Empresa> GetByIdAsync(int id);
     }
 }

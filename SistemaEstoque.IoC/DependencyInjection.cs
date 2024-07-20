@@ -25,6 +25,8 @@ using SistemaEstoque.Application.Queries.GetAllFornecedores;
 using SistemaEstoque.Application.Commands.CreateEstoqueInsumo;
 using SistemaEstoque.Application.Queries.GetAllEstoquesInsumos;
 using SistemaEstoque.Application.Queries.GetAllLotes;
+using SistemaEstoque.Application.Commands.CreatePerfilAcesso;
+using SistemaEstoque.Application.Commands.CreateEmpresa;
 
 namespace SistemaEstoque.IoC
 {
@@ -49,6 +51,8 @@ namespace SistemaEstoque.IoC
                     typeof(CreateLoteCommand).Assembly,
                     typeof(CreateLoteProdutoCommand).Assembly,
                     typeof(CreateLoteInsumoCommand).Assembly,
+                    typeof(CreatePerfilAcessoComannd).Assembly,
+                    typeof(CreateEmpresaCommand).Assembly,
 
                     typeof(UpdateCategoriaCommand).Assembly,
                     
@@ -75,6 +79,8 @@ namespace SistemaEstoque.IoC
             services.AddAutoMapper(typeof(MovimentacaoInsumoProfile));
             services.AddAutoMapper(typeof(LoteProfile));
             services.AddAutoMapper(typeof(PerfilAcessoProfile));
+            services.AddAutoMapper(typeof(EmpresaProfile));
+            services.AddAutoMapper(typeof(ProprietarioProfile));
 
             return services;
         }
@@ -104,8 +110,11 @@ namespace SistemaEstoque.IoC
             services.AddScoped<ILoteInsumoRepository, LoteInsumoRepository>();
             services.AddScoped<IMovimentacaoInsumoRepository, MovimentacaoInsumoRepository>();
             services.AddScoped<ILoteRepository, LoteRepository>();
-            services.AddScoped<IPerfilAcessoRepository, IPerfilAcessoRepository>();
-            services.AddScoped<IPermissaoProdutoRepository, IPermissaoProdutoRepository>();
+            services.AddScoped<IPerfilAcessoRepository, PerfilAcessoRepository>();
+            services.AddScoped<IPermissaoProdutoRepository, PermissaoProdutoRepository>();
+            services.AddScoped<IPermissaoCategoriaRepository, PermissaoCategoriaRepository>();
+            services.AddScoped<IEmpresaRepository, EmpresaRepository>();
+            services.AddScoped<IProprietarioRepository, ProprietarioRepository>();
 
             return services;
         }
@@ -119,6 +128,7 @@ namespace SistemaEstoque.IoC
             services.AddScoped<IFornecedorService, FornecedorService>();
             services.AddScoped<ILoteProdutoService, LoteProdutoService>();
             services.AddScoped<IInsumoService, InsumoService>();
+            services.AddScoped<IProprietarioService, ProprietarioService>();
             //services.AddScoped<IUsuarioService, UsuarioService>();
 
             return services;

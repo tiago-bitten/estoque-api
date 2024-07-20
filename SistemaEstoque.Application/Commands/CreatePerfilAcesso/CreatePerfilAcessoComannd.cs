@@ -8,5 +8,6 @@ namespace SistemaEstoque.Application.Commands.CreatePerfilAcesso
         public string Nome { get; set; }
         public int UsuarioId { get; set; }
         public PermissaoProdutoDTO PermissaoProduto { get; set; }
+        public PermissaoCategoriaDTO PermissaoCategoria { get; set; }
     }
 }

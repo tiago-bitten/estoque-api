@@ -1,5 +1,6 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using SistemaEstoque.Application.Commands.CreatePerfilAcesso;
 
 namespace SistemaEstoque.API.Controllers
 {
@@ -15,11 +16,11 @@ namespace SistemaEstoque.API.Controllers
         }
 
         [HttpPost("Criar")]
-        public async Task<IActionResult> Criar(/*[FromBody] CreatePerfilAcessoCommand command*/)
+        public async Task<IActionResult> Criar([FromBody] CreatePerfilAcessoComannd command)
         {
-            //var reponse = await _mediator.Send(command)
+            var response = await _mediator.Send(command);
 
-            return Ok();
+            return Ok(response);
         }
 
         //[HttpPost("Criar/PermissaoProduto")]

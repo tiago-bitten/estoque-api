@@ -30,7 +30,9 @@ namespace SistemaEstoque.Infra.Data
         public DbSet<HistoricoEstoqueProduto> HistoricosEstoquesProdutos { get; set; }
         public DbSet<HistoricoEstoqueInsumo> HistoricosEstoquesInsumos { get; set; }
         public DbSet<PerfilAcesso> PerfisAcessos { get; set; }
+        public DbSet<Proprietario> Proprietarios { get; set; }
         public DbSet<PermissaoProduto> PermissoesProdutos { get; set; }
+        public DbSet<PermissaoCategoria> PermissoesCategorias { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -52,7 +54,9 @@ namespace SistemaEstoque.Infra.Data
             modelBuilder.ApplyConfiguration(new HistoricoEstoqueProdutoConfig());
             modelBuilder.ApplyConfiguration(new HistoricoEstoqueInsumoConfig());
             modelBuilder.ApplyConfiguration(new PerfilAcessoConfig());
+            modelBuilder.ApplyConfiguration(new ProprietarioConfig());
             modelBuilder.ApplyConfiguration(new PermissaoProdutoConfig());
+            modelBuilder.ApplyConfiguration(new PermissaoCategoriaConfig());
             
             base.OnModelCreating(modelBuilder);
         }

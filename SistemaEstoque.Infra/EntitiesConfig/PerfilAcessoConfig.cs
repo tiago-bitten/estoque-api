@@ -25,7 +25,7 @@ namespace SistemaEstoque.Infra.EntitiesConfig
             builder.Property(p => p.Removido)
                 .HasColumnName("removido")
                 .HasColumnType("boolean")
-                .IsRequired();
+                .HasDefaultValue(false);
 
             builder.Property(p => p.EmpresaId)
                 .HasColumnName("empresa_id")
@@ -33,6 +33,11 @@ namespace SistemaEstoque.Infra.EntitiesConfig
                 .IsRequired();
             
             builder.HasOne(p => p.PermissaoProduto)
+                .WithOne(p => p.PerfilAcesso)
+                .HasForeignKey<PerfilAcesso>(p => p.Id)
+                .IsRequired();
+
+            builder.HasOne(p => p.PermissaoCategoria)
                 .WithOne(p => p.PerfilAcesso)
                 .HasForeignKey<PerfilAcesso>(p => p.Id)
                 .IsRequired();

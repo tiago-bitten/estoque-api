@@ -12,6 +12,8 @@ namespace SistemaEstoque.Application.Profiles
             CreateMap<CreatePerfilAcessoComannd, PerfilAcesso>()
                 .ForMember(dest => dest.PermissaoProduto, opt => opt.Ignore());
 
+            CreateMap<PerfilAcesso, CreatePerfilAcessoResponse>();
+
             CreateMap<CreatePerfilAcessoComannd, PermissaoProduto>()
                 .BeforeMap((src, dest) =>
                 {
@@ -19,6 +21,15 @@ namespace SistemaEstoque.Application.Profiles
                     dest.Criar = src.PermissaoProduto.Criar;
                     dest.Editar = src.PermissaoProduto.Editar;
                     dest.Excluir = src.PermissaoProduto.Excluir;
+                });
+
+            CreateMap<CreatePerfilAcessoComannd, PermissaoCategoria>()
+                .BeforeMap((src, dest) =>
+                {
+                    dest.Visualizar = src.PermissaoCategoria.Visualizar;
+                    dest.Criar = src.PermissaoCategoria.Criar;
+                    dest.Editar = src.PermissaoCategoria.Editar;
+                    dest.Excluir = src.PermissaoCategoria.Excluir;
                 });
         }
     }

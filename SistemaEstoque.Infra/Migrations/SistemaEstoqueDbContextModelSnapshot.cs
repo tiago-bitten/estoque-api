@@ -112,6 +112,10 @@ namespace SistemaEstoque.Infra.Migrations
                         .HasColumnType("varchar(150)")
                         .HasColumnName("nome");
 
+                    b.Property<int?>("ProprietarioId")
+                        .HasColumnType("int")
+                        .HasColumnName("proprietario_id");
+
                     b.Property<string>("Telefone")
                         .IsRequired()
                         .HasColumnType("varchar(15)")
@@ -123,6 +127,8 @@ namespace SistemaEstoque.Infra.Migrations
                         .HasColumnName("tipo_empresa");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("ProprietarioId");
 
                     b.ToTable("empresas", (string)null);
                 });
@@ -857,8 +863,9 @@ namespace SistemaEstoque.Infra.Migrations
                         .HasColumnName("nome");
 
                     b.Property<bool?>("Removido")
-                        .IsRequired()
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("boolean")
+                        .HasDefaultValue(false)
                         .HasColumnName("removido");
 
                     b.HasKey("Id");
@@ -866,6 +873,47 @@ namespace SistemaEstoque.Infra.Migrations
                     b.HasIndex("EmpresaId");
 
                     b.ToTable("perfis_acessos", (string)null);
+                });
+
+            modelBuilder.Entity("SistemaEstoque.Domain.Entities.Permissoes.PermissaoCategoria", b =>
+                {
+                    b.Property<int>("Id")
+                        .HasColumnType("integer");
+
+                    b.Property<bool>("Criar")
+                        .HasColumnType("boolean")
+                        .HasColumnName("criar");
+
+                    b.Property<bool>("Editar")
+                        .HasColumnType("boolean")
+                        .HasColumnName("editar");
+
+                    b.Property<int>("EmpresaId")
+                        .HasColumnType("int")
+                        .HasColumnName("empresa_id");
+
+                    b.Property<bool>("Excluir")
+                        .HasColumnType("boolean")
+                        .HasColumnName("excluir");
+
+                    b.Property<int>("PerfilAcessoId")
+                        .HasColumnType("integer");
+
+                    b.Property<bool?>("Removido")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("boolean")
+                        .HasDefaultValue(false)
+                        .HasColumnName("removido");
+
+                    b.Property<bool>("Visualizar")
+                        .HasColumnType("boolean")
+                        .HasColumnName("visualizar");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EmpresaId");
+
+                    b.ToTable("permissoes_categorias", (string)null);
                 });
 
             modelBuilder.Entity("SistemaEstoque.Domain.Entities.Permissoes.PermissaoProduto", b =>
@@ -898,8 +946,9 @@ namespace SistemaEstoque.Infra.Migrations
                         .HasColumnName("perfil_acesso_id");
 
                     b.Property<bool?>("Removido")
-                        .IsRequired()
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("boolean")
+                        .HasDefaultValue(false)
                         .HasColumnName("removido");
 
                     b.Property<bool>("Visualizar")
@@ -965,6 +1014,50 @@ namespace SistemaEstoque.Infra.Migrations
                     b.ToTable("produtos", (string)null);
                 });
 
+            modelBuilder.Entity("SistemaEstoque.Domain.Entities.Proprietario", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("id");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Cpf")
+                        .IsRequired()
+                        .HasColumnType("varchar(11)")
+                        .HasColumnName("cpf");
+
+                    b.Property<DateTime>("DataNascimento")
+                        .HasColumnType("date")
+                        .HasColumnName("data_nascimento");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("varchar(150)")
+                        .HasColumnName("email");
+
+                    b.Property<string>("Nome")
+                        .IsRequired()
+                        .HasColumnType("varchar(150)")
+                        .HasColumnName("nome");
+
+                    b.Property<bool?>("Removido")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("boolean")
+                        .HasDefaultValue(false)
+                        .HasColumnName("removido");
+
+                    b.Property<string>("Telefone")
+                        .IsRequired()
+                        .HasColumnType("varchar(15)")
+                        .HasColumnName("telefone");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("proprietarios", (string)null);
+                });
+
             modelBuilder.Entity("SistemaEstoque.Domain.Entities.Usuario", b =>
                 {
                     b.Property<int>("Id")
@@ -1027,6 +1120,16 @@ namespace SistemaEstoque.Infra.Migrations
                         .IsRequired();
 
                     b.Navigation("Empresa");
+                });
+
+            modelBuilder.Entity("SistemaEstoque.Domain.Entities.Empresa", b =>
+                {
+                    b.HasOne("SistemaEstoque.Domain.Entities.Proprietario", "Proprietario")
+                        .WithMany("Empresas")
+                        .HasForeignKey("ProprietarioId")
+                        .OnDelete(DeleteBehavior.SetNull);
+
+                    b.Navigation("Proprietario");
                 });
 
             modelBuilder.Entity("SistemaEstoque.Domain.Entities.EstoqueInsumo", b =>
@@ -1349,12 +1452,31 @@ namespace SistemaEstoque.Infra.Migrations
                     b.Navigation("Empresa");
                 });
 
+            modelBuilder.Entity("SistemaEstoque.Domain.Entities.Permissoes.PermissaoCategoria", b =>
+                {
+                    b.HasOne("SistemaEstoque.Domain.Entities.Empresa", "Empresa")
+                        .WithMany("PermissoesCategorias")
+                        .HasForeignKey("EmpresaId")
+                        .OnDelete(DeleteBehavior.SetNull)
+                        .IsRequired();
+
+                    b.HasOne("SistemaEstoque.Domain.Entities.PerfilAcesso", "PerfilAcesso")
+                        .WithOne("PermissaoCategoria")
+                        .HasForeignKey("SistemaEstoque.Domain.Entities.Permissoes.PermissaoCategoria", "Id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Empresa");
+
+                    b.Navigation("PerfilAcesso");
+                });
+
             modelBuilder.Entity("SistemaEstoque.Domain.Entities.Permissoes.PermissaoProduto", b =>
                 {
                     b.HasOne("SistemaEstoque.Domain.Entities.Empresa", "Empresa")
                         .WithMany("PermissoesProdutos")
                         .HasForeignKey("EmpresaId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.SetNull)
                         .IsRequired();
 
                     b.HasOne("SistemaEstoque.Domain.Entities.PerfilAcesso", "PerfilAcesso")
@@ -1444,6 +1566,8 @@ namespace SistemaEstoque.Infra.Migrations
 
                     b.Navigation("PerfisAcessos");
 
+                    b.Navigation("PermissoesCategorias");
+
                     b.Navigation("PermissoesProdutos");
 
                     b.Navigation("Produtos");
@@ -1500,6 +1624,9 @@ namespace SistemaEstoque.Infra.Migrations
 
             modelBuilder.Entity("SistemaEstoque.Domain.Entities.PerfilAcesso", b =>
                 {
+                    b.Navigation("PermissaoCategoria")
+                        .IsRequired();
+
                     b.Navigation("PermissaoProduto")
                         .IsRequired();
 
@@ -1513,6 +1640,11 @@ namespace SistemaEstoque.Infra.Migrations
                     b.Navigation("LotesProdutos");
 
                     b.Navigation("MovimentacoesProdutos");
+                });
+
+            modelBuilder.Entity("SistemaEstoque.Domain.Entities.Proprietario", b =>
+                {
+                    b.Navigation("Empresas");
                 });
 
             modelBuilder.Entity("SistemaEstoque.Domain.Entities.Usuario", b =>
