@@ -19,6 +19,7 @@ namespace SistemaEstoque.Domain.Entities
         public int? ProprietarioId { get; set; }
         public Proprietario? Proprietario { get; set; }
 
+        public ConfiguracaoEstoque? ConfiguracaoEstoque { get; set; }
         public IEnumerable<Usuario?> Usuarios { get; set; }
         public IEnumerable<Categoria?> Categorias { get; set; } 
         public IEnumerable<Produto?> Produtos { get; set; }

@@ -8,14 +8,8 @@ namespace SistemaEstoque.Domain.Enums
 {
     public enum EOrigemMovimentacao
     {
-        Compra = 1,
-        Venda = 2,
-        Devolucao = 3,
-        Ajuste = 4,
-        EntradaLote = 5,
-        SaidaLote = 6,
-        EntradaManual = 7,
-        SaidaManual = 8,
-        CriacaoEstoque = 9
+        CriacaoLote = 1,
+        EntradaLote = 2,
+        SaidaLote = 3,
     }
 }

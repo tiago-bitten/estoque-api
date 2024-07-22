@@ -13,6 +13,7 @@ namespace SistemaEstoque.Infra.Data
         }
 
         public DbSet<Empresa> Empresas { get; set; }
+        public DbSet<ConfiguracaoEstoque> ConfiguracoesEstoques { get; set; }
         public DbSet<Lote> Lotes { get; set; }
         public DbSet<Produto> Produtos { get; set; }
         public DbSet<MovimentacaoInsumo> Insumos { get; set; }
@@ -37,6 +38,7 @@ namespace SistemaEstoque.Infra.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new EmpresaConfig());
+            modelBuilder.ApplyConfiguration(new ConfiguracaoEstoqueConfig());
             modelBuilder.ApplyConfiguration(new LoteConfig());
             modelBuilder.ApplyConfiguration(new ProdutoConfig());
             modelBuilder.ApplyConfiguration(new InsumoConfig());

@@ -15,12 +15,12 @@ namespace SistemaEstoque.Application.Profiles
             CreateMap<CreateLoteProdutoCommand, MovimentacaoProduto>()
                 .ForMember(dest => dest.Tipo, opt => opt.MapFrom(src => ETipoMovimentacao.Entrada))
                 .ForMember(dest => dest.DataMovimentacao, opt => opt.MapFrom(src => DateTime.Now))
-                .ForMember(dest => dest.Origem, opt => opt.MapFrom(src => EOrigemMovimentacao.EntradaLote));
+                .ForMember(dest => dest.Origem, opt => opt.MapFrom(src => EOrigemMovimentacao.CriacaoLote));
        
             CreateMap<LoteItemDTO, MovimentacaoProduto>()
                 .ForMember(dest => dest.Tipo, opt => opt.MapFrom(src => ETipoMovimentacao.Entrada))
                 .ForMember(dest => dest.DataMovimentacao, opt => opt.MapFrom(src => DateTime.Now))
-                .ForMember(dest => dest.Origem, opt => opt.MapFrom(src => EOrigemMovimentacao.EntradaLote));
+                .ForMember(dest => dest.Origem, opt => opt.MapFrom(src => EOrigemMovimentacao.CriacaoLote));
         }
     }
 }
