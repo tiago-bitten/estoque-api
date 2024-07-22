@@ -39,5 +39,6 @@ namespace SistemaEstoque.Domain.Entities
         public IEnumerable<PerfilAcesso?> PerfisAcessos { get; set; }
         public IEnumerable<PermissaoProduto?> PermissoesProdutos { get; set; }
         public IEnumerable<PermissaoCategoria?> PermissoesCategorias { get; set; }
+        public IEnumerable<PermissaoInsumo?> PermissoesInsumos { get; set; }
     }
 }

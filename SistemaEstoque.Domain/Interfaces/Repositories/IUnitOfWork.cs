@@ -22,5 +22,6 @@
         IPerfilAcessoRepository PerfisAcessos { get; }
         IPermissaoProdutoRepository PermissoesProdutos { get; }
         IPermissaoCategoriaRepository PermissoesCategorias { get; }
+        IConfiguracaoEstoqueRepository ConfiguracoesEstoques { get; }
     }
 }

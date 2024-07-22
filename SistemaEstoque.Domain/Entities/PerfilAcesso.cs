@@ -8,6 +8,7 @@ namespace SistemaEstoque.Domain.Entities
 
         public PermissaoProduto PermissaoProduto { get; set; }
         public PermissaoCategoria PermissaoCategoria { get; set; }
+        public PermissaoInsumo PermissaoInsumo { get; set; }
         public IEnumerable<Usuario?> Usuarios { get; set; }
     }
 }

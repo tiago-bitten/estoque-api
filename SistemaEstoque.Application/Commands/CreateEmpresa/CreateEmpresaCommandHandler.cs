@@ -75,6 +75,19 @@ namespace SistemaEstoque.Application.Commands.CreateEmpresa
 
             await _uow.Usuarios.AddAsync(usuarioProprietario, empresa.Id);
 
+            var configuracaoEstoque = new ConfiguracaoEstoque
+            {
+                PermiteEstoqueNegativo = false,
+                PermitePassarEstoqueMinimo = false,
+                PermitePassarEstoqueMaximo = false,
+                PermiteEntradaSemLote = false,
+                PermiteSaidaSemLote = false,
+                NotificarEstoqueMaximo = true,
+                NotificarEstoqueMinimo = true,
+            };
+
+            await _uow.ConfiguracoesEstoques.AddAsync(configuracaoEstoque, empresa.Id);
+
             await _uow.CommitAsync();
 
             var response = _mapper.Map<CreateEmpresaResponse>(empresa);

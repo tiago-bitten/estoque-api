@@ -115,6 +115,8 @@ namespace SistemaEstoque.IoC
             services.AddScoped<IPermissaoCategoriaRepository, PermissaoCategoriaRepository>();
             services.AddScoped<IEmpresaRepository, EmpresaRepository>();
             services.AddScoped<IProprietarioRepository, ProprietarioRepository>();
+            services.AddScoped<IConfiguracaoEstoqueRepository, ConfiguracaoEstoqueRepository>();
+            services.AddScoped<IPermissaoInsumoRepository, PermissaoInsumoRepository>();
 
             return services;
         }

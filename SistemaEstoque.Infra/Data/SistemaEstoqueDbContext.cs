@@ -34,6 +34,7 @@ namespace SistemaEstoque.Infra.Data
         public DbSet<Proprietario> Proprietarios { get; set; }
         public DbSet<PermissaoProduto> PermissoesProdutos { get; set; }
         public DbSet<PermissaoCategoria> PermissoesCategorias { get; set; }
+        public DbSet<PermissaoInsumo> PermissoesInsumos { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -59,6 +60,7 @@ namespace SistemaEstoque.Infra.Data
             modelBuilder.ApplyConfiguration(new ProprietarioConfig());
             modelBuilder.ApplyConfiguration(new PermissaoProdutoConfig());
             modelBuilder.ApplyConfiguration(new PermissaoCategoriaConfig());
+            modelBuilder.ApplyConfiguration(new PermissaoInsumoConfig());
             
             base.OnModelCreating(modelBuilder);
         }

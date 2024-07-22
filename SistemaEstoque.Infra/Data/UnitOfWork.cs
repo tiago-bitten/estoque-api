@@ -1,6 +1,4 @@
 ﻿using SistemaEstoque.Domain.Interfaces.Repositories;
-using SistemaEstoque.Infra.Repositories;
-using System.Threading.Tasks;
 
 namespace SistemaEstoque.Infra.Data
 {
@@ -24,6 +22,7 @@ namespace SistemaEstoque.Infra.Data
         private readonly IPerfilAcessoRepository _perfilAcessoRepository;
         private readonly IPermissaoProdutoRepository _permissaoProdutoRepository;
         private readonly IPermissaoCategoriaRepository _permissaoCategoriaRepository;
+        private readonly IConfiguracaoEstoqueRepository _configuracaoEstoqueRepository;
 
         public UnitOfWork(
             SistemaEstoqueDbContext context,
@@ -43,7 +42,8 @@ namespace SistemaEstoque.Infra.Data
             ILogAlteracaoRepository logAlteracaoRepository,
             IPerfilAcessoRepository perfilAcessoRepository,
             IPermissaoProdutoRepository permissaoProdutoRepository,
-            IPermissaoCategoriaRepository permissaoCategoriaRepository)
+            IPermissaoCategoriaRepository permissaoCategoriaRepository,
+            IConfiguracaoEstoqueRepository configuracaoEstoqueRepository)
         {
             _context = context;
             _empresaRepository = empresaRepository;
@@ -63,6 +63,7 @@ namespace SistemaEstoque.Infra.Data
             _perfilAcessoRepository = perfilAcessoRepository;
             _permissaoProdutoRepository = permissaoProdutoRepository;
             _permissaoCategoriaRepository = permissaoCategoriaRepository;
+            _configuracaoEstoqueRepository = configuracaoEstoqueRepository;
         }
 
         public IEmpresaRepository Empresas => _empresaRepository;
@@ -82,6 +83,7 @@ namespace SistemaEstoque.Infra.Data
         public IPerfilAcessoRepository PerfisAcessos => _perfilAcessoRepository;
         public IPermissaoProdutoRepository PermissoesProdutos => _permissaoProdutoRepository;
         public IPermissaoCategoriaRepository PermissoesCategorias => _permissaoCategoriaRepository;
+        public IConfiguracaoEstoqueRepository ConfiguracoesEstoques => _configuracaoEstoqueRepository;
 
         public async Task<bool> CommitAsync()
         {

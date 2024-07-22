@@ -50,7 +50,7 @@ namespace SistemaEstoque.Infra.EntitiesConfig
             builder.HasOne(p => p.PerfilAcesso)
                 .WithOne(p => p.PermissaoCategoria)
                 .HasForeignKey<PermissaoCategoria>(p => p.PerfilAcessoId)
-                .IsRequired();
+                .OnDelete(DeleteBehavior.SetNull);
 
             builder.HasOne(p => p.Empresa)
                 .WithMany(e => e.PermissoesCategorias)

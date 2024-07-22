@@ -180,6 +180,11 @@ namespace SistemaEstoque.Infra.EntitiesConfig
                 .WithOne(p => p.Empresa)
                 .HasForeignKey(p => p.EmpresaId)
                 .OnDelete(DeleteBehavior.SetNull);
+
+            builder.HasMany(e => e.PermissoesInsumos)
+                .WithOne(p => p.Empresa)
+                .HasForeignKey(p => p.EmpresaId)
+                .OnDelete(DeleteBehavior.SetNull);
         }
     }
 }

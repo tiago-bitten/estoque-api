@@ -55,12 +55,12 @@ namespace SistemaEstoque.Infra.EntitiesConfig
             builder.HasOne(p => p.PerfilAcesso)
                 .WithOne(p => p.PermissaoProduto)
                 .HasForeignKey<PermissaoProduto>(p => p.PerfilAcessoId)
-                .IsRequired();
+                .OnDelete(DeleteBehavior.SetNull);
 
             builder.HasOne(p => p.Empresa)
                 .WithMany(e => e.PermissoesProdutos)
                 .HasForeignKey(p => p.EmpresaId)
-                .IsRequired();
+                .OnDelete(DeleteBehavior.SetNull);
         }
     }
 }
