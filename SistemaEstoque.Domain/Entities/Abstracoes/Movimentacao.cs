@@ -1,6 +1,6 @@
 ﻿using SistemaEstoque.Domain.Enums;
 
-namespace SistemaEstoque.Domain.Entities
+namespace SistemaEstoque.Domain.Entities.Abstracoes
 {
     public abstract class Movimentacao : EntidadeBase
     {

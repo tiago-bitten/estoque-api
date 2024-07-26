@@ -31,6 +31,15 @@ namespace SistemaEstoque.Application.Profiles
                     dest.Editar = src.PermissaoCategoria.Editar;
                     dest.Excluir = src.PermissaoCategoria.Excluir;
                 });
+
+            CreateMap<CreatePerfilAcessoComannd, PermissaoInsumo>()
+                .BeforeMap((src, dest) =>
+                {
+                    dest.Visualizar = src.PermissaoInsumo.Visualizar;
+                    dest.Criar = src.PermissaoInsumo.Criar;
+                    dest.Editar = src.PermissaoInsumo.Editar;
+                    dest.Excluir = src.PermissaoInsumo.Excluir;
+                });
         }
     }
 }

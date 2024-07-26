@@ -1,6 +1,8 @@
-﻿namespace SistemaEstoque.Domain.Entities
+﻿using SistemaEstoque.Domain.Entities.Abstracoes;
+
+namespace SistemaEstoque.Domain.Entities
 {
-    public class HistoricoUsuarioAcesso : EntidadeBase
+    public sealed class HistoricoUsuarioAcesso : EntidadeBase
     {
         public int UsuarioId { get; set; }
         public Usuario Usuario { get; set; }

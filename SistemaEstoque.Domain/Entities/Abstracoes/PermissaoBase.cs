@@ -1,4 +1,4 @@
-﻿namespace SistemaEstoque.Domain.Entities.Permissoes
+﻿namespace SistemaEstoque.Domain.Entities.Abstracoes
 {
     public abstract class PermissaoBase : EntidadeBase
     {

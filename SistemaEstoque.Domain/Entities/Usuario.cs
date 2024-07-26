@@ -1,6 +1,8 @@
-﻿namespace SistemaEstoque.Domain.Entities
+﻿using SistemaEstoque.Domain.Entities.Abstracoes;
+
+namespace SistemaEstoque.Domain.Entities
 {
-    public class Usuario : EntidadeBase
+    public sealed class Usuario : EntidadeBase
     {
         public string Nome { get; set; }
         public string Email { get; set; }

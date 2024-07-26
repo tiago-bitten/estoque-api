@@ -1,8 +1,9 @@
-﻿using SistemaEstoque.Domain.Entities.Permissoes;
+﻿using SistemaEstoque.Domain.Entities.Abstracoes;
+using SistemaEstoque.Domain.Entities.Permissoes;
 
 namespace SistemaEstoque.Domain.Entities
 {
-    public class PerfilAcesso : EntidadeBase
+    public sealed class PerfilAcesso : EntidadeBase
     {
         public string Nome { get; set; }
 

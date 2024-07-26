@@ -36,7 +36,6 @@ namespace SistemaEstoque.Application.Commands.CreateLote
             _estoqueInsumoService = estoqueInsumoService;
         }
 
-        // TODO: Implementar movimentações no estoque de produtos e insumos
         public async Task<CreateLoteResponse> Handle(CreateLoteCommand request, CancellationToken cancellationToken)
         {
             var empresaId = EMPRESA_CONSTANTE.ID_EMPRESA;

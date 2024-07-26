@@ -33,3 +33,4 @@ C:\Users\teste\Documents\CSHARP\projetos\estoque-api\SistemaEstoque.Domain\obj\D
 C:\Users\teste\Documents\CSHARP\projetos\estoque-api\SistemaEstoque.Domain\obj\Debug\net7.0\refint\SistemaEstoque.Domain.dll
 C:\Users\teste\Documents\CSHARP\projetos\estoque-api\SistemaEstoque.Domain\obj\Debug\net7.0\SistemaEstoque.Domain.pdb
 C:\Users\teste\Documents\CSHARP\projetos\estoque-api\SistemaEstoque.Domain\obj\Debug\net7.0\ref\SistemaEstoque.Domain.dll
+C:\Users\teste\Documents\CSHARP\projetos\estoque-api\SistemaEstoque.Domain\obj\Debug\net7.0\SistemaEstoque.Domain.sourcelink.json

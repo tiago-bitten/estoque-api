@@ -1,4 +1,6 @@
-﻿namespace SistemaEstoque.Domain.Entities
+﻿using SistemaEstoque.Domain.Entities.Abstracoes;
+
+namespace SistemaEstoque.Domain.Entities
 {
     public sealed class EstoqueProduto : Estoque
     {

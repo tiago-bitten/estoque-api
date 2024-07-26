@@ -1,6 +1,8 @@
-﻿namespace SistemaEstoque.Domain.Entities
+﻿using SistemaEstoque.Domain.Entities.Abstracoes;
+
+namespace SistemaEstoque.Domain.Entities
 {
-    public class Fornecedor : EntidadeBase
+    public sealed class Fornecedor : EntidadeBase
     {
         public string Nome { get; set; }
         public string CpfCnpj { get; set; }

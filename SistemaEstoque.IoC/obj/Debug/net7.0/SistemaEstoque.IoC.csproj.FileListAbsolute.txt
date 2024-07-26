@@ -58,8 +58,9 @@ C:\Users\teste\Documents\CSHARP\projetos\estoque-api\SistemaEstoque.IoC\obj\Debu
 C:\Users\teste\Documents\CSHARP\projetos\estoque-api\SistemaEstoque.IoC\obj\Debug\net7.0\SistemaEstoque.IoC.AssemblyInfoInputs.cache
 C:\Users\teste\Documents\CSHARP\projetos\estoque-api\SistemaEstoque.IoC\obj\Debug\net7.0\SistemaEstoque.IoC.AssemblyInfo.cs
 C:\Users\teste\Documents\CSHARP\projetos\estoque-api\SistemaEstoque.IoC\obj\Debug\net7.0\SistemaEstoque.IoC.csproj.CoreCompileInputs.cache
-C:\Users\teste\Documents\CSHARP\projetos\estoque-api\SistemaEstoque.IoC\obj\Debug\net7.0\SistemaEstoque.IoC.csproj.CopyComplete
 C:\Users\teste\Documents\CSHARP\projetos\estoque-api\SistemaEstoque.IoC\obj\Debug\net7.0\SistemaEstoque.IoC.dll
 C:\Users\teste\Documents\CSHARP\projetos\estoque-api\SistemaEstoque.IoC\obj\Debug\net7.0\refint\SistemaEstoque.IoC.dll
 C:\Users\teste\Documents\CSHARP\projetos\estoque-api\SistemaEstoque.IoC\obj\Debug\net7.0\SistemaEstoque.IoC.pdb
 C:\Users\teste\Documents\CSHARP\projetos\estoque-api\SistemaEstoque.IoC\obj\Debug\net7.0\ref\SistemaEstoque.IoC.dll
+C:\Users\teste\Documents\CSHARP\projetos\estoque-api\SistemaEstoque.IoC\obj\Debug\net7.0\SistemaEstoque.IoC.sourcelink.json
+C:\Users\teste\Documents\CSHARP\projetos\estoque-api\SistemaEstoque.IoC\obj\Debug\net7.0\SistemaE.CA08F0C0.Up2Date

@@ -45,9 +45,10 @@ C:\Users\teste\Documents\CSHARP\projetos\estoque-api\SistemaEstoque.Infra\obj\De
 C:\Users\teste\Documents\CSHARP\projetos\estoque-api\SistemaEstoque.Infra\obj\Debug\net7.0\SistemaEstoque.Infra.AssemblyInfoInputs.cache
 C:\Users\teste\Documents\CSHARP\projetos\estoque-api\SistemaEstoque.Infra\obj\Debug\net7.0\SistemaEstoque.Infra.AssemblyInfo.cs
 C:\Users\teste\Documents\CSHARP\projetos\estoque-api\SistemaEstoque.Infra\obj\Debug\net7.0\SistemaEstoque.Infra.csproj.CoreCompileInputs.cache
-C:\Users\teste\Documents\CSHARP\projetos\estoque-api\SistemaEstoque.Infra\obj\Debug\net7.0\SistemaEstoque.Infra.csproj.CopyComplete
 C:\Users\teste\Documents\CSHARP\projetos\estoque-api\SistemaEstoque.Infra\obj\Debug\net7.0\SistemaEstoque.Infra.dll
 C:\Users\teste\Documents\CSHARP\projetos\estoque-api\SistemaEstoque.Infra\obj\Debug\net7.0\refint\SistemaEstoque.Infra.dll
 C:\Users\teste\Documents\CSHARP\projetos\estoque-api\SistemaEstoque.Infra\obj\Debug\net7.0\SistemaEstoque.Infra.pdb
 C:\Users\teste\Documents\CSHARP\projetos\estoque-api\SistemaEstoque.Infra\obj\Debug\net7.0\SistemaEstoque.Infra.genruntimeconfig.cache
 C:\Users\teste\Documents\CSHARP\projetos\estoque-api\SistemaEstoque.Infra\obj\Debug\net7.0\ref\SistemaEstoque.Infra.dll
+C:\Users\teste\Documents\CSHARP\projetos\estoque-api\SistemaEstoque.Infra\obj\Debug\net7.0\SistemaEstoque.Infra.sourcelink.json
+C:\Users\teste\Documents\CSHARP\projetos\estoque-api\SistemaEstoque.Infra\obj\Debug\net7.0\SistemaE.FC64AFA3.Up2Date

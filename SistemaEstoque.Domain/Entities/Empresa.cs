@@ -3,7 +3,7 @@ using SistemaEstoque.Domain.Enums;
 
 namespace SistemaEstoque.Domain.Entities
 {
-    public class Empresa
+    public sealed class Empresa
     {
         public int Id { get; set; }
         public string Nome { get; set; }

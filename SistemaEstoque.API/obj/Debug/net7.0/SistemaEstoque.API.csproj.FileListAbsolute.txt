@@ -195,6 +195,7 @@ C:\Users\teste\Documents\CSHARP\projetos\estoque-api\SistemaEstoque.API\obj\Debu
 C:\Users\teste\Documents\CSHARP\projetos\estoque-api\SistemaEstoque.API\obj\Debug\net7.0\staticwebassets.build.json
 C:\Users\teste\Documents\CSHARP\projetos\estoque-api\SistemaEstoque.API\obj\Debug\net7.0\staticwebassets.development.json
 C:\Users\teste\Documents\CSHARP\projetos\estoque-api\SistemaEstoque.API\obj\Debug\net7.0\scopedcss\bundle\SistemaEstoque.API.styles.css
-C:\Users\teste\Documents\CSHARP\projetos\estoque-api\SistemaEstoque.API\obj\Debug\net7.0\SistemaEstoque.API.csproj.CopyComplete
 C:\Users\teste\Documents\CSHARP\projetos\estoque-api\SistemaEstoque.API\obj\Debug\net7.0\SistemaEstoque.API.genruntimeconfig.cache
 C:\Users\teste\Documents\CSHARP\projetos\estoque-api\SistemaEstoque.API\obj\Debug\net7.0\ref\SistemaEstoque.API.dll
+C:\Users\teste\Documents\CSHARP\projetos\estoque-api\SistemaEstoque.Api\obj\Debug\net7.0\SistemaEstoque.API.sourcelink.json
+C:\Users\teste\Documents\CSHARP\projetos\estoque-api\SistemaEstoque.Api\obj\Debug\net7.0\SistemaE.4F172BF2.Up2Date

@@ -1,6 +1,8 @@
-﻿namespace SistemaEstoque.Domain.Entities
+﻿using SistemaEstoque.Domain.Entities.Abstracoes;
+
+namespace SistemaEstoque.Domain.Entities
 {
-    public class Lote : EntidadeBase
+    public sealed class Lote : EntidadeBase
     {
         public string Descricao { get; set; }
         public string Codigo { get; set; }

@@ -1,6 +1,8 @@
-﻿namespace SistemaEstoque.Domain.Entities.Permissoes
+﻿using SistemaEstoque.Domain.Entities.Abstracoes;
+
+namespace SistemaEstoque.Domain.Entities.Permissoes
 {
-    public class PermissaoInsumo : PermissaoBase
+    public sealed class PermissaoInsumo : PermissaoBase
     {
     }
 }

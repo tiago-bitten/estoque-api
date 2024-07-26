@@ -1,4 +1,5 @@
-﻿using SistemaEstoque.Domain.Enums;
+﻿using SistemaEstoque.Domain.Entities.Abstracoes;
+using SistemaEstoque.Domain.Enums;
 
 namespace SistemaEstoque.Domain.Entities
 {
