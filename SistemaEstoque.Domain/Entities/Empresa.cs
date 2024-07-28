@@ -40,5 +40,7 @@ namespace SistemaEstoque.Domain.Entities
         public IEnumerable<PermissaoProduto?> PermissoesProdutos { get; set; }
         public IEnumerable<PermissaoCategoria?> PermissoesCategorias { get; set; }
         public IEnumerable<PermissaoInsumo?> PermissoesInsumos { get; set; }
+        
+        public IEnumerable<RefreshToken?> RefreshTokens { get; set; }
     }
 }

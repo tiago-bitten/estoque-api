@@ -86,6 +86,11 @@ namespace SistemaEstoque.Infra.EntitiesConfig
                 .WithOne(l => l.UsuarioRecebimento)
                 .HasForeignKey(l => l.UsuarioRecebimentoId)
                 .OnDelete(DeleteBehavior.SetNull);
+
+            builder.HasOne(x => x.RefreshToken)
+                .WithOne(x => x.Usuario)
+                .HasForeignKey<Usuario>(x => x.Id)
+                .OnDelete(DeleteBehavior.SetNull);
         }
     }
 }
