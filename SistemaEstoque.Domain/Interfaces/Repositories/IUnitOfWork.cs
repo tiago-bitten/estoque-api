@@ -23,5 +23,6 @@
         IPermissaoProdutoRepository PermissoesProdutos { get; }
         IPermissaoCategoriaRepository PermissoesCategorias { get; }
         IConfiguracaoEstoqueRepository ConfiguracoesEstoques { get; }
+        IRefreshTokenRepository RefreshTokens { get; }
     }
 }

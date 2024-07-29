@@ -1,23 +1,91 @@
-﻿using SistemaEstoque.Domain.Entities;
+﻿using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Text;
+using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Configuration;
+using Microsoft.IdentityModel.Tokens;
+using SistemaEstoque.Domain.Entities;
+using SistemaEstoque.Domain.Interfaces.Repositories;
 using SistemaEstoque.Domain.Interfaces.Services;
 
 namespace SistemaEstoque.Application.Services
 {
     public class JwtTokenService : ITokenService
     {
-        public string GenerateToken(Usuario usuario)
+        private readonly IConfiguration _configuration;
+        private readonly IUnitOfWork _uow;
+        private readonly IHttpContextAccessor _httpContextAccessor;
+
+        public JwtTokenService(
+            IConfiguration configuration,
+            IUnitOfWork uow,
+            IHttpContextAccessor httpContextAccessor)
         {
-            throw new NotImplementedException();
+            _configuration = configuration;
+            _uow = uow;
+            _httpContextAccessor = httpContextAccessor;
         }
 
-        public Task<Empresa> GetEmpresaByTokenAsync(string token)
+        public string GenerateAccessToken(Usuario usuario)
         {
-            throw new NotImplementedException();
+            var authClaims = new List<Claim>
+            {
+                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+                new Claim("Email", usuario.Nome),
+                new Claim("UsuarioId", usuario.Id.ToString()),
+                new Claim("TenantId", usuario.EmpresaId.ToString())
+            };
+
+            var authSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));
+
+            var token = new JwtSecurityToken(
+                issuer: _configuration["Jwt:Issuer"],
+                audience: _configuration["Jwt:Issuer"],
+                expires: DateTime.Now.AddMinutes(Int32.Parse(_configuration["Jwt:ExpirationInMinutes"])),
+                claims: authClaims,
+                signingCredentials: new SigningCredentials(authSigningKey, SecurityAlgorithms.HmacSha256)
+            );
+
+            return new JwtSecurityTokenHandler().WriteToken(token);
         }
 
-        public Task<Usuario> GetUsuarioByTokenAsync(string token)
+        public async Task<RefreshToken> GenerateRefreshToken(Usuario usuario)
         {
-            throw new NotImplementedException();
+            var refreshToken = new RefreshToken
+            {
+                Token = Guid.NewGuid().ToString(),
+                UsuarioId = usuario.Id,
+                ExpiraEm = DateTime.UtcNow.AddDays(7),
+                IsRevogado = false,
+                UltimaGeracao = DateTime.UtcNow
+            };
+
+            refreshToken.Usuario = usuario;
+            await _uow.RefreshTokens.AddAsync(refreshToken, usuario.EmpresaId);
+
+            return refreshToken;
+        }
+
+        public async Task RevokeRefreshToken(string refreshToken)
+        {
+            var token = await _uow.RefreshTokens.GetByTokenAsync(refreshToken);
+            if (token != null)
+            {
+                token.IsRevogado = true;
+                _uow.RefreshTokens.Update(token);
+            }
+        }
+
+        public async Task<Empresa> GetEmpresaByAccessTokenAsync(string token)
+        {
+            var empresaId = _httpContextAccessor.HttpContext?.User.Claims.FirstOrDefault(c => c.Type == "TenantId")?.Value;
+            return await _uow.Empresas.GetByIdAsync(Convert.ToInt32(empresaId));
+        }
+
+        public async Task<Usuario> GetUsuarioByAccessTokenAsync(string token)
+        {
+            var usuarioId = _httpContextAccessor.HttpContext?.User.Claims.FirstOrDefault(c => c.Type == "UsuarioId")?.Value;
+            return await _uow.Usuarios.GetByIdAsync(Convert.ToInt32(usuarioId));
         }
     }
 }

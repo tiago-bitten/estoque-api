@@ -4,8 +4,10 @@ namespace SistemaEstoque.Domain.Interfaces.Services
 {
     public interface ITokenService
     {
-        string GenerateToken(Usuario usuario);
-        Task<Empresa> GetEmpresaByTokenAsync(string token);
-        Task<Usuario> GetUsuarioByTokenAsync(string token);
+        string GenerateAccessToken(Usuario usuario);
+        Task<RefreshToken> GenerateRefreshToken(Usuario usuario);
+        Task RevokeRefreshToken(string refreshToken);
+        Task<Empresa> GetEmpresaByAccessTokenAsync(string token);
+        Task<Usuario> GetUsuarioByAccessTokenAsync(string token);
     }
 }

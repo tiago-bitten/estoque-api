@@ -27,6 +27,7 @@ using SistemaEstoque.Application.Queries.GetAllEstoquesInsumos;
 using SistemaEstoque.Application.Queries.GetAllLotes;
 using SistemaEstoque.Application.Commands.CreatePerfilAcesso;
 using SistemaEstoque.Application.Commands.CreateEmpresa;
+using SistemaEstoque.Application.Commands.Login;
 
 namespace SistemaEstoque.IoC
 {
@@ -41,6 +42,8 @@ namespace SistemaEstoque.IoC
             {
                 cfg.RegisterServicesFromAssemblies(new Assembly[] 
                 { 
+                    typeof(LoginCommand).Assembly,
+                    
                     typeof(CreateUsuarioCommand).Assembly,
                     typeof(CreateCategoriaCommand).Assembly,
                     typeof(CreateProdutoCommand).Assembly,
@@ -131,6 +134,7 @@ namespace SistemaEstoque.IoC
             services.AddScoped<ILoteProdutoService, LoteProdutoService>();
             services.AddScoped<IInsumoService, InsumoService>();
             services.AddScoped<IProprietarioService, ProprietarioService>();
+            services.AddScoped<ITokenService, JwtTokenService>();
             //services.AddScoped<IUsuarioService, UsuarioService>();
 
             return services;

@@ -17,6 +17,11 @@ public class RefreshTokenRepository : IRefreshTokenRepository
     {
         await _repositoryBase.AddAsync(refreshToken, empresaId);
     }
+    
+    public void Update(RefreshToken refreshToken)
+    {
+        _repositoryBase.Update(refreshToken);
+    }
 
     public async Task<RefreshToken> GetByTokenAsync(string token)
     {

@@ -1,13 +1,8 @@
 ﻿using MediatR;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.IdentityModel.Tokens;
 using SistemaEstoque.Application.Commands.CreateCategoria;
 using SistemaEstoque.Application.Commands.UpdateCategoria;
 using SistemaEstoque.Application.Queries.GetAllCategorias;
-using SistemaEstoque.Application.Responses;
-using System.Dynamic;
-using SistemaEstoque.API.Filters;
 
 namespace SistemaEstoque.API.Controllers
 {

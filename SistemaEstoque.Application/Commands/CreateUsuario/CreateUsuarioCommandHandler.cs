@@ -27,6 +27,9 @@ namespace SistemaEstoque.Application.Commands.CreateUsuario
                 throw new Exception("Usuário já cadastrado");
         
             usuario.EmpresaId = EMPRESA_CONSTANTE.ID_EMPRESA;
+            
+            var senhaHash = BCrypt.Net.BCrypt.HashPassword(request.Senha);
+            usuario.Senha = senhaHash;
 
             await _uow.Usuarios.AddAsync(usuario, EMPRESA_CONSTANTE.ID_EMPRESA);
             await _uow.CommitAsync();

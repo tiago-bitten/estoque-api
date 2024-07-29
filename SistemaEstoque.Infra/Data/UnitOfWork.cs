@@ -23,6 +23,7 @@ namespace SistemaEstoque.Infra.Data
         private readonly IPermissaoProdutoRepository _permissaoProdutoRepository;
         private readonly IPermissaoCategoriaRepository _permissaoCategoriaRepository;
         private readonly IConfiguracaoEstoqueRepository _configuracaoEstoqueRepository;
+        private readonly IRefreshTokenRepository _refreshTokenRepository;
 
         public UnitOfWork(
             SistemaEstoqueDbContext context,
@@ -43,7 +44,8 @@ namespace SistemaEstoque.Infra.Data
             IPerfilAcessoRepository perfilAcessoRepository,
             IPermissaoProdutoRepository permissaoProdutoRepository,
             IPermissaoCategoriaRepository permissaoCategoriaRepository,
-            IConfiguracaoEstoqueRepository configuracaoEstoqueRepository)
+            IConfiguracaoEstoqueRepository configuracaoEstoqueRepository, 
+            IRefreshTokenRepository refreshTokenRepository)
         {
             _context = context;
             _empresaRepository = empresaRepository;
@@ -64,6 +66,7 @@ namespace SistemaEstoque.Infra.Data
             _permissaoProdutoRepository = permissaoProdutoRepository;
             _permissaoCategoriaRepository = permissaoCategoriaRepository;
             _configuracaoEstoqueRepository = configuracaoEstoqueRepository;
+            _refreshTokenRepository = refreshTokenRepository;
         }
 
         public IEmpresaRepository Empresas => _empresaRepository;
@@ -84,6 +87,7 @@ namespace SistemaEstoque.Infra.Data
         public IPermissaoProdutoRepository PermissoesProdutos => _permissaoProdutoRepository;
         public IPermissaoCategoriaRepository PermissoesCategorias => _permissaoCategoriaRepository;
         public IConfiguracaoEstoqueRepository ConfiguracoesEstoques => _configuracaoEstoqueRepository;
+        public IRefreshTokenRepository RefreshTokens => _refreshTokenRepository;
 
         public async Task<bool> CommitAsync()
         {
