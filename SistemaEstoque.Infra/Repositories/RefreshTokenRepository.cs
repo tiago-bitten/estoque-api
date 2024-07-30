@@ -1,4 +1,5 @@
-﻿using SistemaEstoque.Domain.Entities;
+﻿using System.Linq.Expressions;
+using SistemaEstoque.Domain.Entities;
 using SistemaEstoque.Domain.Interfaces.Repositories;
 
 namespace SistemaEstoque.Infra.Repositories;
@@ -26,5 +27,10 @@ public class RefreshTokenRepository : IRefreshTokenRepository
     public async Task<RefreshToken> GetByTokenAsync(string token)
     {
         return await _repositoryBase.FindAsync(x => x.Token == token);
+    }
+
+    public async Task<RefreshToken> FindAsync(Expression<Func<RefreshToken, bool>> predicate)
+    {
+        return await _repositoryBase.FindAsync(predicate);
     }
 }

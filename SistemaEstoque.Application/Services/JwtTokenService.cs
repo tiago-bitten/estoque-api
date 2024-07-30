@@ -1,7 +1,6 @@
 ﻿using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
-using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using SistemaEstoque.Domain.Entities;
@@ -48,16 +47,35 @@ namespace SistemaEstoque.Application.Services
 
         public async Task<RefreshToken> GenerateRefreshToken(Usuario usuario)
         {
-            var refreshToken = new RefreshToken
-            {
-                Token = Guid.NewGuid().ToString(),
-                UsuarioId = usuario.Id,
-                ExpiraEm = DateTime.UtcNow.AddDays(7),
-                IsRevogado = false,
-                UltimaGeracao = DateTime.UtcNow
-            };
+            var existingToken = await _uow.RefreshTokens
+                .FindAsync(rt => rt.UsuarioId == usuario.Id && !rt.IsRevogado);
 
-            await _uow.RefreshTokens.AddAsync(refreshToken, usuario.EmpresaId);
+            RefreshToken refreshToken;
+
+            if (existingToken == null)
+            {
+                refreshToken = new RefreshToken
+                {
+                    Token = Guid.NewGuid().ToString(),
+                    UsuarioId = usuario.Id,
+                    ExpiraEm = DateTime.UtcNow.AddDays(7),
+                    IsRevogado = false,
+                    UltimaGeracao = DateTime.UtcNow
+                };
+
+                await _uow.RefreshTokens.AddAsync(refreshToken, usuario.EmpresaId);
+            }
+            else
+            {
+                existingToken.Token = Guid.NewGuid().ToString();
+                existingToken.ExpiraEm = DateTime.UtcNow.AddDays(7);
+                existingToken.IsRevogado = false;
+                existingToken.UltimaGeracao = DateTime.UtcNow;
+
+                _uow.RefreshTokens.Update(existingToken);
+                refreshToken = existingToken;
+            }
+
             await _uow.CommitAsync();
 
             return refreshToken;
@@ -75,7 +93,7 @@ namespace SistemaEstoque.Application.Services
 
         public async Task<Empresa> GetEmpresaByAccessTokenAsync(string token)
         {
-            var principal = GetPrincipalFromToken(token);
+            var principal = GetPrincipalFromExpiredToken(token);
 
             var empresaId = principal.Claims.FirstOrDefault(c => c.Type == "TenantId")?.Value;
 
@@ -84,14 +102,14 @@ namespace SistemaEstoque.Application.Services
 
         public async Task<Usuario> GetUsuarioByAccessTokenAsync(string token)
         {
-            var principal = GetPrincipalFromToken(token);
+            var principal = GetPrincipalFromExpiredToken(token);
 
             var usuarioId = principal.Claims.FirstOrDefault(c => c.Type == "UsuarioId")?.Value;
 
             return await _uow.Usuarios.GetByIdAsync(Convert.ToInt32(usuarioId));
         }
 
-        public ClaimsPrincipal GetPrincipalFromToken(string token)
+        public ClaimsPrincipal GetPrincipalFromExpiredToken(string token)
         {
             var tokenHandler = new JwtSecurityTokenHandler();
             var key = Encoding.ASCII.GetBytes(_configuration["Jwt:Key"]);
@@ -100,7 +118,7 @@ namespace SistemaEstoque.Application.Services
             {
                 ValidateIssuer = true,
                 ValidateAudience = true,
-                ValidateLifetime = true,
+                ValidateLifetime = false,
                 ValidateIssuerSigningKey = true,
                 ValidIssuer = _configuration["Jwt:Issuer"],
                 ValidAudience = _configuration["Jwt:Issuer"],
@@ -108,6 +126,13 @@ namespace SistemaEstoque.Application.Services
             };
 
             var principal = tokenHandler.ValidateToken(token, tokenValidationParameters, out var validatedToken);
+            
+            if (!(validatedToken is JwtSecurityToken jwtSecurityToken) ||
+                !jwtSecurityToken.Header.Alg.Equals(SecurityAlgorithms.HmacSha256, StringComparison.InvariantCultureIgnoreCase))
+            {
+                throw new SecurityTokenException("Invalid token");
+            }
+
             return principal;
         }
     }

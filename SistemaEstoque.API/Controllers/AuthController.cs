@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using SistemaEstoque.Application.Commands.Login;
+using SistemaEstoque.Application.Commands.RefreshToken;
 using SistemaEstoque.Application.Queries.GetAllTenantsLogin;
 
 namespace SistemaEstoque.API.Controllers;
@@ -23,6 +24,16 @@ public class AuthController : ControllerBase
         var response = await _mediator.Send(command);
 
         HttpContext.Items["MensagemAPI"] = "Login realizado";
+
+        return Ok(response);
+    }
+    
+    [HttpPost("RefreshToken")]
+    public async Task<IActionResult> RefreshToken([FromBody] RefreshTokenCommand command)
+    {
+        var response = await _mediator.Send(command);
+
+        HttpContext.Items["MensagemAPI"] = "Token atualizado";
 
         return Ok(response);
     }

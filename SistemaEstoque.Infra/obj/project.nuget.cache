@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "150g+Hds3EAHYWxJGMnijTw3BY2ti5g7OQmRxXX47iXDpqAyLZueKy7rRAYGX/Ik8iWpthZTafOoE6rOT7B6tA==",
+  "dgSpecHash": "sSy0kigQ8TB4+uR1ddavPtojgZkJLfC5Zra7b5ifFygroovdtfu7J6AxZFOHq4X0/M+D0mRraKu4cEebmR9/Eg==",
   "success": true,
-  "projectFilePath": "D:\\csharp\\SistemaEstoque\\SistemaEstoque.Infra\\SistemaEstoque.Infra.csproj",
+  "projectFilePath": "C:\\Users\\tiago\\Documents\\CSHARP\\p-projetos\\estoque-api\\SistemaEstoque.Infra\\SistemaEstoque.Infra.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\tiago\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\tiago\\.nuget\\packages\\microsoft.aspnetcore.authorization\\7.0.0\\microsoft.aspnetcore.authorization.7.0.0.nupkg.sha512",

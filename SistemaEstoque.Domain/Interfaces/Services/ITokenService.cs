@@ -1,4 +1,5 @@
-﻿using SistemaEstoque.Domain.Entities;
+﻿using System.Security.Claims;
+using SistemaEstoque.Domain.Entities;
 
 namespace SistemaEstoque.Domain.Interfaces.Services
 {
@@ -9,5 +10,6 @@ namespace SistemaEstoque.Domain.Interfaces.Services
         Task RevokeRefreshToken(string refreshToken);
         Task<Empresa> GetEmpresaByAccessTokenAsync(string token);
         Task<Usuario> GetUsuarioByAccessTokenAsync(string token);
+        ClaimsPrincipal GetPrincipalFromExpiredToken(string token);
     }
 }
