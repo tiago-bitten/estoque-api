@@ -1,4 +1,5 @@
-﻿using SistemaEstoque.Domain.Entities;
+﻿using System.Linq.Expressions;
+using SistemaEstoque.Domain.Entities;
 using SistemaEstoque.Domain.Interfaces.Repositories;
 using SistemaEstoque.Infra.Data;
 
@@ -21,6 +22,11 @@ namespace SistemaEstoque.Infra.Repositories
         public async Task<Empresa> GetByIdAsync(int id)
         {
             return await _context.Empresas.FindAsync(id);
+        }
+
+        public IQueryable<Empresa> FindAll(Expression<Func<Empresa, bool>> predicate)
+        {
+            return _context.Empresas.Where(predicate);
         }
     }
 }

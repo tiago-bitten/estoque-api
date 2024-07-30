@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using SistemaEstoque.Application.Commands.CreateEmpresa;
+using SistemaEstoque.Application.DTOs;
 using SistemaEstoque.Domain.Entities;
 
 namespace SistemaEstoque.Application.Profiles
@@ -10,6 +11,9 @@ namespace SistemaEstoque.Application.Profiles
         {
             CreateMap<CreateEmpresaCommand, Empresa>();
             CreateMap<Empresa, CreateEmpresaResponse>();
+
+            CreateMap<Empresa, SimpTenantDTO>()
+                .ForMember(dest => dest.Fantasia, opt => opt.MapFrom(x => x.Nome));
         }
     }
 }

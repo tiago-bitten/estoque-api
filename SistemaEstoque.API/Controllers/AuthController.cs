@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using SistemaEstoque.Application.Commands.Login;
+using SistemaEstoque.Application.Queries.GetAllTenantsLogin;
 
 namespace SistemaEstoque.API.Controllers;
 
@@ -22,6 +23,16 @@ public class AuthController : ControllerBase
         var response = await _mediator.Send(command);
 
         HttpContext.Items["MensagemAPI"] = "Login realizado";
+
+        return Ok(response);
+    }
+
+    [HttpGet("Tenants")]
+    public async Task<IActionResult> GetTentants([FromQuery] GetAllTenantsLoginQuery query)
+    {
+        var response = await _mediator.Send(query);
+
+        HttpContext.Items["MensagemAPI"] = "Tenants recuparados";
 
         return Ok(response);
     }

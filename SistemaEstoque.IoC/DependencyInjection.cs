@@ -120,6 +120,7 @@ namespace SistemaEstoque.IoC
             services.AddScoped<IProprietarioRepository, ProprietarioRepository>();
             services.AddScoped<IConfiguracaoEstoqueRepository, ConfiguracaoEstoqueRepository>();
             services.AddScoped<IPermissaoInsumoRepository, PermissaoInsumoRepository>();
+            services.AddScoped<IRefreshTokenRepository, RefreshTokenRepository>();
 
             return services;
         }
@@ -127,6 +128,7 @@ namespace SistemaEstoque.IoC
         public static IServiceCollection AddServices(this IServiceCollection services)
         {
             services.AddScoped(typeof(ILogAlteracaoService<>), typeof(LogAlteracaoService<>));
+            services.AddScoped(typeof(IServiceBase<>), typeof(ServiceBase<>));
             services.AddScoped(typeof(IEstoqueService<>), typeof(EstoqueService<>));
             services.AddScoped<ICategoriaService, CategoriaService>();
             services.AddScoped<IProdutoService, ProdutoService>();

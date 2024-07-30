@@ -14,16 +14,13 @@ namespace SistemaEstoque.Application.Services
     {
         private readonly IConfiguration _configuration;
         private readonly IUnitOfWork _uow;
-        private readonly IHttpContextAccessor _httpContextAccessor;
 
         public JwtTokenService(
             IConfiguration configuration,
-            IUnitOfWork uow,
-            IHttpContextAccessor httpContextAccessor)
+            IUnitOfWork uow)
         {
             _configuration = configuration;
             _uow = uow;
-            _httpContextAccessor = httpContextAccessor;
         }
 
         public string GenerateAccessToken(Usuario usuario)
@@ -60,8 +57,8 @@ namespace SistemaEstoque.Application.Services
                 UltimaGeracao = DateTime.UtcNow
             };
 
-            refreshToken.Usuario = usuario;
             await _uow.RefreshTokens.AddAsync(refreshToken, usuario.EmpresaId);
+            await _uow.CommitAsync();
 
             return refreshToken;
         }
@@ -78,14 +75,40 @@ namespace SistemaEstoque.Application.Services
 
         public async Task<Empresa> GetEmpresaByAccessTokenAsync(string token)
         {
-            var empresaId = _httpContextAccessor.HttpContext?.User.Claims.FirstOrDefault(c => c.Type == "TenantId")?.Value;
+            var principal = GetPrincipalFromToken(token);
+
+            var empresaId = principal.Claims.FirstOrDefault(c => c.Type == "TenantId")?.Value;
+
             return await _uow.Empresas.GetByIdAsync(Convert.ToInt32(empresaId));
         }
 
         public async Task<Usuario> GetUsuarioByAccessTokenAsync(string token)
         {
-            var usuarioId = _httpContextAccessor.HttpContext?.User.Claims.FirstOrDefault(c => c.Type == "UsuarioId")?.Value;
+            var principal = GetPrincipalFromToken(token);
+
+            var usuarioId = principal.Claims.FirstOrDefault(c => c.Type == "UsuarioId")?.Value;
+
             return await _uow.Usuarios.GetByIdAsync(Convert.ToInt32(usuarioId));
+        }
+
+        public ClaimsPrincipal GetPrincipalFromToken(string token)
+        {
+            var tokenHandler = new JwtSecurityTokenHandler();
+            var key = Encoding.ASCII.GetBytes(_configuration["Jwt:Key"]);
+
+            var tokenValidationParameters = new TokenValidationParameters
+            {
+                ValidateIssuer = true,
+                ValidateAudience = true,
+                ValidateLifetime = true,
+                ValidateIssuerSigningKey = true,
+                ValidIssuer = _configuration["Jwt:Issuer"],
+                ValidAudience = _configuration["Jwt:Issuer"],
+                IssuerSigningKey = new SymmetricSecurityKey(key)
+            };
+
+            var principal = tokenHandler.ValidateToken(token, tokenValidationParameters, out var validatedToken);
+            return principal;
         }
     }
 }

@@ -1167,6 +1167,55 @@ namespace SistemaEstoque.Infra.Migrations
                     b.ToTable("proprietarios", (string)null);
                 });
 
+            modelBuilder.Entity("SistemaEstoque.Domain.Entities.RefreshToken", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("id");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("EmpresaId")
+                        .HasColumnType("int")
+                        .HasColumnName("empresa_id");
+
+                    b.Property<DateTime>("ExpiraEm")
+                        .HasColumnType("date")
+                        .HasColumnName("expira_em");
+
+                    b.Property<bool>("IsRevogado")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("boolean")
+                        .HasDefaultValue(false)
+                        .HasColumnName("is_revogado");
+
+                    b.Property<bool?>("Removido")
+                        .HasColumnType("boolean");
+
+                    b.Property<string>("Token")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("varchar(50)");
+
+                    b.Property<DateTime>("UltimaGeracao")
+                        .HasColumnType("date")
+                        .HasColumnName("ultima_geracao");
+
+                    b.Property<int>("UsuarioId")
+                        .HasColumnType("int")
+                        .HasColumnName("usuario_id");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EmpresaId");
+
+                    b.HasIndex("UsuarioId")
+                        .IsUnique();
+
+                    b.ToTable("refresh_tokens", (string)null);
+                });
+
             modelBuilder.Entity("SistemaEstoque.Domain.Entities.Usuario", b =>
                 {
                     b.Property<int>("Id")
@@ -1648,6 +1697,25 @@ namespace SistemaEstoque.Infra.Migrations
                     b.Navigation("Empresa");
                 });
 
+            modelBuilder.Entity("SistemaEstoque.Domain.Entities.RefreshToken", b =>
+                {
+                    b.HasOne("SistemaEstoque.Domain.Entities.Empresa", "Empresa")
+                        .WithMany("RefreshTokens")
+                        .HasForeignKey("EmpresaId")
+                        .OnDelete(DeleteBehavior.SetNull)
+                        .IsRequired();
+
+                    b.HasOne("SistemaEstoque.Domain.Entities.Usuario", "Usuario")
+                        .WithOne("RefreshToken")
+                        .HasForeignKey("SistemaEstoque.Domain.Entities.RefreshToken", "UsuarioId")
+                        .OnDelete(DeleteBehavior.SetNull)
+                        .IsRequired();
+
+                    b.Navigation("Empresa");
+
+                    b.Navigation("Usuario");
+                });
+
             modelBuilder.Entity("SistemaEstoque.Domain.Entities.Usuario", b =>
                 {
                     b.HasOne("SistemaEstoque.Domain.Entities.Empresa", "Empresa")
@@ -1714,6 +1782,8 @@ namespace SistemaEstoque.Infra.Migrations
                     b.Navigation("PermissoesProdutos");
 
                     b.Navigation("Produtos");
+
+                    b.Navigation("RefreshTokens");
 
                     b.Navigation("Usuarios");
                 });
@@ -1802,6 +1872,9 @@ namespace SistemaEstoque.Infra.Migrations
                     b.Navigation("MovimentacoesInsumos");
 
                     b.Navigation("MovimentacoesProdutos");
+
+                    b.Navigation("RefreshToken")
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

@@ -10,18 +10,15 @@ public class LoginCommandHandler : IRequestHandler<LoginCommand, LoginResponse>
 {
     private readonly IUnitOfWork _uow;
     private readonly IMapper _mapper;
-    private readonly IServiceBase<Empresa> _empresaService;
     private readonly ITokenService _tokenService;
 
     public LoginCommandHandler(
         IMapper mapper,
         IUnitOfWork uow,
-        IServiceBase<Empresa> empresaService,
         ITokenService tokenService)
     {
         _mapper = mapper;
         _uow = uow;
-        _empresaService = empresaService;
         _tokenService = tokenService;
     }
 

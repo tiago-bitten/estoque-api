@@ -89,7 +89,7 @@ namespace SistemaEstoque.Infra.EntitiesConfig
 
             builder.HasOne(x => x.RefreshToken)
                 .WithOne(x => x.Usuario)
-                .HasForeignKey<Usuario>(x => x.Id)
+                .HasForeignKey<RefreshToken>(x => x.UsuarioId)
                 .OnDelete(DeleteBehavior.SetNull);
         }
     }

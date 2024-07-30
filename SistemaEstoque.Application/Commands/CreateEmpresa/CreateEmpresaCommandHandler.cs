@@ -67,7 +67,7 @@ namespace SistemaEstoque.Application.Commands.CreateEmpresa
             {
                 Nome = proprietario.Nome,
                 Email = proprietario.Email,
-                Senha = "123456",
+                Senha = BCrypt.Net.BCrypt.HashPassword("123456"),
                 PerfilAcesso = perfilAcessoProprietario,
                 AcessoBloqueado = false,
                 Removido = false,
