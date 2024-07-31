@@ -29,10 +29,14 @@ public class RefreshTokenCommandHandler : IRequestHandler<RefreshTokenCommand, R
         if (refreshToken is null || refreshToken.ExpiraEm < DateTime.UtcNow || refreshToken.IsRevogado)
             throw new Exception("Faça login novamente");
 
-        var usuario = refreshToken.Usuario;
+        var usuarioAccessToken = await _tokenService.GetUsuarioByAccessTokenAsync(request.AccessToken);
+        var usuarioRefreshToken = refreshToken.Usuario;
         
-        var newRefreshToken = await _tokenService.GenerateRefreshToken(usuario);
-        var newAccessToken = _tokenService.GenerateAccessToken(usuario);
+        if (usuarioAccessToken.Id != usuarioRefreshToken.Id)
+            throw new Exception("Faça login novamente");
+        
+        var newRefreshToken = await _tokenService.GenerateRefreshToken(usuarioRefreshToken);
+        var newAccessToken = _tokenService.GenerateAccessToken(usuarioRefreshToken);
 
         return new RefreshTokenResponse()
         {

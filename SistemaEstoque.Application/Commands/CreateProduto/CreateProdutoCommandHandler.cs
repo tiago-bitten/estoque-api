@@ -11,23 +11,23 @@ namespace SistemaEstoque.Application.Commands.CreateProduto
         private readonly IUnitOfWork _uow;
         private readonly IMapper _mapper;
         private readonly ICategoriaService _categoriaService;
+        private readonly ICurrentUserService _currentUserService;
 
         public CreateProdutoCommandHandler(
             IUnitOfWork uow,
             IMapper mapper,
-            ICategoriaService categoriaService)
+            ICategoriaService categoriaService, ICurrentUserService currentUserService)
         {
             _uow = uow;
             _mapper = mapper;
             _categoriaService = categoriaService;
+            _currentUserService = currentUserService;
         }
 
         public async Task<CreateProdutoResponse> Handle(CreateProdutoCommand request, CancellationToken cancellationToken)
         {
-            var empresaId = EMPRESA_CONSTANTE.ID_EMPRESA;
-            var usuarioId = 1;
-
-            var usuario = await _uow.Usuarios.GetByIdAsync(usuarioId);
+            var usuario = await _currentUserService.GetUsuario();
+            var empresa = await _currentUserService.GetEmpresa();
 
             if (!usuario.PerfilAcesso.PermissaoProduto.Criar)
                 throw new UnauthorizedAccessException("Usuário não tem permissão para criar produtos");
@@ -38,7 +38,7 @@ namespace SistemaEstoque.Application.Commands.CreateProduto
 
             produto.Categoria = categoria;
 
-            await _uow.Produtos.AddAsync(produto, empresaId);
+            await _uow.Produtos.AddAsync(produto, empresa.Id);
             await _uow.CommitAsync();
 
             var response = _mapper.Map<CreateProdutoResponse>(produto);

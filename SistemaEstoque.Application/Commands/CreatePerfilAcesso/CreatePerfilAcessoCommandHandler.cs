@@ -3,6 +3,7 @@ using MediatR;
 using SistemaEstoque.Domain.Entities;
 using SistemaEstoque.Domain.Entities.Permissoes;
 using SistemaEstoque.Domain.Interfaces.Repositories;
+using SistemaEstoque.Domain.Interfaces.Services;
 
 namespace SistemaEstoque.Application.Commands.CreatePerfilAcesso
 {
@@ -10,18 +11,24 @@ namespace SistemaEstoque.Application.Commands.CreatePerfilAcesso
     {
         private readonly IUnitOfWork _uow;
         private readonly IMapper _mapper;
+        private readonly ICurrentUserService _currentUserService;
 
         public CreatePerfilAcessoCommandHandler(
             IUnitOfWork uow,
-            IMapper mapper)
+            IMapper mapper, ICurrentUserService currentUserService)
         {
             _uow = uow;
             _mapper = mapper;
+            _currentUserService = currentUserService;
         }
 
         public async Task<CreatePerfilAcessoResponse> Handle(CreatePerfilAcessoComannd request, CancellationToken cancellationToken)
         {
-            var empresaId = EMPRESA_CONSTANTE.ID_EMPRESA;
+            var usuario = await _currentUserService.GetUsuario();
+            var empresa = await _currentUserService.GetEmpresa();
+            
+            /**if (!usuario.PerfilAcesso.PermissaoPerfilAcesso.Criar)
+                throw new UnauthorizedAccessException("Usuário não tem permissão para criar perfis de acesso");**/
 
             var perfilAcesso = _mapper.Map<PerfilAcesso>(request);
             var permissaoProduto = _mapper.Map<PermissaoProduto>(request);
@@ -32,10 +39,10 @@ namespace SistemaEstoque.Application.Commands.CreatePerfilAcesso
             permissaoInsumo.PerfilAcesso = perfilAcesso;
             permissaoCategoria.PerfilAcesso = perfilAcesso;
         
-            await _uow.PerfisAcessos.AddAsync(perfilAcesso, empresaId);
-            await _uow.PermissoesProdutos.AddAsync(permissaoProduto, empresaId);
-            //await _uow.PermissoesInsumos.AddAsync(permissaoInsumo, empresaId);
-            await _uow.PermissoesCategorias.AddAsync(permissaoCategoria, empresaId);
+            await _uow.PerfisAcessos.AddAsync(perfilAcesso, empresa.Id);
+            await _uow.PermissoesProdutos.AddAsync(permissaoProduto, empresa.Id);
+            //await _uow.PermissoesInsumos.AddAsync(permissaoInsumo, empresa.Id);
+            await _uow.PermissoesCategorias.AddAsync(permissaoCategoria, empresa.Id);
 
             await _uow.CommitAsync();
 

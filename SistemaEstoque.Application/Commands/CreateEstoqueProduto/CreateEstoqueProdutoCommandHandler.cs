@@ -1,30 +1,35 @@
 ﻿using AutoMapper;
 using MediatR;
+using SistemaEstoque.Application.Commands.CreateEstoque;
 using SistemaEstoque.Domain.Entities;
 using SistemaEstoque.Domain.Interfaces.Repositories;
 using SistemaEstoque.Domain.Interfaces.Services;
 
-namespace SistemaEstoque.Application.Commands.CreateEstoque
+namespace SistemaEstoque.Application.Commands.CreateEstoqueProduto
 {
     public class CreateEstoqueProdutoCommandHandler : IRequestHandler<CreateEstoqueProdutoCommand, CreateEstoqueProdutoResponse>
     {
         private readonly IUnitOfWork _ouw;
         private readonly IMapper _mapper;
         private readonly IProdutoService _produtoService;
+        private readonly ICurrentUserService _currentUserService;
 
         public CreateEstoqueProdutoCommandHandler(
             IUnitOfWork ouw, 
             IMapper mapper,
-            IProdutoService produtoService)
+            IProdutoService produtoService, ICurrentUserService currentUserService)
         {
             _ouw = ouw;
             _mapper = mapper;
             _produtoService = produtoService;
-
+            _currentUserService = currentUserService;
         }
 
         public async Task<CreateEstoqueProdutoResponse> Handle(CreateEstoqueProdutoCommand request, CancellationToken cancellationToken)
         {
+            var usuario = await _currentUserService.GetUsuario();
+            var empresa = await _currentUserService.GetEmpresa();
+            
             var produto = await _produtoService.GetAndValidateEntityAsync(request.ProdutoId);
 
             if (request.QuantidadeMinima <= 0 || request.QuantidadeMaxima <= 0)
@@ -40,9 +45,9 @@ namespace SistemaEstoque.Application.Commands.CreateEstoque
             var estoque = _mapper.Map<EstoqueProduto>(request);
 
             estoque.Produto = produto;
-            estoque.EmpresaId = EMPRESA_CONSTANTE.ID_EMPRESA;
+            estoque.Empresa = empresa;
 
-            await _ouw.EstoquesProdutos.AddAsync(estoque, EMPRESA_CONSTANTE.ID_EMPRESA);
+            await _ouw.EstoquesProdutos.AddAsync(estoque, empresa.Id);
             await _ouw.CommitAsync();
         
             var response = _mapper.Map<CreateEstoqueProdutoResponse>(estoque);

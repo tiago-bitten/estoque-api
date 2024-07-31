@@ -16,7 +16,6 @@ using SistemaEstoque.Application.Commands.CreateEstoque;
 using SistemaEstoque.Application.Commands.CreateLote;
 using SistemaEstoque.Application.Commands.UpdateCategoria;
 using SistemaEstoque.Application.Commands.CreateInsumo;
-using SistemaEstoque.Application.Commands.CreateLoteInsumo;
 using SistemaEstoque.Application.Queries.GetAllCategorias;
 using SistemaEstoque.Application.Queries.GetAllProdutos;
 using SistemaEstoque.Application.Queries.GetAllInsumos;
@@ -52,8 +51,6 @@ namespace SistemaEstoque.IoC
                     typeof(CreateEstoqueProdutoCommand).Assembly,
                     typeof(CreateEstoqueInsumoCommand).Assembly,
                     typeof(CreateLoteCommand).Assembly,
-                    typeof(CreateLoteProdutoCommand).Assembly,
-                    typeof(CreateLoteInsumoCommand).Assembly,
                     typeof(CreatePerfilAcessoComannd).Assembly,
                     typeof(CreateEmpresaCommand).Assembly,
 
@@ -84,6 +81,8 @@ namespace SistemaEstoque.IoC
             services.AddAutoMapper(typeof(PerfilAcessoProfile));
             services.AddAutoMapper(typeof(EmpresaProfile));
             services.AddAutoMapper(typeof(ProprietarioProfile));
+
+            services.AddHttpContextAccessor();
 
             return services;
         }
@@ -137,6 +136,7 @@ namespace SistemaEstoque.IoC
             services.AddScoped<IInsumoService, InsumoService>();
             services.AddScoped<IProprietarioService, ProprietarioService>();
             services.AddScoped<ITokenService, JwtTokenService>();
+            services.AddScoped<ICurrentUserService, CurrentUserService>();
             //services.AddScoped<IUsuarioService, UsuarioService>();
 
             return services;

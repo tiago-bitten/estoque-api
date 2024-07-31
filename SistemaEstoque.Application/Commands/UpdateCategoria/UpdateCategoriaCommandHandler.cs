@@ -15,21 +15,29 @@ namespace SistemaEstoque.Application.Commands.UpdateCategoria
         private readonly IMapper _mapper;
         private readonly ICategoriaService _categoriaService;
         private readonly ILogAlteracaoService<Categoria> _logAlteracaoService;
+        private readonly ICurrentUserService _currentUserService;
 
         public UpdateCategoriaCommandHandler(
             IUnitOfWork unitOfWork,
             IMapper mapper,
             ICategoriaService categoriaService,
-            ILogAlteracaoService<Categoria> logAlteracaoService)
+            ILogAlteracaoService<Categoria> logAlteracaoService, ICurrentUserService currentUserService)
         {
             _unitOfWork = unitOfWork;
             _mapper = mapper;
             _categoriaService = categoriaService;
             _logAlteracaoService = logAlteracaoService;
+            _currentUserService = currentUserService;
         }
 
         public async Task<UpdateCategoriaResponse> Handle(UpdateCategoriaCommand request, CancellationToken cancellationToken)
         {
+            var usuario = await _currentUserService.GetUsuario();
+            var empresa = await _currentUserService.GetEmpresa();
+            
+            if (!usuario.PerfilAcesso.PermissaoCategoria.Editar)
+                throw new UnauthorizedAccessException("Usuário não tem permissão para alterar categorias");
+            
             int totalAlteracoes = 0;
 
             var categoriaNova = await _categoriaService.GetAndValidateEntityAsync(request.Id);
@@ -56,9 +64,9 @@ namespace SistemaEstoque.Application.Commands.UpdateCategoria
                 categoriaNovaDTO,
                 categoriaNova.Id,
                 totalAlteracoes,
-                1,
+                usuario.Id,
                 ETipoAlteracao.Alteracao,
-                EMPRESA_CONSTANTE.ID_EMPRESA
+                empresa.Id
             );
 
             _unitOfWork.Categorias.Update(categoriaNova);

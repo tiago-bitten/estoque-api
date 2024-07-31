@@ -39,8 +39,7 @@ namespace SistemaEstoque.Application.Services
             var token = new JwtSecurityToken(
                 issuer: _configuration["Jwt:Issuer"],
                 audience: _configuration["Jwt:Issuer"],
-                //expires: DateTime.Now.AddMinutes(Int32.Parse(_configuration["Jwt:ExpirationInMinutes"])),
-                expires: DateTime.UtcNow.AddSeconds(1),
+                expires: DateTime.Now.AddMinutes(Int32.Parse(_configuration["Jwt:ExpirationInMinutes"])),
                 claims: authClaims,
                 signingCredentials: new SigningCredentials(authSigningKey, SecurityAlgorithms.HmacSha256)
             );

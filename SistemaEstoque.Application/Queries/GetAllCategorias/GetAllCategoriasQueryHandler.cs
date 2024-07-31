@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using SistemaEstoque.Application.DTOs;
 using SistemaEstoque.Domain.Interfaces.Repositories;
+using SistemaEstoque.Domain.Interfaces.Services;
 
 namespace SistemaEstoque.Application.Queries.GetAllCategorias
 {
@@ -12,18 +13,20 @@ namespace SistemaEstoque.Application.Queries.GetAllCategorias
 
         private readonly IUnitOfWork _uow;
         private readonly IMapper _mapper;
+        private readonly ITokenService _tokenService;
 
         public GetAllCategoriasQueryHandler(
             IUnitOfWork uow,
-            IMapper mapper)
+            IMapper mapper,
+            ITokenService tokenService)
         {
             _uow = uow;
             _mapper = mapper;
+            _tokenService = tokenService;
         }
 
         public async Task<GetAllCategoriasResponse> Handle(GetAllCategoriasQuery request, CancellationToken cancellationToken)
         {
-            // ALTERAR_EMPRESA
             var empresaId = EMPRESA_CONSTANTE.ID_EMPRESA;
 
             var totalCategorias = await _uow.Categorias.GetAll(empresaId).CountAsync(cancellationToken);

@@ -11,21 +11,27 @@ namespace SistemaEstoque.Application.Commands.CreateEstoqueInsumo
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
         private readonly IInsumoService _insumoService;
+        private readonly ICurrentUserService _currentUserService;
 
         public CreateEstoqueInsumoCommandHandler(
             IUnitOfWork unitOfWork,
             IMapper mapper,
-            IInsumoService insumoService)
+            IInsumoService insumoService, ICurrentUserService currentUserService)
         {
             _unitOfWork = unitOfWork;
             _mapper = mapper;
             _insumoService = insumoService;
+            _currentUserService = currentUserService;
         }
 
         public async Task<CreateEstoqueInsumoResponse> Handle(CreateEstoqueInsumoCommand request, CancellationToken cancellationToken)
         {
-            var empresaId = EMPRESA_CONSTANTE.ID_EMPRESA;
-
+            var usuario = await _currentUserService.GetUsuario();
+            var empresa = await _currentUserService.GetEmpresa();
+            
+            /**if (!usuario.PerfilAcesso.PermissaoEstoqueInsumo.Criar)
+                throw new UnauthorizedAccessException("Usuário não tem permissão para criar estoque de insumo");**/
+            
             var insumo = await _insumoService.GetAndValidateEntityAsync(request.InsumoId);
 
             var exitsEstoqueInsumo = await _unitOfWork.EstoquesInsumos.FindAsync(x => x.InsumoId == request.InsumoId && x.Removido == false);
@@ -39,9 +45,9 @@ namespace SistemaEstoque.Application.Commands.CreateEstoqueInsumo
             var estoqueInsumo = _mapper.Map<EstoqueInsumo>(request);
 
             estoqueInsumo.Insumo = insumo;
-            estoqueInsumo.EmpresaId = empresaId;
+            estoqueInsumo.Empresa = empresa;
 
-            await _unitOfWork.EstoquesInsumos.AddAsync(estoqueInsumo, empresaId);
+            await _unitOfWork.EstoquesInsumos.AddAsync(estoqueInsumo, empresa.Id);
             await _unitOfWork.CommitAsync();
 
             var response = _mapper.Map<CreateEstoqueInsumoResponse>(estoqueInsumo);
