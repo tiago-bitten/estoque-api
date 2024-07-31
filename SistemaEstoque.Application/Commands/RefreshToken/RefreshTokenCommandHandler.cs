@@ -19,18 +19,26 @@ public class RefreshTokenCommandHandler : IRequestHandler<RefreshTokenCommand, R
 
     public async Task<RefreshTokenResponse> Handle(RefreshTokenCommand request, CancellationToken cancellationToken)
     {
-        var principal = _tokenService.GetPrincipalFromExpiredToken(request.Token);
+        var validateExpiredAccessToken = _tokenService.ValidateExpiredAccessToken(request.AccessToken);
+
+        if (!validateExpiredAccessToken)
+            throw new Exception("Access Token continua sendo válido");
         
-        var usuarioId = int.Parse(principal.Claims.First(x => x.Type == "UsuarioId").Value);
-        var usuario = await _uow.Usuarios.GetByIdAsync(usuarioId);
+        var refreshToken = await _uow.RefreshTokens.GetByTokenAsync(request.RefreshToken);
         
-        var refreshToken = await _uow.RefreshTokens.GetByTokenAsync(usuario.RefreshToken.Token);
+        if (refreshToken is null || refreshToken.ExpiraEm < DateTime.UtcNow || refreshToken.IsRevogado)
+            throw new Exception("Faça login novamente");
+
+        var usuario = refreshToken.Usuario;
         
-        if (refreshToken.ExpiraEm < DateTime.UtcNow || refreshToken.IsRevogado)
-            throw new Exception("Refresh token expired");
-        
-        refreshToken = await _tokenService.GenerateRefreshToken(usuario);
-        var accessToken = _tokenService.GenerateAccessToken(usuario);
-        
+        var newRefreshToken = await _tokenService.GenerateRefreshToken(usuario);
+        var newAccessToken = _tokenService.GenerateAccessToken(usuario);
+
+        return new RefreshTokenResponse()
+        {
+            RefreshToken = newRefreshToken.Token,
+            Token = newAccessToken,
+            Expiration = newRefreshToken.ExpiraEm
+        };
     }
 }

@@ -10,12 +10,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cd127400-eff2-40f3-8ea5-9e896d1baa85" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/SistemaEstoque.Application/Commands/RefreshToken/RefreshTokenCommand.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SistemaEstoque.Application/Commands/RefreshToken/RefreshTokenCommandHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SistemaEstoque.Application/Commands/RefreshToken/RefreshTokenResponse.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SistemaEstoque/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SistemaEstoque/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/config/applicationhost.config" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/config/applicationhost.config" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaEstoque.API/Controllers/AuthController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaEstoque.API/Controllers/AuthController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SistemaEstoque.API/bin/Debug/net7.0/SistemaEstoque.API.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaEstoque.API/bin/Debug/net7.0/SistemaEstoque.API.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SistemaEstoque.API/bin/Debug/net7.0/SistemaEstoque.API.exe" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaEstoque.API/bin/Debug/net7.0/SistemaEstoque.API.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SistemaEstoque.API/bin/Debug/net7.0/SistemaEstoque.API.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaEstoque.API/bin/Debug/net7.0/SistemaEstoque.API.pdb" afterDir="false" />
@@ -49,6 +45,8 @@
       <change beforePath="$PROJECT_DIR$/SistemaEstoque.API/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaEstoque.API/obj/project.packagespec.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SistemaEstoque.API/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaEstoque.API/obj/rider.project.model.nuget.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SistemaEstoque.API/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaEstoque.API/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SistemaEstoque.Application/Commands/RefreshToken/RefreshTokenCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaEstoque.Application/Commands/RefreshToken/RefreshTokenCommand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SistemaEstoque.Application/Commands/RefreshToken/RefreshTokenCommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaEstoque.Application/Commands/RefreshToken/RefreshTokenCommandHandler.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SistemaEstoque.Application/Services/JwtTokenService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaEstoque.Application/Services/JwtTokenService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SistemaEstoque.Application/bin/Debug/net7.0/SistemaEstoque.Application.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaEstoque.Application/bin/Debug/net7.0/SistemaEstoque.Application.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SistemaEstoque.Application/bin/Debug/net7.0/SistemaEstoque.Application.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaEstoque.Application/bin/Debug/net7.0/SistemaEstoque.Application.pdb" afterDir="false" />
@@ -76,7 +74,7 @@
       <change beforePath="$PROJECT_DIR$/SistemaEstoque.Application/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaEstoque.Application/obj/project.packagespec.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SistemaEstoque.Application/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaEstoque.Application/obj/rider.project.model.nuget.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SistemaEstoque.Application/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaEstoque.Application/obj/rider.project.restore.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaEstoque.Domain/Interfaces/Repositories/IRefreshTokenRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaEstoque.Domain/Interfaces/Repositories/IRefreshTokenRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SistemaEstoque.Domain/Entities/Usuario.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaEstoque.Domain/Entities/Usuario.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SistemaEstoque.Domain/Interfaces/Services/ITokenService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaEstoque.Domain/Interfaces/Services/ITokenService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SistemaEstoque.Domain/bin/Debug/net7.0/SistemaEstoque.Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaEstoque.Domain/bin/Debug/net7.0/SistemaEstoque.Domain.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SistemaEstoque.Domain/bin/Debug/net7.0/SistemaEstoque.Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaEstoque.Domain/bin/Debug/net7.0/SistemaEstoque.Domain.pdb" afterDir="false" />
@@ -98,6 +96,7 @@
       <change beforePath="$PROJECT_DIR$/SistemaEstoque.Domain/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaEstoque.Domain/obj/rider.project.model.nuget.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SistemaEstoque.Domain/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaEstoque.Domain/obj/rider.project.restore.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SistemaEstoque.Infra/Repositories/RefreshTokenRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaEstoque.Infra/Repositories/RefreshTokenRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SistemaEstoque.Infra/Repositories/UsuarioRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaEstoque.Infra/Repositories/UsuarioRepository.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SistemaEstoque.Infra/bin/Debug/net7.0/SistemaEstoque.Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaEstoque.Infra/bin/Debug/net7.0/SistemaEstoque.Domain.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SistemaEstoque.Infra/bin/Debug/net7.0/SistemaEstoque.Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaEstoque.Infra/bin/Debug/net7.0/SistemaEstoque.Domain.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SistemaEstoque.Infra/bin/Debug/net7.0/SistemaEstoque.Infra.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaEstoque.Infra/bin/Debug/net7.0/SistemaEstoque.Infra.dll" afterDir="false" />
@@ -180,6 +179,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/aspnetcore/d9ba962869d1b1c410ea476b02de2f8e27eec762/src/Mvc/Mvc.Core/src/Infrastructure/ActionMethodExecutor.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 7
@@ -192,29 +194,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;.NET Launch Settings Profile.SistemaEstoque.API: IIS Express.executor&quot;: &quot;Debug&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;staging&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    ".NET Launch Settings Profile.SistemaEstoque.API: IIS Express.executor": "Debug",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "staging",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
     ],
-    &quot;rider.external.source.directories&quot;: [
-      &quot;C:\\Users\\tiago\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache&quot;,
-      &quot;C:\\Users\\tiago\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache&quot;,
-      &quot;C:\\Users\\tiago\\AppData\\Local\\Symbols\\src&quot;
+    "rider.external.source.directories": [
+      "C:\\Users\\tiago\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache",
+      "C:\\Users\\tiago\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache",
+      "C:\\Users\\tiago\\AppData\\Local\\Symbols\\src"
     ]
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected=".NET Launch Settings Profile.SistemaEstoque.API: IIS Express">
     <configuration name="SistemaEstoque.API: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/SistemaEstoque.API/SistemaEstoque.API.csproj" />
@@ -301,5 +303,24 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/SistemaEstoque.Application/Commands/RefreshToken/RefreshTokenCommandHandler.cs</url>
+          <line>31</line>
+          <properties documentPath="D:\csharp\SistemaEstoque\SistemaEstoque.Application\Commands\RefreshToken\RefreshTokenCommandHandler.cs" containingFunctionPresentation="Method 'Handle'">
+            <startOffsets>
+              <option value="1162" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1197" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

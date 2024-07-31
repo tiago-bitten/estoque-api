@@ -11,5 +11,6 @@ namespace SistemaEstoque.Domain.Interfaces.Services
         Task<Empresa> GetEmpresaByAccessTokenAsync(string token);
         Task<Usuario> GetUsuarioByAccessTokenAsync(string token);
         ClaimsPrincipal GetPrincipalFromExpiredToken(string token);
+        bool ValidateExpiredAccessToken(string token);
     }
 }

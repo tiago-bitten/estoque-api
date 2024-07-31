@@ -1,8 +1,10 @@
 ﻿using System.IdentityModel.Tokens.Jwt;
-using System.Security.Claims;
 using System.Text;
-using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.Extensions.Configuration;
+using System.Linq;
+using System.Security.Claims;
+using System.Security.Cryptography;
 using SistemaEstoque.Domain.Entities;
 using SistemaEstoque.Domain.Interfaces.Repositories;
 using SistemaEstoque.Domain.Interfaces.Services;
@@ -37,7 +39,8 @@ namespace SistemaEstoque.Application.Services
             var token = new JwtSecurityToken(
                 issuer: _configuration["Jwt:Issuer"],
                 audience: _configuration["Jwt:Issuer"],
-                expires: DateTime.Now.AddMinutes(Int32.Parse(_configuration["Jwt:ExpirationInMinutes"])),
+                //expires: DateTime.Now.AddMinutes(Int32.Parse(_configuration["Jwt:ExpirationInMinutes"])),
+                expires: DateTime.UtcNow.AddSeconds(1),
                 claims: authClaims,
                 signingCredentials: new SigningCredentials(authSigningKey, SecurityAlgorithms.HmacSha256)
             );
@@ -52,11 +55,11 @@ namespace SistemaEstoque.Application.Services
 
             RefreshToken refreshToken;
 
-            if (existingToken == null)
+            if (existingToken is null)
             {
                 refreshToken = new RefreshToken
                 {
-                    Token = Guid.NewGuid().ToString(),
+                    Token = GenerateSecureToken(),
                     UsuarioId = usuario.Id,
                     ExpiraEm = DateTime.UtcNow.AddDays(7),
                     IsRevogado = false,
@@ -67,7 +70,7 @@ namespace SistemaEstoque.Application.Services
             }
             else
             {
-                existingToken.Token = Guid.NewGuid().ToString();
+                existingToken.Token = GenerateSecureToken();
                 existingToken.ExpiraEm = DateTime.UtcNow.AddDays(7);
                 existingToken.IsRevogado = false;
                 existingToken.UltimaGeracao = DateTime.UtcNow;
@@ -134,6 +137,51 @@ namespace SistemaEstoque.Application.Services
             }
 
             return principal;
+        }
+
+        public bool ValidateExpiredAccessToken(string token)
+        {
+            var tokenHandler = new JwtSecurityTokenHandler();
+            var key = Encoding.ASCII.GetBytes(_configuration["Jwt:Key"]);
+
+            var tokenValidationParameters = new TokenValidationParameters
+            {
+                ValidateIssuer = true,
+                ValidateAudience = true,
+                ValidateLifetime = false,
+                ValidateIssuerSigningKey = true,
+                ValidIssuer = _configuration["Jwt:Issuer"],
+                ValidAudience = _configuration["Jwt:Issuer"],
+                IssuerSigningKey = new SymmetricSecurityKey(key)
+            };
+
+            try
+            {
+                var principal = tokenHandler.ValidateToken(token, tokenValidationParameters, out var validatedToken);
+
+                if (validatedToken is JwtSecurityToken jwtSecurityToken &&
+                    jwtSecurityToken.Header.Alg.Equals(SecurityAlgorithms.HmacSha256, StringComparison.InvariantCultureIgnoreCase))
+                {
+                    var exp = principal.Claims.FirstOrDefault(c => c.Type == JwtRegisteredClaimNames.Exp)?.Value;
+                    var expirationDate = DateTimeOffset.FromUnixTimeSeconds(Convert.ToInt64(exp)).UtcDateTime;
+                    return expirationDate < DateTime.UtcNow;
+                }
+                throw new SecurityTokenException("Invalid token");
+            }
+            catch (SecurityTokenException)
+            {
+                return false;
+            }
+        }
+
+        private string GenerateSecureToken()
+        {
+            var random = new byte[32];
+            using (var rng = RandomNumberGenerator.Create())
+            {
+                rng.GetBytes(random);
+                return Convert.ToBase64String(random);
+            }
         }
     }
 }

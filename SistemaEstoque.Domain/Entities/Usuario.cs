@@ -10,7 +10,7 @@ namespace SistemaEstoque.Domain.Entities
         public int? PerfilAcessoId { get; set; }
         public bool? AcessoBloqueado { get; set; }
         
-        public RefreshToken RefreshToken { get; set; }
+        public RefreshToken? RefreshToken { get; set; }
         public PerfilAcesso? PerfilAcesso { get; set; }
 
         public IEnumerable<MovimentacaoProduto?> MovimentacoesProdutos { get; set; }

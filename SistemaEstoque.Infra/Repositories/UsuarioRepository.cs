@@ -17,6 +17,7 @@ namespace SistemaEstoque.Infra.Repositories
             return _dbSet
                 .Include(u => u.PerfilAcesso).ThenInclude(p => p.PermissaoProduto)
                 .Include(u => u.PerfilAcesso).ThenInclude(p => p.PermissaoCategoria)
+                .Include(x => x.RefreshToken)
                 .Where(u => u.EmpresaId == empresaId && u.Removido == false);
         }
 
@@ -25,6 +26,7 @@ namespace SistemaEstoque.Infra.Repositories
             return await _context.Usuarios
                 .Include(u => u.PerfilAcesso).ThenInclude(p => p.PermissaoProduto)
                 .Include(u => u.PerfilAcesso).ThenInclude(p => p.PermissaoCategoria)
+                .Include(x => x.RefreshToken)
                 .FirstOrDefaultAsync(u => u.Id == id);
         }   
 
