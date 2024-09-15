@@ -2,7 +2,7 @@
 
 namespace SistemaEstoque.Domain.Entities
 {
-    public sealed class ConfiguracaoEstoque : IdentificadorBase
+    public sealed class ConfiguracaoEstoque : IdentificadorTenant
     {
         public bool PermiteEstoqueNegativo { get; set; }
         public bool PermitePassarEstoqueMinimo { get; set; }
