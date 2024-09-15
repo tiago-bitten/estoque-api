@@ -25,19 +25,37 @@ public class ResponseBase<T> where T : class
     public int? Total { get; init; }
 }
 
-public class ControllerBase : Microsoft.AspNetCore.Mvc.ControllerBase
+[ApiController]
+[Route("api/[controller]")]
+public class ControllerBaseImp : ControllerBase
 {
+    private const string FallbackSuccessMessage = "Operação concluída com sucesso";
+    private const string FallbackErrorMessage = "Ocorreu um erro ao processar a solicitação";
+    
     [NonAction]
-    public IActionResult Success<T>(T? content, string? message, int? total) where T : class
+    public IActionResult Success<T>(T? content, int? total, string? message) where T : class
     {
         var responseBase = new  ResponseBase<T>
         {
             Success = true,
             Content = content,
-            Message = message,
+            Message = message ?? FallbackSuccessMessage,
             Total = total
         };
 
         return Ok(responseBase);
+    }
+    
+    [NonAction]
+    public IActionResult Error(string? message, string[] errors)
+    {
+        var responseBase = new ResponseBase<dynamic>
+        {
+            Success = false,
+            Message = message ?? FallbackErrorMessage,
+            Errors = errors
+        };
+
+        return BadRequest(responseBase);
     }
 }

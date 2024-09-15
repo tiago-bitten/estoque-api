@@ -10,7 +10,7 @@ namespace SistemaEstoque.API.Controllers
     [Route("api/[controller]")]
     [ApiController]
     [Authorize]
-    public class CategoriasController : ControllerBase
+    public class CategoriasController : ControllerBaseImp
     {
         private readonly IMediator _mediator;
 

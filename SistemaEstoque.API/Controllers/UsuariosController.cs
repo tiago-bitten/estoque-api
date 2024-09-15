@@ -6,7 +6,7 @@ namespace SistemaEstoque.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class UsuariosController : ControllerBase
+    public class UsuariosController : ControllerBaseImp
     {
         private readonly IMediator _mediator;
 

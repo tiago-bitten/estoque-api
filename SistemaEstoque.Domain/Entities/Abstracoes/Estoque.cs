@@ -1,6 +1,6 @@
 ﻿namespace SistemaEstoque.Domain.Entities.Abstracoes
 {
-    public abstract class Estoque : EntidadeBase
+    public abstract class Estoque : IdentificadorBase
     {
         public int Quantidade { get; set; }
         public int QuantidadeMinima { get; set; }

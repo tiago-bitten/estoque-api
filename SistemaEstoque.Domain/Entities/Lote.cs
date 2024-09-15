@@ -2,7 +2,7 @@
 
 namespace SistemaEstoque.Domain.Entities
 {
-    public sealed class Lote : EntidadeBase
+    public sealed class Lote : IdentificadorBase
     {
         public string Descricao { get; set; }
         public string Codigo { get; set; }

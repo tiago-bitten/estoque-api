@@ -2,7 +2,7 @@
 
 namespace SistemaEstoque.Domain.Entities.Abstracoes
 {
-    public abstract class Movimentacao : EntidadeBase
+    public abstract class Movimentacao : IdentificadorBase
     {
         public ETipoMovimentacao Tipo { get; set; }
         public int Quantidade { get; set; }

@@ -1,6 +1,6 @@
 ﻿namespace SistemaEstoque.Domain.Entities.Abstracoes
 {
-    public abstract class Item : EntidadeBase
+    public abstract class Item : IdentificadorBase
     {
         public string Nome { get; set; }
         public string? Descricao { get; set; }

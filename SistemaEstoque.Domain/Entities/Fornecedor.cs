@@ -2,7 +2,7 @@
 
 namespace SistemaEstoque.Domain.Entities
 {
-    public sealed class Fornecedor : EntidadeBase
+    public sealed class Fornecedor : IdentificadorBase
     {
         public string Nome { get; set; }
         public string CpfCnpj { get; set; }

@@ -2,7 +2,7 @@
 
 namespace SistemaEstoque.Domain.Entities;
 
-public class RefreshToken : EntidadeBase
+public class RefreshToken : IdentificadorBase
 {
     public string Token { get; set; }
     public int UsuarioId { get; set; }

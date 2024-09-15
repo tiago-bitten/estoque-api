@@ -1,6 +1,6 @@
 ﻿namespace SistemaEstoque.Domain.Entities.Abstracoes
 {
-    public abstract class LoteItem : EntidadeBase
+    public abstract class LoteItem : IdentificadorBase
     {
         public DateTime DataFabricacao { get; set; }
         public DateTime DataValidade { get; set; }

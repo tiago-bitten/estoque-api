@@ -6,7 +6,7 @@ namespace SistemaEstoque.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class PerfisAcessosController : ControllerBase
+    public class PerfisAcessosController : ControllerBaseImp
     {
         private readonly IMediator _mediator;
 
