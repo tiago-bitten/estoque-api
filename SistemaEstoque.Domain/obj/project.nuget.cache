@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "clnvbSWAz8DslnVyXtk+FDr1/4f9f4VKbJAuQaLBHBHxsjbRgQ5/Oo0y2Shs4MB0xAun1DiK9wcDyvtTD1qTIQ==",
+  "dgSpecHash": "vlXI/FdWaoDfs2v7WlrLinNm1HNbyg6k8UmkA8Vg88Mb+4lPiMwJ2eYLoeFd2S7C7p530OCncE6z3m3+zBSn1Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\tiago\\Documents\\CSHARP\\p-projetos\\estoque-api\\SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\teste\\Documents\\CSHARP\\projetos\\estoque-api\\SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\teste\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.20\\microsoft.netcore.app.ref.7.0.20.nupkg.sha512",
+    "C:\\Users\\teste\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.20\\microsoft.windowsdesktop.app.ref.7.0.20.nupkg.sha512",
+    "C:\\Users\\teste\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.20\\microsoft.aspnetcore.app.ref.7.0.20.nupkg.sha512"
+  ],
   "logs": []
 }

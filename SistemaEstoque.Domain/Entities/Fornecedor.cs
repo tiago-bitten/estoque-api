@@ -2,7 +2,7 @@
 
 namespace SistemaEstoque.Domain.Entities
 {
-    public sealed class Fornecedor : EntidadeBase
+    public sealed class Fornecedor : IdentificadorTenant
     {
         public string Nome { get; set; }
         public string CpfCnpj { get; set; }
@@ -14,6 +14,6 @@ namespace SistemaEstoque.Domain.Entities
         public string Cep { get; set; }
         public bool? Removido { get; set; }
 
-        public IEnumerable<Lote?> Lotes { get; set; }
+        public List<Lote> Lotes { get; set; } = new();
     }
 }

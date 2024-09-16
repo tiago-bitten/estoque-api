@@ -207,3 +207,11 @@ C:\Users\tiago\Documents\CSHARP\p-projetos\estoque-api\SistemaEstoque.API\bin\De
 C:\Users\tiago\Documents\CSHARP\p-projetos\estoque-api\SistemaEstoque.API\bin\Debug\net7.0\Nito.Disposables.dll
 C:\Users\tiago\Documents\CSHARP\p-projetos\estoque-api\SistemaEstoque.API\bin\Debug\net7.0\System.Linq.Dynamic.Core.dll
 C:\Users\tiago\Documents\CSHARP\p-projetos\estoque-api\SistemaEstoque.API\bin\Debug\net7.0\Volo.Abp.Core.dll
+C:\Users\teste\Documents\CSHARP\projetos\estoque-api\SistemaEstoque.API\bin\Debug\net7.0\JetBrains.Annotations.dll
+C:\Users\teste\Documents\CSHARP\projetos\estoque-api\SistemaEstoque.API\bin\Debug\net7.0\Nito.AsyncEx.Context.dll
+C:\Users\teste\Documents\CSHARP\projetos\estoque-api\SistemaEstoque.API\bin\Debug\net7.0\Nito.AsyncEx.Coordination.dll
+C:\Users\teste\Documents\CSHARP\projetos\estoque-api\SistemaEstoque.API\bin\Debug\net7.0\Nito.AsyncEx.Tasks.dll
+C:\Users\teste\Documents\CSHARP\projetos\estoque-api\SistemaEstoque.API\bin\Debug\net7.0\Nito.Collections.Deque.dll
+C:\Users\teste\Documents\CSHARP\projetos\estoque-api\SistemaEstoque.API\bin\Debug\net7.0\Nito.Disposables.dll
+C:\Users\teste\Documents\CSHARP\projetos\estoque-api\SistemaEstoque.API\bin\Debug\net7.0\System.Linq.Dynamic.Core.dll
+C:\Users\teste\Documents\CSHARP\projetos\estoque-api\SistemaEstoque.API\bin\Debug\net7.0\Volo.Abp.Core.dll

@@ -3,7 +3,7 @@ using SistemaEstoque.Domain.Entities.Permissoes;
 
 namespace SistemaEstoque.Domain.Entities
 {
-    public sealed class PerfilAcesso : EntidadeBase
+    public sealed class PerfilAcesso : IdentificadorBase
     {
         public string Nome { get; set; }
 

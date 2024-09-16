@@ -2,7 +2,7 @@
 
 namespace SistemaEstoque.Domain.Entities
 {
-    public sealed class Usuario : EntidadeBase
+    public sealed class Usuario : IdentificadorBase
     {
         public string Nome { get; set; }
         public string Email { get; set; }
