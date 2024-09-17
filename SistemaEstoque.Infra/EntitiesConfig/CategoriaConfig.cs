@@ -2,31 +2,26 @@
 using Microsoft.EntityFrameworkCore;
 using SistemaEstoque.Domain.Entities;
 using SistemaEstoque.Domain.Enums;
+using SistemaEstoque.Infra.EntitiesConfig.Abstracoes;
 
 namespace SistemaEstoque.Infra.EntitiesConfig
 {
-    public class CategoriaConfig : IEntityTypeConfiguration<Categoria>
+    public class CategoriaConfig : IdentificadorTenantConfig<Categoria>
     {
-        public void Configure(EntityTypeBuilder<Categoria> builder)
+        public override void Configure(EntityTypeBuilder<Categoria> builder)
         {
+            base.Configure(builder);
+            
             builder.ToTable("categorias");
 
-            builder.HasKey(c => c.Id);
-
-            builder.Property(c => c.Id)
-                .HasColumnName("id")
-                .HasColumnType("int")
-                .ValueGeneratedOnAdd()
-                .IsRequired();
-
             builder.Property(c => c.Nome)
-                .HasColumnName("nome")
                 .HasColumnType("varchar(150)")
+                .HasColumnName("nome")
                 .IsRequired();
 
             builder.Property(c => c.Descricao)
-                .HasColumnName("descricao")
-                .HasColumnType("varchar(255)");
+                .HasColumnType("varchar(255)")
+                .HasColumnName("descricao");
 
             builder.Property(c => c.TipoItem)
                 .HasColumnName("tipo_item")
@@ -40,26 +35,14 @@ namespace SistemaEstoque.Infra.EntitiesConfig
                 .HasColumnName("removido")
                 .HasColumnType("boolean")
                 .HasDefaultValue(false);
-
-            builder.Property(c => c.EmpresaId)
-                .HasColumnName("empresa_id")
-                .HasColumnType("int")
-                .IsRequired();
-
-            builder.HasMany(c => c.Produtos)
-                .WithOne(p => p.Categoria)
-                .HasForeignKey(p => p.CategoriaId)
-                .OnDelete(DeleteBehavior.SetNull);
-
-            builder.HasMany(c => c.Insumos)
-                .WithOne(i => i.Categoria)
-                .HasForeignKey(i => i.CategoriaId)
-                .OnDelete(DeleteBehavior.SetNull);
+            
+            builder.HasMany(x => x.Items)
+                .WithOne(x => x.Categoria)
+                .HasForeignKey(x => x.CategoriaId);
 
             builder.HasOne(c => c.Empresa)
                 .WithMany(e => e.Categorias)
-                .HasForeignKey(c => c.EmpresaId)
-                .OnDelete(DeleteBehavior.SetNull);
+                .HasForeignKey(c => c.TenantId);
         }
     }
 }

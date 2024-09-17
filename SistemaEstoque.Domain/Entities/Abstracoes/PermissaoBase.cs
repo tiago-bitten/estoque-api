@@ -1,6 +1,6 @@
 ﻿namespace SistemaEstoque.Domain.Entities.Abstracoes
 {
-    public abstract class PermissaoBase : IdentificadorBase
+    public abstract class PermissaoBase : IdentificadorTenant
     {
         public int PerfilAcessoId { get; set; }
         public bool Visualizar { get; set; }
