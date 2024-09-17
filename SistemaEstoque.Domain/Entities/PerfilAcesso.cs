@@ -3,13 +3,13 @@ using SistemaEstoque.Domain.Entities.Permissoes;
 
 namespace SistemaEstoque.Domain.Entities
 {
-    public sealed class PerfilAcesso : IdentificadorBase
+    public sealed class PerfilAcesso : IdentificadorTenant
     {
         public string Nome { get; set; }
 
         public PermissaoProduto PermissaoProduto { get; set; }
         public PermissaoCategoria PermissaoCategoria { get; set; }
         public PermissaoInsumo PermissaoInsumo { get; set; }
-        public IEnumerable<Usuario?> Usuarios { get; set; }
+        public List<Usuario> Usuarios { get; set; } = new();
     }
 }

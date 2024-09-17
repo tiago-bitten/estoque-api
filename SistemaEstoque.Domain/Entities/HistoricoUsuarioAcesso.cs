@@ -2,7 +2,7 @@
 
 namespace SistemaEstoque.Domain.Entities
 {
-    public sealed class HistoricoUsuarioAcesso : IdentificadorBase
+    public sealed class HistoricoUsuarioAcesso : IdentificadorTenant
     {
         public int UsuarioId { get; set; }
         public Usuario Usuario { get; set; }

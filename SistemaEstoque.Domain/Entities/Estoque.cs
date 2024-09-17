@@ -5,6 +5,7 @@ namespace SistemaEstoque.Domain.Entities
 {
     public sealed class Estoque : IdentificadorTenant
     {
+        public int ItemId { get; set; }
         public ETipoItem Tipo { get; set; }
         public int Quantidade { get; set; }
         public int QuantidadeMinima { get; set; }

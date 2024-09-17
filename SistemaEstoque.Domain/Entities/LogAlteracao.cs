@@ -3,9 +3,8 @@ using SistemaEstoque.Domain.Enums;
 
 namespace SistemaEstoque.Domain.Entities
 {
-    public sealed class LogAlteracao : Tenant
+    public sealed class LogAlteracao : IdentificadorTenant
     {
-        public int Id { get; set; }
         public string Tabela { get; set; }
         public DateTime AlteradoEm { get; set; }
         public int ItemId { get; set; }
