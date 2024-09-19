@@ -1,22 +1,17 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using SistemaEstoque.Domain.Entities;
+using SistemaEstoque.Infra.EntitiesConfig.Abstracoes;
 
 namespace SistemaEstoque.Infra.EntitiesConfig
 {
-    public class ProprietarioConfig : IEntityTypeConfiguration<Proprietario>
+    public class ProprietarioConfig : IdentificadorTenantConfig<Proprietario>
     {
-        public void Configure(EntityTypeBuilder<Proprietario> builder)
+        public override void Configure(EntityTypeBuilder<Proprietario> builder)
         {
+            base.Configure(builder);
+            
             builder.ToTable("proprietarios");
-
-            builder.HasKey(p => p.Id);
-
-            builder.Property(p => p.Id)
-                .HasColumnName("id")
-                .HasColumnType("int")
-                .ValueGeneratedOnAdd()
-                .IsRequired();
 
             builder.Property(p => p.Nome)
                 .HasColumnName("nome")
@@ -42,11 +37,6 @@ namespace SistemaEstoque.Infra.EntitiesConfig
                 .HasColumnName("telefone")
                 .HasColumnType("varchar(15)")
                 .IsRequired();
-
-            builder.Property(p => p.Removido)
-                .HasColumnName("removido")
-                .HasColumnType("boolean")
-                .HasDefaultValue(false);
 
             builder.HasMany(p => p.Empresas)
                 .WithOne(e => e.Proprietario)

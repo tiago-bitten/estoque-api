@@ -1,4 +1,5 @@
-﻿using SistemaEstoque.Domain.Entities.Abstracoes;
+﻿using System.Runtime.CompilerServices;
+using SistemaEstoque.Domain.Entities.Abstracoes;
 using SistemaEstoque.Domain.Entities.Permissoes;
 using SistemaEstoque.Domain.Enums;
 
@@ -15,32 +16,28 @@ namespace SistemaEstoque.Domain.Entities
         public string Cidade { get; set; }
         public string Estado { get; set; }
         public string Cep { get; set; }
-        public int? ProprietarioId { get; set; }
-        public Proprietario? Proprietario { get; set; }
+        public int ProprietarioId { get; set; }
+        public Proprietario Proprietario { get; set; }
 
         
         // Referencias para navegação
         public ConfiguracaoEstoque ConfiguracaoEstoque { get; set; }
-        public IEnumerable<Usuario> Usuarios { get; set; }
-        public IEnumerable<Categoria> Categorias { get; set; } 
-        public IEnumerable<Produto> Produtos { get; set; }
-        public IEnumerable<Insumo> Insumos { get; set; }
-        public IEnumerable<Fornecedor> Fornecedores { get; set; }
-        public IEnumerable<EstoqueProduto> EstoquesProdutos { get; set; }
-        public IEnumerable<EstoqueInsumo> EstoquesInsumos { get; set; }
-        public IEnumerable<LoteProduto> LotesProdutos { get; set; }
-        public IEnumerable<LoteInsumo> LotesInsumos { get; set; }
-        public IEnumerable<MovimentacaoProduto> MovimentacoesProdutos { get; set; }
-        public IEnumerable<MovimentacaoInsumo> MovimentacoesInsumos { get; set; }
-        public IEnumerable<LogAlteracao> LogsAlteracoes { get; set; }
-        public IEnumerable<HistoricoEstoque> HistoricosEstoquesProdutos { get; set; }
-        public IEnumerable<HistoricoUsuarioAcesso?> HistoricosUsuariosAcessos { get; set; }
-        public IEnumerable<Lote> Lotes { get; set; }
-        public IEnumerable<PerfilAcesso> PerfisAcessos { get; set; }
-        public IEnumerable<PermissaoProduto> PermissoesProdutos { get; set; }
-        public IEnumerable<PermissaoCategoria> PermissoesCategorias { get; set; }
-        public IEnumerable<PermissaoInsumo> PermissoesInsumos { get; set; }
-        
-        public IEnumerable<RefreshToken> RefreshTokens { get; set; }
+        public List<Usuario> Usuarios { get; set; } = new();
+        public List<Categoria> Categorias { get; set; } = new();
+        public List<Produto> Produtos { get; set; } = new();
+        public List<Insumo> Insumos { get; set; } = new();
+        public List<Fornecedor> Fornecedores { get; set; } = new();
+        public List<Estoque> Estoques { get; set; } = new();
+        public List<Movimentacao> Movimentacoes { get; set; } = new();
+        public List<RegistroAlteracaoEntidade> LogsAlteracoes { get; set; } = new();
+        public List<HistoricoEstoque> HistoricosEstoquesProdutos { get; set; } = new();
+        public List<RegistroUsuarioAcesso> HistoricosUsuariosAcessos { get; set; } = new();
+        public List<Lote> Lotes { get; set; } = new();
+        public List<LoteItem> LoteItems { get; set; } = new();
+        public List<PerfilAcesso> PerfisAcessos { get; set; } = new();
+        public List<PermissaoProduto> PermissoesProdutos { get; set; } = new();
+        public List<PermissaoCategoria> PermissoesCategorias { get; set; } = new();
+        public List<PermissaoInsumo> PermissoesInsumos { get; set; } = new();
+        public List<RefreshToken> RefreshTokens { get; set; } = new();
     }
 }

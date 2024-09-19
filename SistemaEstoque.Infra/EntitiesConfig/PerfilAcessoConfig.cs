@@ -1,37 +1,24 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using SistemaEstoque.Domain.Entities;
+using SistemaEstoque.Infra.EntitiesConfig.Abstracoes;
+using SistemaEstoque.Infra.EntitiesConfig.Utils;
 
 namespace SistemaEstoque.Infra.EntitiesConfig
 {
-    public class PerfilAcessoConfig : IEntityTypeConfiguration<PerfilAcesso>
+    public class PerfilAcessoConfig : IdentificadorTenantConfig<PerfilAcesso>
     {
-        public void Configure(EntityTypeBuilder<PerfilAcesso> builder)
+        public override void Configure(EntityTypeBuilder<PerfilAcesso> builder)
         {
+            base.Configure(builder);
+            
             builder.ToTable("perfis_acessos");
 
-            builder.HasKey(p => p.Id);
-
-            builder.Property(p => p.Id)
-                .HasColumnName("id")
-                .ValueGeneratedOnAdd()
-                .IsRequired();
-
             builder.Property(p => p.Nome)
+                .HasColumnType(TipoColunaConstants.VarcharDefault)
                 .HasColumnName("nome")
-                .HasColumnType("varchar(50)")
                 .IsRequired();
 
-            builder.Property(p => p.Removido)
-                .HasColumnName("removido")
-                .HasColumnType("boolean")
-                .HasDefaultValue(false);
-
-            builder.Property(p => p.EmpresaId)
-                .HasColumnName("empresa_id")
-                .HasColumnType("int")
-                .IsRequired();
-            
             builder.HasOne(p => p.PermissaoProduto)
                 .WithOne(p => p.PerfilAcesso)
                 .HasForeignKey<PerfilAcesso>(p => p.Id)
@@ -49,7 +36,7 @@ namespace SistemaEstoque.Infra.EntitiesConfig
 
             builder.HasOne(p => p.Empresa)
                 .WithMany(e => e.PerfisAcessos)
-                .HasForeignKey(p => p.EmpresaId)
+                .HasForeignKey(p => p.TenantId)
                 .OnDelete(DeleteBehavior.SetNull);
         }
     }

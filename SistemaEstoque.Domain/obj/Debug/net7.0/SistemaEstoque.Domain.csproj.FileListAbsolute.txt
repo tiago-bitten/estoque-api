@@ -34,3 +34,10 @@ C:\Users\teste\Documents\CSHARP\projetos\estoque-api\SistemaEstoque.Domain\obj\D
 C:\Users\teste\Documents\CSHARP\projetos\estoque-api\SistemaEstoque.Domain\obj\Debug\net7.0\SistemaEstoque.Domain.pdb
 C:\Users\teste\Documents\CSHARP\projetos\estoque-api\SistemaEstoque.Domain\obj\Debug\net7.0\ref\SistemaEstoque.Domain.dll
 C:\Users\teste\Documents\CSHARP\projetos\estoque-api\SistemaEstoque.Domain\obj\Debug\net7.0\SistemaEstoque.Domain.sourcelink.json
+D:\C#\estoque-api\SistemaEstoque.Domain\obj\Debug\net7.0\SistemaEstoque.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\C#\estoque-api\SistemaEstoque.Domain\obj\Debug\net7.0\SistemaEstoque.Domain.AssemblyInfoInputs.cache
+D:\C#\estoque-api\SistemaEstoque.Domain\obj\Debug\net7.0\SistemaEstoque.Domain.AssemblyInfo.cs
+D:\C#\estoque-api\SistemaEstoque.Domain\obj\Debug\net7.0\SistemaEstoque.Domain.csproj.CoreCompileInputs.cache
+D:\C#\estoque-api\SistemaEstoque.Domain\obj\Debug\net7.0\SistemaEstoque.Domain.dll
+D:\C#\estoque-api\SistemaEstoque.Domain\obj\Debug\net7.0\refint\SistemaEstoque.Domain.dll
+D:\C#\estoque-api\SistemaEstoque.Domain\obj\Debug\net7.0\SistemaEstoque.Domain.pdb

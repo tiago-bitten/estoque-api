@@ -27,8 +27,8 @@ namespace SistemaEstoque.Infra.Data
         public DbSet<LoteInsumo> LotesInsumos { get; set; }
         public DbSet<MovimentacaoProduto> MovimentacoesProdutos { get; set; }
         public DbSet<MovimentacaoInsumo> MovimentacoesInsumos { get; set; }
-        public DbSet<LogAlteracao> LogAlteracoes { get; set; }
-        public DbSet<HistoricoUsuarioAcesso> HistoricosUsuariosAcessos { get; set; }
+        public DbSet<RegistroAlteracaoEntidade> LogAlteracoes { get; set; }
+        public DbSet<RegistroUsuarioAcesso> HistoricosUsuariosAcessos { get; set; }
         public DbSet<HistoricoEstoqueProduto> HistoricosEstoquesProdutos { get; set; }
         public DbSet<HistoricoEstoqueInsumo> HistoricosEstoquesInsumos { get; set; }
         public DbSet<PerfilAcesso> PerfisAcessos { get; set; }
@@ -48,15 +48,15 @@ namespace SistemaEstoque.Infra.Data
             modelBuilder.ApplyConfiguration(new CategoriaConfig());
             modelBuilder.ApplyConfiguration(new UsuarioConfig());
             modelBuilder.ApplyConfiguration(new FornecedorConfig());
-            modelBuilder.ApplyConfiguration(new EstoqueProdutoConfig());
+            modelBuilder.ApplyConfiguration(new EstoqueConfig());
             modelBuilder.ApplyConfiguration(new EstoqueInsumoConfig());
-            modelBuilder.ApplyConfiguration(new LoteProdutoConfig());
+            modelBuilder.ApplyConfiguration(new LoteItemConfig());
             modelBuilder.ApplyConfiguration(new LoteInsumoConfig());
-            modelBuilder.ApplyConfiguration(new MovimentacaoProdutoConfig());
+            modelBuilder.ApplyConfiguration(new MovimentacaoConfig());
             modelBuilder.ApplyConfiguration(new MovimentacaoInsumoConfig());
-            modelBuilder.ApplyConfiguration(new LogAlteracaoConfig());
-            modelBuilder.ApplyConfiguration(new HistoricoUsuarioAcessoConfig());
-            modelBuilder.ApplyConfiguration(new HistoricoEstoqueProdutoConfig());
+            modelBuilder.ApplyConfiguration(new RegistroAlteracaoEntidadeConfig());
+            modelBuilder.ApplyConfiguration(new RegistroUsuarioAcessoConfig());
+            modelBuilder.ApplyConfiguration(new HistoricoEstoqueConfig());
             modelBuilder.ApplyConfiguration(new HistoricoEstoqueInsumoConfig());
             modelBuilder.ApplyConfiguration(new PerfilAcessoConfig());
             modelBuilder.ApplyConfiguration(new ProprietarioConfig());

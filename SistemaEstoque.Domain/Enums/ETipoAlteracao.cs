@@ -2,7 +2,8 @@
 {
     public enum ETipoAlteracao
     {
-        Alteracao = 1,
-        Exclusao = 2
+        Criacao = 1,
+        Alteracao = 2,
+        Exclusao = 3
     }
 }

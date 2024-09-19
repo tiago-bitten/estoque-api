@@ -11,7 +11,6 @@ namespace SistemaEstoque.Domain.Entities
 
         
         // Referencias para navegação
-        public List<Produto> Produtos { get; set; } = new();
-        public List<Insumo> Insumos { get; set; } = new();
+        public List<Item> Items { get; set; } = new();
     }
 }

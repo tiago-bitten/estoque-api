@@ -34,3 +34,14 @@ C:\Users\teste\Documents\CSHARP\projetos\estoque-api\SistemaEstoque.Shared\obj\D
 C:\Users\teste\Documents\CSHARP\projetos\estoque-api\SistemaEstoque.Shared\obj\Debug\net7.0\SistemaEstoque.Shared.pdb
 C:\Users\teste\Documents\CSHARP\projetos\estoque-api\SistemaEstoque.Shared\obj\Debug\net7.0\ref\SistemaEstoque.Shared.dll
 C:\Users\teste\Documents\CSHARP\projetos\estoque-api\SistemaEstoque.Shared\obj\Debug\net7.0\SistemaEstoque.Shared.sourcelink.json
+D:\C#\estoque-api\SistemaEstoque.Shared\bin\Debug\net7.0\SistemaEstoque.Shared.deps.json
+D:\C#\estoque-api\SistemaEstoque.Shared\bin\Debug\net7.0\SistemaEstoque.Shared.dll
+D:\C#\estoque-api\SistemaEstoque.Shared\bin\Debug\net7.0\SistemaEstoque.Shared.pdb
+D:\C#\estoque-api\SistemaEstoque.Shared\obj\Debug\net7.0\SistemaEstoque.Shared.GeneratedMSBuildEditorConfig.editorconfig
+D:\C#\estoque-api\SistemaEstoque.Shared\obj\Debug\net7.0\SistemaEstoque.Shared.AssemblyInfoInputs.cache
+D:\C#\estoque-api\SistemaEstoque.Shared\obj\Debug\net7.0\SistemaEstoque.Shared.AssemblyInfo.cs
+D:\C#\estoque-api\SistemaEstoque.Shared\obj\Debug\net7.0\SistemaEstoque.Shared.csproj.CoreCompileInputs.cache
+D:\C#\estoque-api\SistemaEstoque.Shared\obj\Debug\net7.0\SistemaEstoque.Shared.dll
+D:\C#\estoque-api\SistemaEstoque.Shared\obj\Debug\net7.0\refint\SistemaEstoque.Shared.dll
+D:\C#\estoque-api\SistemaEstoque.Shared\obj\Debug\net7.0\SistemaEstoque.Shared.pdb
+D:\C#\estoque-api\SistemaEstoque.Shared\obj\Debug\net7.0\ref\SistemaEstoque.Shared.dll

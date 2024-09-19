@@ -1,61 +1,47 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using SistemaEstoque.Domain.Entities;
+using SistemaEstoque.Infra.EntitiesConfig.Abstracoes;
+using SistemaEstoque.Infra.EntitiesConfig.Utils;
 
 namespace SistemaEstoque.Infra.EntitiesConfig
 {
-    public class LoteConfig : IEntityTypeConfiguration<Lote>
+    public class LoteConfig : IdentificadorTenantConfig<Lote>
     {
-        public void Configure(EntityTypeBuilder<Lote> builder)
+        public override void Configure(EntityTypeBuilder<Lote> builder)
         {
+            base.Configure(builder);
+            
             builder.ToTable("lotes");
 
-            builder.HasKey(l => l.Id);
-
-            builder.Property(l => l.Id)
-                .HasColumnName("id")
-                .HasColumnType("int")
-                .ValueGeneratedOnAdd()
-                .IsRequired();
-
             builder.Property(l => l.Descricao)
+                .HasColumnType(TipoColunaConstants.VarcharDefault)
                 .HasColumnName("descricao")
-                .HasColumnType("varchar(150)")
                 .IsRequired();
 
             builder.Property(l => l.Codigo)
+                .HasColumnType(TipoColunaConstants.VarcharDefault)
                 .HasColumnName("codigo")
-                .HasColumnType("varchar(200)")
                 .IsRequired();
 
             builder.Property(l => l.CodigoBarras)
+                .HasColumnType(TipoColunaConstants.VarcharDefault)
                 .HasColumnName("codigo_barras")
-                .HasColumnType("varchar(200)")
                 .IsRequired();
 
             builder.Property(l => l.FornecedorId)
+                .HasColumnType(TipoColunaConstants.Int)
                 .HasColumnName("fornecedor_id")
-                .HasColumnType("int")
                 .IsRequired();
 
             builder.Property(l => l.DataRecebimento)
+                .HasColumnType(TipoColunaConstants.TimestampWithTimeZone)
                 .HasColumnName("data_recebimento")
-                .HasColumnType("date")
                 .IsRequired();
 
             builder.Property(l => l.UsuarioRecebimentoId)
+                .HasColumnType(TipoColunaConstants.Int)
                 .HasColumnName("usuario_recebimento_id")
-                .HasColumnType("int")
-                .IsRequired();
-
-            builder.Property(l => l.Removido)
-                .HasColumnName("removido")
-                .HasColumnType("boolean")
-                .HasDefaultValue(false);
-
-            builder.Property(l => l.EmpresaId)
-                .HasColumnName("empresa_id")
-                .HasColumnType("int")
                 .IsRequired();
 
             builder.HasOne(l => l.Fornecedor)
@@ -70,7 +56,7 @@ namespace SistemaEstoque.Infra.EntitiesConfig
 
             builder.HasOne(l => l.Empresa)
                 .WithMany(e => e.Lotes)
-                .HasForeignKey(l => l.EmpresaId)
+                .HasForeignKey(l => l.TenantId)
                 .OnDelete(DeleteBehavior.Restrict);
         }
     }
