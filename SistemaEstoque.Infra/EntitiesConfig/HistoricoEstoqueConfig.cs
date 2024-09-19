@@ -25,7 +25,6 @@ namespace SistemaEstoque.Infra.EntitiesConfig
                 .HasColumnName("data")
                 .IsRequired();
 
-
             builder.Property(h => h.DataRegistro)
                 .HasColumnType(TipoColunaConstants.TimestampWithTimeZone)
                 .HasColumnName("data_registro")
@@ -34,6 +33,11 @@ namespace SistemaEstoque.Infra.EntitiesConfig
             builder.HasOne(h => h.Estoque)
                 .WithMany(e => e.HistoricoEstoques)
                 .HasForeignKey(h => h.EstoqueId)
+                .OnDelete(DeleteBehavior.SetNull);
+
+            builder.HasOne(x => x.Empresa)
+                .WithMany(x => x.HistoricoEstoques)
+                .HasForeignKey(x => x.TenantId)
                 .OnDelete(DeleteBehavior.SetNull);
         }
     }

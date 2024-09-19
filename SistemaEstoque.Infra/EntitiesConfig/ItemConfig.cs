@@ -41,5 +41,25 @@ public class ItemConfig : IdentificadorTenantConfig<Item>
             .HasColumnType(TipoColunaConstants.Int)
             .HasColumnName("categoria_id")
             .IsRequired();
+
+        builder.HasMany(x => x.Estoques)
+            .WithOne(x => x.Item)
+            .HasForeignKey(x => x.ItemId)
+            .OnDelete(DeleteBehavior.SetNull);
+
+        builder.HasMany(x => x.LoteItems)
+            .WithOne(x => x.Item)
+            .HasForeignKey(x => x.ItemId)
+            .OnDelete(DeleteBehavior.SetNull);
+        
+        builder.HasOne(x => x.Categoria)
+            .WithMany(x => x.Items)
+            .HasForeignKey(x => x.CategoriaId)
+            .OnDelete(DeleteBehavior.SetNull);
+
+        builder.HasOne(x => x.Empresa)
+            .WithMany(x => x.Items)
+            .HasForeignKey(x => x.TenantId)
+            .OnDelete(DeleteBehavior.SetNull);
     }
 }

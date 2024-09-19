@@ -13,6 +13,8 @@ namespace SistemaEstoque.Domain.Entities.Abstracoes
 
         // Navegação
         public Categoria Categoria { get; set; }
-        public Estoque Estoque { get; set; }
+        public List<Estoque> Estoques { get; set; }
+        public List<LoteItem> LoteItems { get; set; }
+        public List<Movimentacao> Movimentacoes { get; set; }
     }
 }

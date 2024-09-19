@@ -15,12 +15,11 @@ namespace SistemaEstoque.Infra.EntitiesConfig
             
             builder.ToTable("movimentacoes");
 
-            builder.Property(m => m.Tipo)
+            builder.Property(x => x.Tipo)
                 .HasColumnType(TipoColunaConstants.Text)
-                .HasColumnName("tipo")
-                .HasConversion<ETipoItem>()
+                .HasConversion<ETipoMovimentacao>()
                 .IsRequired();
-
+            
             builder.Property(m => m.Quantidade)
                 .HasColumnType(TipoColunaConstants.Int)
                 .HasColumnName("quantidade")
@@ -52,11 +51,6 @@ namespace SistemaEstoque.Infra.EntitiesConfig
                 .HasColumnName("usuario_id")
                 .IsRequired();
 
-            builder.Property(m => m.EstoqueId)
-                .HasColumnType(TipoColunaConstants.Int)
-                .HasColumnName("estoque_id")
-                .IsRequired();
-
             builder.Property(m => m.ItemId)
                 .HasColumnType(TipoColunaConstants.Int)
                 .HasColumnName("item_id")
@@ -64,16 +58,21 @@ namespace SistemaEstoque.Infra.EntitiesConfig
 
             builder.Property(m => m.LoteItemId)
                 .HasColumnType(TipoColunaConstants.Int)
-                .HasColumnName("lote_id");
+                .HasColumnName("lote_item_id");
+
+            builder.HasOne(x => x.Item)
+                .WithMany(x => x.Movimentacoes)
+                .HasForeignKey(x => x.ItemId)
+                .OnDelete(DeleteBehavior.SetNull);
+
+            builder.HasOne(x => x.LoteItem)
+                .WithOne(x => x.Movimentacao)
+                .HasForeignKey<LoteItem>(x => x.ItemId)
+                .OnDelete(DeleteBehavior.SetNull);
 
             builder.HasOne(m => m.Usuario)
                 .WithMany(u => u.Movimentacoes)
                 .HasForeignKey(m => m.UsuarioId)
-                .OnDelete(DeleteBehavior.SetNull);
-
-            builder.HasOne(m => m.Estoque)
-                .WithMany(e => e.Movimentacoes)
-                .HasForeignKey(m => m.EstoqueId)
                 .OnDelete(DeleteBehavior.SetNull);
 
             builder.HasOne(x => x.Empresa)

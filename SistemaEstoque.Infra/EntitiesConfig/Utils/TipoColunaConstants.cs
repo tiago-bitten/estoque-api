@@ -9,6 +9,9 @@ public static class TipoColunaConstants
     public static readonly string Decimal  = "decimal";
     public static readonly string Boolean = "boolean";
     public static readonly string VarcharDefault = $"varchar({TamanhoVarchar})";
+    public static readonly string VarcharCpfCnpj = "varchar(14)";
+    public static readonly string VarcharCelular = "varchar(15)";
+    public static readonly string VarcharCep = "varchar(8)";
     public static readonly string Varchar    = "varchar"; // precisa usar um string format para adicionar quantidade
     public static readonly string Text = "text";
     

@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using SistemaEstoque.Domain.Entities;
 using SistemaEstoque.Domain.Entities.Abstracoes;
 using SistemaEstoque.Infra.EntitiesConfig.Abstracoes;
+using SistemaEstoque.Infra.EntitiesConfig.Utils;
 
 namespace SistemaEstoque.Infra.EntitiesConfig
 {
@@ -15,38 +16,38 @@ namespace SistemaEstoque.Infra.EntitiesConfig
             builder.ToTable("configuracoes_estoques");
 
             builder.Property(c => c.PermitePassarEstoqueMinimo)
+                .HasColumnType(TipoColunaConstants.Boolean)
                 .HasColumnName("permite_passar_estoque_minimo")
-                .HasColumnType("boolean")
                 .IsRequired();
 
             builder.Property(c => c.PermitePassarEstoqueMaximo)
+                .HasColumnType(TipoColunaConstants.Boolean)
                 .HasColumnName("permite_passar_estoque_maximo")
-                .HasColumnType("boolean")
                 .IsRequired();
 
             builder.Property(c => c.PermiteEstoqueNegativo)
+                .HasColumnType(TipoColunaConstants.Boolean)
                 .HasColumnName("permite_estoque_negativo")
-                .HasColumnType("boolean")
                 .IsRequired();
 
             builder.Property(c => c.NotificarEstoqueMaximo)
+                .HasColumnType(TipoColunaConstants.Boolean)
                 .HasColumnName("notificar_estoque_maximo")
-                .HasColumnType("boolean")
                 .IsRequired();
 
             builder.Property(c => c.NotificarEstoqueMinimo)
+                .HasColumnType(TipoColunaConstants.Boolean)
                 .HasColumnName("notificar_estoque_minimo")
-                .HasColumnType("boolean")
                 .IsRequired();
 
             builder.Property(c => c.PermiteSaidaSemLote)
+                .HasColumnType(TipoColunaConstants.Boolean)
                 .HasColumnName("permite_saida_sem_lote")
-                .HasColumnType("boolean")
                 .IsRequired();
 
             builder.Property(c => c.PermiteEntradaSemLote)
+                .HasColumnType(TipoColunaConstants.Boolean)
                 .HasColumnName("permite_entrada_sem_lote")
-                .HasColumnType("boolean")
                 .IsRequired();
 
             builder.HasOne(c => c.Empresa)

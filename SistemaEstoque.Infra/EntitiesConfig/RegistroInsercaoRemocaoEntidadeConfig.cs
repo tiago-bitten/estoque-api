@@ -12,6 +12,8 @@ public class RegistroInsercaoRemocaoEntidadeConfig : RegistroEntidadeConfig<Regi
     {
         base.Configure(builder);
 
+        builder.ToTable("registros_insercoes_remocoes");
+        
         builder.HasOne(x => x.Usuario)
             .WithMany(x => x.RegistroInsercaoRemocaoEntidades)
             .HasForeignKey(x => x.UsuarioId)

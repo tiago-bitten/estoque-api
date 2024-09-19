@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using SistemaEstoque.Domain.Entities;
 using SistemaEstoque.Infra.EntitiesConfig.Abstracoes;
+using SistemaEstoque.Infra.EntitiesConfig.Utils;
 
 namespace SistemaEstoque.Infra.EntitiesConfig
 {
@@ -12,43 +13,48 @@ namespace SistemaEstoque.Infra.EntitiesConfig
             builder.ToTable("fornecedores");
 
             builder.Property(f => f.Nome)
+                .HasColumnType(TipoColunaConstants.VarcharDefault)
                 .HasColumnName("nome")
-                .HasColumnType("varchar(150)")
                 .IsRequired();
 
             builder.Property(f => f.CpfCnpj)
+                .HasColumnType(TipoColunaConstants.VarcharCpfCnpj)
                 .HasColumnName("cpf_cnpj")
-                .HasColumnType("varchar(14)")
                 .IsRequired();
 
             builder.Property(f => f.Telefone)
-                .HasColumnName("telefone")
-                .HasColumnType("varchar(15)");
+                .HasColumnType(TipoColunaConstants.VarcharCelular)
+                .HasColumnName("telefone");
 
             builder.Property(f => f.Email)
-                .HasColumnName("email")
-                .HasColumnType("varchar(150)");
+                .HasColumnType(TipoColunaConstants.VarcharDefault)
+                .HasColumnName("email");
 
             builder.Property(f => f.Endereco)
-                .HasColumnName("endereco")
-                .HasColumnType("varchar(150)");
+                .HasColumnType(TipoColunaConstants.VarcharDefault)
+                .HasColumnName("endereco");
 
             builder.Property(f => f.Cidade)
-                .HasColumnName("cidade")
-                .HasColumnType("varchar(150)");
+                .HasColumnType(TipoColunaConstants.VarcharDefault)
+                .HasColumnName("cidade");
 
             builder.Property(f => f.Estado)
-                .HasColumnName("estado")
-                .HasColumnType("varchar(2)");
+                .HasColumnType($"{TipoColunaConstants.Varchar}(2)")
+                .HasColumnName("estado");
 
             builder.Property(f => f.Cep)
-                .HasColumnName("cep")
-                .HasColumnType("varchar(8)");
+                .HasColumnType(TipoColunaConstants.VarcharCep)
+                .HasColumnName("cep");
 
             builder.HasMany(f => f.Lotes)
                 .WithOne(l => l.Fornecedor)
                 .HasForeignKey(l => l.FornecedorId)
                 .OnDelete(DeleteBehavior.Restrict);
+
+            builder.HasOne(x => x.Empresa)
+                .WithMany(x => x.Fornecedores)
+                .HasForeignKey(x => x.TenantId)
+                .OnDelete(DeleteBehavior.SetNull);
         }
     }
 }

@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using SistemaEstoque.Domain.Entities;
 using SistemaEstoque.Domain.Enums;
 using SistemaEstoque.Infra.EntitiesConfig.Abstracoes;
+using SistemaEstoque.Infra.EntitiesConfig.Utils;
 
 namespace SistemaEstoque.Infra.EntitiesConfig
 {
@@ -15,34 +16,29 @@ namespace SistemaEstoque.Infra.EntitiesConfig
             builder.ToTable("categorias");
 
             builder.Property(c => c.Nome)
-                .HasColumnType("varchar(150)")
+                .HasColumnType(TipoColunaConstants.VarcharDefault)
                 .HasColumnName("nome")
                 .IsRequired();
 
             builder.Property(c => c.Descricao)
-                .HasColumnType("varchar(255)")
+                .HasColumnType(TipoColunaConstants.VarcharDefault)
                 .HasColumnName("descricao");
 
             builder.Property(c => c.TipoItem)
+                .HasColumnType(TipoColunaConstants.Text)
                 .HasColumnName("tipo_item")
-                .HasColumnType("text")
-                .HasConversion(
-                    v => v.ToString(),
-                    v => (ETipoItem)System.Enum.Parse(typeof(ETipoItem), v))
+                .HasConversion<ETipoItem>()
                 .IsRequired();
 
-            builder.Property(c => c.Removido)
-                .HasColumnName("removido")
-                .HasColumnType("boolean")
-                .HasDefaultValue(false);
-            
             builder.HasMany(x => x.Items)
                 .WithOne(x => x.Categoria)
-                .HasForeignKey(x => x.CategoriaId);
+                .HasForeignKey(x => x.CategoriaId)
+                .OnDelete(DeleteBehavior.SetNull);
 
             builder.HasOne(c => c.Empresa)
                 .WithMany(e => e.Categorias)
-                .HasForeignKey(c => c.TenantId);
+                .HasForeignKey(c => c.TenantId)
+                .OnDelete(DeleteBehavior.SetNull);
         }
     }
 }
