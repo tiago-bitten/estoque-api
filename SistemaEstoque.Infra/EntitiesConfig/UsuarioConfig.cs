@@ -1,56 +1,42 @@
 ﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Microsoft.EntityFrameworkCore;
 using SistemaEstoque.Domain.Entities;
+using SistemaEstoque.Infra.EntitiesConfig.Abstracoes;
+using SistemaEstoque.Infra.EntitiesConfig.Utils;
 
 namespace SistemaEstoque.Infra.EntitiesConfig
 {
-    public class UsuarioConfig : IEntityTypeConfiguration<Usuario>
+    public class UsuarioConfig : IdentificadorTenantConfig<Usuario>
     {
-        public void Configure(EntityTypeBuilder<Usuario> builder)
+        public override void Configure(EntityTypeBuilder<Usuario> builder)
         {
+            base.Configure(builder);
+            
             builder.ToTable("usuarios");
 
-            builder.HasKey(u => u.Id);
-
-            builder.Property(u => u.Id)
-                .HasColumnName("id")
-                .HasColumnType("int")
-                .ValueGeneratedOnAdd()
-                .IsRequired();
-
             builder.Property(u => u.Nome)
+                .HasColumnType(TipoColunaConstants.VarcharDefault)
                 .HasColumnName("nome")
-                .HasColumnType("varchar(150)")
                 .IsRequired();
 
             builder.Property(u => u.Email)
+                .HasColumnType(TipoColunaConstants.VarcharDefault)
                 .HasColumnName("email")
-                .HasColumnType("varchar(150)")
                 .IsRequired();
 
             builder.Property(u => u.Senha)
+                .HasColumnType(TipoColunaConstants.VarcharDefault)
                 .HasColumnName("senha")
-                .HasColumnType("varchar(255)")
                 .IsRequired();
 
             builder.Property(u => u.PerfilAcessoId)
-                .HasColumnName("perfil_acesso_id")
-                .HasColumnType("int");
+                .HasColumnType(TipoColunaConstants.Int)
+                .HasColumnName("perfil_acesso_id");
 
             builder.Property(u => u.AcessoBloqueado)
+                .HasColumnType(TipoColunaConstants.Boolean)
                 .HasColumnName("acesso_bloqueado")
-                .HasColumnType("boolean")
                 .HasDefaultValue(false);
-
-            builder.Property(u => u.Removido)
-                .HasColumnName("removido")
-                .HasColumnType("boolean")
-                .HasDefaultValue(false);
-
-            builder.Property(u => u.EmpresaId)
-                .HasColumnName("empresa_id")
-                .HasColumnType("int")
-                .IsRequired();
 
             builder.HasOne(u => u.PerfilAcesso)
                 .WithMany(p => p.Usuarios)
@@ -59,20 +45,20 @@ namespace SistemaEstoque.Infra.EntitiesConfig
 
             builder.HasOne(u => u.Empresa)
                 .WithMany(e => e.Usuarios)
-                .HasForeignKey(u => u.EmpresaId)
+                .HasForeignKey(u => u.TenantId)
                 .OnDelete(DeleteBehavior.SetNull);
 
-            builder.HasMany(u => u.LogsAlteracoes)
+            builder.HasMany(u => u.RegistroAlteracaoEntidades)
                 .WithOne(l => l.Usuario)
                 .HasForeignKey(l => l.UsuarioId)
                 .OnDelete(DeleteBehavior.SetNull);
 
-            builder.HasMany(u => u.MovimentacoesProdutos)
-                .WithOne(m => m.Usuario)
-                .HasForeignKey(m => m.UsuarioId)
+            builder.HasMany(x => x.RegistroInsercaoRemocaoEntidades)
+                .WithOne(x => x.Usuario)
+                .HasForeignKey(x => x.UsuarioId)
                 .OnDelete(DeleteBehavior.SetNull);
 
-            builder.HasMany(u => u.MovimentacoesInsumos)
+            builder.HasMany(u => u.Movimentacoes)
                 .WithOne(m => m.Usuario)
                 .HasForeignKey(m => m.UsuarioId)
                 .OnDelete(DeleteBehavior.SetNull);

@@ -1,22 +1,15 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using SistemaEstoque.Domain.Entities;
+using SistemaEstoque.Infra.EntitiesConfig.Abstracoes;
 
 namespace SistemaEstoque.Infra.EntitiesConfig
 {
-    public class FornecedorConfig : IEntityTypeConfiguration<Fornecedor>
+    public class FornecedorConfig : IdentificadorTenantConfig<Fornecedor>
     {
-        public void Configure(EntityTypeBuilder<Fornecedor> builder)
+        public override void Configure(EntityTypeBuilder<Fornecedor> builder)
         {
             builder.ToTable("fornecedores");
-
-            builder.HasKey(f => f.Id);
-
-            builder.Property(f => f.Id)
-                .HasColumnName("id")
-                .HasColumnType("int")
-                .ValueGeneratedOnAdd()
-                .IsRequired();
 
             builder.Property(f => f.Nome)
                 .HasColumnName("nome")
@@ -51,21 +44,6 @@ namespace SistemaEstoque.Infra.EntitiesConfig
             builder.Property(f => f.Cep)
                 .HasColumnName("cep")
                 .HasColumnType("varchar(8)");
-
-            builder.Property(f => f.Removido)
-                .HasColumnName("removido")
-                .HasColumnType("boolean")
-                .HasDefaultValue(false);
-
-            builder.Property(f => f.EmpresaId)
-                .HasColumnName("empresa_id")
-                .HasColumnType("int")
-                .IsRequired();
-
-            builder.HasOne(f => f.Empresa)
-                .WithMany(e => e.Fornecedores)
-                .HasForeignKey(f => f.EmpresaId)
-                .OnDelete(DeleteBehavior.SetNull);
 
             builder.HasMany(f => f.Lotes)
                 .WithOne(l => l.Fornecedor)

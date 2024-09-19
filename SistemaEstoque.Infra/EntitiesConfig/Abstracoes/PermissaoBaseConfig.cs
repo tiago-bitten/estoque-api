@@ -1,42 +1,44 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using SistemaEstoque.Domain.Entities.Abstracoes;
+using SistemaEstoque.Infra.EntitiesConfig.Utils;
 
 namespace SistemaEstoque.Infra.EntitiesConfig.Abstracoes;
 
-public class PermissaoBaseConfig : IdentificadorTenantConfig<PermissaoBase>
+public class PermissaoBaseConfig<T> : IdentificadorTenantConfig<T> where T : PermissaoBase
 {
-    public override void Configure(EntityTypeBuilder<PermissaoBase> builder)
+    public override void Configure(EntityTypeBuilder<T> builder)
     {
         base.Configure(builder);
         
         builder.Property(x => x.Criar)
-            .HasColumnType("BOOLEAN")
+            .HasColumnType(TipoColunaConstants.Boolean)
             .HasColumnName("criar")
             .IsRequired();
         
         builder.Property(x => x.Editar)
-            .HasColumnType("BOOLEAN")
+            .HasColumnType(TipoColunaConstants.Boolean)
             .HasColumnName("editar")
             .IsRequired();
         
         builder.Property(x => x.Excluir)
-            .HasColumnType("BOOLEAN")
+            .HasColumnType(TipoColunaConstants.Boolean)
             .HasColumnName("excluir")
             .IsRequired();
 
         builder.Property(x => x.Visualizar)
-            .HasColumnType("BOOLEAN")
+            .HasColumnType(TipoColunaConstants.Boolean)
             .HasColumnName("visualizar")
             .IsRequired();
         
         builder.Property(x => x.PerfilAcessoId)
-            .HasColumnType("INT")
+            .HasColumnType(TipoColunaConstants.Int)
             .HasColumnName("perfil_acesso_id")
             .IsRequired();
 
         builder.HasOne(x => x.PerfilAcesso)
             .WithMany()
-            .HasForeignKey(x => x.PerfilAcessoId);
+            .HasForeignKey(x => x.PerfilAcessoId)
+            .OnDelete(DeleteBehavior.SetNull);
     }
 }

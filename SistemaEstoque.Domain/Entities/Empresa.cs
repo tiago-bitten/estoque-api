@@ -1,4 +1,5 @@
-﻿using SistemaEstoque.Domain.Entities.Abstracoes;
+﻿using System.Runtime.CompilerServices;
+using SistemaEstoque.Domain.Entities.Abstracoes;
 using SistemaEstoque.Domain.Entities.Permissoes;
 using SistemaEstoque.Domain.Enums;
 
@@ -28,10 +29,11 @@ namespace SistemaEstoque.Domain.Entities
         public List<Fornecedor> Fornecedores { get; set; } = new();
         public List<Estoque> Estoques { get; set; } = new();
         public List<Movimentacao> Movimentacoes { get; set; } = new();
-        public List<LogAlteracao> LogsAlteracoes { get; set; } = new();
+        public List<RegistroAlteracaoEntidade> LogsAlteracoes { get; set; } = new();
         public List<HistoricoEstoque> HistoricosEstoquesProdutos { get; set; } = new();
-        public List<HistoricoUsuarioAcesso> HistoricosUsuariosAcessos { get; set; } = new();
+        public List<RegistroUsuarioAcesso> HistoricosUsuariosAcessos { get; set; } = new();
         public List<Lote> Lotes { get; set; } = new();
+        public List<LoteItem> LoteItems { get; set; } = new();
         public List<PerfilAcesso> PerfisAcessos { get; set; } = new();
         public List<PermissaoProduto> PermissoesProdutos { get; set; } = new();
         public List<PermissaoCategoria> PermissoesCategorias { get; set; } = new();

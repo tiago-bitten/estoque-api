@@ -18,7 +18,7 @@ namespace SistemaEstoque.Application.Services
 
         public async Task LogAsync(object dadosAntigos, object dadosNovos, int itemId, int quantidade, int usuarioId, ETipoAlteracao tipo, int empresaId)
         {
-            var log = new LogAlteracao
+            var log = new RegistroAlteracaoEntidade
             {
                 Tabela = typeof(T).Name,
                 AlteradoEm = DateTime.Now,

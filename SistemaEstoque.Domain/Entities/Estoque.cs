@@ -11,6 +11,10 @@ namespace SistemaEstoque.Domain.Entities
         public int QuantidadeMinima { get; set; }
         public int QuantidadeMaxima { get; set; }
 
+        // Referencias para navegação
+        public List<Movimentacao> Movimentacoes { get; set; } = new();
+        public List<HistoricoEstoque> HistoricoEstoques { get; set; } = new();
+        
         public void AdicionarQuantidade(int quantidade)
         {
             Quantidade += quantidade;

@@ -14,8 +14,9 @@ namespace SistemaEstoque.Domain.Entities
         public PerfilAcesso PerfilAcesso { get; set; }
 
         public List<Movimentacao> Movimentacoes { get; set; } = new();
-        public List<LogAlteracao> HistoricoAlteracoes { get; set; } = new();
-        public List<HistoricoUsuarioAcesso> HistoricosUsuariosAcessos { get; set; } = new();
+        public List<RegistroInsercaoRemocaoEntidade> RegistroInsercaoRemocaoEntidades { get; set; } = new();
+        public List<RegistroAlteracaoEntidade> RegistroAlteracaoEntidades { get; set; } = new();
+        public List<RegistroUsuarioAcesso> HistoricosUsuariosAcessos { get; set; } = new();
         public List<Lote> Lotes { get; set; }
     }
 }

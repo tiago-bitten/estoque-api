@@ -8,6 +8,7 @@
         public bool Editar { get; set; }
         public bool Excluir { get; set; }
         
+        // Navegação
         public PerfilAcesso PerfilAcesso { get; set; }
     }
 }

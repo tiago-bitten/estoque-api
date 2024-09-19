@@ -5,7 +5,7 @@ namespace SistemaEstoque.Domain.Entities
 {
     public sealed class LoteItem : IdentificadorTenant
     {
-        public int itemId { get; set; }
+        public int ItemId { get; set; }
         public ETipoItem Tipo { get; set; }
         public DateTime DataFabricacao { get; set; }
         public DateTime DataValidade { get; set; }

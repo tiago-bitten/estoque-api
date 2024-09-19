@@ -7,7 +7,11 @@ namespace SistemaEstoque.Domain.Entities
     {
         public ETipoItem Tipo { get; set; }
         public int Quantidade { get; set; }
+        public int EstoqueId { get; set; }
         public DateTime Data { get; set; }
         public DateTime DataRegistro { get; set; }
+        
+        // Navegação
+        public Estoque Estoque { get; set; }
     }
 }

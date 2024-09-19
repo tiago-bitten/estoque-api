@@ -1,8 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using SistemaEstoque.Domain.Entities.Abstracoes;
+using SistemaEstoque.Domain.Enums;
+using SistemaEstoque.Infra.EntitiesConfig.Abstracoes;
+using SistemaEstoque.Infra.EntitiesConfig.Utils;
 
-namespace SistemaEstoque.Infra.EntitiesConfig.Abstracoes;
+namespace SistemaEstoque.Infra.EntitiesConfig;
 
 public class ItemConfig : IdentificadorTenantConfig<Item>
 {
@@ -10,30 +13,33 @@ public class ItemConfig : IdentificadorTenantConfig<Item>
     {
         base.Configure(builder);
 
+        builder.ToTable("itens");
+
+        builder.Property(x => x.Tipo)
+            .HasColumnType(TipoColunaConstants.Text)
+            .HasConversion<ETipoItem>()
+            .IsRequired();
+        
         builder.Property(x => x.Nome)
-            .HasColumnType("VARCHAR(150)")
+            .HasColumnType(TipoColunaConstants.VarcharDefault)
             .HasColumnName("nome")
             .IsRequired();
 
         builder.Property(x => x.Descricao)
-            .HasColumnType("VARCHAR(500)")
+            .HasColumnType(TipoColunaConstants.VarcharDefault)
             .HasColumnName("descricao");
         
         builder.Property(x => x.PrecoCustoReferencia)
-            .HasColumnType("DECIMAL(10,2)")
+            .HasColumnType(TipoColunaConstants.Int)
             .HasColumnName("preco_custo_referencia");
         
         builder.Property(x => x.PrecoVendaReferencia)
-            .HasColumnType("DECIMAL(10,2)")
+            .HasColumnType(TipoColunaConstants.Int)
             .HasColumnName("preco_venda_referencia");
         
         builder.Property(x => x.CategoriaId)
-            .HasColumnType("INT")
+            .HasColumnType(TipoColunaConstants.Int)
             .HasColumnName("categoria_id")
             .IsRequired();
-
-        builder.HasOne(x => x.Categoria)
-            .WithMany(x => x.Items)
-            .HasForeignKey(x => x.CategoriaId);
     }
 }

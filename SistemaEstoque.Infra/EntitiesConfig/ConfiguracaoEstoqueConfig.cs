@@ -1,22 +1,18 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using SistemaEstoque.Domain.Entities;
+using SistemaEstoque.Domain.Entities.Abstracoes;
+using SistemaEstoque.Infra.EntitiesConfig.Abstracoes;
 
 namespace SistemaEstoque.Infra.EntitiesConfig
 {
-    public class ConfiguracaoEstoqueConfig : IEntityTypeConfiguration<ConfiguracaoEstoque>
+    public class ConfiguracaoEstoqueConfig : IdentificadorTenantConfig<ConfiguracaoEstoque>
     {
-        public void Configure(EntityTypeBuilder<ConfiguracaoEstoque> builder)
+        public override void Configure(EntityTypeBuilder<ConfiguracaoEstoque> builder)
         {
+            base.Configure(builder);
+            
             builder.ToTable("configuracoes_estoques");
-
-            builder.HasKey(c => c.Id);
-
-            builder.Property(c => c.Id)
-                .HasColumnName("id")
-                .HasColumnType("int")
-                .ValueGeneratedOnAdd()
-                .IsRequired();
 
             builder.Property(c => c.PermitePassarEstoqueMinimo)
                 .HasColumnName("permite_passar_estoque_minimo")
@@ -53,19 +49,9 @@ namespace SistemaEstoque.Infra.EntitiesConfig
                 .HasColumnType("boolean")
                 .IsRequired();
 
-            builder.Property(c => c.EmpresaId)
-                .HasColumnName("empresa_id")
-                .HasColumnType("int")
-                .IsRequired();
-
-            builder.Property(c => c.Removido)
-                .HasColumnName("removido")
-                .HasColumnType("boolean")
-                .HasDefaultValue(false);
-
             builder.HasOne(c => c.Empresa)
                 .WithOne(e => e.ConfiguracaoEstoque)
-                .HasForeignKey<ConfiguracaoEstoque>(c => c.EmpresaId)
+                .HasForeignKey<ConfiguracaoEstoque>(c => c.TenantId)
                 .OnDelete(DeleteBehavior.SetNull);
         }
     }
