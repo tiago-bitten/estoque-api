@@ -27,6 +27,7 @@ using SistemaEstoque.Application.Queries.GetAllLotes;
 using SistemaEstoque.Application.Commands.CreatePerfilAcesso;
 using SistemaEstoque.Application.Commands.CreateEmpresa;
 using SistemaEstoque.Application.Commands.Login;
+using SistemaEstoque.Domain.Entities;
 
 namespace SistemaEstoque.IoC
 {
@@ -103,14 +104,10 @@ namespace SistemaEstoque.IoC
             services.AddScoped<IItemRepository, ItemRepository>();
             services.AddScoped<IUsuarioRepository, UsuarioRepository>();
             services.AddScoped<IFornecedorRepository, FornecedorRepository>();
-            services.AddScoped<IEstoqueRepository, EstoqueProdutoRepository>();
-            services.AddScoped<IEstoqueInsumoRepository, EstoqueRepository>();
+            services.AddScoped<IEstoqueRepository, EstoqueRepository>();
             services.AddScoped<ILoteItemRepository, LoteItemRepository>();
             services.AddScoped<IMovimentacaoRepository, MovimentacaoRepository>();
             services.AddScoped<IRegistroAlteracaoEntidadeRepository, RegistroAlteracaoEntidadeEntidadeRepository>();
-            services.AddScoped<IInsumoRepository, InsumoRepository>();
-            services.AddScoped<ILoteInsumoRepository, LoteInsumoRepository>();
-            services.AddScoped<IMovimentacaoInsumoRepository, MovimentacaoInsumoRepository>();
             services.AddScoped<ILoteRepository, LoteRepository>();
             services.AddScoped<IPerfilAcessoRepository, PerfilAcessoRepository>();
             services.AddScoped<IPermissaoProdutoRepository, PermissaoProdutoRepository>();
@@ -126,14 +123,12 @@ namespace SistemaEstoque.IoC
 
         public static IServiceCollection AddServices(this IServiceCollection services)
         {
-            services.AddScoped(typeof(IRegistroAlteracaoEntidade<>), typeof(RegistroAlteracaoEntidade<>));
             services.AddScoped(typeof(IServiceBase<>), typeof(ServiceBase<>));
-            services.AddScoped(typeof(IEstoqueService<>), typeof(EstoqueService<>));
+            services.AddScoped<IEstoqueService, EstoqueService>();
             services.AddScoped<ICategoriaService, CategoriaService>();
             services.AddScoped<IItemService, ItemService>();
             services.AddScoped<IFornecedorService, FornecedorService>();
             services.AddScoped<ILoteItemService, LoteItemService>();
-            services.AddScoped<IInsumoService, InsumoService>();
             services.AddScoped<IProprietarioService, ProprietarioService>();
             services.AddScoped<ITokenService, JwtTokenService>();
             services.AddScoped<ICurrentUserService, CurrentUserService>();

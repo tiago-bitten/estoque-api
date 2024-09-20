@@ -20,7 +20,7 @@ public class RefreshTokenRepository : IRefreshTokenRepository
     }
 
 
-    public async Task AddAsync(RefreshToken refreshToken, int empresaId)
+    public async Task AddAsync(RefreshToken refreshToken)
     {
         await _repositoryBase.AddAsync(refreshToken);
     }
@@ -33,11 +33,11 @@ public class RefreshTokenRepository : IRefreshTokenRepository
     public async Task<RefreshToken?> GetByTokenAsync(string token)
     {
         return await _repositoryBase
-            .FindAsync(x => x.Token == token)
+            .FindAsync(x => x.Token == token, "Usuario");
     }
 
     public async Task<RefreshToken?> FindAsync(Expression<Func<RefreshToken, bool>> predicate)
     {
-        return await _repositoryBase.FindAsync(predicate);
+        return await _repositoryBase.FindAsync(predicate, "Usuario");
     }
 }

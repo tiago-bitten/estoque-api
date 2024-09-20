@@ -13,14 +13,15 @@ namespace SistemaEstoque.Infra.Repositories
             _repository = repository;
         }
 
-        public IQueryable<RegistroAlteracaoEntidade> GetAllLogsFromItem(int itemId, string tabela, int empresaId)
+        public IQueryable<RegistroAlteracaoEntidade?> GetAllLogsFromItem(int itemId, string tabela)
         {
-            return _repository.FindAll(x => x.ItemId == itemId && x.Tabela == tabela && x.TenantId == empresaId);
+            return _repository
+                .FindAll(x => x.ItemId == itemId && x.Tabela == tabela);
         }
 
-        public async Task LogAsync(RegistroAlteracaoEntidade registro, int empresaId)
+        public async Task LogAsync(RegistroAlteracaoEntidade registro)
         {
-            await _repository.AddAsync(registro, empresaId);
+            await _repository.AddAsync(registro);
         }
     }
 }
