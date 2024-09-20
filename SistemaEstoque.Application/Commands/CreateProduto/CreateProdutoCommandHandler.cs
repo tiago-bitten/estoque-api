@@ -38,7 +38,7 @@ namespace SistemaEstoque.Application.Commands.CreateProduto
 
             produto.Categoria = categoria;
 
-            await _uow.Produtos.AddAsync(produto, empresa.Id);
+            await _uow.Items.AddAsync(produto, empresa.Id);
             await _uow.CommitAsync();
 
             var response = _mapper.Map<CreateProdutoResponse>(produto);

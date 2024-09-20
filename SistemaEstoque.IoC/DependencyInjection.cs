@@ -100,13 +100,13 @@ namespace SistemaEstoque.IoC
 
             services.AddScoped(typeof(IRepositoryBase<>), typeof(RepositoryBase<>));
             services.AddScoped<ICategoriaRepository, CategoriaRepository>();
-            services.AddScoped<IProdutoRepository, ItemRepository>();
+            services.AddScoped<IItemRepository, ItemRepository>();
             services.AddScoped<IUsuarioRepository, UsuarioRepository>();
             services.AddScoped<IFornecedorRepository, FornecedorRepository>();
             services.AddScoped<IEstoqueRepository, EstoqueProdutoRepository>();
             services.AddScoped<IEstoqueInsumoRepository, EstoqueRepository>();
-            services.AddScoped<ILoteProdutoRepository, LoteItemRepository>();
-            services.AddScoped<IMovimentacaoProdutoRepository, MovimentacaoRepository>();
+            services.AddScoped<ILoteItemRepository, LoteItemRepository>();
+            services.AddScoped<IMovimentacaoRepository, MovimentacaoRepository>();
             services.AddScoped<IRegistroAlteracaoEntidadeRepository, RegistroAlteracaoEntidadeEntidadeRepository>();
             services.AddScoped<IInsumoRepository, InsumoRepository>();
             services.AddScoped<ILoteInsumoRepository, LoteInsumoRepository>();
@@ -126,13 +126,13 @@ namespace SistemaEstoque.IoC
 
         public static IServiceCollection AddServices(this IServiceCollection services)
         {
-            services.AddScoped(typeof(ILogAlteracaoService<>), typeof(LogAlteracaoService<>));
+            services.AddScoped(typeof(IRegistroAlteracaoEntidade<>), typeof(RegistroAlteracaoEntidade<>));
             services.AddScoped(typeof(IServiceBase<>), typeof(ServiceBase<>));
             services.AddScoped(typeof(IEstoqueService<>), typeof(EstoqueService<>));
             services.AddScoped<ICategoriaService, CategoriaService>();
-            services.AddScoped<IProdutoService, ProdutoService>();
+            services.AddScoped<IItemService, ItemService>();
             services.AddScoped<IFornecedorService, FornecedorService>();
-            services.AddScoped<ILoteProdutoService, LoteProdutoService>();
+            services.AddScoped<ILoteItemService, LoteItemService>();
             services.AddScoped<IInsumoService, InsumoService>();
             services.AddScoped<IProprietarioService, ProprietarioService>();
             services.AddScoped<ITokenService, JwtTokenService>();

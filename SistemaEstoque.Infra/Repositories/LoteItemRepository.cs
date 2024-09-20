@@ -4,7 +4,7 @@ using SistemaEstoque.Infra.Data;
 
 namespace SistemaEstoque.Infra.Repositories
 {
-    public class LoteItemRepository : RepositoryBase<LoteItem>, ILoteProdutoRepository
+    public class LoteItemRepository : RepositoryBase<LoteItem>, ILoteItemRepository
     {
         public LoteItemRepository(SistemaEstoqueDbContext context)
             : base(context)

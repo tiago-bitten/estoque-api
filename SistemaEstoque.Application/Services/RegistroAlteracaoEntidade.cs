@@ -7,11 +7,11 @@ using System.Text.Json.Serialization;
 
 namespace SistemaEstoque.Application.Services
 {
-    public class LogAlteracaoService<T> : ILogAlteracaoService<T> where T : class
+    public class RegistroAlteracaoEntidade<T> : IRegistroAlteracaoEntidade<T> where T : class
     {
         private readonly IUnitOfWork _uow;
 
-        public LogAlteracaoService(IUnitOfWork uow)
+        public RegistroAlteracaoEntidade(IUnitOfWork uow)
         {
             _uow = uow;
         }

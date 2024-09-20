@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SistemaEstoque.Domain.Entities.Abstracoes;
 
 namespace SistemaEstoque.Domain.Interfaces.Repositories
 {
-    public interface IProdutoRepository : IRepositoryBase<Produto>
+    public interface IItemRepository : IRepositoryBase<Item>
     {
     }
 }

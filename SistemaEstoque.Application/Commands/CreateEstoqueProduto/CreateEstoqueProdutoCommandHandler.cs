@@ -11,17 +11,17 @@ namespace SistemaEstoque.Application.Commands.CreateEstoqueProduto
     {
         private readonly IUnitOfWork _ouw;
         private readonly IMapper _mapper;
-        private readonly IProdutoService _produtoService;
+        private readonly IItemService _itemService;
         private readonly ICurrentUserService _currentUserService;
 
         public CreateEstoqueProdutoCommandHandler(
             IUnitOfWork ouw, 
             IMapper mapper,
-            IProdutoService produtoService, ICurrentUserService currentUserService)
+            IItemService itemService, ICurrentUserService currentUserService)
         {
             _ouw = ouw;
             _mapper = mapper;
-            _produtoService = produtoService;
+            _itemService = itemService;
             _currentUserService = currentUserService;
         }
 
@@ -30,7 +30,7 @@ namespace SistemaEstoque.Application.Commands.CreateEstoqueProduto
             var usuario = await _currentUserService.GetUsuario();
             var empresa = await _currentUserService.GetEmpresa();
             
-            var produto = await _produtoService.GetAndValidateEntityAsync(request.ProdutoId);
+            var produto = await _itemService.GetAndValidateEntityAsync(request.ProdutoId);
 
             if (request.QuantidadeMinima <= 0 || request.QuantidadeMaxima <= 0)
                 throw new Exception("Quantidade minima e maxima devem ser maiores que 0");

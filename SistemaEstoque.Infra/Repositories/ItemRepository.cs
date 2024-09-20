@@ -6,7 +6,7 @@ using SistemaEstoque.Infra.Data;
 
 namespace SistemaEstoque.Infra.Repositories
 {
-    public class ItemRepository : RepositoryBase<Item>, IProdutoRepository
+    public class ItemRepository : RepositoryBase<Item>, IItemRepository
     {
         public ItemRepository(SistemaEstoqueDbContext context) 
            : base(context)

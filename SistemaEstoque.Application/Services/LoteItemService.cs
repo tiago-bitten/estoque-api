@@ -4,9 +4,9 @@ using SistemaEstoque.Domain.Interfaces.Services;
 
 namespace SistemaEstoque.Application.Services
 {
-    public class ProdutoService : ServiceBase<Produto>, IProdutoService
+    public class LoteItemService : ServiceBase<LoteProduto>, ILoteItemService
     {
-        public ProdutoService(IProdutoRepository repository)
+        public LoteItemService(ILoteItemRepository repository)
             : base(repository)
         {
         }

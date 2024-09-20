@@ -1,8 +1,9 @@
 ﻿using SistemaEstoque.Domain.Entities;
+using SistemaEstoque.Domain.Entities.Abstracoes;
 
 namespace SistemaEstoque.Domain.Interfaces.Services
 {
-    public interface ILoteProdutoService : IServiceBase<LoteProduto>
+    public interface IItemService : IServiceBase<Item>
     {
     }
 }

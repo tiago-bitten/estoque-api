@@ -3,7 +3,7 @@ using SistemaEstoque.Domain.Interfaces.Repositories;
 
 namespace SistemaEstoque.Infra.Repositories
 {
-    public class MovimentacaoRepository : IMovimentacaoProdutoRepository
+    public class MovimentacaoRepository : IMovimentacaoRepository
     {
         private readonly IRepositoryBase<Movimentacao> _repositoryBase;
 
@@ -12,17 +12,17 @@ namespace SistemaEstoque.Infra.Repositories
             _repositoryBase = repositoryBase;
         }
 
-        public async Task AddAsync(Movimentacao movimentacao, int idEmpresa)
+        public async Task AddAsync(Movimentacao movimentacao)
         {
-            await _repositoryBase.AddAsync(movimentacao, idEmpresa);
+            await _repositoryBase.AddAsync(movimentacao);
         }
 
-        public IQueryable<Movimentacao> GetAll(int idEmpresa)
+        public IQueryable<Movimentacao?> GetAll()
         {
-            return _repositoryBase.GetAll(idEmpresa);
+            return _repositoryBase.GetAll();
         }
 
-        public async Task<Movimentacao> GetByIdAsync(int id)
+        public async Task<Movimentacao?> GetByIdAsync(int id)
         {
             return await _repositoryBase.GetByIdAsync(id);
         }

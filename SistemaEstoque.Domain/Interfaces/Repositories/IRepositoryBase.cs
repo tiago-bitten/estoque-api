@@ -5,13 +5,17 @@ namespace SistemaEstoque.Domain.Interfaces.Repositories
 {
     public interface IRepositoryBase<T> where T : class
     {
-        Task<T> GetByIdAsync(int id);
-        IQueryable<T> GetAll(int empresaId);
-        Task<T> FindAsync(Expression<Func<T, bool>> predicate);
-        IQueryable<T> FindAll(Expression<Func<T, bool>> predicate);
-        Task AddAsync(T entity, int empresaId);
+        Task<T?> GetByIdAsync(int id, params string[]? includes);
+        IQueryable<T?> GetAll(params string[]? includes);
+        Task<T?> FindAsync(Expression<Func<T, bool>> predicate, params string[]? includes);
+        IQueryable<T?> FindAll(Expression<Func<T, bool>> predicate, params string[]? includes);
+        Task AddAsync(T entity);
+        Task AddRangeAsync(IEnumerable<T> entities);
         void Update(T entity);
+        void UpdateRange(IEnumerable<T> entities);
         void Remove(T entity);
-        Task SoftRemoveAsync(T entity);
+        void RemoveRange(IEnumerable<T> entities);
+        void SoftRemove(T entity);
+        void SoftRemoveRange(IEnumerable<T> entities);
     }
 }

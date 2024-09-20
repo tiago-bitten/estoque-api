@@ -8,14 +8,12 @@
         IEmpresaRepository Empresas { get; }
         ICategoriaRepository Categorias { get; }
         IUsuarioRepository Usuarios { get; }
-        IProdutoRepository Produtos { get; }
+        IItemRepository Items { get; }
         IFornecedorRepository Fornecedores { get; }
         IEstoqueRepository Estoques { get; }
         ILoteRepository Lotes { get; }
-        ILoteProdutoRepository LotesProdutos { get; }
-        ILoteInsumoRepository LotesInsumos { get; }
-        IMovimentacaoProdutoRepository MovimentacoesProdutos { get; }
-        IMovimentacaoInsumoRepository MovimentacoesInsumos { get; }
+        ILoteItemRepository LotesItems { get; }
+        IMovimentacaoRepository Movimentacoes { get; }
         IRegistroAlteracaoEntidadeRepository RegistrosAlteracoes { get; }
         IPerfilAcessoRepository PerfisAcessos { get; }
         IPermissaoProdutoRepository PermissoesProdutos { get; }

@@ -2,7 +2,7 @@
 
 namespace SistemaEstoque.Domain.Interfaces.Services
 {
-    public interface ILogAlteracaoService<T> where T : class
+    public interface IRegistroAlteracaoEntidade
     {
         Task LogAsync(object dadosAntigos, object dadosNovos, int itemId, int quantidade, int usuarioId, ETipoAlteracao tipo, int empresaId);
     }

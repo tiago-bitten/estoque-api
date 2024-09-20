@@ -12,29 +12,5 @@ namespace SistemaEstoque.Infra.Repositories
             base(context)
         {
         }
-
-        public override IQueryable<Lote> GetAll(int empresaId)
-        {
-            return _dbSet
-                .Include(x => x.LotesInsumos).ThenInclude(x => x.Insumo).ThenInclude(x => x.Categoria)
-                .Include(x => x.LotesProdutos).ThenInclude(x => x.Produto).ThenInclude(x => x.Categoria)
-                .Include(x => x.LotesInsumos).ThenInclude(x => x.MovimentacoesInsumos)
-                .Include(x => x.LotesProdutos).ThenInclude(x => x.MovimentacoesProdutos)
-                .Include(x => x.UsuarioRecebimento)
-                .Include(x => x.Fornecedor)
-                .Where(x => x.EmpresaId == empresaId);
-        }
-
-        public override async Task<Lote> GetByIdAsync(int id)
-        {
-            return await _dbSet
-                .Include(x => x.LotesInsumos).ThenInclude(x => x.Insumo).ThenInclude(x => x.Categoria)
-                .Include(x => x.LotesProdutos).ThenInclude(x => x.Produto).ThenInclude(x => x.Categoria)
-                .Include(x => x.LotesInsumos).ThenInclude(x => x.MovimentacoesInsumos)
-                .Include(x => x.LotesProdutos).ThenInclude(x => x.MovimentacoesProdutos)
-                .Include(x => x.UsuarioRecebimento)
-                .Include(x => x.Fornecedor)
-                .FirstOrDefaultAsync(x => x.Id == id);
-        }
     }
 }

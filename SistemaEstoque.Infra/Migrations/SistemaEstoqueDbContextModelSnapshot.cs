@@ -1502,19 +1502,19 @@ namespace SistemaEstoque.Infra.Migrations
             modelBuilder.Entity("SistemaEstoque.Domain.Entities.LoteProduto", b =>
                 {
                     b.HasOne("SistemaEstoque.Domain.Entities.Empresa", "Empresa")
-                        .WithMany("LotesProdutos")
+                        .WithMany("LotesItems")
                         .HasForeignKey("EmpresaId")
                         .OnDelete(DeleteBehavior.SetNull)
                         .IsRequired();
 
                     b.HasOne("SistemaEstoque.Domain.Entities.Lote", "Lote")
-                        .WithMany("LotesProdutos")
+                        .WithMany("LotesItems")
                         .HasForeignKey("LoteId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("SistemaEstoque.Domain.Entities.Produto", "Produto")
-                        .WithMany("LotesProdutos")
+                        .WithMany("LotesItems")
                         .HasForeignKey("ProdutoId")
                         .OnDelete(DeleteBehavior.SetNull)
                         .IsRequired();
@@ -1571,30 +1571,30 @@ namespace SistemaEstoque.Infra.Migrations
             modelBuilder.Entity("SistemaEstoque.Domain.Entities.MovimentacaoProduto", b =>
                 {
                     b.HasOne("SistemaEstoque.Domain.Entities.Empresa", "Empresa")
-                        .WithMany("MovimentacoesProdutos")
+                        .WithMany("Movimentacoes")
                         .HasForeignKey("EmpresaId")
                         .OnDelete(DeleteBehavior.SetNull)
                         .IsRequired();
 
                     b.HasOne("SistemaEstoque.Domain.Entities.EstoqueProduto", "EstoqueProduto")
-                        .WithMany("MovimentacoesProdutos")
+                        .WithMany("Movimentacoes")
                         .HasForeignKey("EstoqueProdutoId")
                         .OnDelete(DeleteBehavior.SetNull)
                         .IsRequired();
 
                     b.HasOne("SistemaEstoque.Domain.Entities.LoteProduto", "LoteProduto")
-                        .WithMany("MovimentacoesProdutos")
+                        .WithMany("Movimentacoes")
                         .HasForeignKey("LoteProdutoId")
                         .OnDelete(DeleteBehavior.SetNull);
 
                     b.HasOne("SistemaEstoque.Domain.Entities.Produto", "Produto")
-                        .WithMany("MovimentacoesProdutos")
+                        .WithMany("Movimentacoes")
                         .HasForeignKey("ProdutoId")
                         .OnDelete(DeleteBehavior.SetNull)
                         .IsRequired();
 
                     b.HasOne("SistemaEstoque.Domain.Entities.Usuario", "Usuario")
-                        .WithMany("MovimentacoesProdutos")
+                        .WithMany("Movimentacoes")
                         .HasForeignKey("UsuarioId")
                         .OnDelete(DeleteBehavior.SetNull)
                         .IsRequired();
@@ -1681,13 +1681,13 @@ namespace SistemaEstoque.Infra.Migrations
             modelBuilder.Entity("SistemaEstoque.Domain.Entities.Produto", b =>
                 {
                     b.HasOne("SistemaEstoque.Domain.Entities.Categoria", "Categoria")
-                        .WithMany("Produtos")
+                        .WithMany("Items")
                         .HasForeignKey("CategoriaId")
                         .OnDelete(DeleteBehavior.SetNull)
                         .IsRequired();
 
                     b.HasOne("SistemaEstoque.Domain.Entities.Empresa", "Empresa")
-                        .WithMany("Produtos")
+                        .WithMany("Items")
                         .HasForeignKey("EmpresaId")
                         .OnDelete(DeleteBehavior.SetNull)
                         .IsRequired();
@@ -1738,7 +1738,7 @@ namespace SistemaEstoque.Infra.Migrations
                 {
                     b.Navigation("Insumos");
 
-                    b.Navigation("Produtos");
+                    b.Navigation("Items");
                 });
 
             modelBuilder.Entity("SistemaEstoque.Domain.Entities.Empresa", b =>
@@ -1767,11 +1767,11 @@ namespace SistemaEstoque.Infra.Migrations
 
                     b.Navigation("LotesInsumos");
 
-                    b.Navigation("LotesProdutos");
+                    b.Navigation("LotesItems");
 
                     b.Navigation("MovimentacoesInsumos");
 
-                    b.Navigation("MovimentacoesProdutos");
+                    b.Navigation("Movimentacoes");
 
                     b.Navigation("PerfisAcessos");
 
@@ -1781,7 +1781,7 @@ namespace SistemaEstoque.Infra.Migrations
 
                     b.Navigation("PermissoesProdutos");
 
-                    b.Navigation("Produtos");
+                    b.Navigation("Items");
 
                     b.Navigation("RefreshTokens");
 
@@ -1799,7 +1799,7 @@ namespace SistemaEstoque.Infra.Migrations
                 {
                     b.Navigation("HistoricosEstoquesProdutos");
 
-                    b.Navigation("MovimentacoesProdutos");
+                    b.Navigation("Movimentacoes");
                 });
 
             modelBuilder.Entity("SistemaEstoque.Domain.Entities.Fornecedor", b =>
@@ -1820,7 +1820,7 @@ namespace SistemaEstoque.Infra.Migrations
                 {
                     b.Navigation("LotesInsumos");
 
-                    b.Navigation("LotesProdutos");
+                    b.Navigation("LotesItems");
                 });
 
             modelBuilder.Entity("SistemaEstoque.Domain.Entities.LoteInsumo", b =>
@@ -1830,7 +1830,7 @@ namespace SistemaEstoque.Infra.Migrations
 
             modelBuilder.Entity("SistemaEstoque.Domain.Entities.LoteProduto", b =>
                 {
-                    b.Navigation("MovimentacoesProdutos");
+                    b.Navigation("Movimentacoes");
                 });
 
             modelBuilder.Entity("SistemaEstoque.Domain.Entities.PerfilAcesso", b =>
@@ -1851,9 +1851,9 @@ namespace SistemaEstoque.Infra.Migrations
                 {
                     b.Navigation("EstoqueProduto");
 
-                    b.Navigation("LotesProdutos");
+                    b.Navigation("LotesItems");
 
-                    b.Navigation("MovimentacoesProdutos");
+                    b.Navigation("Movimentacoes");
                 });
 
             modelBuilder.Entity("SistemaEstoque.Domain.Entities.Proprietario", b =>
@@ -1871,7 +1871,7 @@ namespace SistemaEstoque.Infra.Migrations
 
                     b.Navigation("MovimentacoesInsumos");
 
-                    b.Navigation("MovimentacoesProdutos");
+                    b.Navigation("Movimentacoes");
 
                     b.Navigation("RefreshToken")
                         .IsRequired();
