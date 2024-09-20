@@ -4,18 +4,18 @@ using System.Runtime.CompilerServices;
 
 namespace SistemaEstoque.Infra.Repositories
 {
-    public class LogAlteracaoRepository : ILogAlteracaoRepository
+    public class RegistroAlteracaoEntidadeEntidadeRepository : IRegistroAlteracaoEntidadeRepository
     {
         private readonly IRepositoryBase<RegistroAlteracaoEntidade> _repository;
 
-        public LogAlteracaoRepository(IRepositoryBase<RegistroAlteracaoEntidade> repository)
+        public RegistroAlteracaoEntidadeEntidadeRepository(IRepositoryBase<RegistroAlteracaoEntidade> repository)
         {
             _repository = repository;
         }
 
         public IQueryable<RegistroAlteracaoEntidade> GetAllLogsFromItem(int itemId, string tabela, int empresaId)
         {
-            return _repository.FindAll(x => x.ItemId == itemId && x.Tabela == tabela && x.EmpresaId == empresaId);
+            return _repository.FindAll(x => x.ItemId == itemId && x.Tabela == tabela && x.TenantId == empresaId);
         }
 
         public async Task LogAsync(RegistroAlteracaoEntidade registro, int empresaId)

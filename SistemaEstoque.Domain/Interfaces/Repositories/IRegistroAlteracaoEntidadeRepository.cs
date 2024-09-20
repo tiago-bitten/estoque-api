@@ -2,7 +2,7 @@
 
 namespace SistemaEstoque.Domain.Interfaces.Repositories
 {
-    public interface ILogAlteracaoRepository
+    public interface IRegistroAlteracaoEntidadeRepository
     {
         Task LogAsync(RegistroAlteracaoEntidade registro, int empresaId);
         IQueryable<RegistroAlteracaoEntidade> GetAllLogsFromItem(int itemId, string tabela, int empresaId);

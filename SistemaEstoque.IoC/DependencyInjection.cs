@@ -100,14 +100,14 @@ namespace SistemaEstoque.IoC
 
             services.AddScoped(typeof(IRepositoryBase<>), typeof(RepositoryBase<>));
             services.AddScoped<ICategoriaRepository, CategoriaRepository>();
-            services.AddScoped<IProdutoRepository, ProdutoRepository>();
+            services.AddScoped<IProdutoRepository, ItemRepository>();
             services.AddScoped<IUsuarioRepository, UsuarioRepository>();
             services.AddScoped<IFornecedorRepository, FornecedorRepository>();
-            services.AddScoped<IEstoqueProdutoRepository, EstoqueProdutoRepository>();
-            services.AddScoped<IEstoqueInsumoRepository, EstoqueInsumoRepository>();
-            services.AddScoped<ILoteProdutoRepository, LoteProdutoRepository>();
-            services.AddScoped<IMovimentacaoProdutoRepository, MovimentacaoProdutoRepository>();
-            services.AddScoped<ILogAlteracaoRepository, LogAlteracaoRepository>();
+            services.AddScoped<IEstoqueRepository, EstoqueProdutoRepository>();
+            services.AddScoped<IEstoqueInsumoRepository, EstoqueRepository>();
+            services.AddScoped<ILoteProdutoRepository, LoteItemRepository>();
+            services.AddScoped<IMovimentacaoProdutoRepository, MovimentacaoRepository>();
+            services.AddScoped<IRegistroAlteracaoEntidadeRepository, RegistroAlteracaoEntidadeEntidadeRepository>();
             services.AddScoped<IInsumoRepository, InsumoRepository>();
             services.AddScoped<ILoteInsumoRepository, LoteInsumoRepository>();
             services.AddScoped<IMovimentacaoInsumoRepository, MovimentacaoInsumoRepository>();

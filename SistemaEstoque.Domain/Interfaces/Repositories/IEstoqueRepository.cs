@@ -2,7 +2,7 @@
 
 namespace SistemaEstoque.Domain.Interfaces.Repositories
 {
-    public interface IEstoqueProdutoRepository : IRepositoryBase<EstoqueProduto>
+    public interface IEstoqueRepository : IRepositoryBase<Estoque>
     {
     }
 }

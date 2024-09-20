@@ -5,9 +5,10 @@ using SistemaEstoque.Infra.Data;
 
 namespace SistemaEstoque.Infra.Repositories
 {
-    public class CategoriaRepository : RepositoryBase<Categoria>, ICategoriaRepository
+    public class EstoqueRepository : RepositoryBase<Estoque>, IEstoqueInsumoRepository
     {
-        public CategoriaRepository(SistemaEstoqueDbContext context) : base(context)
+        public EstoqueRepository(SistemaEstoqueDbContext context)
+            : base(context)
         {
         }
     }

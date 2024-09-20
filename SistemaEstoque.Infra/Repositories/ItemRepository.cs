@@ -1,13 +1,15 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using SistemaEstoque.Domain.Entities;
+using SistemaEstoque.Domain.Entities.Abstracoes;
 using SistemaEstoque.Domain.Interfaces.Repositories;
 using SistemaEstoque.Infra.Data;
 
 namespace SistemaEstoque.Infra.Repositories
 {
-    public class CategoriaRepository : RepositoryBase<Categoria>, ICategoriaRepository
+    public class ItemRepository : RepositoryBase<Item>, IProdutoRepository
     {
-        public CategoriaRepository(SistemaEstoqueDbContext context) : base(context)
+        public ItemRepository(SistemaEstoqueDbContext context) 
+           : base(context)
         {
         }
     }

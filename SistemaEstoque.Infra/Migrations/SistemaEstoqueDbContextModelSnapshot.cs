@@ -1323,7 +1323,7 @@ namespace SistemaEstoque.Infra.Migrations
             modelBuilder.Entity("SistemaEstoque.Domain.Entities.EstoqueProduto", b =>
                 {
                     b.HasOne("SistemaEstoque.Domain.Entities.Empresa", "Empresa")
-                        .WithMany("EstoquesProdutos")
+                        .WithMany("Estoques")
                         .HasForeignKey("EmpresaId")
                         .OnDelete(DeleteBehavior.SetNull)
                         .IsRequired();
@@ -1429,13 +1429,13 @@ namespace SistemaEstoque.Infra.Migrations
             modelBuilder.Entity("SistemaEstoque.Domain.Entities.LogAlteracao", b =>
                 {
                     b.HasOne("SistemaEstoque.Domain.Entities.Empresa", "Empresa")
-                        .WithMany("LogsAlteracoes")
+                        .WithMany("RegistrosAlteracoes")
                         .HasForeignKey("EmpresaId")
                         .OnDelete(DeleteBehavior.SetNull)
                         .IsRequired();
 
                     b.HasOne("SistemaEstoque.Domain.Entities.Usuario", "Usuario")
-                        .WithMany("LogsAlteracoes")
+                        .WithMany("RegistrosAlteracoes")
                         .HasForeignKey("UsuarioId")
                         .OnDelete(DeleteBehavior.SetNull)
                         .IsRequired();
@@ -1749,7 +1749,7 @@ namespace SistemaEstoque.Infra.Migrations
 
                     b.Navigation("EstoquesInsumos");
 
-                    b.Navigation("EstoquesProdutos");
+                    b.Navigation("Estoques");
 
                     b.Navigation("Fornecedores");
 
@@ -1761,7 +1761,7 @@ namespace SistemaEstoque.Infra.Migrations
 
                     b.Navigation("Insumos");
 
-                    b.Navigation("LogsAlteracoes");
+                    b.Navigation("RegistrosAlteracoes");
 
                     b.Navigation("Lotes");
 
@@ -1865,7 +1865,7 @@ namespace SistemaEstoque.Infra.Migrations
                 {
                     b.Navigation("HistoricosUsuariosAcessos");
 
-                    b.Navigation("LogsAlteracoes");
+                    b.Navigation("RegistrosAlteracoes");
 
                     b.Navigation("Lotes");
 

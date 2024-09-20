@@ -31,7 +31,7 @@ namespace SistemaEstoque.Application.Services
                 EmpresaId = empresaId
             };
 
-            await _uow.LogsAlteracoes.LogAsync(log, empresaId);
+            await _uow.RegistrosAlteracoes.LogAsync(log, empresaId);
             await _uow.CommitAsync();
         }
     }
