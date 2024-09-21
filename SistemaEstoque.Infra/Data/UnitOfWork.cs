@@ -11,8 +11,8 @@ namespace SistemaEstoque.Infra.Data
         private readonly IItemRepository _itemRepository;
         private readonly IFornecedorRepository _fornecedorRepository;
         private readonly IEstoqueRepository _estoqueRepository;
+        private readonly IRemesaLoteRepository _remesaLoteRepository;
         private readonly ILoteRepository _loteRepository;
-        private readonly ILoteItemRepository _loteItemRepository;
         private readonly IMovimentacaoRepository _movimentacaoRepository;
         private readonly IRegistroAlteracaoEntidadeRepository _registroAlteracaoEntidadeRepository;
         private readonly IPerfilAcessoRepository _perfilAcessoRepository;
@@ -29,8 +29,8 @@ namespace SistemaEstoque.Infra.Data
             IItemRepository itemRepository,
             IFornecedorRepository fornecedorRepository,
             IEstoqueRepository estoqueRepository,
+            IRemesaLoteRepository remesaLoteRepository,
             ILoteRepository loteRepository,
-            ILoteItemRepository loteItemRepository,
             IMovimentacaoRepository movimentacaoRepository,
             IRegistroAlteracaoEntidadeRepository registroAlteracaoEntidadeRepository,
             IPerfilAcessoRepository perfilAcessoRepository,
@@ -47,8 +47,8 @@ namespace SistemaEstoque.Infra.Data
             _fornecedorRepository = fornecedorRepository;
             _estoqueRepository = estoqueRepository;
             _movimentacaoRepository = movimentacaoRepository;
+            _remesaLoteRepository = remesaLoteRepository;
             _loteRepository = loteRepository;
-            _loteItemRepository = loteItemRepository;
             _registroAlteracaoEntidadeRepository = registroAlteracaoEntidadeRepository;
             _perfilAcessoRepository = perfilAcessoRepository;
             _permissaoProdutoRepository = permissaoProdutoRepository;
@@ -63,8 +63,8 @@ namespace SistemaEstoque.Infra.Data
         public IItemRepository Items => _itemRepository;
         public IFornecedorRepository Fornecedores => _fornecedorRepository;
         public IEstoqueRepository Estoques => _estoqueRepository;
+        public IRemesaLoteRepository RemesaLotes => _remesaLoteRepository;
         public ILoteRepository Lotes => _loteRepository;
-        public ILoteItemRepository LotesItems => _loteItemRepository;
         public IMovimentacaoRepository Movimentacoes => _movimentacaoRepository;
         public IRegistroAlteracaoEntidadeRepository RegistrosAlteracoes => _registroAlteracaoEntidadeRepository;
         public IPerfilAcessoRepository PerfisAcessos => _perfilAcessoRepository;

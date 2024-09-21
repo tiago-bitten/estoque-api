@@ -1,15 +1,13 @@
-﻿using Microsoft.EntityFrameworkCore;
-using SistemaEstoque.Domain.Entities;
+﻿using SistemaEstoque.Domain.Entities;
 using SistemaEstoque.Domain.Interfaces.Repositories;
 using SistemaEstoque.Infra.Data;
-using System.Runtime.CompilerServices;
 
 namespace SistemaEstoque.Infra.Repositories
 {
     public class LoteRepository : RepositoryBase<Lote>, ILoteRepository
     {
-        public LoteRepository(SistemaEstoqueDbContext context):
-            base(context)
+        public LoteRepository(SistemaEstoqueDbContext context)
+            : base(context)
         {
         }
     }

@@ -56,18 +56,18 @@ namespace SistemaEstoque.Infra.EntitiesConfig
                 .HasColumnName("item_id")
                 .IsRequired();
 
-            builder.Property(m => m.LoteItemId)
+            builder.Property(m => m.LoteId)
                 .HasColumnType(TipoColunaConstants.Int)
-                .HasColumnName("lote_item_id");
+                .HasColumnName("lote_id");
 
             builder.HasOne(x => x.Item)
                 .WithMany(x => x.Movimentacoes)
                 .HasForeignKey(x => x.ItemId)
                 .OnDelete(DeleteBehavior.SetNull);
 
-            builder.HasOne(x => x.LoteItem)
+            builder.HasOne(x => x.Lote)
                 .WithOne(x => x.Movimentacao)
-                .HasForeignKey<LoteItem>(x => x.ItemId)
+                .HasForeignKey<Lote>(x => x.ItemId)
                 .OnDelete(DeleteBehavior.SetNull);
 
             builder.HasOne(m => m.Usuario)

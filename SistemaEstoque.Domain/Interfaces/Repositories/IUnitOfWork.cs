@@ -11,8 +11,8 @@
         IItemRepository Items { get; }
         IFornecedorRepository Fornecedores { get; }
         IEstoqueRepository Estoques { get; }
+        IRemesaLoteRepository RemesaLotes { get; }
         ILoteRepository Lotes { get; }
-        ILoteItemRepository LotesItems { get; }
         IMovimentacaoRepository Movimentacoes { get; }
         IRegistroAlteracaoEntidadeRepository RegistrosAlteracoes { get; }
         IPerfilAcessoRepository PerfisAcessos { get; }

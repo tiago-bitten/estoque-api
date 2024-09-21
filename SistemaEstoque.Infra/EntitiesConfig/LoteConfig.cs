@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using SistemaEstoque.Domain.Entities;
+using SistemaEstoque.Domain.Enums;
 using SistemaEstoque.Infra.EntitiesConfig.Abstracoes;
 using SistemaEstoque.Infra.EntitiesConfig.Utils;
 
@@ -14,55 +15,40 @@ namespace SistemaEstoque.Infra.EntitiesConfig
             
             builder.ToTable("lotes");
 
-            builder.Property(l => l.Descricao)
-                .HasColumnType(TipoColunaConstants.VarcharDefault)
-                .HasColumnName("descricao")
-                .IsRequired();
-
-            builder.Property(l => l.Codigo)
-                .HasColumnType(TipoColunaConstants.VarcharDefault)
-                .HasColumnName("codigo")
-                .IsRequired();
-
-            builder.Property(l => l.CodigoBarras)
-                .HasColumnType(TipoColunaConstants.VarcharDefault)
-                .HasColumnName("codigo_barras")
-                .IsRequired();
-
-            builder.Property(l => l.FornecedorId)
-                .HasColumnType(TipoColunaConstants.Int)
-                .HasColumnName("fornecedor_id")
-                .IsRequired();
-
-            builder.Property(l => l.DataRecebimento)
+            builder.Property(l => l.DataFabricacao)
                 .HasColumnType(TipoColunaConstants.TimestampWithTimeZone)
-                .HasColumnName("data_recebimento")
+                .HasColumnName("data_fabricacao")
                 .IsRequired();
 
-            builder.Property(l => l.UsuarioRecebimentoId)
+            builder.Property(l => l.DataValidade)
+                .HasColumnType(TipoColunaConstants.TimestampWithTimeZone)
+                .HasColumnName("data_validade")
+                .IsRequired();
+
+            builder.Property(l => l.Quantidade)
                 .HasColumnType(TipoColunaConstants.Int)
-                .HasColumnName("usuario_recebimento_id")
+                .HasColumnName("quantidade")
                 .IsRequired();
 
-            builder.HasOne(l => l.Fornecedor)
-                .WithMany(f => f.Lotes)
-                .HasForeignKey(l => l.FornecedorId)
-                .OnDelete(DeleteBehavior.Restrict);
+            builder.Property(l => l.ItemId)
+                .HasColumnType(TipoColunaConstants.Int)
+                .HasColumnName("item_id")
+                .IsRequired();
 
-            builder.HasMany(x => x.LoteItems)
-                .WithOne(x => x.Lote)
-                .HasForeignKey(x => x.LoteId)
+            builder.HasOne(x => x.Item)
+                .WithMany(x => x.LoteItems)
+                .HasForeignKey(x => x.ItemId)
                 .OnDelete(DeleteBehavior.SetNull);
 
-            builder.HasOne(l => l.UsuarioRecebimento)
-                .WithMany(u => u.Lotes)
-                .HasForeignKey(l => l.UsuarioRecebimentoId)
-                .OnDelete(DeleteBehavior.Restrict);
-
             builder.HasOne(l => l.Empresa)
-                .WithMany(e => e.Lotes)
+                .WithMany(e => e.LoteItems)
                 .HasForeignKey(l => l.TenantId)
-                .OnDelete(DeleteBehavior.Restrict);
+                .OnDelete(DeleteBehavior.SetNull);
+
+            builder.HasOne(x => x.Movimentacao)
+                .WithOne(x => x.Lote)
+                .HasForeignKey<Lote>(x => x.ItemId)
+                .OnDelete(DeleteBehavior.SetNull);
         }
     }
 }

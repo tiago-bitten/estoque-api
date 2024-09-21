@@ -6,7 +6,7 @@ namespace SistemaEstoque.Application.Services
 {
     public class LoteItemService : ServiceBase<LoteProduto>, ILoteItemService
     {
-        public LoteItemService(ILoteItemRepository repository)
+        public LoteItemService(ILoteRepository repository)
             : base(repository)
         {
         }

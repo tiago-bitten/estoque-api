@@ -22,7 +22,7 @@ namespace SistemaEstoque.Application.Queries.GetAllTotalizadores
         {
             var empresaId = EMPRESA_CONSTANTE.ID_EMPRESA;
 
-            var lotesTotalizadoresDTO = await _uow.Lotes
+            var lotesTotalizadoresDTO = await _uow.RemesaLotes
                 .GetAll(empresaId)
                 .Skip(request.Skip)
                 .Take(request.Take)
@@ -48,7 +48,7 @@ namespace SistemaEstoque.Application.Queries.GetAllTotalizadores
                                 .Sum(mi => mi.Quantidade)
                 }).ToListAsync(cancellationToken);
 
-            int total = await _uow.Lotes.GetAll(empresaId).CountAsync(cancellationToken);
+            int total = await _uow.RemesaLotes.GetAll(empresaId).CountAsync(cancellationToken);
 
             return new GetAllLotesTotalizadoresResponse(lotesTotalizadoresDTO, total);
         }

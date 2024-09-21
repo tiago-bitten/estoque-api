@@ -9,11 +9,11 @@ namespace SistemaEstoque.Application.Profiles
     {
         public LoteProfile()
         {
-            CreateMap<CreateLoteCommand, Lote>();
+            CreateMap<CreateLoteCommand, RemessaLote>();
 
-            CreateMap<Lote, CreateLoteResponse>();
+            CreateMap<RemessaLote, CreateLoteResponse>();
 
-            CreateMap<Lote, LoteDTO>();
+            CreateMap<RemessaLote, LoteDTO>();
         }
     }
 }

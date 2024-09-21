@@ -13,11 +13,11 @@ namespace SistemaEstoque.Domain.Entities
         public decimal PrecoUnitarioCusto { get; set; }
         public EOrigemMovimentacao Origem { get; set; }
         public int UsuarioId { get; set; }
-        public int LoteItemId { get; set; }
+        public int LoteId { get; set; }
         
         
         public Item Item { get; set; }
-        public LoteItem LoteItem { get; set; }
+        public Lote Lote { get; set; }
         public Usuario Usuario { get; set; }
 
         public decimal ValorTotalVenda => Quantidade * PrecoUnitarioVenda;

@@ -48,12 +48,12 @@ namespace SistemaEstoque.Application.Commands.CreateLote
             
             var fornecedor = await _fornecedorService.GetAndValidateEntityAsync(request.FornecedorId);
 
-            var lote = _mapper.Map<Lote>(request);
+            var lote = _mapper.Map<RemessaLote>(request);
             lote.Fornecedor = fornecedor;
             lote.Empresa = empresa;
             lote.UsuarioRecebimentoId = request.UsuarioRecebimentoId;
 
-            await _uow.Lotes.AddAsync(lote, empresa.Id);
+            await _uow.RemesaLotes.AddAsync(lote, empresa.Id);
 
             foreach (var item in request.LotesItens)
             {
@@ -66,7 +66,7 @@ namespace SistemaEstoque.Application.Commands.CreateLote
                     loteProduto.Empresa = empresa;
                     loteProduto.Lote = lote;
 
-                    await _uow.LotesItems.AddAsync(loteProduto, empresa.Id);
+                    await _uow.Lotes.AddAsync(loteProduto, empresa.Id);
                     await _estoqueProdutoService.UpdateEstoque(produto.EstoqueProduto, item.Quantidade, ETipoMovimentacao.Entrada);
                     
                     var movimentacaoProduto = _mapper.Map<MovimentacaoProduto>(item);

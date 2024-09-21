@@ -15,9 +15,9 @@ namespace SistemaEstoque.Infra.Data
         public DbSet<Empresa> Empresas { get; set; }
         public DbSet<RefreshToken> RefreshTokens { get; set; }
         public DbSet<ConfiguracaoEstoque> ConfiguracoesEstoques { get; set; }
-        public DbSet<Lote> Lotes { get; set; }
+        public DbSet<RemessaLote> Lotes { get; set; }
         public DbSet<Categoria> Categorias { get; set; }
-        public DbSet<LoteItem> LoteItems { get; set; }
+        public DbSet<Lote> LoteItems { get; set; }
         public DbSet<Movimentacao> Movimentacoes { get; set; }
         public DbSet<HistoricoEstoque> HistoricoEstoques { get; set; }
         public DbSet<Usuario> Usuarios { get; set; }
@@ -35,12 +35,12 @@ namespace SistemaEstoque.Infra.Data
             modelBuilder.ApplyConfiguration(new EmpresaConfig());
             modelBuilder.ApplyConfiguration(new RefreshTokenConfig());
             modelBuilder.ApplyConfiguration(new ConfiguracaoEstoqueConfig());
-            modelBuilder.ApplyConfiguration(new LoteConfig());
+            modelBuilder.ApplyConfiguration(new RemessaLoteConfig());
             modelBuilder.ApplyConfiguration(new CategoriaConfig());
             modelBuilder.ApplyConfiguration(new UsuarioConfig());
             modelBuilder.ApplyConfiguration(new FornecedorConfig());
             modelBuilder.ApplyConfiguration(new EstoqueConfig());
-            modelBuilder.ApplyConfiguration(new LoteItemConfig());
+            modelBuilder.ApplyConfiguration(new LoteConfig());
             modelBuilder.ApplyConfiguration(new MovimentacaoConfig());
             modelBuilder.ApplyConfiguration(new RegistroAlteracaoEntidadeConfig());
             modelBuilder.ApplyConfiguration(new RegistroUsuarioAcessoConfig());
