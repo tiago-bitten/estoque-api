@@ -1,7 +1,6 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore.Metadata.Builders;
+﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace SistemaEstoque.Infra.EntitiesConfig.Utils
+namespace SistemaEstoque.Infra.Extensions
 {
     public static class EfCoreExtensions
     {
