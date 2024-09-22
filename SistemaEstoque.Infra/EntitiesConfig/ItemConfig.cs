@@ -1,10 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using SistemaEstoque.Domain.Entities.Abstracoes;
-using SistemaEstoque.Domain.Enums;
 using SistemaEstoque.Infra.EntitiesConfig.Abstracoes;
 using SistemaEstoque.Infra.EntitiesConfig.Utils;
-using SistemaEstoque.Infra.Extensions;
+using SistemaEstoque.Shared.Extensions;
 
 namespace SistemaEstoque.Infra.EntitiesConfig;
 
