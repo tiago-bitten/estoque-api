@@ -131,7 +131,7 @@ namespace SistemaEstoque.IoC
             services.AddScoped<ILoteService, LoteService>();
             services.AddScoped<IProprietarioService, ProprietarioService>();
             services.AddScoped<ITokenService, JwtTokenService>();
-            services.AddScoped<ICurrentUserService, CurrentUserService>();
+            services.AddScoped<IAmbienteUsuario, AmbienteUsuario>();
             //services.AddScoped<IUsuarioService, UsuarioService>();
 
             return services;
