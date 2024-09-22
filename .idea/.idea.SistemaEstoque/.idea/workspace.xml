@@ -10,86 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cd127400-eff2-40f3-8ea5-9e896d1baa85" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/SistemaEstoque.API/obj/Debug/net7.0/SistemaEstoque.API.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaEstoque.API/obj/Debug/net7.0/SistemaEstoque.API.AssemblyInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaEstoque.API/obj/Debug/net7.0/SistemaEstoque.API.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaEstoque.API/obj/Debug/net7.0/SistemaEstoque.API.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaEstoque.API/obj/Debug/net7.0/SistemaEstoque.API.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaEstoque.API/obj/Debug/net7.0/SistemaEstoque.API.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaEstoque.API/obj/Debug/net7.0/SistemaEstoque.API.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaEstoque.API/obj/Debug/net7.0/SistemaEstoque.API.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaEstoque.API/obj/Debug/net7.0/SistemaEstoque.API.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaEstoque.API/obj/Debug/net7.0/SistemaEstoque.API.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaEstoque.API/obj/SistemaEstoque.API.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaEstoque.API/obj/SistemaEstoque.API.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaEstoque.API/obj/SistemaEstoque.API.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaEstoque.API/obj/SistemaEstoque.API.csproj.nuget.g.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaEstoque.API/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaEstoque.API/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaEstoque.API/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaEstoque.API/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaEstoque.API/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaEstoque.API/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaEstoque.API/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaEstoque.API/obj/rider.project.model.nuget.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaEstoque.API/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaEstoque.API/obj/rider.project.restore.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaEstoque.Application/obj/Debug/net7.0/SistemaEstoque.Application.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaEstoque.Application/obj/Debug/net7.0/SistemaEstoque.Application.AssemblyInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaEstoque.Application/obj/Debug/net7.0/SistemaEstoque.Application.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaEstoque.Application/obj/Debug/net7.0/SistemaEstoque.Application.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaEstoque.Application/obj/Debug/net7.0/SistemaEstoque.Application.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaEstoque.Application/obj/Debug/net7.0/SistemaEstoque.Application.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaEstoque.Application/obj/Debug/net7.0/SistemaEstoque.Application.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaEstoque.Application/obj/Debug/net7.0/SistemaEstoque.Application.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaEstoque.Application/obj/Debug/net7.0/SistemaEstoque.Application.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaEstoque.Application/obj/Debug/net7.0/SistemaEstoque.Application.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaEstoque.Application/obj/SistemaEstoque.Application.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaEstoque.Application/obj/SistemaEstoque.Application.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaEstoque.Application/obj/SistemaEstoque.Application.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaEstoque.Application/obj/SistemaEstoque.Application.csproj.nuget.g.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaEstoque.Application/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaEstoque.Application/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaEstoque.Application/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaEstoque.Application/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaEstoque.Application/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaEstoque.Application/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaEstoque.Application/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaEstoque.Application/obj/rider.project.model.nuget.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaEstoque.Application/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaEstoque.Application/obj/rider.project.restore.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaEstoque.Domain/obj/Debug/net7.0/SistemaEstoque.Domain.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaEstoque.Domain/obj/Debug/net7.0/SistemaEstoque.Domain.AssemblyInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaEstoque.Domain/obj/Debug/net7.0/SistemaEstoque.Domain.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaEstoque.Domain/obj/Debug/net7.0/SistemaEstoque.Domain.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaEstoque.Domain/obj/Debug/net7.0/SistemaEstoque.Domain.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaEstoque.Domain/obj/Debug/net7.0/SistemaEstoque.Domain.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaEstoque.Domain/obj/Debug/net7.0/SistemaEstoque.Domain.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaEstoque.Domain/obj/Debug/net7.0/SistemaEstoque.Domain.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaEstoque.Domain/obj/Debug/net7.0/SistemaEstoque.Domain.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaEstoque.Domain/obj/Debug/net7.0/SistemaEstoque.Domain.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaEstoque.Domain/obj/Debug/net7.0/SistemaEstoque.Domain.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaEstoque.Domain/obj/Debug/net7.0/SistemaEstoque.Domain.csproj.FileListAbsolute.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaEstoque.Domain/obj/SistemaEstoque.Domain.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaEstoque.Domain/obj/SistemaEstoque.Domain.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaEstoque.Domain/obj/SistemaEstoque.Domain.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaEstoque.Domain/obj/SistemaEstoque.Domain.csproj.nuget.g.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaEstoque.Domain/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaEstoque.Domain/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaEstoque.Domain/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaEstoque.Domain/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaEstoque.Domain/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaEstoque.Domain/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaEstoque.Domain/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaEstoque.Domain/obj/rider.project.model.nuget.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaEstoque.Domain/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaEstoque.Domain/obj/rider.project.restore.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaEstoque.Infra/obj/Debug/net7.0/SistemaEstoque.Infra.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaEstoque.Infra/obj/Debug/net7.0/SistemaEstoque.Infra.AssemblyInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaEstoque.Infra/obj/Debug/net7.0/SistemaEstoque.Infra.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaEstoque.Infra/obj/Debug/net7.0/SistemaEstoque.Infra.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaEstoque.Infra/obj/Debug/net7.0/SistemaEstoque.Infra.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaEstoque.Infra/obj/Debug/net7.0/SistemaEstoque.Infra.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaEstoque.Infra/obj/Debug/net7.0/SistemaEstoque.Infra.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaEstoque.Infra/obj/Debug/net7.0/SistemaEstoque.Infra.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaEstoque.Infra/obj/Debug/net7.0/SistemaEstoque.Infra.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaEstoque.Infra/obj/Debug/net7.0/SistemaEstoque.Infra.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaEstoque.Infra/obj/SistemaEstoque.Infra.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaEstoque.Infra/obj/SistemaEstoque.Infra.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaEstoque.Infra/obj/SistemaEstoque.Infra.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaEstoque.Infra/obj/SistemaEstoque.Infra.csproj.nuget.g.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaEstoque.Infra/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaEstoque.Infra/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaEstoque.Infra/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaEstoque.Infra/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaEstoque.Infra/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaEstoque.Infra/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaEstoque.Infra/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaEstoque.Infra/obj/rider.project.model.nuget.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaEstoque.Infra/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaEstoque.Infra/obj/rider.project.restore.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaEstoque.IoC/obj/Debug/net7.0/SistemaEstoque.IoC.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaEstoque.IoC/obj/Debug/net7.0/SistemaEstoque.IoC.AssemblyInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaEstoque.IoC/obj/Debug/net7.0/SistemaEstoque.IoC.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaEstoque.IoC/obj/Debug/net7.0/SistemaEstoque.IoC.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaEstoque.IoC/obj/Debug/net7.0/SistemaEstoque.IoC.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaEstoque.IoC/obj/Debug/net7.0/SistemaEstoque.IoC.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaEstoque.IoC/obj/Debug/net7.0/SistemaEstoque.IoC.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaEstoque.IoC/obj/Debug/net7.0/SistemaEstoque.IoC.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaEstoque.IoC/obj/Debug/net7.0/SistemaEstoque.IoC.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaEstoque.IoC/obj/Debug/net7.0/SistemaEstoque.IoC.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaEstoque.IoC/obj/SistemaEstoque.IoC.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaEstoque.IoC/obj/SistemaEstoque.IoC.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaEstoque.IoC/obj/SistemaEstoque.IoC.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaEstoque.IoC/obj/SistemaEstoque.IoC.csproj.nuget.g.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaEstoque.IoC/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaEstoque.IoC/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaEstoque.IoC/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaEstoque.IoC/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaEstoque.IoC/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaEstoque.IoC/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaEstoque.IoC/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaEstoque.IoC/obj/rider.project.model.nuget.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaEstoque.IoC/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaEstoque.IoC/obj/rider.project.restore.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaEstoque.Shared/bin/Debug/net7.0/SistemaEstoque.Shared.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaEstoque.Shared/bin/Debug/net7.0/SistemaEstoque.Shared.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaEstoque.Shared/bin/Debug/net7.0/SistemaEstoque.Shared.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaEstoque.Shared/bin/Debug/net7.0/SistemaEstoque.Shared.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaEstoque.Shared/obj/Debug/net7.0/SistemaEstoque.Shared.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaEstoque.Shared/obj/Debug/net7.0/SistemaEstoque.Shared.AssemblyInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaEstoque.Shared/obj/Debug/net7.0/SistemaEstoque.Shared.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaEstoque.Shared/obj/Debug/net7.0/SistemaEstoque.Shared.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaEstoque.Shared/obj/Debug/net7.0/SistemaEstoque.Shared.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaEstoque.Shared/obj/Debug/net7.0/SistemaEstoque.Shared.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaEstoque.Shared/obj/Debug/net7.0/SistemaEstoque.Shared.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaEstoque.Shared/obj/Debug/net7.0/SistemaEstoque.Shared.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaEstoque.Shared/obj/Debug/net7.0/SistemaEstoque.Shared.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaEstoque.Shared/obj/Debug/net7.0/SistemaEstoque.Shared.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaEstoque.Shared/obj/Debug/net7.0/SistemaEstoque.Shared.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaEstoque.Shared/obj/Debug/net7.0/SistemaEstoque.Shared.csproj.FileListAbsolute.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaEstoque.Shared/obj/Debug/net7.0/SistemaEstoque.Shared.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaEstoque.Shared/obj/Debug/net7.0/SistemaEstoque.Shared.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaEstoque.Shared/obj/Debug/net7.0/SistemaEstoque.Shared.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaEstoque.Shared/obj/Debug/net7.0/SistemaEstoque.Shared.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaEstoque.Shared/obj/Debug/net7.0/ref/SistemaEstoque.Shared.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaEstoque.Shared/obj/Debug/net7.0/ref/SistemaEstoque.Shared.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaEstoque.Shared/obj/Debug/net7.0/refint/SistemaEstoque.Shared.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaEstoque.Shared/obj/Debug/net7.0/refint/SistemaEstoque.Shared.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaEstoque.Shared/obj/SistemaEstoque.Shared.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaEstoque.Shared/obj/SistemaEstoque.Shared.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaEstoque.Shared/obj/SistemaEstoque.Shared.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaEstoque.Shared/obj/SistemaEstoque.Shared.csproj.nuget.g.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaEstoque.Shared/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaEstoque.Shared/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaEstoque.Shared/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaEstoque.Shared/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaEstoque.Shared/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaEstoque.Shared/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaEstoque.Shared/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaEstoque.Shared/obj/rider.project.model.nuget.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaEstoque.Shared/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaEstoque.Shared/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SistemaEstoque.Infra/Data/UnitOfWork.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaEstoque.Infra/Data/UnitOfWork.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,11 +48,17 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.keymap",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
     "DatabaseDriversLRU": [
       "postgresql"
+    ],
+    "rider.external.source.directories": [
+      "C:\\Users\\teste\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache",
+      "C:\\Users\\teste\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache",
+      "C:\\Users\\teste\\AppData\\Local\\Symbols\\src"
     ]
   }
 }]]></component>
@@ -206,6 +133,7 @@
       <workItem from="1722454815002" duration="2705000" />
       <workItem from="1724458329551" duration="339000" />
       <workItem from="1726699261927" duration="821000" />
+      <workItem from="1726887695421" duration="1366000" />
     </task>
     <servers />
   </component>
@@ -225,7 +153,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <option name="LOCAL_CHANGES_DETAILS_PREVIEW_SHOWN" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
 </project>

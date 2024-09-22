@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="dataSourceStorageLocal" created-in="RD-242.21829.166">
+  <component name="dataSourceStorageLocal" created-in="RD-241.18034.76">
     <data-source name="sistema_estoque@localhost" uuid="9dccacb0-3668-4c51-907a-edc2fa43d074">
       <database-info product="PostgreSQL" version="15.3" jdbc-version="4.2" driver-name="PostgreSQL JDBC Driver" driver-version="42.6.0" dbms="POSTGRES" exact-version="15.3" exact-driver-version="42.6">
         <identifier-quote-string>&quot;</identifier-quote-string>

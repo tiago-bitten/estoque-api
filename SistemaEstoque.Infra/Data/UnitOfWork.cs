@@ -1,91 +1,119 @@
-﻿using SistemaEstoque.Domain.Interfaces.Repositories;
+﻿using Microsoft.EntityFrameworkCore.Storage;
+using SistemaEstoque.Domain.Interfaces.Repositories;
 
 namespace SistemaEstoque.Infra.Data
 {
     public class UnitOfWork : IUnitOfWork
     {
+        private IDbContextTransaction? _transaction;
         private readonly SistemaEstoqueDbContext _context;
-        private readonly IEmpresaRepository _empresaRepository;
-        private readonly ICategoriaRepository _categoriaRepository;
-        private readonly IUsuarioRepository _usuarioRepository;
-        private readonly IItemRepository _itemRepository;
-        private readonly IFornecedorRepository _fornecedorRepository;
-        private readonly IEstoqueRepository _estoqueRepository;
-        private readonly IRemesaLoteRepository _remesaLoteRepository;
-        private readonly ILoteRepository _loteRepository;
-        private readonly IMovimentacaoRepository _movimentacaoRepository;
-        private readonly IRegistroAlteracaoEntidadeRepository _registroAlteracaoEntidadeRepository;
-        private readonly IPerfilAcessoRepository _perfilAcessoRepository;
-        private readonly IPermissaoProdutoRepository _permissaoProdutoRepository;
-        private readonly IPermissaoCategoriaRepository _permissaoCategoriaRepository;
-        private readonly IConfiguracaoEstoqueRepository _configuracaoEstoqueRepository;
-        private readonly IRefreshTokenRepository _refreshTokenRepository;
 
-        public UnitOfWork(
-            SistemaEstoqueDbContext context,
-            IEmpresaRepository empresaRepository,
-            ICategoriaRepository categoriaRepository,
-            IUsuarioRepository usuarioRepository,
-            IItemRepository itemRepository,
-            IFornecedorRepository fornecedorRepository,
-            IEstoqueRepository estoqueRepository,
-            IRemesaLoteRepository remesaLoteRepository,
-            ILoteRepository loteRepository,
-            IMovimentacaoRepository movimentacaoRepository,
-            IRegistroAlteracaoEntidadeRepository registroAlteracaoEntidadeRepository,
-            IPerfilAcessoRepository perfilAcessoRepository,
-            IPermissaoProdutoRepository permissaoProdutoRepository,
-            IPermissaoCategoriaRepository permissaoCategoriaRepository,
-            IConfiguracaoEstoqueRepository configuracaoEstoqueRepository, 
-            IRefreshTokenRepository refreshTokenRepository)
+        public UnitOfWork(SistemaEstoqueDbContext context,
+                          IEmpresaRepository empresaRepository,
+                          ICategoriaRepository categoriaRepository,
+                          IUsuarioRepository usuarioRepository,
+                          IItemRepository itemRepository,
+                          IFornecedorRepository fornecedorRepository,
+                          IEstoqueRepository estoqueRepository,
+                          IRemesaLoteRepository remesaLoteRepository,
+                          ILoteRepository loteRepository,
+                          IMovimentacaoRepository movimentacaoRepository,
+                          IRegistroAlteracaoEntidadeRepository registroAlteracaoEntidadeRepository,
+                          IPerfilAcessoRepository perfilAcessoRepository,
+                          IPermissaoProdutoRepository permissaoProdutoRepository,
+                          IPermissaoCategoriaRepository permissaoCategoriaRepository,
+                          IConfiguracaoEstoqueRepository configuracaoEstoqueRepository,
+                          IRefreshTokenRepository refreshTokenRepository)
         {
-            _context = context;
-            _empresaRepository = empresaRepository;
-            _categoriaRepository = categoriaRepository;
-            _usuarioRepository = usuarioRepository;
-            _itemRepository = itemRepository;
-            _fornecedorRepository = fornecedorRepository;
-            _estoqueRepository = estoqueRepository;
-            _movimentacaoRepository = movimentacaoRepository;
-            _remesaLoteRepository = remesaLoteRepository;
-            _loteRepository = loteRepository;
-            _registroAlteracaoEntidadeRepository = registroAlteracaoEntidadeRepository;
-            _perfilAcessoRepository = perfilAcessoRepository;
-            _permissaoProdutoRepository = permissaoProdutoRepository;
-            _permissaoCategoriaRepository = permissaoCategoriaRepository;
-            _configuracaoEstoqueRepository = configuracaoEstoqueRepository;
-            _refreshTokenRepository = refreshTokenRepository;
+            _context = context ?? throw new ArgumentNullException(nameof(context));
+            Empresas = empresaRepository ?? throw new ArgumentNullException(nameof(empresaRepository));
+            Categorias = categoriaRepository ?? throw new ArgumentNullException(nameof(categoriaRepository));
+            Usuarios = usuarioRepository ?? throw new ArgumentNullException(nameof(usuarioRepository));
+            Items = itemRepository ?? throw new ArgumentNullException(nameof(itemRepository));
+            Fornecedores = fornecedorRepository ?? throw new ArgumentNullException(nameof(fornecedorRepository));
+            Estoques = estoqueRepository ?? throw new ArgumentNullException(nameof(estoqueRepository));
+            RemesaLotes = remesaLoteRepository ?? throw new ArgumentNullException(nameof(remesaLoteRepository));
+            Lotes = loteRepository ?? throw new ArgumentNullException(nameof(loteRepository));
+            Movimentacoes = movimentacaoRepository ?? throw new ArgumentNullException(nameof(movimentacaoRepository));
+            RegistrosAlteracoes = registroAlteracaoEntidadeRepository ?? throw new ArgumentNullException(nameof(registroAlteracaoEntidadeRepository));
+            PerfisAcessos = perfilAcessoRepository ?? throw new ArgumentNullException(nameof(perfilAcessoRepository));
+            PermissoesProdutos = permissaoProdutoRepository ?? throw new ArgumentNullException(nameof(permissaoProdutoRepository));
+            PermissoesCategorias = permissaoCategoriaRepository ?? throw new ArgumentNullException(nameof(permissaoCategoriaRepository));
+            ConfiguracoesEstoques = configuracaoEstoqueRepository ?? throw new ArgumentNullException(nameof(configuracaoEstoqueRepository));
+            RefreshTokens = refreshTokenRepository ?? throw new ArgumentNullException(nameof(refreshTokenRepository));
         }
 
-        public IEmpresaRepository Empresas => _empresaRepository;
-        public ICategoriaRepository Categorias => _categoriaRepository;
-        public IUsuarioRepository Usuarios => _usuarioRepository;
-        public IItemRepository Items => _itemRepository;
-        public IFornecedorRepository Fornecedores => _fornecedorRepository;
-        public IEstoqueRepository Estoques => _estoqueRepository;
-        public IRemesaLoteRepository RemesaLotes => _remesaLoteRepository;
-        public ILoteRepository Lotes => _loteRepository;
-        public IMovimentacaoRepository Movimentacoes => _movimentacaoRepository;
-        public IRegistroAlteracaoEntidadeRepository RegistrosAlteracoes => _registroAlteracaoEntidadeRepository;
-        public IPerfilAcessoRepository PerfisAcessos => _perfilAcessoRepository;
-        public IPermissaoProdutoRepository PermissoesProdutos => _permissaoProdutoRepository;
-        public IPermissaoCategoriaRepository PermissoesCategorias => _permissaoCategoriaRepository;
-        public IConfiguracaoEstoqueRepository ConfiguracoesEstoques => _configuracaoEstoqueRepository;
-        public IRefreshTokenRepository RefreshTokens => _refreshTokenRepository;
+        public IEmpresaRepository Empresas { get; }
+        public ICategoriaRepository Categorias { get; }
+        public IUsuarioRepository Usuarios { get; }
+        public IItemRepository Items { get; }
+        public IFornecedorRepository Fornecedores { get; }
+        public IEstoqueRepository Estoques { get; }
+        public IRemesaLoteRepository RemesaLotes { get; }
+        public ILoteRepository Lotes { get; }
+        public IMovimentacaoRepository Movimentacoes { get; }
+        public IRegistroAlteracaoEntidadeRepository RegistrosAlteracoes { get; }
+        public IPerfilAcessoRepository PerfisAcessos { get; }
+        public IPermissaoProdutoRepository PermissoesProdutos { get; }
+        public IPermissaoCategoriaRepository PermissoesCategorias { get; }
+        public IConfiguracaoEstoqueRepository ConfiguracoesEstoques { get; }
+        public IRefreshTokenRepository RefreshTokens { get; }
+
+        public async Task BeginTransactionAsync()
+        {
+            _transaction ??= await _context.Database.BeginTransactionAsync();
+        }
 
         public async Task<bool> CommitAsync()
         {
+            if (_transaction != null)
+            {
+                try
+                {
+                    var result = await _context.SaveChangesAsync() > 0;
+                    await _transaction.CommitAsync();
+                    return result;
+                }
+                finally
+                {
+                    await DisposeTransactionAsync();
+                }
+            }
+
             return await _context.SaveChangesAsync() > 0;
+        }
+
+        public async Task RollbackAsync()
+        {
+            if (_transaction != null)
+            {
+                await _transaction.RollbackAsync();
+                await DisposeTransactionAsync();
+            }
+        }
+
+        private async Task DisposeTransactionAsync()
+        {
+            if (_transaction != null)
+            {
+                await _transaction.DisposeAsync();
+                _transaction = null;
+            }
         }
 
         public void Dispose()
         {
             _context.Dispose();
+            _transaction?.Dispose();
         }
 
-        public Task RollbackAsync()
+        public async ValueTask DisposeAsync()
         {
-            return Task.CompletedTask;
+            await _context.DisposeAsync();
+            if (_transaction != null)
+            {
+                await _transaction.DisposeAsync();
+            }
         }
     }
 }

@@ -1,9 +1,10 @@
 ﻿namespace SistemaEstoque.Domain.Interfaces.Repositories
 {
-    public interface IUnitOfWork : IDisposable
+    public interface IUnitOfWork : IDisposable, IAsyncDisposable
     {
         Task<bool> CommitAsync();
         Task RollbackAsync();
+        Task BeginTransactionAsync();
 
         IEmpresaRepository Empresas { get; }
         ICategoriaRepository Categorias { get; }
