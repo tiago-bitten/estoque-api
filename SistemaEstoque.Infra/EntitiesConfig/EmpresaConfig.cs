@@ -4,6 +4,7 @@ using SistemaEstoque.Domain.Entities;
 using SistemaEstoque.Domain.Enums;
 using SistemaEstoque.Infra.EntitiesConfig.Abstracoes;
 using SistemaEstoque.Infra.EntitiesConfig.Utils;
+using SistemaEstoque.Infra.Extensions;
 
 namespace SistemaEstoque.Infra.EntitiesConfig
 {
@@ -33,7 +34,7 @@ namespace SistemaEstoque.Infra.EntitiesConfig
             builder.Property(e => e.TipoEmpresa)
                 .HasColumnType(TipoColunaConstants.Text)
                 .HasColumnName("tipo_empresa")
-                .HasConversion<ETipoEmpresa>()
+                .HasEnumConversion()
                 .IsRequired();
 
             builder.Property(e => e.Telefone)

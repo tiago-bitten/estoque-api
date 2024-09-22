@@ -2,7 +2,7 @@
 
 namespace SistemaEstoque.Domain.Interfaces.Services
 {
-    public interface ILoteItemService : IServiceBase<Lote>
+    public interface ILoteService : IServiceBase<Lote>
     {
     }
 }

@@ -4,6 +4,7 @@ using SistemaEstoque.Domain.Entities.Abstracoes;
 using SistemaEstoque.Domain.Enums;
 using SistemaEstoque.Infra.EntitiesConfig.Abstracoes;
 using SistemaEstoque.Infra.EntitiesConfig.Utils;
+using SistemaEstoque.Infra.Extensions;
 
 namespace SistemaEstoque.Infra.EntitiesConfig;
 
@@ -17,7 +18,7 @@ public class ItemConfig : IdentificadorTenantConfig<Item>
 
         builder.Property(x => x.Tipo)
             .HasColumnType(TipoColunaConstants.Text)
-            .HasConversion<ETipoItem>()
+            .HasEnumConversion()
             .IsRequired();
         
         builder.Property(x => x.Nome)

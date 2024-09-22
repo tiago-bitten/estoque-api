@@ -17,5 +17,6 @@ namespace SistemaEstoque.Domain.Interfaces.Repositories
         void RemoveRange(IEnumerable<T> entities);
         void SoftRemove(T entity);
         void SoftRemoveRange(IEnumerable<T> entities);
+        Task<bool> AnyAsync(Expression<Func<T, bool>> predicate, params string[]? includes);
     }
 }

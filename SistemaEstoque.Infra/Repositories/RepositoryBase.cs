@@ -9,77 +9,77 @@ namespace SistemaEstoque.Infra.Repositories
 {
     public class RepositoryBase<T> : IRepositoryBase<T> where T : IdentificadorBase
     {
-        protected readonly SistemaEstoqueDbContext _context;
-        protected readonly DbSet<T> _dbSet;
+        protected readonly SistemaEstoqueDbContext Context;
+        protected readonly DbSet<T> DbSet;
 
         public RepositoryBase(SistemaEstoqueDbContext context)
         {
-            _context = context;
-            _dbSet = context.Set<T>();
+            Context = context;
+            DbSet = context.Set<T>();
         }
 
         public async Task<T?> GetByIdAsync(int id, params string[]? includes)
         {
-            var query = _dbSet.AsQueryable();
+            var query = DbSet.AsQueryable();
             query = query.ApplyIncludes(includes);
             return await query.FirstOrDefaultAsync(e => e.Id == id);
         }
 
         public IQueryable<T?> GetAll(params string[]? includes)
         {
-            var query = _dbSet.AsQueryable();
+            var query = DbSet.AsQueryable();
             query = query.ApplyIncludes(includes);
             return query;
         }
 
         public async Task<T?> FindAsync(Expression<Func<T, bool>> predicate, params string[]? includes)
         {
-            var query = _dbSet.Where(predicate).AsQueryable();
+            var query = DbSet.Where(predicate).AsQueryable();
             query = query.ApplyIncludes(includes);
             return await query.FirstOrDefaultAsync();
         }
 
         public IQueryable<T?> FindAll(Expression<Func<T, bool>> predicate, params string[]? includes)
         {
-            var query = _dbSet.Where(predicate).AsQueryable();
+            var query = DbSet.Where(predicate).AsQueryable();
             query = query.ApplyIncludes(includes);
             return query;
         }
 
         public async Task AddAsync(T entity)
         {
-            await _dbSet.AddAsync(entity);
+            await DbSet.AddAsync(entity);
         }
 
         public async Task AddRangeAsync(IEnumerable<T> entities)
         {
-            await _dbSet.AddRangeAsync(entities);
+            await DbSet.AddRangeAsync(entities);
         }
 
         public void Update(T entity)
         {
-            _dbSet.Update(entity);
+            DbSet.Update(entity);
         }
 
         public void UpdateRange(IEnumerable<T> entities)
         {
-            _dbSet.UpdateRange(entities);
+            DbSet.UpdateRange(entities);
         }
 
         public void Remove(T entity)
         {
-            _dbSet.Remove(entity);
+            DbSet.Remove(entity);
         }
 
         public void RemoveRange(IEnumerable<T> entities)
         {
-            _dbSet.RemoveRange(entities);
+            DbSet.RemoveRange(entities);
         }
 
         public void SoftRemove(T entity)
         {
             entity.Removido = true;
-            _dbSet.Update(entity);
+            DbSet.Update(entity);
         }
 
         public void SoftRemoveRange(IEnumerable<T> entities)
@@ -88,6 +88,13 @@ namespace SistemaEstoque.Infra.Repositories
             {
                 SoftRemove(entity);
             }
+        }
+
+        public async Task<bool> AnyAsync(Expression<Func<T, bool>> predicate, params string[]? includes)
+        {
+            var query = DbSet.Where(predicate).AsQueryable();
+            query = query.ApplyIncludes(includes);
+            return await query.AnyAsync();
         }
     }
 }

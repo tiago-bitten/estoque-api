@@ -14,7 +14,7 @@ namespace SistemaEstoque.Infra.Repositories
 
         public async Task<Usuario> GetByEmailAsync(string email)
         {
-            return await _dbSet.FirstOrDefaultAsync(u => u.Email == email);
+            return await DbSet.FirstOrDefaultAsync(u => u.Email == email);
         }
     }
 }

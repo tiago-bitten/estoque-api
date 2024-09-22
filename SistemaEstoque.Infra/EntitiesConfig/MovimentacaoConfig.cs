@@ -4,6 +4,7 @@ using SistemaEstoque.Domain.Entities;
 using SistemaEstoque.Domain.Enums;
 using SistemaEstoque.Infra.EntitiesConfig.Abstracoes;
 using SistemaEstoque.Infra.EntitiesConfig.Utils;
+using SistemaEstoque.Infra.Extensions;
 
 namespace SistemaEstoque.Infra.EntitiesConfig
 {
@@ -17,7 +18,7 @@ namespace SistemaEstoque.Infra.EntitiesConfig
 
             builder.Property(x => x.Tipo)
                 .HasColumnType(TipoColunaConstants.Text)
-                .HasConversion<ETipoMovimentacao>()
+                .HasEnumConversion()
                 .IsRequired();
             
             builder.Property(m => m.Quantidade)
@@ -43,7 +44,7 @@ namespace SistemaEstoque.Infra.EntitiesConfig
             builder.Property(m => m.Origem)
                 .HasColumnType(TipoColunaConstants.Text)
                 .HasColumnName("origem")
-                .HasConversion<EOrigemMovimentacao>()
+                .HasEnumConversion()
                 .IsRequired();
 
             builder.Property(m => m.UsuarioId)
