@@ -1,8 +1,9 @@
 ﻿using System.Linq.Expressions;
 using Microsoft.EntityFrameworkCore;
 using SistemaEstoque.Domain.Entities.Abstracoes;
+using SistemaEstoque.Infra.Util;
 
-namespace SistemaEstoque.Infra.Extensions
+namespace SistemaEstoque.Shared.Extensions
 {
     public static class QueryableExtensions
     {
@@ -24,6 +25,26 @@ namespace SistemaEstoque.Infra.Extensions
             var queryable = query.Where(x => x.TenantId == tenantId);
 
             return queryable.WhereNotRemovido(anotherCondition);
+        }
+        
+        public static PagedResult<T> ToPagedResult<T>(this IQueryable<T> query, int page, int size) where T : class
+        {
+            var totalItems = query.Count();
+            var totalPages = (int)Math.Ceiling(totalItems / (double)size);
+
+            var items = query.Skip((page - 1) * size)
+                .Take(size)
+                .ToList();
+
+            return new PagedResult<T>
+            {
+                Data = items,
+                Page = page,
+                Size = size,
+                Total = totalItems,
+                HasNext = page < totalPages,
+                HasPrevious = page > 1
+            };
         }
     }
 }

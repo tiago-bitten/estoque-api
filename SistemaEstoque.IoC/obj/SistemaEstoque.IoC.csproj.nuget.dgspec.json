@@ -228,6 +228,9 @@
             "projectReferences": {
               "C:\\Users\\teste\\Documents\\CSHARP\\projetos\\estoque-api\\SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj": {
                 "projectPath": "C:\\Users\\teste\\Documents\\CSHARP\\projetos\\estoque-api\\SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj"
+              },
+              "C:\\Users\\teste\\Documents\\CSHARP\\projetos\\estoque-api\\SistemaEstoque.Shared\\SistemaEstoque.Shared.csproj": {
+                "projectPath": "C:\\Users\\teste\\Documents\\CSHARP\\projetos\\estoque-api\\SistemaEstoque.Shared\\SistemaEstoque.Shared.csproj"
               }
             }
           }
@@ -426,7 +429,11 @@
         "frameworks": {
           "net7.0": {
             "targetAlias": "net7.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\teste\\Documents\\CSHARP\\projetos\\estoque-api\\SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj": {
+                "projectPath": "C:\\Users\\teste\\Documents\\CSHARP\\projetos\\estoque-api\\SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -438,6 +445,12 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

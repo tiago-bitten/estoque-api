@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace SistemaEstoque.Infra.Extensions
+namespace SistemaEstoque.Shared.Extensions
 {
     public static class EfCoreExtensions
     {

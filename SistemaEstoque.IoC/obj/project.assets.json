@@ -1410,6 +1410,7 @@
           "Microsoft.Extensions.Configuration.Json": "7.0.0",
           "Npgsql.EntityFrameworkCore.PostgreSQL": "7.0.0",
           "SistemaEstoque.Domain": "1.0.0",
+          "SistemaEstoque.Shared": "1.0.0",
           "Volo.Abp.Core": "7.0.0"
         },
         "compile": {
@@ -1422,6 +1423,10 @@
       "SistemaEstoque.Shared/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "7.0.0",
+          "SistemaEstoque.Domain": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/SistemaEstoque.Shared.dll": {}
         },

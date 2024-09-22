@@ -1253,6 +1253,20 @@
         "runtime": {
           "bin/placeholder/SistemaEstoque.Domain.dll": {}
         }
+      },
+      "SistemaEstoque.Shared/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "7.0.0",
+          "SistemaEstoque.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/SistemaEstoque.Shared.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SistemaEstoque.Shared.dll": {}
+        }
       }
     }
   },
@@ -3957,6 +3971,11 @@
       "type": "project",
       "path": "../SistemaEstoque.Domain/SistemaEstoque.Domain.csproj",
       "msbuildProject": "../SistemaEstoque.Domain/SistemaEstoque.Domain.csproj"
+    },
+    "SistemaEstoque.Shared/1.0.0": {
+      "type": "project",
+      "path": "../SistemaEstoque.Shared/SistemaEstoque.Shared.csproj",
+      "msbuildProject": "../SistemaEstoque.Shared/SistemaEstoque.Shared.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -3970,6 +3989,7 @@
       "Microsoft.Extensions.Configuration.Json >= 7.0.0",
       "Npgsql.EntityFrameworkCore.PostgreSQL >= 7.0.0",
       "SistemaEstoque.Domain >= 1.0.0",
+      "SistemaEstoque.Shared >= 1.0.0",
       "Volo.Abp.Core >= 7.0.0"
     ]
   },
@@ -4008,6 +4028,9 @@
           "projectReferences": {
             "C:\\Users\\teste\\Documents\\CSHARP\\projetos\\estoque-api\\SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj": {
               "projectPath": "C:\\Users\\teste\\Documents\\CSHARP\\projetos\\estoque-api\\SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj"
+            },
+            "C:\\Users\\teste\\Documents\\CSHARP\\projetos\\estoque-api\\SistemaEstoque.Shared\\SistemaEstoque.Shared.csproj": {
+              "projectPath": "C:\\Users\\teste\\Documents\\CSHARP\\projetos\\estoque-api\\SistemaEstoque.Shared\\SistemaEstoque.Shared.csproj"
             }
           }
         }

@@ -3,7 +3,7 @@ using SistemaEstoque.Domain.Interfaces.Repositories;
 using SistemaEstoque.Infra.Data;
 using System.Linq.Expressions;
 using SistemaEstoque.Domain.Entities.Abstracoes;
-using SistemaEstoque.Infra.Extensions;
+using SistemaEstoque.Shared.Extensions;
 
 namespace SistemaEstoque.Infra.Repositories
 {
