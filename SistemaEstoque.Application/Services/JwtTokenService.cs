@@ -28,10 +28,10 @@ namespace SistemaEstoque.Application.Services
         {
             var authClaims = new List<Claim>
             {
-                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-                new Claim("Email", usuario.Nome),
-                new Claim("UsuarioId", usuario.Id.ToString()),
-                new Claim("TenantId", usuario.EmpresaId.ToString())
+                new(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+                new("Email", usuario.Nome),
+                new("UsuarioId", usuario.Id.ToString()),
+                new("TenantId", usuario.TenantId.ToString())
             };
 
             var authSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));
@@ -64,8 +64,10 @@ namespace SistemaEstoque.Application.Services
                     IsRevogado = false,
                     UltimaGeracao = DateTime.UtcNow
                 };
+                
+                refreshToken.TenantId = usuario.TenantId;
 
-                await _uow.RefreshTokens.AddAsync(refreshToken, usuario.EmpresaId);
+                await _uow.RefreshTokens.AddAsync(refreshToken);
             }
             else
             {

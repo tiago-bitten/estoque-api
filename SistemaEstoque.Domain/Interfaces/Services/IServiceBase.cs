@@ -6,6 +6,6 @@ namespace SistemaEstoque.Domain.Interfaces.Services
     {
         Task<bool> ExistsAsync(int id, bool includeDeleted = false);
         Task EnsureExistsAsync(int id, bool includeDeleted = false);
-        Task<T> GetAndEnsureExistsAsync(int id, bool includeDeleted, params string[] includes);
+        Task<T> GetAndEnsureExistsAsync(int id, bool includeDeleted = false, params string[]? includes);
     }
 }
