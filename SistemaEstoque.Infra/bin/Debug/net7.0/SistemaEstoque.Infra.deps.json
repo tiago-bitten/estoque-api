@@ -17,6 +17,7 @@
           "Microsoft.Extensions.Configuration.Json": "7.0.0",
           "Npgsql.EntityFrameworkCore.PostgreSQL": "7.0.0",
           "SistemaEstoque.Domain": "1.0.0",
+          "SistemaEstoque.Shared": "1.0.0",
           "Volo.Abp.Core": "7.0.0"
         },
         "runtime": {
@@ -729,6 +730,15 @@
         "runtime": {
           "SistemaEstoque.Domain.dll": {}
         }
+      },
+      "SistemaEstoque.Shared/1.0.0": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "7.0.0",
+          "SistemaEstoque.Domain": "1.0.0"
+        },
+        "runtime": {
+          "SistemaEstoque.Shared.dll": {}
+        }
       }
     }
   },
@@ -1250,6 +1260,11 @@
       "hashPath": "volo.abp.core.7.0.0.nupkg.sha512"
     },
     "SistemaEstoque.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "SistemaEstoque.Shared/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
