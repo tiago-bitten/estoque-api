@@ -24,8 +24,8 @@ namespace SistemaEstoque.Application.Queries.GetAllProdutos
             // ALTERAR_EMPRESA
             var empresaId = EMPRESA_CONSTANTE.ID_EMPRESA;
 
-            var totalProdutos = await _uow.Produtos.GetAll(empresaId).CountAsync(cancellationToken);
-            var produtos = await _uow.Produtos.GetAll(empresaId)
+            var totalProdutos = await _uow.Items.GetAll(empresaId).CountAsync(cancellationToken);
+            var produtos = await _uow.Items.GetAll(empresaId)
                 .Skip(request.Skip)
                 .Take(request.Take)
                 .ToListAsync(cancellationToken);

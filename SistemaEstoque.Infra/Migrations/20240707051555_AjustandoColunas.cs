@@ -16,11 +16,11 @@ namespace SistemaEstoque.Infra.Migrations
 
             migrationBuilder.DropForeignKey(
                 name: "FK_Produtos_Categorias_CategoriaId",
-                table: "Produtos");
+                table: "Items");
 
             migrationBuilder.DropForeignKey(
                 name: "FK_Produtos_Empresas_EmpresaId",
-                table: "Produtos");
+                table: "Items");
 
             migrationBuilder.DropForeignKey(
                 name: "FK_Usuarios_Empresas_EmpresaId",
@@ -32,7 +32,7 @@ namespace SistemaEstoque.Infra.Migrations
 
             migrationBuilder.DropPrimaryKey(
                 name: "PK_Produtos",
-                table: "Produtos");
+                table: "Items");
 
             migrationBuilder.DropPrimaryKey(
                 name: "PK_Empresas",
@@ -47,7 +47,7 @@ namespace SistemaEstoque.Infra.Migrations
                 newName: "usuarios");
 
             migrationBuilder.RenameTable(
-                name: "Produtos",
+                name: "Items",
                 newName: "produtos");
 
             migrationBuilder.RenameTable(
@@ -187,7 +187,7 @@ namespace SistemaEstoque.Infra.Migrations
 
             migrationBuilder.RenameTable(
                 name: "produtos",
-                newName: "Produtos");
+                newName: "Items");
 
             migrationBuilder.RenameTable(
                 name: "empresas",
@@ -209,22 +209,22 @@ namespace SistemaEstoque.Infra.Migrations
 
             migrationBuilder.RenameColumn(
                 name: "empresa_id",
-                table: "Produtos",
+                table: "Items",
                 newName: "EmpresaId");
 
             migrationBuilder.RenameColumn(
                 name: "categoria_id",
-                table: "Produtos",
+                table: "Items",
                 newName: "CategoriaId");
 
             migrationBuilder.RenameIndex(
                 name: "IX_produtos_empresa_id",
-                table: "Produtos",
+                table: "Items",
                 newName: "IX_Produtos_EmpresaId");
 
             migrationBuilder.RenameIndex(
                 name: "IX_produtos_categoria_id",
-                table: "Produtos",
+                table: "Items",
                 newName: "IX_Produtos_CategoriaId");
 
             migrationBuilder.RenameIndex(
@@ -239,7 +239,7 @@ namespace SistemaEstoque.Infra.Migrations
 
             migrationBuilder.AddPrimaryKey(
                 name: "PK_Produtos",
-                table: "Produtos",
+                table: "Items",
                 column: "id");
 
             migrationBuilder.AddPrimaryKey(
@@ -262,7 +262,7 @@ namespace SistemaEstoque.Infra.Migrations
 
             migrationBuilder.AddForeignKey(
                 name: "FK_Produtos_Categorias_CategoriaId",
-                table: "Produtos",
+                table: "Items",
                 column: "CategoriaId",
                 principalTable: "Categorias",
                 principalColumn: "id",
@@ -270,7 +270,7 @@ namespace SistemaEstoque.Infra.Migrations
 
             migrationBuilder.AddForeignKey(
                 name: "FK_Produtos_Empresas_EmpresaId",
-                table: "Produtos",
+                table: "Items",
                 column: "EmpresaId",
                 principalTable: "Empresas",
                 principalColumn: "id",

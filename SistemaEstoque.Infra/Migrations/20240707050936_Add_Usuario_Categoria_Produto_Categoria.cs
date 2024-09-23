@@ -80,7 +80,7 @@ namespace SistemaEstoque.Infra.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Produtos",
+                name: "Items",
                 columns: table => new
                 {
                     id = table.Column<int>(type: "int", nullable: false)
@@ -117,12 +117,12 @@ namespace SistemaEstoque.Infra.Migrations
 
             migrationBuilder.CreateIndex(
                 name: "IX_Produtos_CategoriaId",
-                table: "Produtos",
+                table: "Items",
                 column: "CategoriaId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Produtos_EmpresaId",
-                table: "Produtos",
+                table: "Items",
                 column: "EmpresaId");
 
             migrationBuilder.CreateIndex(
@@ -135,7 +135,7 @@ namespace SistemaEstoque.Infra.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Produtos");
+                name: "Items");
 
             migrationBuilder.DropTable(
                 name: "Usuarios");

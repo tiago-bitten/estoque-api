@@ -34,7 +34,7 @@ namespace SistemaEstoque.API.Controllers
 
             var response = await _mediator.Send(query);
 
-            HttpContext.Items["MensagemAPI"] = "Produtos retornados";
+            HttpContext.Items["MensagemAPI"] = "Items retornados";
             
             return Ok(response);
         }

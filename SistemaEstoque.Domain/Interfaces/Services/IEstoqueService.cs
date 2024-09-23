@@ -4,8 +4,7 @@ using SistemaEstoque.Domain.Enums;
 
 namespace SistemaEstoque.Domain.Interfaces.Services
 {
-    public interface IEstoqueService<T> : IServiceBase<T> where T : Estoque
+    public interface IEstoqueService : IServiceBase<Estoque> 
     {
-        Task UpdateEstoque(T estoque, int quantidade, ETipoMovimentacao tipoMovimentacao);
     }
 }

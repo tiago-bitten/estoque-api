@@ -1,9 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using SistemaEstoque.Domain.Entities;
-using SistemaEstoque.Domain.Enums;
 using SistemaEstoque.Infra.EntitiesConfig.Abstracoes;
 using SistemaEstoque.Infra.EntitiesConfig.Utils;
+using SistemaEstoque.Shared.Extensions;
 
 namespace SistemaEstoque.Infra.EntitiesConfig
 {
@@ -33,7 +33,7 @@ namespace SistemaEstoque.Infra.EntitiesConfig
             builder.Property(e => e.TipoEmpresa)
                 .HasColumnType(TipoColunaConstants.Text)
                 .HasColumnName("tipo_empresa")
-                .HasConversion<ETipoEmpresa>()
+                .HasEnumConversion()
                 .IsRequired();
 
             builder.Property(e => e.Telefone)
@@ -84,11 +84,6 @@ namespace SistemaEstoque.Infra.EntitiesConfig
                 .WithOne(c => c.Empresa)
                 .HasForeignKey(c => c.TenantId)
                 .OnDelete(DeleteBehavior.SetNull);
-
-            builder.HasMany(e => e.Produtos)
-                .WithOne(p => p.Empresa)
-                .HasForeignKey(p => p.TenantId)
-                .OnDelete(DeleteBehavior.SetNull);
         
             builder.HasMany(e => e.Fornecedores)
                 .WithOne(f => f.Empresa)
@@ -110,17 +105,12 @@ namespace SistemaEstoque.Infra.EntitiesConfig
                 .HasForeignKey(es => es.TenantId)
                 .OnDelete(DeleteBehavior.SetNull);
 
-            builder.HasMany(e => e.Insumos)
-                .WithOne(i => i.Empresa)
-                .HasForeignKey(i => i.TenantId)
-                .OnDelete(DeleteBehavior.SetNull);
-
             builder.HasMany(e => e.LogsAlteracoes)
                 .WithOne(l => l.Empresa)
                 .HasForeignKey(l => l.TenantId)
                 .OnDelete(DeleteBehavior.SetNull);
 
-            builder.HasMany(e => e.HistoricosEstoquesProdutos)
+            builder.HasMany(e => e.HistoricoEstoques)
                 .WithOne(h => h.Empresa)
                 .HasForeignKey(h => h.TenantId)
                 .OnDelete(DeleteBehavior.SetNull);

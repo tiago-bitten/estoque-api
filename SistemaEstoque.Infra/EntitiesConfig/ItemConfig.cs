@@ -1,9 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using SistemaEstoque.Domain.Entities.Abstracoes;
-using SistemaEstoque.Domain.Enums;
 using SistemaEstoque.Infra.EntitiesConfig.Abstracoes;
 using SistemaEstoque.Infra.EntitiesConfig.Utils;
+using SistemaEstoque.Shared.Extensions;
 
 namespace SistemaEstoque.Infra.EntitiesConfig;
 
@@ -17,7 +17,7 @@ public class ItemConfig : IdentificadorTenantConfig<Item>
 
         builder.Property(x => x.Tipo)
             .HasColumnType(TipoColunaConstants.Text)
-            .HasConversion<ETipoItem>()
+            .HasEnumConversion()
             .IsRequired();
         
         builder.Property(x => x.Nome)
@@ -41,5 +41,25 @@ public class ItemConfig : IdentificadorTenantConfig<Item>
             .HasColumnType(TipoColunaConstants.Int)
             .HasColumnName("categoria_id")
             .IsRequired();
+
+        builder.HasMany(x => x.Estoques)
+            .WithOne(x => x.Item)
+            .HasForeignKey(x => x.ItemId)
+            .OnDelete(DeleteBehavior.SetNull);
+
+        builder.HasMany(x => x.LoteItems)
+            .WithOne(x => x.Item)
+            .HasForeignKey(x => x.ItemId)
+            .OnDelete(DeleteBehavior.SetNull);
+        
+        builder.HasOne(x => x.Categoria)
+            .WithMany(x => x.Items)
+            .HasForeignKey(x => x.CategoriaId)
+            .OnDelete(DeleteBehavior.SetNull);
+
+        builder.HasOne(x => x.Empresa)
+            .WithMany(x => x.Items)
+            .HasForeignKey(x => x.TenantId)
+            .OnDelete(DeleteBehavior.SetNull);
     }
 }

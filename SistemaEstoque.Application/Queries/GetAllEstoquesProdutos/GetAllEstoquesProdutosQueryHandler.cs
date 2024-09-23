@@ -21,10 +21,10 @@ namespace SistemaEstoque.Application.Queries.GetAllEstoquesProdutos
         {
             var empresaId = EMPRESA_CONSTANTE.ID_EMPRESA;
 
-            var totalEstoquesProdutos = await _uow.EstoquesProdutos.GetAll(empresaId)
+            var totalEstoquesProdutos = await _uow.Estoques.GetAll(empresaId)
                 .CountAsync(cancellationToken);
 
-            var estoquesProdutos = await _uow.EstoquesProdutos.GetAll(empresaId)
+            var estoquesProdutos = await _uow.Estoques.GetAll(empresaId)
                 .Skip(request.Skip)
                 .Take(request.Take)
                 .ToListAsync(cancellationToken);

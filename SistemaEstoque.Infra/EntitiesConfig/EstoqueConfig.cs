@@ -33,16 +33,15 @@ namespace SistemaEstoque.Infra.EntitiesConfig
                 .HasColumnType(TipoColunaConstants.Int)
                 .HasColumnName("item_id")
                 .IsRequired();
-            
-            builder.Property(x => x.Tipo)
-                .HasColumnType(TipoColunaConstants.Text)
-                .HasColumnName("tipo_empresa")
-                .HasConversion<ETipoEmpresa>()
-                .IsRequired();
 
-            builder.HasMany(x => x.Movimentacoes)
-                .WithOne(x => x.Estoque)
-                .HasForeignKey(m => m.EstoqueId)
+            builder.HasOne(x => x.Item)
+                .WithMany(x => x.Estoques)
+                .HasForeignKey(x => x.ItemId)
+                .OnDelete(DeleteBehavior.SetNull);
+
+            builder.HasOne(x => x.Empresa)
+                .WithMany(x => x.Estoques)
+                .HasForeignKey(x => x.ItemId)
                 .OnDelete(DeleteBehavior.SetNull);
         }
     }

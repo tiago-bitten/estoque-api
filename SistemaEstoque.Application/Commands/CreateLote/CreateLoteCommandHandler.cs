@@ -13,7 +13,7 @@ namespace SistemaEstoque.Application.Commands.CreateLote
         private readonly IUnitOfWork _uow;
         private readonly IMapper _mapper;
         private readonly IFornecedorService _fornecedorService;
-        private readonly IProdutoService _produtoService;
+        private readonly IItemService _itemService;
         private readonly IInsumoService _insumoService;
         private readonly IEstoqueService<EstoqueProduto> _estoqueProdutoService;
         private readonly IEstoqueService<EstoqueInsumo> _estoqueInsumoService;
@@ -23,7 +23,7 @@ namespace SistemaEstoque.Application.Commands.CreateLote
             IUnitOfWork uow,
             IMapper mapper,
             IFornecedorService fornecedorService,
-            IProdutoService produtoService,
+            IItemService itemService,
             IInsumoService insumoService,
             IEstoqueService<EstoqueProduto> estoqueProdutoService,
             IEstoqueService<EstoqueInsumo> estoqueInsumoService, ICurrentUserService currentUserService)
@@ -31,7 +31,7 @@ namespace SistemaEstoque.Application.Commands.CreateLote
             _uow = uow;
             _mapper = mapper;
             _fornecedorService = fornecedorService;
-            _produtoService = produtoService;
+            _itemService = itemService;
             _insumoService = insumoService;
             _estoqueProdutoService = estoqueProdutoService;
             _estoqueInsumoService = estoqueInsumoService;
@@ -48,25 +48,25 @@ namespace SistemaEstoque.Application.Commands.CreateLote
             
             var fornecedor = await _fornecedorService.GetAndValidateEntityAsync(request.FornecedorId);
 
-            var lote = _mapper.Map<Lote>(request);
+            var lote = _mapper.Map<RemessaLote>(request);
             lote.Fornecedor = fornecedor;
             lote.Empresa = empresa;
             lote.UsuarioRecebimentoId = request.UsuarioRecebimentoId;
 
-            await _uow.Lotes.AddAsync(lote, empresa.Id);
+            await _uow.RemesaLotes.AddAsync(lote, empresa.Id);
 
             foreach (var item in request.LotesItens)
             {
                 if (item.TipoItem == ETipoItem.Produto)
                 {
-                    var produto = await _produtoService.GetAndValidateEntityAsync(item.ItemId);
+                    var produto = await _itemService.GetAndValidateEntityAsync(item.ItemId);
 
                     var loteProduto = _mapper.Map<LoteProduto>(item);
                     loteProduto.Produto = produto;
                     loteProduto.Empresa = empresa;
                     loteProduto.Lote = lote;
 
-                    await _uow.LotesProdutos.AddAsync(loteProduto, empresa.Id);
+                    await _uow.Lotes.AddAsync(loteProduto, empresa.Id);
                     await _estoqueProdutoService.UpdateEstoque(produto.EstoqueProduto, item.Quantidade, ETipoMovimentacao.Entrada);
                     
                     var movimentacaoProduto = _mapper.Map<MovimentacaoProduto>(item);
@@ -76,7 +76,7 @@ namespace SistemaEstoque.Application.Commands.CreateLote
                     movimentacaoProduto.LoteProduto = loteProduto;
                     movimentacaoProduto.Usuario = usuario;
 
-                    await _uow.MovimentacoesProdutos.AddAsync(movimentacaoProduto, empresa.Id);
+                    await _uow.Movimentacoes.AddAsync(movimentacaoProduto, empresa.Id);
                 }
                 else
                 {

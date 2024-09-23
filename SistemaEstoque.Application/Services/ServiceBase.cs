@@ -1,22 +1,38 @@
-﻿using SistemaEstoque.Domain.Interfaces.Repositories;
+﻿using SistemaEstoque.Domain.Enterprise.Exceptions;
+using SistemaEstoque.Domain.Entities.Abstracoes;
+using SistemaEstoque.Domain.Interfaces.Repositories;
 using SistemaEstoque.Domain.Interfaces.Services;
 
 namespace SistemaEstoque.Application.Services
 {
-    public class ServiceBase<T> : IServiceBase<T> where T : class
+    public class ServiceBase<T> : IServiceBase<T> where T : IdentificadorBase
     {
-        protected readonly IRepositoryBase<T> _repository;
+        protected readonly IRepositoryBase<T> Repository;
 
         public ServiceBase(IRepositoryBase<T> repository)
         {
-            _repository = repository;
+            Repository = repository;
         }
 
-        public virtual async Task<T> GetAndValidateEntityAsync(int id)
+        public async Task<bool> ExistsAsync(int id, bool includeDeleted = false)
         {
-            var entity = await _repository.GetByIdAsync(id);
+            return await Repository
+                .AnyAsync(x => x.Id == id && x.Removido == includeDeleted);            
+        }
 
-            return entity ?? throw new Exception("Entidade não encontrada.");
+        public async Task EnsureExistsAsync(int id, bool includeDeleted = false)
+        {
+            await GetAndEnsureExistsAsync(id, includeDeleted);
+        }
+
+        public async Task<T> GetAndEnsureExistsAsync(int id, bool includeDeleted = false, params string[] includes)
+        {
+            var entity = await Repository.GetByIdAsync(id, includes);
+            
+            if (entity is null)
+                throw new EntityNotFoundException<T>(id);
+
+            return entity;
         }
     }
 }

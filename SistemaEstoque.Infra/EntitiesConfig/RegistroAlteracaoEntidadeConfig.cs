@@ -12,7 +12,7 @@ namespace SistemaEstoque.Infra.EntitiesConfig
         {
             base.Configure(builder);
             
-            builder.ToTable("logs_alteracoes");
+            builder.ToTable("registros_alteracooes_entidades");
 
             builder.Property(l => l.Quantidade)
                 .HasColumnName("quantidade")

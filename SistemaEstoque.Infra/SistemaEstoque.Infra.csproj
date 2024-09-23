@@ -26,6 +26,11 @@
 
   <ItemGroup>
     <ProjectReference Include="..\SistemaEstoque.Domain\SistemaEstoque.Domain.csproj" />
+    <ProjectReference Include="..\SistemaEstoque.Shared\SistemaEstoque.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Extensions\" />
   </ItemGroup>
 
 </Project>

@@ -23,10 +23,10 @@ namespace SistemaEstoque.Application.Queries.GetAllLotes
         {
             var empresaId = EMPRESA_CONSTANTE.ID_EMPRESA;
 
-            var totalLotes = await _uow.Lotes.GetAll(empresaId)
+            var totalLotes = await _uow.RemesaLotes.GetAll(empresaId)
                 .CountAsync();
 
-            var lotes = await _uow.Lotes.GetAll(empresaId)
+            var lotes = await _uow.RemesaLotes.GetAll(empresaId)
                 .Skip(request.Skip)
                 .Take(request.Take)
                 .ToListAsync();

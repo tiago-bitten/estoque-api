@@ -1,76 +1,100 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using SistemaEstoque.Domain.Interfaces.Repositories;
 using SistemaEstoque.Infra.Data;
-using System.Collections.Generic;
-using System.Linq;
 using System.Linq.Expressions;
-using System.Threading.Tasks;
+using SistemaEstoque.Domain.Entities.Abstracoes;
+using SistemaEstoque.Shared.Extensions;
 
 namespace SistemaEstoque.Infra.Repositories
 {
-    public class RepositoryBase<T> : IRepositoryBase<T> where T : class
+    public class RepositoryBase<T> : IRepositoryBase<T> where T : IdentificadorBase
     {
-        protected readonly SistemaEstoqueDbContext _context;
-        protected readonly DbSet<T> _dbSet;
+        protected readonly SistemaEstoqueDbContext Context;
+        protected readonly DbSet<T> DbSet;
 
         public RepositoryBase(SistemaEstoqueDbContext context)
         {
-            _context = context;
-            _dbSet = context.Set<T>();
+            Context = context;
+            DbSet = context.Set<T>();
         }
 
-        public virtual async Task<T> GetByIdAsync(int id)
+        public async Task<T?> GetByIdAsync(int id, params string[]? includes)
         {
-            return await _dbSet.FirstOrDefaultAsync(e => EF.Property<int>(e, "Id") == id);
-             
+            var query = DbSet.AsQueryable();
+            query = query.ApplyIncludes(includes);
+            return await query.FirstOrDefaultAsync(e => e.Id == id);
         }
 
-        public virtual IQueryable<T> GetAll(int empresaId)
+        public IQueryable<T?> GetAll(params string[]? includes)
         {
-            return _dbSet.Where(e =>
-                EF.Property<int>(e, "EmpresaId") == empresaId)
-                .Where(e => EF.Property<bool>(e, "Removido") == false)
-                .AsQueryable();
+            var query = DbSet.AsQueryable();
+            query = query.ApplyIncludes(includes);
+            return query;
         }
 
-        public virtual async Task AddAsync(T entity, int empresaId)
+        public async Task<T?> FindAsync(Expression<Func<T, bool>> predicate, params string[]? includes)
         {
-            var propertyInfo = entity.GetType().GetProperty("EmpresaId");
-            propertyInfo.SetValue(entity, empresaId);
-            await _dbSet.AddAsync(entity);
+            var query = DbSet.Where(predicate).AsQueryable();
+            query = query.ApplyIncludes(includes);
+            return await query.FirstOrDefaultAsync();
         }
 
-        public virtual void Update(T entity)
+        public IQueryable<T?> FindAll(Expression<Func<T, bool>> predicate, params string[]? includes)
         {
-            _context.Entry(entity).Property("EmpresaId").IsModified = false;
-            _context.Entry(entity).Property("Removido").IsModified = false;
-
-            _dbSet.Update(entity);
+            var query = DbSet.Where(predicate).AsQueryable();
+            query = query.ApplyIncludes(includes);
+            return query;
         }
 
-        public virtual void Remove(T entity)
+        public async Task AddAsync(T entity)
         {
-            _dbSet.Remove(entity);
+            await DbSet.AddAsync(entity);
         }
 
-        public virtual async Task SoftRemoveAsync(T entity)
+        public async Task AddRangeAsync(IEnumerable<T> entities)
         {
-            var removidoProperty = entity.GetType().GetProperty("Removido");
-            removidoProperty.SetValue(entity, true);
-            
-            _dbSet.Update(entity);
-            
-            await Task.CompletedTask;
+            await DbSet.AddRangeAsync(entities);
         }
 
-        public virtual async Task<T> FindAsync(Expression<Func<T, bool>> predicate)
+        public void Update(T entity)
         {
-            return await _dbSet.FirstOrDefaultAsync(predicate);
+            DbSet.Update(entity);
         }
 
-        public virtual IQueryable<T> FindAll(Expression<Func<T, bool>> predicate)
+        public void UpdateRange(IEnumerable<T> entities)
         {
-            return _dbSet.Where(predicate);
+            DbSet.UpdateRange(entities);
+        }
+
+        public void Remove(T entity)
+        {
+            DbSet.Remove(entity);
+        }
+
+        public void RemoveRange(IEnumerable<T> entities)
+        {
+            DbSet.RemoveRange(entities);
+        }
+
+        public void SoftRemove(T entity)
+        {
+            entity.Removido = true;
+            DbSet.Update(entity);
+        }
+
+        public void SoftRemoveRange(IEnumerable<T> entities)
+        {
+            foreach (var entity in entities)
+            {
+                SoftRemove(entity);
+            }
+        }
+
+        public async Task<bool> AnyAsync(Expression<Func<T, bool>> predicate, params string[]? includes)
+        {
+            var query = DbSet.Where(predicate).AsQueryable();
+            query = query.ApplyIncludes(includes);
+            return await query.AnyAsync();
         }
     }
 }

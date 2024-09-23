@@ -1,24 +1,21 @@
 ﻿namespace SistemaEstoque.Domain.Interfaces.Repositories
 {
-    public interface IUnitOfWork : IDisposable
+    public interface IUnitOfWork : IDisposable, IAsyncDisposable
     {
         Task<bool> CommitAsync();
         Task RollbackAsync();
+        Task BeginTransactionAsync();
 
         IEmpresaRepository Empresas { get; }
         ICategoriaRepository Categorias { get; }
         IUsuarioRepository Usuarios { get; }
-        IProdutoRepository Produtos { get; }
-        IInsumoRepository Insumos { get; }
+        IItemRepository Items { get; }
         IFornecedorRepository Fornecedores { get; }
-        IEstoqueProdutoRepository EstoquesProdutos { get; }
-        IEstoqueInsumoRepository EstoquesInsumos { get; }
+        IEstoqueRepository Estoques { get; }
+        IRemesaLoteRepository RemesaLotes { get; }
         ILoteRepository Lotes { get; }
-        ILoteProdutoRepository LotesProdutos { get; }
-        ILoteInsumoRepository LotesInsumos { get; }
-        IMovimentacaoProdutoRepository MovimentacoesProdutos { get; }
-        IMovimentacaoInsumoRepository MovimentacoesInsumos { get; }
-        ILogAlteracaoRepository LogsAlteracoes { get; }
+        IMovimentacaoRepository Movimentacoes { get; }
+        IRegistroAlteracaoEntidadeRepository RegistrosAlteracoes { get; }
         IPerfilAcessoRepository PerfisAcessos { get; }
         IPermissaoProdutoRepository PermissoesProdutos { get; }
         IPermissaoCategoriaRepository PermissoesCategorias { get; }

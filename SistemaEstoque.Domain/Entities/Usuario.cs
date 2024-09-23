@@ -17,6 +17,6 @@ namespace SistemaEstoque.Domain.Entities
         public List<RegistroInsercaoRemocaoEntidade> RegistroInsercaoRemocaoEntidades { get; set; } = new();
         public List<RegistroAlteracaoEntidade> RegistroAlteracaoEntidades { get; set; } = new();
         public List<RegistroUsuarioAcesso> HistoricosUsuariosAcessos { get; set; } = new();
-        public List<Lote> Lotes { get; set; }
+        public List<RemessaLote> Lotes { get; set; }
     }
 }

@@ -15,6 +15,6 @@ namespace SistemaEstoque.Domain.Entities
         public string Estado { get; set; }
         public string Cep { get; set; }
 
-        public List<Lote> Lotes { get; set; } = new();
+        public List<RemessaLote> Lotes { get; set; } = new();
     }
 }
