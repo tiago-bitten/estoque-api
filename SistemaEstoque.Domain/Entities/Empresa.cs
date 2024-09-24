@@ -28,7 +28,7 @@ namespace SistemaEstoque.Domain.Entities
         public List<Fornecedor> Fornecedores { get; set; } = new();
         public List<Estoque> Estoques { get; set; } = new();
         public List<Movimentacao> Movimentacoes { get; set; } = new();
-        public List<RegistroAlteracaoEntidade> LogsAlteracoes { get; set; } = new();
+        public List<AuditoriaEntidade> AuditoriaEntidades { get; set; } = new();
         public List<HistoricoEstoque> HistoricoEstoques { get; set; } = new();
         public List<RegistroUsuarioAcesso> HistoricosUsuariosAcessos { get; set; } = new();
         public List<RemessaLote> Lotes { get; set; } = new();

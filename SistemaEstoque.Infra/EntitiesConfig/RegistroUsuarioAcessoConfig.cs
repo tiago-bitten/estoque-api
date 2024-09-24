@@ -40,7 +40,7 @@ namespace SistemaEstoque.Infra.EntitiesConfig
                 .IsRequired();
 
             builder.HasOne(h => h.Usuario)
-                .WithMany(u => u.HistoricosUsuariosAcessos)
+                .WithMany(u => u.AuditoriaUsuarioAcessos)
                 .HasForeignKey(h => h.UsuarioId)
                 .OnDelete(DeleteBehavior.SetNull);
         }

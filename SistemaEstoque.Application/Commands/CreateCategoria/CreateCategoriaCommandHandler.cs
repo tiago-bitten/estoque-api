@@ -3,6 +3,7 @@ using MediatR;
 using SistemaEstoque.Domain.Entities;
 using SistemaEstoque.Domain.Interfaces.Repositories;
 using SistemaEstoque.Domain.Interfaces.Services;
+using SistemaEstoque.Shared.Extensions;
 
 namespace SistemaEstoque.Application.Commands.CreateCategoria
 {
@@ -10,40 +11,36 @@ namespace SistemaEstoque.Application.Commands.CreateCategoria
     {
         private readonly IUnitOfWork _uow;
         private readonly IMapper _mapper;
-        private readonly ICurrentUserService _currentUserService;
+        private readonly IAmbienteUsuario _ambienteUsuario;
+        private readonly IServiceManager _serviceManager;
 
         public CreateCategoriaCommandHandler(
             IUnitOfWork uow,
-            IMapper mapper,
-            ICurrentUserService currentUserService)
+            IMapper mapper, IAmbienteUsuario ambienteUsuario, IServiceManager serviceManager)
         {
             _uow = uow;
             _mapper = mapper;
-            _currentUserService = currentUserService;
+            _ambienteUsuario = ambienteUsuario;
+            _serviceManager = serviceManager;
         }
 
         public async Task<CreateCategoriaResponse> Handle(CreateCategoriaCommand request, CancellationToken cancellationToken)
         {
-            var usuario = await _currentUserService.GetUsuario();
-            var empresa = await _currentUserService.GetEmpresa();
+            var ambiente = await _ambienteUsuario.GetUsuarioAndTenantAsync("PerfilAcesso.PermissaoCategoria");
 
-            if (!usuario.PerfilAcesso.PermissaoCategoria.Criar)
+            if (!ambiente.usuario.PerfilAcesso.PermissaoCategoria.Criar)
                 throw new UnauthorizedAccessException("Usuário não tem permissão para criar categorias");
 
             var categoria = _mapper.Map<Categoria>(request);
+
+            await _serviceManager.Categorias.EnsureNotExistsByNameAsync(categoria.Nome);
+
+            await _uow.Categorias.AddAsync(categoria);
+            await _uow.CommitAndAuditAsync(categoria, "categorias", _serviceManager);
             
-            var existsCategoria = await _uow.Categorias.FindAsync(x => x.Nome == request.Nome && x.EmpresaId == EMPRESA_CONSTANTE.ID_EMPRESA);
-            if (existsCategoria != null)
-                throw new Exception("Categoria já cadastrada");
-
-            categoria.Empresa = empresa;
-
-            await _uow.Categorias.AddAsync(categoria, empresa.Id);
-            await _uow.CommitAsync();
-
             var response = _mapper.Map<CreateCategoriaResponse>(categoria);
 
-            return await Task.FromResult(response);
+            return response;
         }
     }
 }

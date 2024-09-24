@@ -1,11 +1,5 @@
 ﻿using SistemaEstoque.Application.DTOs;
 using SistemaEstoque.Application.Responses;
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SistemaEstoque.Application.Queries.GetAllCategorias
 {
@@ -15,7 +9,7 @@ namespace SistemaEstoque.Application.Queries.GetAllCategorias
      
         public GetAllCategoriasResponse(IEnumerable<CategoriaDTO> items, int total) 
         {
-            this.AddRange(items);
+            AddRange(items);
             Total = total;
         }
     }

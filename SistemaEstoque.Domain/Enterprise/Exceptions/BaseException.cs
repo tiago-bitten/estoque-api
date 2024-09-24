@@ -2,7 +2,7 @@
 
 public abstract class BaseException : Exception
 {
-    public BaseException()
+    public BaseException() : base("Critical error")
     {
     }
 

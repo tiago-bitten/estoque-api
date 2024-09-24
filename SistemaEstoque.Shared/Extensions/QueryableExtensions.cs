@@ -1,7 +1,7 @@
 ﻿using System.Linq.Expressions;
 using Microsoft.EntityFrameworkCore;
 using SistemaEstoque.Domain.Entities.Abstracoes;
-using SistemaEstoque.Infra.Util;
+using SistemaEstoque.Shared.Util;
 
 namespace SistemaEstoque.Shared.Extensions
 {

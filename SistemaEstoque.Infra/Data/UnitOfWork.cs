@@ -18,7 +18,7 @@ namespace SistemaEstoque.Infra.Data
                           IRemesaLoteRepository remesaLoteRepository,
                           ILoteRepository loteRepository,
                           IMovimentacaoRepository movimentacaoRepository,
-                          IRegistroAlteracaoEntidadeRepository registroAlteracaoEntidadeRepository,
+                          IAuditoriaEntidadeRepository auditoriaEntidadeRepository,
                           IPerfilAcessoRepository perfilAcessoRepository,
                           IPermissaoProdutoRepository permissaoProdutoRepository,
                           IPermissaoCategoriaRepository permissaoCategoriaRepository,
@@ -35,7 +35,7 @@ namespace SistemaEstoque.Infra.Data
             RemesaLotes = remesaLoteRepository ?? throw new ArgumentNullException(nameof(remesaLoteRepository));
             Lotes = loteRepository ?? throw new ArgumentNullException(nameof(loteRepository));
             Movimentacoes = movimentacaoRepository ?? throw new ArgumentNullException(nameof(movimentacaoRepository));
-            RegistrosAlteracoes = registroAlteracaoEntidadeRepository ?? throw new ArgumentNullException(nameof(registroAlteracaoEntidadeRepository));
+            AuditoriaEntidades = auditoriaEntidadeRepository ?? throw new ArgumentNullException(nameof(auditoriaEntidadeRepository));
             PerfisAcessos = perfilAcessoRepository ?? throw new ArgumentNullException(nameof(perfilAcessoRepository));
             PermissoesProdutos = permissaoProdutoRepository ?? throw new ArgumentNullException(nameof(permissaoProdutoRepository));
             PermissoesCategorias = permissaoCategoriaRepository ?? throw new ArgumentNullException(nameof(permissaoCategoriaRepository));
@@ -52,7 +52,7 @@ namespace SistemaEstoque.Infra.Data
         public IRemesaLoteRepository RemesaLotes { get; }
         public ILoteRepository Lotes { get; }
         public IMovimentacaoRepository Movimentacoes { get; }
-        public IRegistroAlteracaoEntidadeRepository RegistrosAlteracoes { get; }
+        public IAuditoriaEntidadeRepository AuditoriaEntidades { get; }
         public IPerfilAcessoRepository PerfisAcessos { get; }
         public IPermissaoProdutoRepository PermissoesProdutos { get; }
         public IPermissaoCategoriaRepository PermissoesCategorias { get; }

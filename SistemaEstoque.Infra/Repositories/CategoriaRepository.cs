@@ -1,5 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using SistemaEstoque.Domain.Entities;
+﻿using SistemaEstoque.Domain.Entities;
 using SistemaEstoque.Domain.Interfaces.Repositories;
 using SistemaEstoque.Domain.Interfaces.Services;
 using SistemaEstoque.Infra.Data;
