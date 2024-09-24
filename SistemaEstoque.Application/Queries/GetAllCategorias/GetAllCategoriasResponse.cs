@@ -1,16 +1,13 @@
 ﻿using SistemaEstoque.Application.DTOs;
-using SistemaEstoque.Application.Responses;
+using SistemaEstoque.Shared.Util;
 
 namespace SistemaEstoque.Application.Queries.GetAllCategorias
 {
-    public class GetAllCategoriasResponse : List<CategoriaDTO>, IPagedResponse
+    public class GetAllCategoriasResponse : PagedResponse<CategoriaDto>
     {
-        public int Total { get ; set ; }
-     
-        public GetAllCategoriasResponse(IEnumerable<CategoriaDTO> items, int total) 
+
+        public GetAllCategoriasResponse(PagedResult<CategoriaDto> categorias) : base(categorias)
         {
-            AddRange(items);
-            Total = total;
         }
     }
 }

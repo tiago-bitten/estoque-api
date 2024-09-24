@@ -65,7 +65,7 @@ public class AmbienteUsuario : IAmbienteUsuario
         return _accessor.HttpContext?.User?.Identity?.IsAuthenticated ?? false;
     }
     
-    public async Task<(Usuario usuario, int tenantId)> GetUsuarioAndTenantAsync(params string[]? includes)
+    public async Task<(Usuario Usuario, int TenantId)> GetUsuarioAndTenantAsync(params string[]? includes)
     {
         return (await GetUsuarioAsync(includes), GetTenantId());
     }

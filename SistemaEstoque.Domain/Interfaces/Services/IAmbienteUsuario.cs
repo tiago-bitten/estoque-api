@@ -13,6 +13,6 @@ namespace SistemaEstoque.Domain.Interfaces.Services
         bool Bloqueado();
         bool Autenticado();
         
-        Task<(Usuario usuario, int tenantId)> GetUsuarioAndTenantAsync(params string[]? includes);
+        Task<(Usuario Usuario, int TenantId)> GetUsuarioAndTenantAsync(params string[]? includes);
     }
 }

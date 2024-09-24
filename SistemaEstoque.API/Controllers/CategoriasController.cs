@@ -18,6 +18,7 @@ namespace SistemaEstoque.API.Controllers
             _mediator = mediator;
         }
 
+        [HttpPost]
         [HttpPost("Criar")]
         public async Task<IActionResult> Create([FromBody] CreateCategoriaCommand command)
         {

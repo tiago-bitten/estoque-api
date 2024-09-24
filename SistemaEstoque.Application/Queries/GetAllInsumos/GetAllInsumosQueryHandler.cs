@@ -2,7 +2,6 @@
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using SistemaEstoque.Application.DTOs;
-using SistemaEstoque.Application.Responses;
 using SistemaEstoque.Domain.Interfaces.Repositories;
 using System.Dynamic;
 

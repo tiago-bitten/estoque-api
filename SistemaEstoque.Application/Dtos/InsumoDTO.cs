@@ -7,6 +7,6 @@
         public string Descricao { get; set; }
         public decimal PrecoVendaReferencia { get; set; }
         public decimal PrecoCustoReferencia { get; set; }
-        public CategoriaDTO Categoria { get; set; }
+        public CategoriaDto Categoria { get; set; }
     }
 }

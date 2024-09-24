@@ -56,8 +56,8 @@ namespace SistemaEstoque.Application.Commands.UpdateCategoria
                 totalAlteracoes++;
             }
 
-            var categoriaAntigaDTO = _mapper.Map<CategoriaDTO>(categoriaAntiga);
-            var categoriaNovaDTO = _mapper.Map<CategoriaDTO>(categoriaNova);
+            var categoriaAntigaDTO = _mapper.Map<CategoriaDto>(categoriaAntiga);
+            var categoriaNovaDTO = _mapper.Map<CategoriaDto>(categoriaNova);
 
             await _auditoriaEntidadeService.LogAsync(
                 categoriaAntigaDTO,

@@ -23,4 +23,8 @@
     <ProjectReference Include="..\SistemaEstoque.Shared\SistemaEstoque.Shared.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Responses\" />
+  </ItemGroup>
+
 </Project>

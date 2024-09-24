@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
-using SistemaEstoque.Application.Responses;
 
 namespace SistemaEstoque.API.Filters
 {

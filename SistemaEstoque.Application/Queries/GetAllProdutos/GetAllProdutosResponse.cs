@@ -1,6 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore.Query.Internal;
 using SistemaEstoque.Application.DTOs;
-using SistemaEstoque.Application.Responses;
 
 namespace SistemaEstoque.Application.Queries.GetAllProdutos
 {
