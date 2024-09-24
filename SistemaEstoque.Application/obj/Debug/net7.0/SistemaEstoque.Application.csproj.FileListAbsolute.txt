@@ -58,3 +58,11 @@ C:\Users\teste\Documents\CSHARP\projetos\estoque-api\SistemaEstoque.Application\
 C:\Users\teste\Documents\CSHARP\projetos\estoque-api\SistemaEstoque.Application\obj\Debug\net7.0\ref\SistemaEstoque.Application.dll
 C:\Users\teste\Documents\CSHARP\projetos\estoque-api\SistemaEstoque.Application\obj\Debug\net7.0\SistemaEstoque.Application.sourcelink.json
 C:\Users\teste\Documents\CSHARP\projetos\estoque-api\SistemaEstoque.Application\obj\Debug\net7.0\SistemaE.2EB6CAA6.Up2Date
+D:\C#\estoque-api\SistemaEstoque.Application\obj\Debug\net7.0\SistemaEstoque.Application.csproj.AssemblyReference.cache
+D:\C#\estoque-api\SistemaEstoque.Application\obj\Debug\net7.0\SistemaEstoque.Application.GeneratedMSBuildEditorConfig.editorconfig
+D:\C#\estoque-api\SistemaEstoque.Application\obj\Debug\net7.0\SistemaEstoque.Application.AssemblyInfoInputs.cache
+D:\C#\estoque-api\SistemaEstoque.Application\obj\Debug\net7.0\SistemaEstoque.Application.AssemblyInfo.cs
+D:\C#\estoque-api\SistemaEstoque.Application\obj\Debug\net7.0\SistemaEstoque.Application.csproj.CoreCompileInputs.cache
+D:\C#\estoque-api\SistemaEstoque.Application\obj\Debug\net7.0\SistemaEstoque.Application.dll
+D:\C#\estoque-api\SistemaEstoque.Application\obj\Debug\net7.0\refint\SistemaEstoque.Application.dll
+D:\C#\estoque-api\SistemaEstoque.Application\obj\Debug\net7.0\SistemaEstoque.Application.pdb

@@ -10,13 +10,13 @@ namespace SistemaEstoque.Domain.Interfaces.Repositories
         Task<T?> FindAsync(Expression<Func<T, bool>> predicate, params string[]? includes);
         IQueryable<T?> FindAll(Expression<Func<T, bool>> predicate, params string[]? includes);
         Task AddAsync(T entity);
-        Task AddRangeAsync(IEnumerable<T> entities);
+        Task AddRangeAsync(List<T> entities);
         void Update(T entity);
-        void UpdateRange(IEnumerable<T> entities);
+        void UpdateRange(List<T> entities);
         void Remove(T entity);
-        void RemoveRange(IEnumerable<T> entities);
+        void RemoveRange(List<T> entities);
         void SoftRemove(T entity);
-        void SoftRemoveRange(IEnumerable<T> entities);
+        void SoftRemoveRange(List<T> entities);
         Task<bool> AnyAsync(Expression<Func<T, bool>> predicate, params string[]? includes);
     }
 }

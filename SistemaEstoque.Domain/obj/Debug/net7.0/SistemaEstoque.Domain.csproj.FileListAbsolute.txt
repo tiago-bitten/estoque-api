@@ -41,3 +41,7 @@ D:\C#\estoque-api\SistemaEstoque.Domain\obj\Debug\net7.0\SistemaEstoque.Domain.c
 D:\C#\estoque-api\SistemaEstoque.Domain\obj\Debug\net7.0\SistemaEstoque.Domain.dll
 D:\C#\estoque-api\SistemaEstoque.Domain\obj\Debug\net7.0\refint\SistemaEstoque.Domain.dll
 D:\C#\estoque-api\SistemaEstoque.Domain\obj\Debug\net7.0\SistemaEstoque.Domain.pdb
+D:\C#\estoque-api\SistemaEstoque.Domain\bin\Debug\net7.0\SistemaEstoque.Domain.deps.json
+D:\C#\estoque-api\SistemaEstoque.Domain\bin\Debug\net7.0\SistemaEstoque.Domain.dll
+D:\C#\estoque-api\SistemaEstoque.Domain\bin\Debug\net7.0\SistemaEstoque.Domain.pdb
+D:\C#\estoque-api\SistemaEstoque.Domain\obj\Debug\net7.0\ref\SistemaEstoque.Domain.dll

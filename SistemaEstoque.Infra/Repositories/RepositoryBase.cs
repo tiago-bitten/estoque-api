@@ -3,98 +3,145 @@ using SistemaEstoque.Domain.Interfaces.Repositories;
 using SistemaEstoque.Infra.Data;
 using System.Linq.Expressions;
 using SistemaEstoque.Domain.Entities.Abstracoes;
+using SistemaEstoque.Domain.Interfaces.Services;
 using SistemaEstoque.Shared.Extensions;
 
-namespace SistemaEstoque.Infra.Repositories
+namespace SistemaEstoque.Infra.Repositories;
+
+public class RepositoryBase<T> : IRepositoryBase<T> where T : IdentificadorTenant
 {
-    public class RepositoryBase<T> : IRepositoryBase<T> where T : IdentificadorBase
+    #region Fields
+    protected readonly SistemaEstoqueDbContext Context;
+    protected readonly DbSet<T> DbSet;
+    protected readonly IAmbienteUsuario AmbienteUsuario;
+    #endregion
+
+    #region Constructor
+    public RepositoryBase(SistemaEstoqueDbContext context, IAmbienteUsuario ambienteUsuario)
     {
-        protected readonly SistemaEstoqueDbContext Context;
-        protected readonly DbSet<T> DbSet;
+        Context = context;
+        AmbienteUsuario = ambienteUsuario;
+        DbSet = context.Set<T>();
+    }
+    #endregion
 
-        public RepositoryBase(SistemaEstoqueDbContext context)
-        {
-            Context = context;
-            DbSet = context.Set<T>();
-        }
+    #region Methods
+        
+    #region GetByIdAsync
+    public async Task<T?> GetByIdAsync(int id, params string[]? includes)
+    {
+        var query = DbSet.AsQueryable();
+        query = query.ApplyIncludes(includes);
+        query = query.GlobalWhere(AmbienteUsuario.GetTenantId());
+        return await query.FirstOrDefaultAsync(e => e.Id == id);
+    }
+    #endregion
 
-        public async Task<T?> GetByIdAsync(int id, params string[]? includes)
-        {
-            var query = DbSet.AsQueryable();
-            query = query.ApplyIncludes(includes);
-            return await query.FirstOrDefaultAsync(e => e.Id == id);
-        }
+    #region GetAll
+    public IQueryable<T?> GetAll(params string[]? includes)
+    {
+        var query = DbSet.AsQueryable();
+        query = query.ApplyIncludes(includes);
+        query = query.GlobalWhere(AmbienteUsuario.GetTenantId());
+        return query;
+    }
+    #endregion
 
-        public IQueryable<T?> GetAll(params string[]? includes)
-        {
-            var query = DbSet.AsQueryable();
-            query = query.ApplyIncludes(includes);
-            return query;
-        }
+    #region FindAsync
+    public async Task<T?> FindAsync(Expression<Func<T, bool>> predicate, params string[]? includes)
+    {
+        var query = DbSet.Where(predicate).AsQueryable();
+        query = query.ApplyIncludes(includes);
+        query = query.GlobalWhere(AmbienteUsuario.GetTenantId());
+        return await query.FirstOrDefaultAsync();
+    }
+    #endregion
 
-        public async Task<T?> FindAsync(Expression<Func<T, bool>> predicate, params string[]? includes)
-        {
-            var query = DbSet.Where(predicate).AsQueryable();
-            query = query.ApplyIncludes(includes);
-            return await query.FirstOrDefaultAsync();
-        }
+    #region FindAll
+    public IQueryable<T?> FindAll(Expression<Func<T, bool>> predicate, params string[]? includes)
+    {
+        var query = DbSet.Where(predicate).AsQueryable();
+        query = query.ApplyIncludes(includes);
+        query = query.GlobalWhere(AmbienteUsuario.GetTenantId());
+        return query;
+    }
+    #endregion
 
-        public IQueryable<T?> FindAll(Expression<Func<T, bool>> predicate, params string[]? includes)
-        {
-            var query = DbSet.Where(predicate).AsQueryable();
-            query = query.ApplyIncludes(includes);
-            return query;
-        }
+    #region AddAsync
+    public async Task AddAsync(T entity)
+    {
+        entity.TenantId = AmbienteUsuario.GetTenantId();
+        await DbSet.AddAsync(entity);
+    }
+    #endregion
 
-        public async Task AddAsync(T entity)
+    #region AddRangeAsync
+    public async Task AddRangeAsync(List<T> entities)
+    {
+        foreach (var entity in entities)
         {
-            await DbSet.AddAsync(entity);
-        }
+            entity.TenantId = AmbienteUsuario.GetTenantId();
+        }   
+            
+        await DbSet.AddRangeAsync(entities);
+    }
+    #endregion
 
-        public async Task AddRangeAsync(IEnumerable<T> entities)
-        {
-            await DbSet.AddRangeAsync(entities);
-        }
+    #region Update
+    public void Update(T entity)
+    {
+        DbSet.Update(entity);
+    }
+    #endregion
 
-        public void Update(T entity)
-        {
-            DbSet.Update(entity);
-        }
+    #region UpdateRange
+    public void UpdateRange(List<T> entities)
+    {
+        DbSet.UpdateRange(entities);
+    }
+    #endregion
 
-        public void UpdateRange(IEnumerable<T> entities)
-        {
-            DbSet.UpdateRange(entities);
-        }
+    #region Remove
+    public void Remove(T entity)
+    {
+        DbSet.Remove(entity);
+    }
+    #endregion
 
-        public void Remove(T entity)
-        {
-            DbSet.Remove(entity);
-        }
+    #region RemoveRange
+    public void RemoveRange(List<T> entities)
+    {
+        DbSet.RemoveRange(entities);
+    }
+    #endregion
 
-        public void RemoveRange(IEnumerable<T> entities)
-        {
-            DbSet.RemoveRange(entities);
-        }
+    #region SoftRemove
+    public void SoftRemove(T entity)
+    {
+        entity.Removido = true;
+        DbSet.Update(entity);
+    }
+    #endregion
 
-        public void SoftRemove(T entity)
+    #region SoftRemoveRange
+    public void SoftRemoveRange(List<T> entities)
+    {
+        foreach (var entity in entities)
         {
-            entity.Removido = true;
-            DbSet.Update(entity);
-        }
-
-        public void SoftRemoveRange(IEnumerable<T> entities)
-        {
-            foreach (var entity in entities)
-            {
-                SoftRemove(entity);
-            }
-        }
-
-        public async Task<bool> AnyAsync(Expression<Func<T, bool>> predicate, params string[]? includes)
-        {
-            var query = DbSet.Where(predicate).AsQueryable();
-            query = query.ApplyIncludes(includes);
-            return await query.AnyAsync();
+            SoftRemove(entity);
         }
     }
+    #endregion
+
+    #region AnyAsync
+    public async Task<bool> AnyAsync(Expression<Func<T, bool>> predicate, params string[]? includes)
+    {
+        var query = DbSet.Where(predicate).AsQueryable();
+        query = query.ApplyIncludes(includes);
+        query = query.GlobalWhere(AmbienteUsuario.GetTenantId());
+        return await query.AnyAsync();
+    }
+    #endregion
+
+    #endregion
 }

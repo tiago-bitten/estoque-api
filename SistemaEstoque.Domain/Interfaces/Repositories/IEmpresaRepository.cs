@@ -11,7 +11,7 @@ namespace SistemaEstoque.Domain.Interfaces.Repositories
     public interface IEmpresaRepository
     {
         Task AddAsync(Empresa empresa);
-        Task<Empresa> GetByIdAsync(int id);
-        IQueryable<Empresa> FindAll(Expression<Func<Empresa, bool>> predicate);
+        Task<Empresa?> GetByIdAsync(int id);
+        IQueryable<Empresa?> FindAll(Expression<Func<Empresa, bool>> predicate);
     }
 }

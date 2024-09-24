@@ -1,20 +1,27 @@
-﻿using Microsoft.EntityFrameworkCore;
-using SistemaEstoque.Domain.Entities;
+﻿using SistemaEstoque.Domain.Entities;
 using SistemaEstoque.Domain.Interfaces.Repositories;
+using SistemaEstoque.Domain.Interfaces.Services;
 using SistemaEstoque.Infra.Data;
 
-namespace SistemaEstoque.Infra.Repositories
-{
-    public class UsuarioRepository : RepositoryBase<Usuario>, IUsuarioRepository
-    {
-        public UsuarioRepository(SistemaEstoqueDbContext context)
-            : base(context)
-        {
-        }
+namespace SistemaEstoque.Infra.Repositories;
 
-        public async Task<Usuario> GetByEmailAsync(string email)
-        {
-            return await DbSet.FirstOrDefaultAsync(u => u.Email == email);
-        }
+public class UsuarioRepository : RepositoryBase<Usuario>, IUsuarioRepository
+{
+    #region Constructor
+    public UsuarioRepository(SistemaEstoqueDbContext context, IAmbienteUsuario ambienteUsuario)
+        : base(context, ambienteUsuario)
+    {
     }
+    #endregion
+
+    #region Methods
+
+    #region GetByEmailAsync
+    public async Task<Usuario?> GetByEmailAsync(string email)
+    {
+        return await FindAsync(u => u.Email == email);
+    }
+    #endregion
+
+    #endregion
 }
