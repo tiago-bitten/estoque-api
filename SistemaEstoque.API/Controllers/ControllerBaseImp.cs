@@ -1,61 +1,88 @@
-﻿using System.Text.Json.Serialization;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using SistemaEstoque.API.Infra;
+using SistemaEstoque.Shared.Util;
 
-namespace SistemaEstoque.API.Controllers;
-
-public class ResponseBase<T> where T : class
+namespace SistemaEstoque.API.Controllers
 {
-    [JsonPropertyName("Content")]
-    [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
-    public T? Content { get; init; }
-    
-    [JsonPropertyName("Success")]
-    public bool Success { get; init; }
-    
-    [JsonPropertyName("Message")]
-    [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
-    public string? Message { get; init; }
-    
-    [JsonPropertyName("Errors")]
-    [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
-    public string[]? Errors { get; init; }
-    
-    [JsonPropertyName("Total")]
-    [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
-    public int? Total { get; init; }
-}
-
-[ApiController]
-[Route("api/[controller]")]
-public class ControllerBaseImp : ControllerBase
-{
-    private const string FallbackSuccessMessage = "Operação concluída com sucesso";
-    private const string FallbackErrorMessage = "Ocorreu um erro ao processar a solicitação";
-    
-    [NonAction]
-    public IActionResult Success<T>(T? content, int? total, string? message) where T : class
+    [ApiController]
+    [Route("api/v1/[controller]")]
+    public class ControllerBaseImp : ControllerBase
     {
-        var responseBase = new  ResponseBase<T>
-        {
-            Success = true,
-            Content = content,
-            Message = message ?? FallbackSuccessMessage,
-            Total = total
-        };
+        #region Constants
+        private const string FallbackSuccessMessage = "Operação concluída com sucesso";
+        private const string FallbackErrorMessage = "Ocorreu um erro ao processar a solicitação";
+        #endregion
+        
+        #region Success Methods
 
-        return Ok(responseBase);
-    }
-    
-    [NonAction]
-    public IActionResult Error(string? message, string[] errors)
-    {
-        var responseBase = new ResponseBase<dynamic>
+        [NonAction]
+        public IActionResult Success<T>(T? content = null, string? message = null) where T : class
         {
-            Success = false,
-            Message = message ?? FallbackErrorMessage,
-            Errors = errors
-        };
+            var responseBase = new ResponseSuccess<T>(content ?? null!, message ?? FallbackSuccessMessage);
+            return Ok(responseBase);
+        }
 
-        return BadRequest(responseBase);
+        [NonAction]
+        public IActionResult SuccessPaged<T>(PagedResult<T> pagedResult, string? message = null) where T : class
+        {
+            var responsePaged = new ResponsePaged<T>(pagedResult, message);
+            return Ok(responsePaged);
+        }
+
+        #endregion
+
+        #region Created Method
+
+        [NonAction]
+        public IActionResult Created<T>(T content, string? message = null) where T : class
+        {
+            var responseCreated = new ResponseCreated<T>(content, message);
+            return CreatedAtAction(nameof(Created), responseCreated);
+        }
+
+        #endregion
+
+        #region Error Methods
+
+        [NonAction]
+        public IActionResult Error(string? message = null, List<string>? errors = null)
+        {
+            var responseError = new ResponseError(message ?? FallbackErrorMessage, errors);
+            return BadRequest(responseError);
+        }
+
+        [NonAction]
+        public IActionResult ValidationError(List<string> errors)
+        {
+            var responseValidationError = new ResponseValidationError(errors);
+            return BadRequest(responseValidationError);
+        }
+
+        #endregion
+
+        #region NotFound/Unauthorized/Forbidden Methods
+
+        [NonAction]
+        public IActionResult NotFoundResponse(string? message = null)
+        {
+            var responseNotFound = new ResponseNotFound(message);
+            return NotFound(responseNotFound);
+        }
+
+        [NonAction]
+        public IActionResult UnauthorizedResponse(string? message = null)
+        {
+            var responseUnauthorized = new ResponseUnauthorized(message);
+            return Unauthorized(responseUnauthorized);
+        }
+
+        [NonAction]
+        public IActionResult ForbiddenResponse(string? message)
+        {
+            //var responseForbidden = new ResponseForbidden(message);
+            return Forbid(message ?? "Acesso proibido.");
+        }
+
+        #endregion
     }
 }

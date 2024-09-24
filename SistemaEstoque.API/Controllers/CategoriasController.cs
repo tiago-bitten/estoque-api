@@ -7,9 +7,8 @@ using SistemaEstoque.Application.Queries.GetAllCategorias;
 
 namespace SistemaEstoque.API.Controllers
 {
-    [Route("api/[controller]")]
-    [ApiController]
     [Authorize]
+    [Route("api/v1/[controller]")]
     public class CategoriasController : ControllerBaseImp
     {
         private readonly IMediator _mediator;
@@ -22,34 +21,38 @@ namespace SistemaEstoque.API.Controllers
         [HttpPost("Criar")]
         public async Task<IActionResult> Create([FromBody] CreateCategoriaCommand command)
         {
+            if (!ModelState.IsValid)
+                return ValidationError(ModelState.Values.SelectMany(v => v.Errors.Select(e => e.ErrorMessage)).ToList());
+
             var response = await _mediator.Send(command);
 
-            HttpContext.Items["MensagemAPI"] = "Categoria criada";
+            if (response == null)
+                return Error("Erro ao criar a categoria");
 
-            return Ok(response);
+            return Created(response);
         }
 
         [HttpPut("Atualizar")]
         public async Task<IActionResult> Update([FromBody] UpdateCategoriaCommand command)
         {
+            if (!ModelState.IsValid)
+                return ValidationError(ModelState.Values.SelectMany(v => v.Errors.Select(e => e.ErrorMessage)).ToList());
+
             var response = await _mediator.Send(command);
 
-            HttpContext.Items["MensagemAPI"] = "Categoria atualizada";
+            if (response == null)
+                return Error("Erro ao atualizar a categoria");
 
-            return Ok(response);
+            return Success(response);
         }
 
         [HttpGet]
         public async Task<IActionResult> GetAll([FromQuery] int skip = 0, int take = 15)
         {
-
             var query = new GetAllCategoriasQuery(skip, take);
-            
             var response = await _mediator.Send(query);
 
-            HttpContext.Items["MensagemAPI"] = "Categorias retornadas";
-            
-            return Ok(response);
+            return SuccessPaged(response, "Categorias retornadas com sucesso");
         }
     }
 }
