@@ -1,16 +1,17 @@
-﻿using Microsoft.EntityFrameworkCore;
-using SistemaEstoque.Domain.Entities;
+﻿using SistemaEstoque.Domain.Entities;
 using SistemaEstoque.Domain.Interfaces.Repositories;
 using SistemaEstoque.Infra.Data;
-using System.Runtime.CompilerServices;
+using SistemaEstoque.Domain.Interfaces.Services;
 
 namespace SistemaEstoque.Infra.Repositories
 {
     public class RemesaLoteRepository : RepositoryBase<RemessaLote>, IRemesaLoteRepository
     {
-        public RemesaLoteRepository(SistemaEstoqueDbContext context):
-            base(context)
+        #region Constructor
+        public RemesaLoteRepository(SistemaEstoqueDbContext context, IAmbienteUsuario ambienteUsuario)
+            : base(context, ambienteUsuario)
         {
         }
+        #endregion
     }
 }

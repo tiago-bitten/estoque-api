@@ -1,5 +1,4 @@
 ﻿using MediatR;
-using SistemaEstoque.Application.Responses;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,15 +7,11 @@ using System.Threading.Tasks;
 
 namespace SistemaEstoque.Application.Queries.GetAllFornecedores
 {
-    public class GetAllFornecedoresQuery : IRequest<GetAllFornecedoresResponse>, IPagedQuery
+    public class GetAllFornecedoresQuery : PagedQuery, IRequest<GetAllFornecedoresResponse>
     {
-        public GetAllFornecedoresQuery(int skip, int take)
+        public GetAllFornecedoresQuery(int page, int size) : base(page, size)
         {
-            Skip = skip;
-            Take = take;
+            
         }
-
-        public int Skip { get; set; }
-        public int Take { get; set; }
     }
 }

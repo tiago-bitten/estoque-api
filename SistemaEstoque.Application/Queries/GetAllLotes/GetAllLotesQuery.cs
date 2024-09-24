@@ -1,5 +1,4 @@
 ﻿using MediatR;
-using SistemaEstoque.Application.Responses;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SistemaEstoque.Application.Queries.GetAllLotes
 {
-    public class GetAllLotesQuery : IRequest<GetAllLotesResponse>, IPagedQuery
+    public class GetAllLotesQuery : IRequest<GetAllLotesResponse>, PagedQuery
     {
         public GetAllLotesQuery(int skip, int take)
         {

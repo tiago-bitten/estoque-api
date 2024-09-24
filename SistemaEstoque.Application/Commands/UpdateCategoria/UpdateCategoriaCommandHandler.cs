@@ -14,19 +14,19 @@ namespace SistemaEstoque.Application.Commands.UpdateCategoria
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
         private readonly ICategoriaService _categoriaService;
-        private readonly IRegistroAlteracaoEntidade<Categoria> _registroAlteracaoEntidade;
+        private readonly IAuditoriaEntidadeService _auditoriaEntidadeService;
         private readonly ICurrentUserService _currentUserService;
 
         public UpdateCategoriaCommandHandler(
             IUnitOfWork unitOfWork,
             IMapper mapper,
             ICategoriaService categoriaService,
-            IRegistroAlteracaoEntidade<Categoria> registroAlteracaoEntidade, ICurrentUserService currentUserService)
+            IAuditoriaEntidadeService auditoriaEntidadeService, ICurrentUserService currentUserService)
         {
             _unitOfWork = unitOfWork;
             _mapper = mapper;
             _categoriaService = categoriaService;
-            _registroAlteracaoEntidade = registroAlteracaoEntidade;
+            _auditoriaEntidadeService = auditoriaEntidadeService;
             _currentUserService = currentUserService;
         }
 
@@ -56,10 +56,10 @@ namespace SistemaEstoque.Application.Commands.UpdateCategoria
                 totalAlteracoes++;
             }
 
-            var categoriaAntigaDTO = _mapper.Map<CategoriaDTO>(categoriaAntiga);
-            var categoriaNovaDTO = _mapper.Map<CategoriaDTO>(categoriaNova);
+            var categoriaAntigaDTO = _mapper.Map<CategoriaDto>(categoriaAntiga);
+            var categoriaNovaDTO = _mapper.Map<CategoriaDto>(categoriaNova);
 
-            await _registroAlteracaoEntidade.LogAsync(
+            await _auditoriaEntidadeService.LogAsync(
                 categoriaAntigaDTO,
                 categoriaNovaDTO,
                 categoriaNova.Id,

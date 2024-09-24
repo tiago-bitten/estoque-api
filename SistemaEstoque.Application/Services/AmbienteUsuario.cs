@@ -19,9 +19,9 @@ public class AmbienteUsuario : IAmbienteUsuario
         _usuarioService = usuarioService;
     }
 
-    public async Task<Usuario> GetUsuarioAsync()
+    public async Task<Usuario> GetUsuarioAsync(params string[]? includes)
     {
-        return await _usuarioService.GetAndEnsureExistsAsync(GetUsuarioId());
+        return await _usuarioService.GetAndEnsureExistsAsync(GetUsuarioId(), includes: includes);
     }
 
     public int GetUsuarioId()
@@ -65,8 +65,8 @@ public class AmbienteUsuario : IAmbienteUsuario
         return _accessor.HttpContext?.User?.Identity?.IsAuthenticated ?? false;
     }
     
-    public async Task<(Usuario usuario, int tenantId)> GetUsuarioAndTenantAsync()
+    public async Task<(Usuario Usuario, int TenantId)> GetUsuarioAndTenantAsync(params string[]? includes)
     {
-        return (await GetUsuarioAsync(), GetTenantId());
+        return (await GetUsuarioAsync(includes), GetTenantId());
     }
 }

@@ -15,7 +15,7 @@
         IRemesaLoteRepository RemesaLotes { get; }
         ILoteRepository Lotes { get; }
         IMovimentacaoRepository Movimentacoes { get; }
-        IRegistroAlteracaoEntidadeRepository RegistrosAlteracoes { get; }
+        IAuditoriaEntidadeRepository AuditoriaEntidades { get; }
         IPerfilAcessoRepository PerfisAcessos { get; }
         IPermissaoProdutoRepository PermissoesProdutos { get; }
         IPermissaoCategoriaRepository PermissoesCategorias { get; }

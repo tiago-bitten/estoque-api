@@ -29,8 +29,4 @@
     <ProjectReference Include="..\SistemaEstoque.Shared\SistemaEstoque.Shared.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Extensions\" />
-  </ItemGroup>
-
 </Project>

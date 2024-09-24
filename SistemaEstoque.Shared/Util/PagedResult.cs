@@ -1,4 +1,4 @@
-﻿namespace SistemaEstoque.Infra.Util;
+﻿namespace SistemaEstoque.Shared.Util;
 
 public class PagedResult<T> where T : class
 {

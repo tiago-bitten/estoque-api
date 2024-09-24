@@ -1,43 +1,41 @@
 ﻿using AutoMapper;
 using MediatR;
-using Microsoft.AspNetCore.Http;
-using Microsoft.EntityFrameworkCore;
 using SistemaEstoque.Application.DTOs;
 using SistemaEstoque.Domain.Interfaces.Repositories;
 using SistemaEstoque.Domain.Interfaces.Services;
+using SistemaEstoque.Shared.Extensions;
 
-namespace SistemaEstoque.Application.Queries.GetAllCategorias
+namespace SistemaEstoque.Application.Queries.GetAllCategorias;
+
+public class GetAllCategoriasQueryHandler : IRequestHandler<GetAllCategoriasQuery, GetAllCategoriasResponse>
 {
-    public class GetAllCategoriasQueryHandler : IRequestHandler<GetAllCategoriasQuery, GetAllCategoriasResponse>
+    private readonly IUnitOfWork _uow;
+    private readonly IAmbienteUsuario _ambienteUsuario;
+    
+    public GetAllCategoriasQueryHandler(IUnitOfWork uow, IAmbienteUsuario ambienteUsuario)
     {
+        _uow = uow;
+        _ambienteUsuario = ambienteUsuario;
+    }
 
-        private readonly IUnitOfWork _uow;
-        private readonly IMapper _mapper;
-        private readonly ITokenService _tokenService;
+    public async Task<GetAllCategoriasResponse> Handle(GetAllCategoriasQuery request, CancellationToken cancellationToken)
+    {
+        var ambiente = await _ambienteUsuario.GetUsuarioAndTenantAsync("PerfilAcesso.PermissaoCategoria");
 
-        public GetAllCategoriasQueryHandler(
-            IUnitOfWork uow,
-            IMapper mapper,
-            ITokenService tokenService)
-        {
-            _uow = uow;
-            _mapper = mapper;
-            _tokenService = tokenService;
-        }
+        if (!ambiente.Usuario.PerfilAcesso.PermissaoCategoria.Visualizar)
+            throw new UnauthorizedAccessException();
+        
+        var categorias = await _uow.Categorias.GetAll()
+            .Select(c => new CategoriaDto
+            {
+                Id = c.Id,
+                Nome = c.Nome,
+                Descricao = c.Descricao
+            })
+            .ToPagedResultAsync(request.Page, request.Size);
 
-        public async Task<GetAllCategoriasResponse> Handle(GetAllCategoriasQuery request, CancellationToken cancellationToken)
-        {
-            var empresaId = EMPRESA_CONSTANTE.ID_EMPRESA;
+        var response = new GetAllCategoriasResponse(categorias);
 
-            var totalCategorias = await _uow.Categorias.GetAll(empresaId).CountAsync(cancellationToken);
-            var categorias = await _uow.Categorias.GetAll(empresaId)
-                .Skip(request.Skip)
-                .Take(request.Take)
-                .ToListAsync(cancellationToken);
-
-            var categoriasDTO = _mapper.Map<List<CategoriaDTO>>(categorias);
-
-            return new GetAllCategoriasResponse(categoriasDTO, totalCategorias);
-        }
+        return response;
     }
 }

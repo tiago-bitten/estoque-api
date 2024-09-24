@@ -105,7 +105,7 @@ namespace SistemaEstoque.Infra.EntitiesConfig
                 .HasForeignKey(es => es.TenantId)
                 .OnDelete(DeleteBehavior.SetNull);
 
-            builder.HasMany(e => e.LogsAlteracoes)
+            builder.HasMany(e => e.AuditoriaEntidades)
                 .WithOne(l => l.Empresa)
                 .HasForeignKey(l => l.TenantId)
                 .OnDelete(DeleteBehavior.SetNull);

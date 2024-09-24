@@ -1,15 +1,17 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using SistemaEstoque.Domain.Entities;
 using SistemaEstoque.Domain.Interfaces.Repositories;
+using SistemaEstoque.Domain.Interfaces.Services;
 using SistemaEstoque.Infra.Data;
 
-namespace SistemaEstoque.Infra.Repositories
+namespace SistemaEstoque.Infra.Repositories;
+
+public class FornecedorRepository : RepositoryBase<Fornecedor>, IFornecedorRepository
 {
-    public class FornecedorRepository : RepositoryBase<Fornecedor>, IFornecedorRepository
+    #region Constructor
+    public FornecedorRepository(SistemaEstoqueDbContext context, IAmbienteUsuario ambienteUsuario)
+        : base(context, ambienteUsuario)
     {
-        public FornecedorRepository(SistemaEstoqueDbContext context)
-            : base(context)
-        {
-        }
     }
+    #endregion
 }

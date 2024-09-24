@@ -1,9 +1,8 @@
 ﻿using MediatR;
-using SistemaEstoque.Application.Responses;
 
 namespace SistemaEstoque.Application.Queries.GetAllInsumos
 {
-    public class GetAllInsumosQuery : IRequest<GetAllInsumosResponse>, IPagedQuery
+    public class GetAllInsumosQuery : IRequest<GetAllInsumosResponse>, PagedQuery
     {
         public GetAllInsumosQuery(int skip, int take)
         {

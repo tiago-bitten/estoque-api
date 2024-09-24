@@ -22,7 +22,7 @@ namespace SistemaEstoque.Infra.Data
         public DbSet<HistoricoEstoque> HistoricoEstoques { get; set; }
         public DbSet<Usuario> Usuarios { get; set; }
         public DbSet<Fornecedor> Fornecedores { get; set; }
-        public DbSet<RegistroAlteracaoEntidade> LogAlteracoes { get; set; }
+        public DbSet<AuditoriaEntidade> LogAlteracoes { get; set; }
         public DbSet<RegistroUsuarioAcesso> HistoricosUsuariosAcessos { get; set; }
         public DbSet<PerfilAcesso> PerfisAcessos { get; set; }
         public DbSet<Proprietario> Proprietarios { get; set; }
@@ -42,7 +42,7 @@ namespace SistemaEstoque.Infra.Data
             modelBuilder.ApplyConfiguration(new EstoqueConfig());
             modelBuilder.ApplyConfiguration(new LoteConfig());
             modelBuilder.ApplyConfiguration(new MovimentacaoConfig());
-            modelBuilder.ApplyConfiguration(new RegistroAlteracaoEntidadeConfig());
+            modelBuilder.ApplyConfiguration(new AuditoriaEntidadeConfig());
             modelBuilder.ApplyConfiguration(new RegistroUsuarioAcessoConfig());
             modelBuilder.ApplyConfiguration(new HistoricoEstoqueConfig());
             modelBuilder.ApplyConfiguration(new PerfilAcessoConfig());

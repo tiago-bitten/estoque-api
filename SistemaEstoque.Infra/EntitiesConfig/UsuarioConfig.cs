@@ -48,14 +48,9 @@ namespace SistemaEstoque.Infra.EntitiesConfig
                 .HasForeignKey(u => u.TenantId)
                 .OnDelete(DeleteBehavior.SetNull);
 
-            builder.HasMany(u => u.RegistroAlteracaoEntidades)
+            builder.HasMany(u => u.AuditoriaEntidades)
                 .WithOne(l => l.Usuario)
                 .HasForeignKey(l => l.UsuarioId)
-                .OnDelete(DeleteBehavior.SetNull);
-
-            builder.HasMany(x => x.RegistroInsercaoRemocaoEntidades)
-                .WithOne(x => x.Usuario)
-                .HasForeignKey(x => x.UsuarioId)
                 .OnDelete(DeleteBehavior.SetNull);
 
             builder.HasMany(u => u.Movimentacoes)
@@ -63,7 +58,7 @@ namespace SistemaEstoque.Infra.EntitiesConfig
                 .HasForeignKey(m => m.UsuarioId)
                 .OnDelete(DeleteBehavior.SetNull);
 
-            builder.HasMany(u => u.HistoricosUsuariosAcessos)
+            builder.HasMany(u => u.AuditoriaUsuarioAcessos)
                 .WithOne(h => h.Usuario)
                 .HasForeignKey(h => h.UsuarioId)
                 .OnDelete(DeleteBehavior.SetNull);

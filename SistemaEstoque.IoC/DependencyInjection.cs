@@ -107,7 +107,7 @@ namespace SistemaEstoque.IoC
             services.AddScoped<IEstoqueRepository, EstoqueRepository>();
             services.AddScoped<ILoteRepository, LoteRepository>();
             services.AddScoped<IMovimentacaoRepository, MovimentacaoRepository>();
-            services.AddScoped<IRegistroAlteracaoEntidadeRepository, RegistroAlteracaoEntidadeEntidadeRepository>();
+            services.AddScoped<IAuditoriaEntidadeRepository, AuditoriaEntidadeRepository>();
             services.AddScoped<IRemesaLoteRepository, RemesaLoteRepository>();
             services.AddScoped<IPerfilAcessoRepository, PerfilAcessoRepository>();
             services.AddScoped<IPermissaoProdutoRepository, PermissaoProdutoRepository>();

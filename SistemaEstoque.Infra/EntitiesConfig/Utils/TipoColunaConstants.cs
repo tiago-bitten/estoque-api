@@ -14,6 +14,7 @@ public static class TipoColunaConstants
     public static readonly string VarcharCep = "varchar(8)";
     public static readonly string Varchar    = "varchar"; // precisa usar um string format para adicionar quantidade
     public static readonly string Text = "text";
+    public static readonly string Jsonb = "jsonb";
     
     public static readonly string TimestampWithTimeZone = "TIMESTAMP WITH TIME ZONE";
 }

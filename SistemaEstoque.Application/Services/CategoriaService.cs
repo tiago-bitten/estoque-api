@@ -10,5 +10,13 @@ namespace SistemaEstoque.Application.Services
             : base(repository)
         {
         }
+
+        public async Task EnsureNotExistsByNameAsync(string nome)
+        {
+            var exists = await Repository.AnyAsync(x => x.Nome == nome);
+
+            if (exists)
+                throw new Exception("ALTERAR");
+        }
     }
 }

@@ -25,7 +25,7 @@ namespace SistemaEstoque.Application.Services
             await GetAndEnsureExistsAsync(id, includeDeleted);
         }
 
-        public async Task<T> GetAndEnsureExistsAsync(int id, bool includeDeleted = false, params string[] includes)
+        public async Task<T> GetAndEnsureExistsAsync(int id, bool includeDeleted = false, params string[]? includes)
         {
             var entity = await Repository.GetByIdAsync(id, includes);
             

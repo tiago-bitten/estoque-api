@@ -15,7 +15,7 @@ namespace SistemaEstoque.Application.Profiles
             
             CreateMap<Categoria, CreateCategoriaResponse>();
 
-            CreateMap<Categoria, CategoriaDTO>();
+            CreateMap<Categoria, CategoriaDto>();
 
             CreateMap<Categoria, UpdateCategoriaResponse>();
 

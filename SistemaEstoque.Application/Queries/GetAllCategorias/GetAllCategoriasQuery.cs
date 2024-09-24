@@ -1,18 +1,10 @@
 ﻿using MediatR;
-using SistemaEstoque.Application.Responses;
 
-namespace SistemaEstoque.Application.Queries.GetAllCategorias
+namespace SistemaEstoque.Application.Queries.GetAllCategorias;
+
+public class GetAllCategoriasQuery : PagedQuery, IRequest<GetAllCategoriasResponse>
 {
-    public class GetAllCategoriasQuery : IRequest<GetAllCategoriasResponse>, IPagedQuery
+    public GetAllCategoriasQuery(int page, int size) : base(page, size)
     {
-        public GetAllCategoriasQuery(int skip, int take)
-        {
-            Skip = skip;
-            Take = take;
-        }
-
-        public int Skip { get ; set; }
-        public int Take { get; set ; }
     }
 }
-    
