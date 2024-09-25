@@ -17,9 +17,9 @@ public class UsuarioRepository : RepositoryBase<Usuario>, IUsuarioRepository
     #region Methods
 
     #region GetByEmailAsync
-    public async Task<Usuario?> GetByEmailAsync(string email)
+    public async Task<Usuario?> GetByEmailAsync(string email, params string[]? includes)
     {
-        return await FindAsync(u => u.Email == email);
+        return await FindAsync(u => u.Email == email, includes);
     }
     #endregion
 

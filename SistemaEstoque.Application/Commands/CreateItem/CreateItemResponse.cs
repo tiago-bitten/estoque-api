@@ -1,6 +1,6 @@
 ﻿namespace SistemaEstoque.Application.Commands.CreateProduto
 {
-    public class CreateProdutoResponse
+    public class CreateItemResponse
     {
         public int Id { get; set; }
         public string Nome { get; set; }

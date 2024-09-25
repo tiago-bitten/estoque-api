@@ -53,7 +53,7 @@ namespace SistemaEstoque.API.Controllers
             var query = new GetAllCategoriasQuery(skip, take);
             var response = await _mediator.Send(query);
 
-            return SuccessPaged(response, "Categorias retornadas com sucesso");
+            return SuccessPaged(response.PagedResult, "Categorias retornadas com sucesso");
         }
     }
 }

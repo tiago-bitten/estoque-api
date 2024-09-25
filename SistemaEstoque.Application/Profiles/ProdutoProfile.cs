@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using SistemaEstoque.Application.Commands.CreateItem;
 using SistemaEstoque.Application.Commands.CreateProduto;
 using SistemaEstoque.Application.DTOs;
 using SistemaEstoque.Application.Queries.GetAllProdutos;
@@ -10,9 +11,9 @@ namespace SistemaEstoque.Application.Profiles
     {
         public ProdutoProfile()
         {
-            CreateMap<CreateProdutoCommand, Produto>();
+            CreateMap<CreateItemCommand, Produto>();
 
-            CreateMap<Produto, CreateProdutoResponse>();
+            CreateMap<Produto, CreateItemResponse>();
 
             CreateMap<Produto, ProdutoDTO>();
 

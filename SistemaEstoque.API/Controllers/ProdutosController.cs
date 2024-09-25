@@ -1,6 +1,7 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using SistemaEstoque.Application.Commands.CreateItem;
 using SistemaEstoque.Application.Commands.CreateProduto;
 using SistemaEstoque.Application.Queries.GetAllProdutos;
 
@@ -18,7 +19,7 @@ namespace SistemaEstoque.API.Controllers
         }
 
         [HttpPost("Criar")]
-        public async Task<IActionResult> Create([FromBody] CreateProdutoCommand command)
+        public async Task<IActionResult> Create([FromBody] CreateItemCommand command)
         {
             var response = await _mediator.Send(command);
 

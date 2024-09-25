@@ -16,7 +16,9 @@ namespace SistemaEstoque.Domain.Entities
         public string Cidade { get; set; }
         public string Estado { get; set; }
         public string Cep { get; set; }
+        public bool AcessoBloqueado { get; set; }
         public int ProprietarioId { get; set; }
+        
         public Proprietario Proprietario { get; set; }
 
         
@@ -38,5 +40,15 @@ namespace SistemaEstoque.Domain.Entities
         public List<PermissaoCategoria> PermissoesCategorias { get; set; } = new();
         public List<PermissaoInsumo> PermissoesInsumos { get; set; } = new();
         public List<RefreshToken> RefreshTokens { get; set; } = new();
+
+        #region Methods
+
+        public void VerifyAcessoBloqueado()
+        {
+            if (AcessoBloqueado)
+                throw new Exception("Acesso bloqueado, entre em contato com a gente para regularizar");
+        }
+
+        #endregion
     }
 }
