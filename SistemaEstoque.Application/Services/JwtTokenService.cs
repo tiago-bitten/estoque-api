@@ -31,7 +31,8 @@ namespace SistemaEstoque.Application.Services
                 new(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
                 new("Email", usuario.Nome),
                 new("UsuarioId", usuario.Id.ToString()),
-                new("TenantId", usuario.TenantId.ToString())
+                new("TenantId", usuario.TenantId.ToString()),
+                new("Bloqueado", usuario.AcessoBloqueado.ToString())
             };
 
             var authSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));
@@ -39,7 +40,7 @@ namespace SistemaEstoque.Application.Services
             var token = new JwtSecurityToken(
                 issuer: _configuration["Jwt:Issuer"],
                 audience: _configuration["Jwt:Issuer"],
-                expires: DateTime.Now.AddMinutes(Int32.Parse(_configuration["Jwt:ExpirationInMinutes"])),
+                expires: DateTime.Now.AddMinutes(int.Parse(_configuration["Jwt:ExpirationInMinutes"])),
                 claims: authClaims,
                 signingCredentials: new SigningCredentials(authSigningKey, SecurityAlgorithms.HmacSha256)
             );
@@ -47,70 +48,31 @@ namespace SistemaEstoque.Application.Services
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
 
-        public async Task<RefreshToken> GenerateRefreshToken(Usuario usuario)
+        public async Task<RefreshToken> GenerateRefreshTokenAsync(Usuario usuario)
         {
-            var existingToken = await _uow.RefreshTokens
-                .FindAsync(rt => rt.UsuarioId == usuario.Id && !rt.IsRevogado);
+            var latestToken = await _uow.RefreshTokens.GetLatestValidTokenAsync(usuario.Id);
 
-            RefreshToken refreshToken;
-
-            if (existingToken is null)
+            if (latestToken is not null)
             {
-                refreshToken = new RefreshToken
-                {
-                    Token = GenerateSecureToken(),
-                    UsuarioId = usuario.Id,
-                    ExpiraEm = DateTime.UtcNow.AddDays(7),
-                    IsRevogado = false,
-                    UltimaGeracao = DateTime.UtcNow
-                };
-                
-                refreshToken.TenantId = usuario.TenantId;
-
-                await _uow.RefreshTokens.AddAsync(refreshToken);
-            }
-            else
-            {
-                existingToken.Token = GenerateSecureToken();
-                existingToken.ExpiraEm = DateTime.UtcNow.AddDays(7);
-                existingToken.IsRevogado = false;
-                existingToken.UltimaGeracao = DateTime.UtcNow;
-
-                _uow.RefreshTokens.Update(existingToken);
-                refreshToken = existingToken;
+                await RevokeRefreshTokenAsync(latestToken.Token, latestToken);
             }
 
-            await _uow.CommitAsync();
+            var refreshToken = RefreshToken.GenerateRefreshToken(usuario);
+            await _uow.RefreshTokens.AddAsync(refreshToken);
 
             return refreshToken;
         }
 
-        public async Task RevokeRefreshToken(string refreshToken)
+
+        public async Task RevokeRefreshTokenAsync(string token, RefreshToken? refreshToken = null)
         {
-            var token = await _uow.RefreshTokens.GetByTokenAsync(refreshToken);
-            if (token != null)
-            {
-                token.IsRevogado = true;
-                _uow.RefreshTokens.Update(token);
-            }
-        }
+            var tokenToRevoke = refreshToken ?? await _uow.RefreshTokens.GetByTokenAsync(token);
+    
+            if (tokenToRevoke is null)
+                throw new InvalidOperationException("RefreshToken não encontrado para revogação.");
 
-        public async Task<Empresa> GetEmpresaByAccessTokenAsync(string token)
-        {
-            var principal = GetPrincipalFromExpiredToken(token);
-
-            var empresaId = principal.Claims.FirstOrDefault(c => c.Type == "TenantId")?.Value;
-
-            return await _uow.Empresas.GetByIdAsync(Convert.ToInt32(empresaId));
-        }
-
-        public async Task<Usuario> GetUsuarioByAccessTokenAsync(string token)
-        {
-            var principal = GetPrincipalFromExpiredToken(token);
-
-            var usuarioId = principal.Claims.FirstOrDefault(c => c.Type == "UsuarioId")?.Value;
-
-            return await _uow.Usuarios.GetByIdAsync(Convert.ToInt32(usuarioId));
+            tokenToRevoke.Revoke();
+            _uow.RefreshTokens.Update(tokenToRevoke);
         }
 
         public ClaimsPrincipal GetPrincipalFromExpiredToken(string token)
@@ -138,51 +100,6 @@ namespace SistemaEstoque.Application.Services
             }
 
             return principal;
-        }
-
-        public bool ValidateExpiredAccessToken(string token)
-        {
-            var tokenHandler = new JwtSecurityTokenHandler();
-            var key = Encoding.ASCII.GetBytes(_configuration["Jwt:Key"]);
-
-            var tokenValidationParameters = new TokenValidationParameters
-            {
-                ValidateIssuer = true,
-                ValidateAudience = true,
-                ValidateLifetime = false,
-                ValidateIssuerSigningKey = true,
-                ValidIssuer = _configuration["Jwt:Issuer"],
-                ValidAudience = _configuration["Jwt:Issuer"],
-                IssuerSigningKey = new SymmetricSecurityKey(key)
-            };
-
-            try
-            {
-                var principal = tokenHandler.ValidateToken(token, tokenValidationParameters, out var validatedToken);
-
-                if (validatedToken is JwtSecurityToken jwtSecurityToken &&
-                    jwtSecurityToken.Header.Alg.Equals(SecurityAlgorithms.HmacSha256, StringComparison.InvariantCultureIgnoreCase))
-                {
-                    var exp = principal.Claims.FirstOrDefault(c => c.Type == JwtRegisteredClaimNames.Exp)?.Value;
-                    var expirationDate = DateTimeOffset.FromUnixTimeSeconds(Convert.ToInt64(exp)).UtcDateTime;
-                    return expirationDate < DateTime.UtcNow;
-                }
-                throw new SecurityTokenException("Invalid token");
-            }
-            catch (SecurityTokenException)
-            {
-                return false;
-            }
-        }
-
-        private string GenerateSecureToken()
-        {
-            var random = new byte[32];
-            using (var rng = RandomNumberGenerator.Create())
-            {
-                rng.GetBytes(random);
-                return Convert.ToBase64String(random);
-            }
         }
     }
 }

@@ -6,11 +6,8 @@ namespace SistemaEstoque.Domain.Interfaces.Services
     public interface ITokenService
     {
         string GenerateAccessToken(Usuario usuario);
-        Task<RefreshToken> GenerateRefreshToken(Usuario usuario);
-        Task RevokeRefreshToken(string refreshToken);
-        Task<Empresa> GetEmpresaByAccessTokenAsync(string token);
-        Task<Usuario> GetUsuarioByAccessTokenAsync(string token);
+        Task<RefreshToken> GenerateRefreshTokenAsync(Usuario usuario);
+        Task RevokeRefreshTokenAsync(string token, RefreshToken? refreshToken = null);
         ClaimsPrincipal GetPrincipalFromExpiredToken(string token);
-        bool ValidateExpiredAccessToken(string token);
     }
 }

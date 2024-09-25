@@ -26,7 +26,7 @@ public class RefreshTokenCommandHandler : IRequestHandler<RefreshTokenCommand, R
         
         var refreshToken = await _uow.RefreshTokens.GetByTokenAsync(request.RefreshToken);
         
-        if (refreshToken is null || refreshToken.ExpiraEm < DateTime.UtcNow || refreshToken.IsRevogado)
+        if (refreshToken is null || refreshToken.DataExpiracao < DateTime.UtcNow || refreshToken.Revogado)
             throw new Exception("Faça login novamente");
 
         var usuarioAccessToken = await _tokenService.GetUsuarioByAccessTokenAsync(request.AccessToken);

@@ -1,14 +1,46 @@
-﻿using SistemaEstoque.Domain.Entities.Abstracoes;
+﻿using System.Security.Cryptography;
+using SistemaEstoque.Domain.Entities.Abstracoes;
 
 namespace SistemaEstoque.Domain.Entities;
 
 public class RefreshToken : IdentificadorTenant
 {
+    public RefreshToken(string token, Usuario usuario, int tenantId, DateTime dataExpiracao)
+    {
+        Token = token;
+        Usuario = usuario;
+        TenantId = tenantId;
+        DataExpiracao = dataExpiracao;
+    }
+    
     public string Token { get; set; }
     public int UsuarioId { get; set; }
-    public DateTime ExpiraEm { get; set; }
-    public bool IsRevogado { get; set; }
-    public DateTime UltimaGeracao { get; set; }
+    public DateTime DataExpiracao { get; set; }
+    public bool Revogado { get; set; }
+    public DateTime? RevogadoEm { get; set; }
     
     public Usuario Usuario { get; set; }
+    public bool TokenValido => DataExpiracao >= DateTime.UtcNow && !Revogado;
+
+    public void Revoke()
+    {
+        Revogado = false;
+        RevogadoEm = DateTime.Now;
+    }
+
+    public static RefreshToken GenerateRefreshToken(Usuario usuario)
+    {
+        var token = GenerateSecureToken();
+        var dataExpiracao = DateTime.UtcNow;
+        
+        return new RefreshToken(token, usuario, usuario.TenantId, dataExpiracao);
+    }
+    
+    private static string GenerateSecureToken()
+    {
+        var random = new byte[32];
+        using var rng = RandomNumberGenerator.Create();
+        rng.GetBytes(random);
+        return Convert.ToBase64String(random);
+    }
 }

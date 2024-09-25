@@ -8,5 +8,7 @@ public interface IRefreshTokenRepository
     Task AddAsync(RefreshToken refreshToken);
     void Update(RefreshToken refreshToken);
     Task<RefreshToken?> GetByTokenAsync(string token);
+    Task<List<RefreshToken>> GetByUsuarioIdAsync(int usuarioId);
+    Task<RefreshToken?> GetLatestValidTokenAsync(int usuarioId);
     Task<RefreshToken?> FindAsync(Expression<Func<RefreshToken, bool>> predicate);
 }

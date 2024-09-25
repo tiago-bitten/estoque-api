@@ -19,12 +19,12 @@ public class RefreshTokenConfig : IdentificadorTenantConfig<RefreshToken>
             .HasColumnName("token")
             .IsRequired();
 
-        builder.Property(x => x.ExpiraEm)
+        builder.Property(x => x.DataExpiracao)
             .HasColumnType(TipoColunaConstants.TimestampWithTimeZone)
             .HasColumnName("expira_em")
             .IsRequired();
 
-        builder.Property(x => x.IsRevogado)
+        builder.Property(x => x.Revogado)
             .HasColumnType(TipoColunaConstants.Boolean)
             .HasColumnName("is_revogado")
             .HasDefaultValue(false)
