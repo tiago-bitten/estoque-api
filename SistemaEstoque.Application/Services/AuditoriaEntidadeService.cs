@@ -11,11 +11,13 @@ namespace SistemaEstoque.Application.Services
     {
         private readonly IUnitOfWork _uow;
         private readonly IAuditoriaEntidadeRepository _auditoriaEntidadeRepository;
+        private readonly IAmbienteUsuario _ambienteUsuario;
 
-        public AuditoriaEntidadeService(IUnitOfWork uow, IAuditoriaEntidadeRepository auditoriaEntidadeRepository)
+        public AuditoriaEntidadeService(IUnitOfWork uow, IAuditoriaEntidadeRepository auditoriaEntidadeRepository, IAmbienteUsuario ambienteUsuario)
         {
             _uow = uow;
             _auditoriaEntidadeRepository = auditoriaEntidadeRepository;
+            _ambienteUsuario = ambienteUsuario;
         }
 
         public async Task AuditarAdicaoAsync<T>(T entidade, string tabela) where T : IdentificadorBase
@@ -28,6 +30,7 @@ namespace SistemaEstoque.Application.Services
                 DadosAntigos = null,
                 DadosNovos = JsonSerializer.Serialize(entidade),
                 Quantidade = null,
+                UsuarioId = _ambienteUsuario.GetUsuarioId()
             };
 
             await _auditoriaEntidadeRepository.AddAsync(adicao);

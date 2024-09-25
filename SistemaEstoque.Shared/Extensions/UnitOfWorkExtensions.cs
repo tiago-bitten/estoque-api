@@ -6,6 +6,7 @@ namespace SistemaEstoque.Shared.Extensions;
 
 public static class UnitOfWorkExtensions
 {
+    //TODO: receber id do usuário que alterou. futuramente bot's executarão jobs
     public static async Task CommitAndAuditAsync<T>(
         this IUnitOfWork unitOfWork, 
         T entidade, 

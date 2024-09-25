@@ -10,24 +10,21 @@ using SistemaEstoque.Application.Commands.CreateUsuario;
 using SistemaEstoque.Application.Commands.CreateCategoria;
 using SistemaEstoque.Domain.Interfaces.Services;
 using SistemaEstoque.Application.Services;
-using SistemaEstoque.Application.Commands.CreateProduto;
 using SistemaEstoque.Application.Commands.CreateFornecedor;
 using SistemaEstoque.Application.Commands.CreateEstoque;
 using SistemaEstoque.Application.Commands.CreateLote;
 using SistemaEstoque.Application.Commands.UpdateCategoria;
-using SistemaEstoque.Application.Commands.CreateInsumo;
 using SistemaEstoque.Application.Queries.GetAllCategorias;
 using SistemaEstoque.Application.Queries.GetAllProdutos;
 using SistemaEstoque.Application.Queries.GetAllInsumos;
 using SistemaEstoque.Application.Queries.GetAllEstoquesProdutos;
 using SistemaEstoque.Application.Queries.GetAllFornecedores;
 using SistemaEstoque.Application.Commands.CreateEstoqueInsumo;
-using SistemaEstoque.Application.Queries.GetAllEstoquesInsumos;
 using SistemaEstoque.Application.Queries.GetAllLotes;
 using SistemaEstoque.Application.Commands.CreatePerfilAcesso;
 using SistemaEstoque.Application.Commands.CreateEmpresa;
+using SistemaEstoque.Application.Commands.CreateItem;
 using SistemaEstoque.Application.Commands.Login;
-using SistemaEstoque.Domain.Entities;
 
 namespace SistemaEstoque.IoC
 {
@@ -46,8 +43,7 @@ namespace SistemaEstoque.IoC
                     
                     typeof(CreateUsuarioCommand).Assembly,
                     typeof(CreateCategoriaCommand).Assembly,
-                    typeof(CreateProdutoCommand).Assembly,
-                    typeof(CreateInsumoCommand).Assembly,
+                    typeof(CreateItemCommand).Assembly,
                     typeof(CreateFornecedorCommand).Assembly,
                     typeof(CreateEstoqueProdutoCommand).Assembly,
                     typeof(CreateEstoqueInsumoCommand).Assembly,
@@ -61,7 +57,6 @@ namespace SistemaEstoque.IoC
                     typeof(GetAllProdutosQuery).Assembly,
                     typeof(GetAllInsumosQuery).Assembly,
                     typeof(GetAllEstoquesProdutosQuery).Assembly,
-                    typeof(GetAllEstoquesInsumosQuery).Assembly,
                     typeof(GetAllFornecedoresQuery).Assembly,
                     typeof(GetAllLotesQuery).Assembly
                 });
@@ -132,7 +127,7 @@ namespace SistemaEstoque.IoC
             services.AddScoped<IProprietarioService, ProprietarioService>();
             services.AddScoped<ITokenService, JwtTokenService>();
             services.AddScoped<IAmbienteUsuario, AmbienteUsuario>();
-            //services.AddScoped<IUsuarioService, UsuarioService>();
+            services.AddScoped<IUsuarioService, UsuarioService>();
 
             return services;
         }

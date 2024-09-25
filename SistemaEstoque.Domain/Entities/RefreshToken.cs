@@ -17,16 +17,17 @@ public class RefreshToken : IdentificadorTenant
     public int UsuarioId { get; set; }
     public DateTime DataExpiracao { get; set; }
     public bool Revogado { get; set; }
-    public DateTime? RevogadoEm { get; set; }
+    public DateTime? DataRevogado { get; set; }
     
     public Usuario Usuario { get; set; }
-    public bool TokenValido => DataExpiracao >= DateTime.UtcNow && !Revogado;
 
     public void Revoke()
     {
         Revogado = false;
-        RevogadoEm = DateTime.Now;
+        DataRevogado = DateTime.Now;
     }
+    
+    public bool TokenValido => DataExpiracao >= DateTime.UtcNow && !Revogado && DataRevogado is null;
 
     public static RefreshToken GenerateRefreshToken(Usuario usuario)
     {

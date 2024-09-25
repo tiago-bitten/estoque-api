@@ -1,9 +1,9 @@
 ﻿using MediatR;
-using SistemaEstoque.Domain.Entities;
+using SistemaEstoque.Application.Commands.CreateProduto;
 
-namespace SistemaEstoque.Application.Commands.CreateProduto
+namespace SistemaEstoque.Application.Commands.CreateItem
 {
-    public class CreateProdutoCommand : IRequest<CreateProdutoResponse>
+    public class CreateItemCommand : IRequest<CreateItemResponse>
     {
         public string Nome { get; set; }
         public string? Descricao { get; set; }
