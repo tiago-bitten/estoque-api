@@ -61,6 +61,12 @@ namespace SistemaEstoque.Infra.EntitiesConfig
                 .HasColumnName("cep")
                 .IsRequired();
 
+            builder.Property(x => x.AcessoBloqueado)
+                .HasColumnType(TipoColunaConstants.Boolean)
+                .HasColumnName("acesso_bloqueado")
+                .HasDefaultValue(false)
+                .IsRequired();
+
             builder.Property(e => e.ProprietarioId)
                 .HasColumnType(TipoColunaConstants.Int)
                 .HasColumnName("proprietario_id");

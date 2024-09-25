@@ -9,6 +9,6 @@ namespace SistemaEstoque.Domain.Interfaces.Repositories
 {
     public interface IUsuarioRepository : IRepositoryBase<Usuario>
     {
-        Task<Usuario?> GetByEmailAsync(string email);
+        Task<Usuario?> GetByEmailAsync(string email, params string[]? includes);
     }
 }

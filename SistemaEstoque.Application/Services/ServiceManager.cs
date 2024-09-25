@@ -14,6 +14,7 @@ namespace SistemaEstoque.Application.Services
         public IMovimentacaoService Movimentacoes { get; }
         public IProprietarioService Proprietarios { get; }
         public ITokenService Tokens { get; }
+        public IUsuarioService Usuarios { get; }
         #endregion
         
         #region Constructor
@@ -26,7 +27,8 @@ namespace SistemaEstoque.Application.Services
             ILoteService loteService,
             IMovimentacaoService movimentacaoService,
             IProprietarioService proprietarioService,
-            ITokenService tokenService)
+            ITokenService tokenService,
+            IUsuarioService usuarioService)
         {
             AuditoriaEntidades = auditoriaEntidadeService ?? throw new ArgumentNullException(nameof(auditoriaEntidadeService));
             Categorias = categoriaService ?? throw new ArgumentNullException(nameof(categoriaService));
@@ -37,6 +39,7 @@ namespace SistemaEstoque.Application.Services
             Movimentacoes = movimentacaoService ?? throw new ArgumentNullException(nameof(movimentacaoService));
             Proprietarios = proprietarioService ?? throw new ArgumentNullException(nameof(proprietarioService));
             Tokens = tokenService ?? throw new ArgumentNullException(nameof(tokenService));
+            Usuarios = usuarioService ?? throw new ArgumentNullException(nameof(usuarioService));
         }
         #endregion
     }

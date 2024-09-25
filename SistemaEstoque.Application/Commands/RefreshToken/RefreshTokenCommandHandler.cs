@@ -1,6 +1,8 @@
-﻿using MediatR;
+﻿using System.Security.Claims;
+using MediatR;
 using SistemaEstoque.Domain.Interfaces.Repositories;
 using SistemaEstoque.Domain.Interfaces.Services;
+using SistemaEstoque.Shared.Extensions;
 
 namespace SistemaEstoque.Application.Commands.RefreshToken;
 
@@ -8,41 +10,41 @@ public class RefreshTokenCommandHandler : IRequestHandler<RefreshTokenCommand, R
 {
     private readonly IUnitOfWork _uow;
     private readonly ITokenService _tokenService;
+    private readonly IServiceManager _serviceManager;
 
     public RefreshTokenCommandHandler(
         IUnitOfWork uow,
-        ITokenService tokenService)
+        ITokenService tokenService, IServiceManager serviceManager)
     {
         _uow = uow;
         _tokenService = tokenService;
+        _serviceManager = serviceManager;
     }
 
     public async Task<RefreshTokenResponse> Handle(RefreshTokenCommand request, CancellationToken cancellationToken)
     {
-        var validateExpiredAccessToken = _tokenService.ValidateExpiredAccessToken(request.AccessToken);
-
-        if (!validateExpiredAccessToken)
-            throw new Exception("Access Token continua sendo válido");
-        
         var refreshToken = await _uow.RefreshTokens.GetByTokenAsync(request.RefreshToken);
         
-        if (refreshToken is null || refreshToken.DataExpiracao < DateTime.UtcNow || refreshToken.Revogado)
-            throw new Exception("Faça login novamente");
+        if (refreshToken is null || !refreshToken.TokenValido)
+            throw new UnauthorizedAccessException("Faça login novamente");
 
-        var usuarioAccessToken = await _tokenService.GetUsuarioByAccessTokenAsync(request.AccessToken);
+        var usuarioId = _tokenService
+            .GetPrincipalFromExpiredToken(request.AccessToken)
+            .GetUsuarioId();
+        
+        var usuarioAccessToken = await _serviceManager.Usuarios.GetAndEnsureExistsAsync(usuarioId);
         var usuarioRefreshToken = refreshToken.Usuario;
         
         if (usuarioAccessToken.Id != usuarioRefreshToken.Id)
-            throw new Exception("Faça login novamente");
+            throw new UnauthorizedAccessException("Faça login novamente");
         
-        var newRefreshToken = await _tokenService.GenerateRefreshToken(usuarioRefreshToken);
+        var newRefreshToken = await _tokenService.GenerateRefreshTokenAsync(usuarioRefreshToken);
         var newAccessToken = _tokenService.GenerateAccessToken(usuarioRefreshToken);
 
-        return new RefreshTokenResponse()
-        {
-            RefreshToken = newRefreshToken.Token,
-            Token = newAccessToken,
-            Expiration = newRefreshToken.ExpiraEm
-        };
+        await _uow.CommitAsync();
+
+        var response = new RefreshTokenResponse(newAccessToken, newRefreshToken);
+
+        return response;
     }
 }

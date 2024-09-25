@@ -10,4 +10,5 @@ public interface IServiceManager
     ILoteService Lotes { get; }
     IMovimentacaoService Movimentacoes { get; }
     IProprietarioService Proprietarios { get; }
+    IUsuarioService Usuarios { get; }
 }

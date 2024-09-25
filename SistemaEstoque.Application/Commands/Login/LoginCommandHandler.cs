@@ -9,40 +9,35 @@ namespace SistemaEstoque.Application.Commands.Login;
 public class LoginCommandHandler : IRequestHandler<LoginCommand, LoginResponse>
 {
     private readonly IUnitOfWork _uow;
-    private readonly IMapper _mapper;
     private readonly ITokenService _tokenService;
 
     public LoginCommandHandler(
-        IMapper mapper,
         IUnitOfWork uow,
         ITokenService tokenService)
     {
-        _mapper = mapper;
         _uow = uow;
         _tokenService = tokenService;
     }
 
     public async Task<LoginResponse> Handle(LoginCommand request, CancellationToken cancellationToken)
     {
-        var usuario = await _uow.Usuarios.FindAsync(x => x.Email == request.Email && x.EmpresaId == request.TenantId);
+        var usuario = await _uow.Usuarios.GetByEmailAsync(request.Email, "Empresa");
         
-        if (usuario == null)
+        if (usuario is null)
             throw new Exception("E-mail ou senha inválidos");
         
-        var senhaValida = BCrypt.Net.BCrypt.Verify(request.Senha, usuario.Senha);
+        var senhaInvalida = !BCrypt.Net.BCrypt.Verify(request.Senha, usuario.Senha);
         
-        if (!senhaValida)
+        if (senhaInvalida)
             throw new Exception("E-mail ou senha inválidos");
-        
-        var accessToken = _tokenService.GenerateAccessToken(usuario);
-        var refreshToken = await _tokenService.GenerateRefreshToken(usuario);
 
-        var response = new LoginResponse()
-        {
-            Token = accessToken,
-            RefreshToken = refreshToken.Token,
-            Expiration = refreshToken.ExpiraEm
-        };
+        usuario.VerifyAcessoBloqueado();
+        usuario.Empresa.VerifyAcessoBloqueado();
+
+        var accessToken = _tokenService.GenerateAccessToken(usuario);
+        var refreshToken = await _tokenService.GenerateRefreshTokenAsync(usuario);
+
+        var response = new LoginResponse(accessToken, refreshToken.Token);
 
         return response;
     }

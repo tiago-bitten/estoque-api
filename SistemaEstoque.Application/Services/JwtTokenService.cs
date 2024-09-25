@@ -2,9 +2,7 @@
 using System.Text;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.Extensions.Configuration;
-using System.Linq;
 using System.Security.Claims;
-using System.Security.Cryptography;
 using SistemaEstoque.Domain.Entities;
 using SistemaEstoque.Domain.Interfaces.Repositories;
 using SistemaEstoque.Domain.Interfaces.Services;
@@ -13,9 +11,12 @@ namespace SistemaEstoque.Application.Services
 {
     public class JwtTokenService : ITokenService
     {
+        #region Fields
         private readonly IConfiguration _configuration;
         private readonly IUnitOfWork _uow;
+        #endregion
 
+        #region Constructor
         public JwtTokenService(
             IConfiguration configuration,
             IUnitOfWork uow)
@@ -23,14 +24,16 @@ namespace SistemaEstoque.Application.Services
             _configuration = configuration;
             _uow = uow;
         }
+        #endregion
 
+        #region GenerateAccessToken
         public string GenerateAccessToken(Usuario usuario)
         {
             var authClaims = new List<Claim>
             {
                 new(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-                new("Email", usuario.Nome),
-                new("UsuarioId", usuario.Id.ToString()),
+                new(ClaimTypes.NameIdentifier, usuario.Id.ToString()),
+                new(ClaimTypes.Name, usuario.Email),
                 new("TenantId", usuario.TenantId.ToString()),
                 new("Bloqueado", usuario.AcessoBloqueado.ToString())
             };
@@ -47,7 +50,9 @@ namespace SistemaEstoque.Application.Services
 
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
+        #endregion
 
+        #region GenerateRefreshTokenAsync
         public async Task<RefreshToken> GenerateRefreshTokenAsync(Usuario usuario)
         {
             var latestToken = await _uow.RefreshTokens.GetLatestValidTokenAsync(usuario.Id);
@@ -62,8 +67,9 @@ namespace SistemaEstoque.Application.Services
 
             return refreshToken;
         }
+        #endregion
 
-
+        #region RevokeRefreshTokenAsync
         public async Task RevokeRefreshTokenAsync(string token, RefreshToken? refreshToken = null)
         {
             var tokenToRevoke = refreshToken ?? await _uow.RefreshTokens.GetByTokenAsync(token);
@@ -74,7 +80,9 @@ namespace SistemaEstoque.Application.Services
             tokenToRevoke.Revoke();
             _uow.RefreshTokens.Update(tokenToRevoke);
         }
+        #endregion
 
+        #region GetPrincipalFromExpiredToken
         public ClaimsPrincipal GetPrincipalFromExpiredToken(string token)
         {
             var tokenHandler = new JwtSecurityTokenHandler();
@@ -93,7 +101,7 @@ namespace SistemaEstoque.Application.Services
 
             var principal = tokenHandler.ValidateToken(token, tokenValidationParameters, out var validatedToken);
             
-            if (!(validatedToken is JwtSecurityToken jwtSecurityToken) ||
+            if (validatedToken is not JwtSecurityToken jwtSecurityToken ||
                 !jwtSecurityToken.Header.Alg.Equals(SecurityAlgorithms.HmacSha256, StringComparison.InvariantCultureIgnoreCase))
             {
                 throw new SecurityTokenException("Invalid token");
@@ -101,5 +109,6 @@ namespace SistemaEstoque.Application.Services
 
             return principal;
         }
+        #endregion
     }
 }
