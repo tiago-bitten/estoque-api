@@ -21,5 +21,6 @@
         IPermissaoCategoriaRepository PermissoesCategorias { get; }
         IConfiguracaoEstoqueRepository ConfiguracoesEstoques { get; }
         IRefreshTokenRepository RefreshTokens { get; }
+        IAuditoriaUsuarioAcessoRepository AuditoriaUsuarioAcessos { get; }
     }
 }

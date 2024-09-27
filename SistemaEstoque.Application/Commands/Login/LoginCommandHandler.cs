@@ -10,13 +10,16 @@ public class LoginCommandHandler : IRequestHandler<LoginCommand, LoginResponse>
 {
     private readonly IUnitOfWork _uow;
     private readonly ITokenService _tokenService;
+    private readonly IServiceManager _serviceManager;
 
     public LoginCommandHandler(
         IUnitOfWork uow,
-        ITokenService tokenService)
+        ITokenService tokenService, 
+        IServiceManager serviceManager)
     {
         _uow = uow;
         _tokenService = tokenService;
+        _serviceManager = serviceManager;
     }
 
     public async Task<LoginResponse> Handle(LoginCommand request, CancellationToken cancellationToken)
@@ -36,6 +39,10 @@ public class LoginCommandHandler : IRequestHandler<LoginCommand, LoginResponse>
 
         var accessToken = _tokenService.GenerateAccessToken(usuario);
         var refreshToken = await _tokenService.GenerateRefreshTokenAsync(usuario);
+
+        await _serviceManager.
+        
+        await _uow.CommitAsync();
 
         var response = new LoginResponse(accessToken, refreshToken.Token);
 

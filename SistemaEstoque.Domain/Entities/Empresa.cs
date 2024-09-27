@@ -32,7 +32,7 @@ namespace SistemaEstoque.Domain.Entities
         public List<Movimentacao> Movimentacoes { get; set; } = new();
         public List<AuditoriaEntidade> AuditoriaEntidades { get; set; } = new();
         public List<HistoricoEstoque> HistoricoEstoques { get; set; } = new();
-        public List<RegistroUsuarioAcesso> HistoricosUsuariosAcessos { get; set; } = new();
+        public List<AuditoriaUsuarioAcesso> HistoricosUsuariosAcessos { get; set; } = new();
         public List<RemessaLote> Lotes { get; set; } = new();
         public List<Lote> LoteItems { get; set; } = new();
         public List<PerfilAcesso> PerfisAcessos { get; set; } = new();

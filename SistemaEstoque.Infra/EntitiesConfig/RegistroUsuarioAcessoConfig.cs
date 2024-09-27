@@ -6,9 +6,9 @@ using SistemaEstoque.Infra.EntitiesConfig.Utils;
 
 namespace SistemaEstoque.Infra.EntitiesConfig
 {
-    public class RegistroUsuarioAcessoConfig : IdentificadorTenantConfig<RegistroUsuarioAcesso>
+    public class RegistroUsuarioAcessoConfig : IdentificadorTenantConfig<AuditoriaUsuarioAcesso>
     {
-        public override void Configure(EntityTypeBuilder<RegistroUsuarioAcesso> builder)
+        public override void Configure(EntityTypeBuilder<AuditoriaUsuarioAcesso> builder)
         {
             base.Configure(builder);
             
