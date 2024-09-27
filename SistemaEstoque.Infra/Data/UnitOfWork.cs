@@ -23,7 +23,8 @@ namespace SistemaEstoque.Infra.Data
                           IPermissaoProdutoRepository permissaoProdutoRepository,
                           IPermissaoCategoriaRepository permissaoCategoriaRepository,
                           IConfiguracaoEstoqueRepository configuracaoEstoqueRepository,
-                          IRefreshTokenRepository refreshTokenRepository)
+                          IRefreshTokenRepository refreshTokenRepository,
+                          IAuditoriaUsuarioAcessoRepository auditoriaUsuarioAcessoRepository)
         {
             _context = context ?? throw new ArgumentNullException(nameof(context));
             Empresas = empresaRepository ?? throw new ArgumentNullException(nameof(empresaRepository));
@@ -41,6 +42,7 @@ namespace SistemaEstoque.Infra.Data
             PermissoesCategorias = permissaoCategoriaRepository ?? throw new ArgumentNullException(nameof(permissaoCategoriaRepository));
             ConfiguracoesEstoques = configuracaoEstoqueRepository ?? throw new ArgumentNullException(nameof(configuracaoEstoqueRepository));
             RefreshTokens = refreshTokenRepository ?? throw new ArgumentNullException(nameof(refreshTokenRepository));
+            AuditoriaUsuarioAcessos = auditoriaUsuarioAcessoRepository ?? throw new ArgumentNullException(nameof(auditoriaUsuarioAcessoRepository));
         }
 
         public IEmpresaRepository Empresas { get; }
@@ -58,6 +60,7 @@ namespace SistemaEstoque.Infra.Data
         public IPermissaoCategoriaRepository PermissoesCategorias { get; }
         public IConfiguracaoEstoqueRepository ConfiguracoesEstoques { get; }
         public IRefreshTokenRepository RefreshTokens { get; }
+        public IAuditoriaUsuarioAcessoRepository AuditoriaUsuarioAcessos { get; }
 
         public async Task BeginTransactionAsync()
         {

@@ -15,7 +15,7 @@ namespace SistemaEstoque.Domain.Entities
 
         public List<Movimentacao> Movimentacoes { get; set; } = new();
         public List<AuditoriaEntidade> AuditoriaEntidades { get; set; } = new();
-        public List<RegistroUsuarioAcesso> AuditoriaUsuarioAcessos { get; set; } = new();
+        public List<AuditoriaUsuarioAcesso> AuditoriaUsuarioAcessos { get; set; } = new();
         public List<RemessaLote> Lotes { get; set; }
 
         #region Methods

@@ -1,7 +1,5 @@
-﻿using System.Security.Claims;
-using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Http;
 using SistemaEstoque.Domain.Entities;
-using SistemaEstoque.Domain.Interfaces.Repositories;
 using SistemaEstoque.Domain.Interfaces.Services;
 
 namespace SistemaEstoque.Application.Services;
@@ -68,5 +66,15 @@ public class AmbienteUsuario : IAmbienteUsuario
     public async Task<(Usuario Usuario, int TenantId)> GetUsuarioAndTenantAsync(params string[]? includes)
     {
         return (await GetUsuarioAsync(includes), GetTenantId());
+    }
+
+    public string? GetIpAddress()
+    {
+        return _accessor.HttpContext?.Connection.LocalIpAddress?.MapToIPv4().ToString();
+    }
+
+    public string? GetUserAgent()
+    {
+        return _accessor.HttpContext?.Connection.LocalIpAddress?.ScopeId.ToString();
     }
 }

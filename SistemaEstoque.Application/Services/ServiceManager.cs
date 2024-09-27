@@ -6,6 +6,7 @@ namespace SistemaEstoque.Application.Services
     {
         #region Fields
         public IAuditoriaEntidadeService AuditoriaEntidades { get; }
+        public IAuditoriaUsuarioAcessoService AuditoriaUsuarioAcessos { get; }
         public ICategoriaService Categorias { get; }
         public IEstoqueService Estoques { get; }
         public IFornecedorService Fornecedores { get; }
@@ -28,7 +29,8 @@ namespace SistemaEstoque.Application.Services
             IMovimentacaoService movimentacaoService,
             IProprietarioService proprietarioService,
             ITokenService tokenService,
-            IUsuarioService usuarioService)
+            IUsuarioService usuarioService,
+            IAuditoriaUsuarioAcessoService auditoriaUsuarioAcessos)
         {
             AuditoriaEntidades = auditoriaEntidadeService ?? throw new ArgumentNullException(nameof(auditoriaEntidadeService));
             Categorias = categoriaService ?? throw new ArgumentNullException(nameof(categoriaService));
@@ -40,6 +42,7 @@ namespace SistemaEstoque.Application.Services
             Proprietarios = proprietarioService ?? throw new ArgumentNullException(nameof(proprietarioService));
             Tokens = tokenService ?? throw new ArgumentNullException(nameof(tokenService));
             Usuarios = usuarioService ?? throw new ArgumentNullException(nameof(usuarioService));
+            AuditoriaUsuarioAcessos = auditoriaUsuarioAcessos?? throw new ArgumentNullException(nameof(auditoriaUsuarioAcessos));
         }
         #endregion
     }

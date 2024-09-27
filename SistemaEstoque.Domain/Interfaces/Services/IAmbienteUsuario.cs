@@ -14,5 +14,8 @@ namespace SistemaEstoque.Domain.Interfaces.Services
         bool Autenticado();
         
         Task<(Usuario Usuario, int TenantId)> GetUsuarioAndTenantAsync(params string[]? includes);
+
+        string? GetIpAddress();
+        string? GetUserAgent();
     }
 }

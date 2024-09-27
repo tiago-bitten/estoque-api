@@ -23,7 +23,7 @@ namespace SistemaEstoque.Infra.Data
         public DbSet<Usuario> Usuarios { get; set; }
         public DbSet<Fornecedor> Fornecedores { get; set; }
         public DbSet<AuditoriaEntidade> LogAlteracoes { get; set; }
-        public DbSet<RegistroUsuarioAcesso> HistoricosUsuariosAcessos { get; set; }
+        public DbSet<AuditoriaUsuarioAcesso> HistoricosUsuariosAcessos { get; set; }
         public DbSet<PerfilAcesso> PerfisAcessos { get; set; }
         public DbSet<Proprietario> Proprietarios { get; set; }
         public DbSet<PermissaoProduto> PermissoesProdutos { get; set; }
